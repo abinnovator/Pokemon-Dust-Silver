@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://cu8sc0th7d20l"]
+
+[ext_resource type="Script" uid="uid://bkloia6nxdl3b" path="res://scripts/gameplay/Npc.cs" id="1_ggjrm"]
+[ext_resource type="Script" uid="uid://btitddia00a6q" path="res://scripts/gameplay/NpcInput.cs" id="2_mtspd"]
+[ext_resource type="Script" uid="uid://disixwvddvaya" path="res://scripts/gameplay/NpcInputConfig.cs" id="2_ydi7b"]
+[ext_resource type="Script" uid="uid://ojrerf85ncwv" path="res://scripts/gameplay/CharacterMovement.cs" id="3_aqags"]
+[ext_resource type="Script" uid="uid://gmo2xmi834dp" path="res://scripts/utilities/StateMachine.cs" id="4_r6yms"]
+[ext_resource type="SpriteFrames" uid="uid://dbs8b3h21lpqj" path="res://resources/spriteframes/worker.tres" id="4_ttbru"]
+[ext_resource type="Script" uid="uid://noyq6csxc7hf" path="res://scripts/gameplay/CharacterAnimation.cs" id="4_ydi7b"]
+[ext_resource type="Script" uid="uid://c7c47ghf7yq53" path="res://scripts/gameplay/states/NpcRoamState.cs" id="5_lrtat"]
+[ext_resource type="Script" uid="uid://bud3b45irf650" path="res://scripts/gameplay/states/NpcMessageState.cs" id="6_lrtat"]
+
+[sub_resource type="Resource" id="Resource_toj7f"]
+resource_local_to_scene = true
+script = ExtResource("2_ydi7b")
+Messages = []
+PatrolPoints = Array[Vector2]([])
+metadata/_custom_type_script = "uid://disixwvddvaya"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msjke"]
+size = Vector2(16, 16)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_ggjrm")
+NpcInputConfig = SubResource("Resource_toj7f")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_msjke")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("2_mtspd")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput")]
+script = ExtResource("3_aqags")
+Character = NodePath("..")
+CharacterInput = NodePath("../Input")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("CharacterMovement", "CharacterInput")]
+texture_filter = 1
+position = Vector2(8, 4)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_ttbru")
+animation = &"idle_down"
+script = ExtResource("4_ydi7b")
+CharacterMovement = NodePath("../Movement")
+CharacterInput = NodePath("../Input")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer")]
+script = ExtResource("4_r6yms")
+Customer = NodePath("..")
+
+[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement", "StateOwner", "StateMachine")]
+script = ExtResource("5_lrtat")
+NpcInput = NodePath("../../Input")
+CharacterMovement = NodePath("../../Movement")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="Message" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("6_lrtat")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")

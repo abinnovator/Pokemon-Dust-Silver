@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=4 uid="uid://pvyq3gdweho"]
+
+[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_68rbe"]
+[ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_jpmhg"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_ogny3"]
+[ext_resource type="PackedScene" uid="uid://bft0l053eiv7l" path="res://scenes/core/pokeball.tscn" id="4_prj1g"]
+[ext_resource type="Script" uid="uid://bsewtsvpwxbc5" path="res://scripts/gameplay/Pokeballs.cs" id="4_r5k76"]
+[ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="6_4wgwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prj1g"]
+size = Vector2(8, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wgwr"]
+size = Vector2(4.0000153, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5k76"]
+size = Vector2(8, 224)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_68rbe")
+LevelName = 4
+top = -48
+bottom = 176
+left = -16
+right = 192
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="LabTextures" type="TileMapLayer" parent="Tiles"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////BwAzAAMAAAD//wAABwAzAAQAAAD//wEABwAzAAUAAAD//wIABwAzAAYAAAD//wMABwAzAAcAAAD//wQABwAzAAgAAAD//wUABwAzAAkAAAAAAP//BwA0AAMAAAAAAAAABwA0AAQAAAAAAAEABwA0AAUAAAAAAAIABwA0AAYAAAAAAAMABwA0AAcAAAAAAAQABwA0AAgAAAAAAAUABwA0AAkAAAABAP//BwA1AAMAAAABAAAABwA1AAQAAAABAAEABwA1AAUAAAABAAIABwA1AAYAAAABAAMABwA1AAcAAAABAAQABwA1AAgAAAABAAUABwA1AAkAAAACAP//BwA2AAMAAAACAAAABwA2AAQAAAACAAEABwA2AAUAAAACAAIABwA2AAYAAAACAAMABwA2AAcAAAACAAQABwA2AAgAAAACAAUABwA2AAkAAAADAP//BwA3AAMAAAADAAAABwA3AAQAAAADAAEABwA3AAUAAAADAAIABwA3AAYAAAADAAMABwA3AAcAAAADAAQABwA3AAgAAAADAAUABwA3AAkAAAAEAP//BwA4AAMAAAAEAAAABwA4AAQAAAAEAAEABwA4AAUAAAAEAAIABwA4AAYAAAAEAAMABwA4AAcAAAAEAAQABwA4AAgAAAAEAAUABwA4AAkAAAAFAP//BwA5AAMAAAAFAAAABwA5AAQAAAAFAAEABwA5AAUAAAAFAAIABwA5AAYAAAAFAAMABwA5AAcAAAAFAAQABwA5AAgAAAAFAAUABwA5AAkAAAAGAP//BwA6AAMAAAAGAAAABwA6AAQAAAAGAAEABwA6AAUAAAAGAAIABwA6AAYAAAAGAAMABwA6AAcAAAAGAAQABwA6AAgAAAAGAAUABwA6AAkAAAAHAP//BwA7AAMAAAAHAAAABwA7AAQAAAAHAAEABwA7AAUAAAAHAAIABwA7AAYAAAAHAAMABwA7AAcAAAAHAAQABwA7AAgAAAAHAAUABwA7AAkAAAAIAP//BwA8AAMAAAAIAAAABwA8AAQAAAAIAAEABwA8AAUAAAAIAAIABwA8AAYAAAAIAAMABwA8AAcAAAAIAAQABwA8AAgAAAAIAAUABwA8AAkAAAAJAP//BwA9AAMAAAAJAAAABwA9AAQAAAAJAAEABwA9AAUAAAAJAAIABwA9AAYAAAAJAAMABwA9AAcAAAAJAAQABwA9AAgAAAAJAAUABwA9AAkAAAD///3/BwAzAAEAAAD///7/BwAzAAIAAAAAAP3/BwA0AAEAAAAAAP7/BwA0AAIAAAABAP3/BwA1AAEAAAABAP7/BwA1AAIAAAACAP3/BwA2AAEAAAACAP7/BwA2AAIAAAADAP3/BwA3AAEAAAADAP7/BwA3AAIAAAAEAP3/BwA4AAEAAAAEAP7/BwA4AAIAAAAFAP3/BwA5AAEAAAAFAP7/BwA5AAIAAAAGAP3/BwA6AAEAAAAGAP7/BwA6AAIAAAAHAP3/BwA7AAEAAAAHAP7/BwA7AAIAAAAIAP3/BwA8AAEAAAAIAP7/BwA8AAIAAAAJAP3/BwA9AAEAAAAJAP7/BwA9AAIAAAD//wYABwAzAAoAAAD//wcABwAzAAsAAAD//wgABwAzAAwAAAD//wkABwAzAA0AAAD//woABwAzAA4AAAAAAAYABwA0AAoAAAAAAAcABwA0AAsAAAAAAAgABwA0AAwAAAAAAAkABwA0AA0AAAAAAAoABwA0AA4AAAABAAYABwA1AAoAAAABAAcABwA1AAsAAAABAAgABwA1AAwAAAABAAkABwA1AA0AAAABAAoABwA1AA4AAAACAAYABwA2AAoAAAACAAcABwA2AAsAAAACAAgABwA2AAwAAAACAAkABwA2AA0AAAACAAoABwA2AA4AAAADAAYABwA3AAoAAAADAAcABwA3AAsAAAADAAgABwA3AAwAAAADAAkABwA3AA0AAAADAAoABwA3AA4AAAAEAAYABwA4AAoAAAAEAAcABwA4AAsAAAAEAAgABwA4AAwAAAAEAAkABwA4AA0AAAAEAAoABwA4AA4AAAAFAAYABwA5AAoAAAAFAAcABwA5AAsAAAAFAAgABwA5AAwAAAAFAAkABwA5AA0AAAAFAAoABwA5AA4AAAAGAAYABwA6AAoAAAAGAAcABwA6AAsAAAAGAAgABwA6AAwAAAAGAAkABwA6AA0AAAAGAAoABwA6AA4AAAAHAAYABwA7AAoAAAAHAAcABwA7AAsAAAAHAAgABwA7AAwAAAAHAAkABwA7AA0AAAAHAAoABwA7AA4AAAAIAAYABwA8AAoAAAAIAAcABwA8AAsAAAAIAAgABwA8AAwAAAAIAAkABwA8AA0AAAAIAAoABwA8AA4AAAAJAAYABwA9AAoAAAAJAAcABwA9AAsAAAAJAAgABwA9AAwAAAAJAAkABwA9AA0AAAAJAAoABwA9AA4AAAAKAP3/BwA+AAEAAAAKAP7/BwA+AAIAAAAKAP//BwA+AAMAAAAKAAAABwA+AAQAAAAKAAEABwA+AAUAAAAKAAIABwA+AAYAAAAKAAMABwA+AAcAAAAKAAQABwA+AAgAAAAKAAUABwA+AAkAAAAKAAYABwA+AAoAAAAKAAcABwA+AAsAAAAKAAgABwA+AAwAAAAKAAkABwA+AA0AAAAKAAoABwA+AA4AAAALAP3/BwA/AAEAAAALAP7/BwA/AAIAAAALAP//BwA/AAMAAAALAAAABwA/AAQAAAALAAEABwA/AAUAAAALAAIABwA/AAYAAAALAAMABwA/AAcAAAALAAQABwA/AAgAAAALAAUABwA/AAkAAAALAAYABwA/AAoAAAALAAcABwA/AAsAAAALAAgABwA/AAwAAAALAAkABwA/AA0AAAALAAoABwA/AA4AAAA=")
+tile_set = ExtResource("2_jpmhg")
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+position = Vector2(80, 96)
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_ogny3")]
+position = Vector2(-7, 48)
+scale = Vector2(1.85, 1)
+TargetLevelTrigger = 1
+CurrentLevelTrigger = 1
+
+[node name="Pokeballs" type="Node2D" parent="."]
+texture_filter = 1
+script = ExtResource("4_r5k76")
+
+[node name="Bulbasaur" parent="Pokeballs" instance=ExtResource("4_prj1g")]
+texture_filter = 1
+position = Vector2(120, 24)
+Type = 5
+
+[node name="Charmander" parent="Pokeballs" instance=ExtResource("4_prj1g")]
+texture_filter = 1
+position = Vector2(136, 24)
+PokemonName = 1
+Type = 2
+
+[node name="Squirtle" parent="Pokeballs" instance=ExtResource("4_prj1g")]
+texture_filter = 1
+position = Vector2(152, 24)
+PokemonName = 2
+Type = 3
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(88, -48)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(112, -108)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_prj1g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(88, 178)
+rotation = 1.5707964
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_4wgwr")
+disabled = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(88, -48)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_4wgwr")
+disabled = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-20, 64)
+shape = SubResource("RectangleShape2D_r5k76")
+disabled = true
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(56, 32)
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("6_4wgwr")]
+position = Vector2(32, 112)

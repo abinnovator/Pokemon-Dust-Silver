@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=4 uid="uid://hju4ycddiq82"]
+
+[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_qwg2j"]
+[ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_nbhf3"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_17k8n"]
+[ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_nnnga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnnga"]
+size = Vector2(12, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7oqo"]
+size = Vector2(12, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq8m3"]
+size = Vector2(12, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijv7t"]
+size = Vector2(12, 160)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_qwg2j")
+LevelName = 18
+top = -48
+bottom = 320
+left = -80
+right = 160
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="PokecenterTextures" type="TileMapLayer" parent="Tiles"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD7//3/BgAAAAEAAAD7//7/BgAAAAIAAAD7////BgAAAAMAAAD7/wAABgAAAAQAAAD7/wEABgAAAAUAAAD7/wIABgAAAAYAAAD7/wMABgAAAAcAAAD7/wQABgAAAAgAAAD7/wUABgAAAAkAAAD8//3/BgABAAEAAAD8//7/BgABAAIAAAD8////BgABAAMAAAD8/wAABgABAAQAAAD8/wEABgABAAUAAAD8/wIABgABAAYAAAD8/wMABgABAAcAAAD8/wQABgABAAgAAAD8/wUABgABAAkAAAD9//3/BgACAAEAAAD9//7/BgACAAIAAAD9////BgACAAMAAAD9/wAABgACAAQAAAD9/wEABgACAAUAAAD9/wIABgACAAYAAAD9/wMABgACAAcAAAD9/wQABgACAAgAAAD9/wUABgACAAkAAAD+//3/BgADAAEAAAD+//7/BgADAAIAAAD+////BgADAAMAAAD+/wAABgADAAQAAAD+/wEABgADAAUAAAD+/wIABgADAAYAAAD+/wMABgADAAcAAAD+/wQABgADAAgAAAD+/wUABgADAAkAAAD///3/BgAEAAEAAAD///7/BgAEAAIAAAD/////BgAEAAMAAAD//wAABgAEAAQAAAD//wEABgAEAAUAAAD//wIABgAEAAYAAAD//wMABgAEAAcAAAD//wQABgAEAAgAAAD//wUABgAEAAkAAAAAAP3/BgAFAAEAAAAAAP7/BgAFAAIAAAAAAP//BgAFAAMAAAAAAAAABgAFAAQAAAAAAAEABgAFAAUAAAAAAAIABgAFAAYAAAAAAAMABgAFAAcAAAAAAAQABgAFAAgAAAAAAAUABgAFAAkAAAABAP3/BgAGAAEAAAABAP7/BgAGAAIAAAABAP//BgAGAAMAAAABAAAABgAGAAQAAAABAAEABgAGAAUAAAABAAIABgAGAAYAAAABAAMABgAGAAcAAAABAAQABgAGAAgAAAABAAUABgAGAAkAAAACAP3/BgAHAAEAAAACAP7/BgAHAAIAAAACAP//BgAHAAMAAAACAAAABgAHAAQAAAACAAEABgAHAAUAAAACAAIABgAHAAYAAAACAAMABgAHAAcAAAACAAQABgAHAAgAAAACAAUABgAHAAkAAAADAP3/BgAIAAEAAAADAP7/BgAIAAIAAAADAP//BgAIAAMAAAADAAAABgAIAAQAAAADAAEABgAIAAUAAAADAAIABgAIAAYAAAADAAMABgAIAAcAAAADAAQABgAIAAgAAAADAAUABgAIAAkAAAAEAP3/BgAJAAEAAAAEAP7/BgAJAAIAAAAEAP//BgAJAAMAAAAEAAAABgAJAAQAAAAEAAEABgAJAAUAAAAEAAIABgAJAAYAAAAEAAMABgAJAAcAAAAEAAQABgAJAAgAAAAEAAUABgAJAAkAAAAFAP3/BgAKAAEAAAAFAP7/BgAKAAIAAAAFAP//BgAKAAMAAAAFAAAABgAKAAQAAAAFAAEABgAKAAUAAAAFAAIABgAKAAYAAAAFAAMABgAKAAcAAAAFAAQABgAKAAgAAAAFAAUABgAKAAkAAAAGAP3/BgALAAEAAAAGAP7/BgALAAIAAAAGAP//BgALAAMAAAAGAAAABgALAAQAAAAGAAEABgALAAUAAAAGAAIABgALAAYAAAAGAAMABgALAAcAAAAGAAQABgALAAgAAAAGAAUABgALAAkAAAAHAP3/BgAMAAEAAAAHAP7/BgAMAAIAAAAHAP//BgAMAAMAAAAHAAAABgAMAAQAAAAHAAEABgAMAAUAAAAHAAIABgAMAAYAAAAHAAMABgAMAAcAAAAHAAQABgAMAAgAAAAHAAUABgAMAAkAAAAIAP3/BgANAAEAAAAIAP7/BgANAAIAAAAIAP//BgANAAMAAAAIAAAABgANAAQAAAAIAAEABgANAAUAAAAIAAIABgANAAYAAAAIAAMABgANAAcAAAAIAAQABgANAAgAAAAIAAUABgANAAkAAAAJAP3/BgAOAAEAAAAJAP7/BgAOAAIAAAAJAP//BgAOAAMAAAAJAAAABgAOAAQAAAAJAAEABgAOAAUAAAAJAAIABgAOAAYAAAAJAAMABgAOAAcAAAAJAAQABgAOAAgAAAAJAAUABgAOAAkAAAA=")
+tile_set = ExtResource("2_nbhf3")
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Wall 3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(176, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall 3"]
+position = Vector2(-10, 24)
+shape = SubResource("RectangleShape2D_nnnga")
+
+[node name="Wall 2" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 2"]
+position = Vector2(40, 102)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j7oqo")
+
+[node name="Wall 4" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, -96)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 4"]
+position = Vector2(40, 42)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qq8m3")
+
+[node name="Wall 1" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 1"]
+position = Vector2(-86, 24)
+shape = SubResource("RectangleShape2D_ijv7t")
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+position = Vector2(80, 96)
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_17k8n")]
+position = Vector2(-48, -16)
+TargetLevelName = 6
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(56, 32)
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_nnnga")]
+position = Vector2(-24, 48)

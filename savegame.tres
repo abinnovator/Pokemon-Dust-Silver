@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/PlayerSaveResource.cs" id="1_lhbgx"]
+
+[resource]
+script = ExtResource("1_lhbgx")
+GlobalPosition = Vector2(100, 200)

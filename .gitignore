@@ -1,0 +1,21 @@
+# --- Godot 4.x Specific Ignores ---
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+*.tmp
+
+# --- .NET / C# Specific Ignores ---
+bin/
+obj/
+*.csproj.old
+*.sln.old
+*.user
+*.suo
+*.userprefs
+
+# --- OS Specific Ignores ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/

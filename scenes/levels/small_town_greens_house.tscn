@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=4 uid="uid://dqmr0egsmbtm2"]
+
+[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_es506"]
+[ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_7at4i"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_wggpw"]
+[ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_78r8n"]
+[ext_resource type="PackedScene" uid="uid://cu8sc0th7d20l" path="res://scenes/charecters/npc.tscn" id="5_7at4i"]
+[ext_resource type="Script" uid="uid://disixwvddvaya" path="res://scripts/gameplay/NpcInputConfig.cs" id="6_wggpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es506"]
+size = Vector2(8, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7at4i"]
+size = Vector2(8, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wggpw"]
+size = Vector2(7.999996, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78r8n"]
+size = Vector2(8, 160)
+
+[sub_resource type="Resource" id="Resource_78r8n"]
+resource_local_to_scene = true
+script = ExtResource("6_wggpw")
+NpcMovementType = 3
+Messages = Array[String](["Ash you have to get going fast proffeser Oak is waiting for you!!"])
+PatrolPoints = Array[Vector2]([])
+metadata/_custom_type_script = "uid://disixwvddvaya"
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_es506")
+bottom = 320
+right = 512
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="HouseTextures" type="TileMapLayer" parent="Tiles"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////BAABAAIAAAD//wAABAABAAMAAAD//wEABAABAAQAAAD//wIABAABAAUAAAD//wMABAABAAYAAAD//wQABAABAAcAAAD//wUABAABAAgAAAD//wYABAABAAkAAAAAAP//BAACAAIAAAAAAAAABAACAAMAAAAAAAEABAACAAQAAAAAAAIABAACAAUAAAAAAAMABAACAAYAAAAAAAQABAACAAcAAAAAAAUABAACAAgAAAAAAAYABAACAAkAAAABAP//BAADAAIAAAABAAAABAADAAMAAAABAAEABAADAAQAAAABAAIABAADAAUAAAABAAMABAADAAYAAAABAAQABAADAAcAAAABAAUABAADAAgAAAABAAYABAADAAkAAAACAP//BAAEAAIAAAACAAAABAAEAAMAAAACAAEABAAEAAQAAAACAAIABAAEAAUAAAACAAMABAAEAAYAAAACAAQABAAEAAcAAAACAAUABAAEAAgAAAACAAYABAAEAAkAAAADAP//BAAFAAIAAAADAAAABAAFAAMAAAADAAEABAAFAAQAAAADAAIABAAFAAUAAAADAAMABAAFAAYAAAADAAQABAAFAAcAAAADAAUABAAFAAgAAAADAAYABAAFAAkAAAAEAP//BAAGAAIAAAAEAAAABAAGAAMAAAAEAAEABAAGAAQAAAAEAAIABAAGAAUAAAAEAAMABAAGAAYAAAAEAAQABAAGAAcAAAAEAAUABAAGAAgAAAAEAAYABAAGAAkAAAAFAP//BAAHAAIAAAAFAAAABAAHAAMAAAAFAAEABAAHAAQAAAAFAAIABAAHAAUAAAAFAAMABAAHAAYAAAAFAAQABAAHAAcAAAAFAAUABAAHAAgAAAAFAAYABAAHAAkAAAAGAP//BAAIAAIAAAAGAAAABAAIAAMAAAAGAAEABAAIAAQAAAAGAAIABAAIAAUAAAAGAAMABAAIAAYAAAAGAAQABAAIAAcAAAAGAAUABAAIAAgAAAAGAAYABAAIAAkAAAAHAP//BAAJAAIAAAAHAAAABAAJAAMAAAAHAAEABAAJAAQAAAAHAAIABAAJAAUAAAAHAAMABAAJAAYAAAAHAAQABAAJAAcAAAAHAAUABAAJAAgAAAAHAAYABAAJAAkAAAAIAP//BAAKAAIAAAAIAAAABAAKAAMAAAAIAAEABAAKAAQAAAAIAAIABAAKAAUAAAAIAAMABAAKAAYAAAAIAAQABAAKAAcAAAAIAAUABAAKAAgAAAAIAAYABAAKAAkAAAAJAP//BAALAAIAAAAJAAAABAALAAMAAAAJAAEABAALAAQAAAAJAAIABAALAAUAAAAJAAMABAALAAYAAAAJAAQABAALAAcAAAAJAAUABAALAAgAAAAJAAYABAALAAkAAAAKAP//BAAMAAIAAAAKAAAABAAMAAMAAAAKAAEABAAMAAQAAAAKAAIABAAMAAUAAAAKAAMABAAMAAYAAAAKAAQABAAMAAcAAAAKAAUABAAMAAgAAAAKAAYABAAMAAkAAAD+//3/BAAAAAAAAAD+//7/BAAAAAEAAAD+////BAAAAAIAAAD+/wAABAAAAAMAAAD+/wEABAAAAAQAAAD+/wIABAAAAAUAAAD+/wMABAAAAAYAAAD+/wQABAAAAAcAAAD+/wUABAAAAAgAAAD+/wYABAAAAAkAAAD///3/BAABAAAAAAD///7/BAABAAEAAAAAAP3/BAACAAAAAAAAAP7/BAACAAEAAAABAP3/BAADAAAAAAABAP7/BAADAAEAAAACAP3/BAAEAAAAAAACAP7/BAAEAAEAAAADAP3/BAAFAAAAAAADAP7/BAAFAAEAAAAEAP3/BAAGAAAAAAAEAP7/BAAGAAEAAAAFAP3/BAAHAAAAAAAFAP7/BAAHAAEAAAAGAP3/BAAIAAAAAAAGAP7/BAAIAAEAAAAHAP3/BAAJAAAAAAAHAP7/BAAJAAEAAAAIAP3/BAAKAAAAAAAIAP7/BAAKAAEAAAAJAP3/BAALAAAAAAAJAP7/BAALAAEAAAAKAP3/BAAMAAAAAAAKAP7/BAAMAAEAAAA=")
+tile_set = ExtResource("2_7at4i")
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Wall 3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(176, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall 3"]
+position = Vector2(4, 32)
+shape = SubResource("RectangleShape2D_es506")
+
+[node name="Wall 2" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 2"]
+position = Vector2(72, 116)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_7at4i")
+
+[node name="Wall 4" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, -96)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 4"]
+position = Vector2(72, 44)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wggpw")
+
+[node name="Wall 1" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 1"]
+position = Vector2(-36, 32)
+shape = SubResource("RectangleShape2D_78r8n")
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+position = Vector2(80, 96)
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_wggpw")]
+position = Vector2(-48, -16)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(48, 72)
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_78r8n")]
+position = Vector2(-8, 16)
+
+[node name="NPC\'s" type="Node2D" parent="."]
+position = Vector2(24, 16)
+
+[node name="Mom ( Delia Ketchum)" parent="NPC\'s" instance=ExtResource("5_7at4i")]
+position = Vector2(-24, 0)
+NpcInputConfig = SubResource("Resource_78r8n")

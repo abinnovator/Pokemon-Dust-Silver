@@ -1,0 +1,38 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://n4qxpr53lfl7"]
+
+[ext_resource type="Texture2D" uid="uid://dvndc5svhlp3i" path="res://assets/characters/Game Boy Advance - Pokemon FireRed _ LeafGreen - Trainers & Non-Playable Characters - Overworld NPCs.png" id="1_smlke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umlea"]
+atlas = ExtResource("1_smlke")
+region = Rect2(26, 243, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20yyn"]
+atlas = ExtResource("1_smlke")
+region = Rect2(77, 243, 16, 23)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umlea")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20yyn")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20yyn")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bft0l053eiv7l"]
+
+[ext_resource type="Script" uid="uid://b0oyox5lov3e0" path="res://scripts/gameplay/levels/Pokeball.cs" id="1_a1fa1"]
+[ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="1_io4q1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1fa1"]
+atlas = ExtResource("1_io4q1")
+region = Rect2(608, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmk6e"]
+size = Vector2(16, 16)
+
+[node name="Pokeball" type="StaticBody2D" node_paths=PackedStringArray("BallSprite")]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_a1fa1")
+BallSprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_a1fa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wmk6e")
