@@ -64,12 +64,8 @@ public partial class TallGrass : Area2D
 			{
 				await MessageManager.PlayText($"A wild {encounteredMonName.ToUpper()} appeared!");
 
-				// Load the player save data
-				CurrentSave = ResourceLoader.Load<PlayerSaveResource>(SavePath);
-				PokemonID playerId = (PokemonID)(int)CurrentSave.ChosenStarter;
-
-				// 4. Use BattleManager to handle the wild battle transition and state saving
-				BattleManager.Instance.StartWildBattle(id, playerId);
+				// Use BattleManager to handle the wild battle transition and player ID retrieval
+				global::Game.Core.BattleManager.Instance.StartWildBattle(id, global::Game.Core.PokemonID.none);
 			}
 			else
 			{

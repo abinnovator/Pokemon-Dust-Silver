@@ -2,6 +2,7 @@ using Godot;
 using System;
 using Game.Utilities;
 using Game.Core;
+using Logger = Game.Core.Logger;
 
 namespace Game.Gameplay
 {
@@ -16,7 +17,7 @@ namespace Game.Gameplay
             
             if (Battle == null)
             {
-                Game.Core.Logger.Error("BattleStateMachine must be a child of BattleMain!");
+                Logger.Error("BattleStateMachine must be a child of BattleMain!");
             }
         }
 

@@ -2,7 +2,6 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 using Game.Utilities;
-using Game.Core;
 
 namespace Game.Gameplay
 {
@@ -19,13 +18,12 @@ namespace Game.Gameplay
         {
             base.EnterState();
             
-            var battle = _battleSM.Battle;
-            battle.UpdateLog($"A wild {battle.OpponentID} appeared!");
-            
-            // Introduce a small delay for the "Intro"
-            await Task.Delay(2000);
-            
-            _battleSM.ChangeState("PlayerTurnState");
+            if (_battleSM != null && _battleSM.Battle != null)
+            {
+                _battleSM.Battle.UpdateLog("A wild Pokemon appeared!");
+                await Task.Delay(1000);
+                _battleSM.ChangeState("PlayerTurnState");
+            }
         }
     }
 }

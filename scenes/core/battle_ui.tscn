@@ -3454,15 +3454,20 @@ region = Rect2(20, 312, 304, 84)
 atlas = ExtResource("3_qhckv")
 region = Rect2(20, 212, 304, 84)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "StateMachine", "PlayerSprite", "OpponentSprite")]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("BattleButton", "RunButton", "BackButton", "MoveButtons", "PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "StateMachine", "PlayerSprite", "OpponentSprite")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("Script_BattleMain")
+BattleButton = NodePath("Ui/Controls/Battle")
+RunButton = NodePath("Ui/Controls/Run")
+BackButton = NodePath("Ui/MoveMenu/Back")
+MoveButtons = [NodePath("Ui/MoveMenu/Move1"), NodePath("Ui/MoveMenu/Move2"), NodePath("Ui/MoveMenu/Move3"), NodePath("Ui/MoveMenu/Move4")]
 PlayerNameLabel = NodePath("Ui/Control/PokemonName")
 OpponentNameLabel = NodePath("Ui/Control/OppPokemonName")
 PlayerHPBar = NodePath("TextureProgressBar")
 EnemyHPBar = NodePath("TextureProgressBar")
 CommandMenu = NodePath("Ui/Controls")
+MoveMenu = NodePath("Ui/MoveMenu")
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
@@ -3557,6 +3562,66 @@ offset_right = 1104.0
 offset_bottom = 648.0
 texture_normal = SubResource("AtlasTexture_il5xb")
 metadata/_edit_use_anchors_ = true
+
+[node name="MoveMenu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 550.0
+offset_top = 200.0
+offset_right = 550.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Move1" type="Button" parent="Ui/MoveMenu"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 400.0
+offset_right = 1100.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("4_qhckv")
+theme_override_font_sizes/font_size = 48
+text = "TACKLE"
+
+[node name="Move2" type="Button" parent="Ui/MoveMenu"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 480.0
+offset_right = 1100.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("4_qhckv")
+theme_override_font_sizes/font_size = 48
+text = "GROWL"
+
+[node name="Move3" type="Button" parent="Ui/MoveMenu"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 560.0
+offset_right = 1100.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("4_qhckv")
+theme_override_font_sizes/font_size = 48
+text = "-"
+
+[node name="Move4" type="Button" parent="Ui/MoveMenu"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 640.0
+offset_right = 1100.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("4_qhckv")
+theme_override_font_sizes/font_size = 48
+text = "-"
+
+[node name="Back" type="Button" parent="Ui/MoveMenu"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 746.0
+offset_right = 1100.0
+offset_bottom = 826.0
+theme_override_fonts/font = ExtResource("4_qhckv")
+theme_override_font_sizes/font_size = 48
+text = "BACK"
 
 [node name="Control" type="Control" parent="Ui"]
 layout_mode = 3

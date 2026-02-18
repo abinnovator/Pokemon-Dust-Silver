@@ -61,7 +61,16 @@ namespace Game.Core
             SaveOverworldState();
             
             opponentPokemonId = wildId;
-            playerPokemonId = playerId;
+            
+            // If playerId is none, try to fetch it from save
+            if (playerId == PokemonID.none)
+            {
+                playerPokemonId = GetSavedPlayerPokemon();
+            }
+            else
+            {
+                playerPokemonId = playerId;
+            }
 
             // Instantiate battle UI directly as a overlay/overlay scene
             var battleScene = GD.Load<PackedScene>("res://scenes/core/battle_ui.tscn").Instantiate();
@@ -82,34 +91,51 @@ namespace Game.Core
 
         private async void ReturnToOverworld()
         {
-            await SceneManager.Instance.FadeOut();
-            await SceneManager.Instance.GetLevel(SavedLevelName);
-            
-            var player = GameManager.GetPlayer();
-            if (player != null)
+            if (SceneManager.Instance != null)
             {
-                player.GlobalPosition = SavedPlayerPosition;
-            }
+                await SceneManager.Instance.FadeOut();
+                await SceneManager.Instance.GetLevel(SavedLevelName);
+                
+                var player = GameManager.GetPlayer();
+                if (player != null)
+                {
+                    player.GlobalPosition = SavedPlayerPosition;
+                }
 
-            await SceneManager.Instance.FadeIn();
-            Logger.Info($"Returned to {SavedLevelName} at {SavedPlayerPosition}");
+                await SceneManager.Instance.FadeIn();
+                Logger.Info($"Returned to {SavedLevelName} at {SavedPlayerPosition}");
+            }
         }
 
-        private PokemonID GetSavedPlayerPokemon()
+        public PokemonID GetSavedPlayerPokemon()
         {
+            // 1. Try SaveManager.Instance (In-memory current session)
+            if (SaveManager.Instance != null && SaveManager.Instance.CurrentSave != null)
+            {
+                var id = MapStarterToPokemonID(SaveManager.Instance.CurrentSave.ChosenStarter);
+                if (id != PokemonID.none) return id;
+            }
+
+            // 2. Try loading from disk directly as fallback
             try
             {
-                var save = ResourceLoader.Load<PlayerSaveResource>("user://savegame.tres");
-                if (save != null)
+                if (FileAccess.FileExists("user://savegame.tres"))
                 {
-                    var id = MapStarterToPokemonID(save.ChosenStarter);
-                    if (id != PokemonID.none) return id;
+                    var save = ResourceLoader.Load<PlayerSaveResource>("user://savegame.tres");
+                    if (save != null)
+                    {
+                        var id = MapStarterToPokemonID(save.ChosenStarter);
+                        if (id != PokemonID.none) return id;
+                    }
                 }
             }
             catch (Exception e)
             {
                 Logger.Error($"Error loading player pokemon from save: {e.Message}");
             }
+
+            // 3. Absolute fallback: If nothing is found, we MUST have a visible pokemon
+            Logger.Warning("No player pokemon found in save. Falling back to Bulbasaur.");
             return PokemonID.bulbasaur;
         }
 

@@ -2,7 +2,6 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 using Game.Utilities;
-using Game.Core;
 
 namespace Game.Gameplay
 {
@@ -19,11 +18,14 @@ namespace Game.Gameplay
         {
             base.EnterState();
             
-            var battle = _battleSM.Battle;
-            battle.UpdateLog("The battle has ended!");
-            
-            await Task.Delay(2000);
-            battle.EndBattle();
+            if (_battleSM != null && _battleSM.Battle != null)
+            {
+                var battle = _battleSM.Battle;
+                battle.UpdateLog("The battle has ended!");
+                
+                await Task.Delay(2000);
+                battle.EndBattle();
+            }
         }
     }
 }

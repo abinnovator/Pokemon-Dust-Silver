@@ -2,7 +2,6 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 using Game.Utilities;
-using Game.Core;
 
 namespace Game.Gameplay
 {
@@ -19,14 +18,17 @@ namespace Game.Gameplay
         {
             base.EnterState();
             
-            var battle = _battleSM.Battle;
-            battle.UpdateLog($"Enemy {battle.OpponentID} is thinking...");
-            
-            await Task.Delay(1500);
-            battle.UpdateLog($"Enemy {battle.OpponentID} used Tackle!");
-            
-            await Task.Delay(1000);
-            _battleSM.ChangeState("CheckFaintState");
+            if (_battleSM != null && _battleSM.Battle != null)
+            {
+                var battle = _battleSM.Battle;
+                battle.UpdateLog($"Enemy {battle.OpponentID} is thinking...");
+                
+                await Task.Delay(1500);
+                battle.UpdateLog($"Enemy {battle.OpponentID} used Tackle!");
+                
+                await Task.Delay(1000);
+                _battleSM.ChangeState("CheckFaintState");
+            }
         }
     }
 }

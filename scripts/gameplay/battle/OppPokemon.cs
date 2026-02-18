@@ -1,6 +1,7 @@
-using Game.Core;
 using Godot;
 using System;
+using Game.Core;
+using Logger = Game.Core.Logger;
 
 namespace Game.Gameplay
 {
@@ -16,11 +17,11 @@ namespace Game.Gameplay
             if (FileAccess.FileExists(path))
             {
                 Texture = GD.Load<Texture2D>(path);
-                Game.Core.Logger.Info($"Loaded opponent pokemon sprite: {path}");
+                Logger.Info($"Loaded opponent pokemon sprite: {path}");
             }
             else
             {
-                Game.Core.Logger.Warning($"Could not find opponent pokemon sprite at: {path}");
+                Logger.Warning($"Could not find opponent pokemon sprite at: {path}");
             }
         }
     }
