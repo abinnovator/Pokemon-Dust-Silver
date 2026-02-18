@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cu6bpyvyypoc2"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_23tgf"]
+
+[resource]
+script = ExtResource("1_23tgf")
+Name = "smokescreen"
+Category = 2
+Accuracy = 100
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 20
+StatChanges = Dictionary[int, int]({
+7: -1
+})

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c8j5djx4w8hrx"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jj1n0"]
+
+[resource]
+script = ExtResource("1_jj1n0")
+Name = "barrage"
+Accuracy = 85
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 15
+PP = 20

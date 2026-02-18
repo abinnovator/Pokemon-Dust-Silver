@@ -1,20 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bka1yd3j2lqam"]
+[gd_scene load_steps=10 format=3 uid="uid://bka1yd3j2lqam"]
 
 [ext_resource type="Script" uid="uid://b1twteam45fh1" path="res://scripts/gameplay/StoryNpc.cs" id="1_qwxu4"]
-[ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="2_hebln"]
-[ext_resource type="Script" uid="uid://btitddia00a6q" path="res://scripts/gameplay/NpcInput.cs" id="3_qmw85"]
+[ext_resource type="Script" uid="uid://d2gbb13vqqa7m" path="res://scripts/gameplay/StoryNpcInput.cs" id="2_qwxu4"]
 [ext_resource type="SpriteFrames" uid="uid://b33mtbjuucod8" path="res://resources/spriteframes/Delia.tres" id="4_qwxu4"]
 [ext_resource type="Script" uid="uid://ojrerf85ncwv" path="res://scripts/gameplay/CharacterMovement.cs" id="4_v8dqu"]
 [ext_resource type="Script" uid="uid://noyq6csxc7hf" path="res://scripts/gameplay/CharacterAnimation.cs" id="6_5wckt"]
 [ext_resource type="Script" uid="uid://gmo2xmi834dp" path="res://scripts/utilities/StateMachine.cs" id="7_gcq7g"]
-[ext_resource type="Script" uid="uid://c7c47ghf7yq53" path="res://scripts/gameplay/states/NpcRoamState.cs" id="8_tfmnf"]
-[ext_resource type="Script" uid="uid://bud3b45irf650" path="res://scripts/gameplay/states/NpcMessageState.cs" id="9_jg6fk"]
-
-[sub_resource type="Resource" id="Resource_ab8g2"]
-script = ExtResource("2_hebln")
-Messages = Array[String]([])
-PatrolPoints = Array[Vector2]([])
-metadata/_custom_type_script = "uid://kah8oayhjg5f"
+[ext_resource type="Script" uid="uid://caow6viuphkvr" path="res://scripts/gameplay/states/StoryNpcRoamState.cs" id="7_qwxu4"]
+[ext_resource type="Script" uid="uid://dnqevjbmypb60" path="res://scripts/gameplay/states/StoryNpcMessageState.cs" id="8_hebln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msjke"]
 size = Vector2(16, 16)
@@ -22,14 +15,13 @@ size = Vector2(16, 16)
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_qwxu4")
 NpcAppearance = 28
-NpcInputConfig = SubResource("Resource_ab8g2")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_msjke")
 
 [node name="Input" type="Node" parent="."]
-script = ExtResource("3_qmw85")
+script = ExtResource("2_qwxu4")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput")]
 script = ExtResource("4_v8dqu")
@@ -51,13 +43,13 @@ script = ExtResource("7_gcq7g")
 Customer = NodePath("..")
 
 [node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement", "StateOwner", "StateMachine")]
-script = ExtResource("8_tfmnf")
+script = ExtResource("7_qwxu4")
 NpcInput = NodePath("../../Input")
 CharacterMovement = NodePath("../../Movement")
 StateOwner = NodePath("../..")
 StateMachine = NodePath("..")
 
 [node name="Message" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
-script = ExtResource("9_jg6fk")
+script = ExtResource("8_hebln")
 StateOwner = NodePath("../..")
 StateMachine = NodePath("..")

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ca8smnga7yaiq"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_ixwyl"]
+
+[resource]
+script = ExtResource("1_ixwyl")
+Name = "amnesia"
+Target = 2
+Category = 2
+PokemonType = 11
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 20
+StatChanges = Dictionary[int, int]({
+5: 2
+})

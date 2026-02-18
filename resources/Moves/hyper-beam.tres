@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dkttrmnh8p2dw"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_j0nkr"]
+
+[resource]
+script = ExtResource("1_j0nkr")
+Name = "hyper-beam"
+Category = 1
+Accuracy = 90
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 150
+PP = 5

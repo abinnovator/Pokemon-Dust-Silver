@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cv5ocq7yh3oud"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_bk60h"]
+
+[resource]
+script = ExtResource("1_bk60h")
+Name = "sky-attack"
+PokemonType = 10
+Accuracy = 90
+CritRate = 1
+FlinchChance = 30
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 140
+PP = 5

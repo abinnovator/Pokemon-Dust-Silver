@@ -9,6 +9,7 @@ namespace Game.Core // Fixed capitalization to match Logger
 
 		[Signal] public delegate void MessageBoxOpenEventHandler(bool value);
 		[Signal] public delegate void MessageBoxCloseEventHandler();
+		[Signal] public delegate void BattleStartEventHandler();
 
 
 		public override void _Ready()

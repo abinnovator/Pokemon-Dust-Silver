@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b2ro0kl2ka6y"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_f0mi5"]
+
+[resource]
+script = ExtResource("1_f0mi5")
+Name = "hydro-pump"
+Category = 1
+PokemonType = 3
+Accuracy = 80
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 110
+PP = 5

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bnl840np6t60e"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jio5x"]
+
+[resource]
+script = ExtResource("1_jio5x")
+Name = "string-shot"
+Target = 6
+Category = 2
+PokemonType = 12
+Accuracy = 95
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 40
+StatChanges = Dictionary[int, int]({
+6: -2
+})

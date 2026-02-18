@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://db0b0o0vr4nvh"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_0a6ls"]
+
+[resource]
+script = ExtResource("1_0a6ls")
+Name = "egg-bomb"
+Accuracy = 75
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 100
+PP = 10

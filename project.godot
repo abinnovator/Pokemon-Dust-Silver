@@ -21,6 +21,7 @@ Globals="*res://scripts/core/Globals.cs"
 Signals="*res://scripts/core/Signals.cs"
 SceneManager="*res://scripts/core/SceneManager.cs"
 SaveManager="*res://scripts/core/SaveManager.cs"
+BattleManager="*res://scripts/core/BattleManager.cs"
 
 [display]
 

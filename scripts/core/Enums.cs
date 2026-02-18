@@ -58,7 +58,8 @@ namespace Game.Core{
 		pewter_city_museum_f2,
 		// Route 3: Done
 		route3,
-		cerulean_city
+		cerulean_city,
+		battle_scene
 	}
 	public enum LevelGroups{
 		SPAWNPOINTS,

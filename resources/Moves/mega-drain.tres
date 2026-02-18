@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://2aatdtfu0bx1"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_oe55t"]
+
+[resource]
+script = ExtResource("1_oe55t")
+Name = "mega-drain"
+Category = 1
+PokemonType = 5
+Accuracy = 100
+Drain = 50
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 40
+PP = 15

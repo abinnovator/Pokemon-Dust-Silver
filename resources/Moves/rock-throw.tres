@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bk6y4ittbu2t6"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_ucg6y"]
+
+[resource]
+script = ExtResource("1_ucg6y")
+Name = "rock-throw"
+PokemonType = 13
+Accuracy = 90
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 50
+PP = 15

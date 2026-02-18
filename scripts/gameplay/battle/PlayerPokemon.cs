@@ -2,22 +2,26 @@ using Game.Core;
 using Godot;
 using System;
 
-public partial class PlayerPokemon : Sprite2D
+namespace Game.Gameplay
 {
-	public BattleManager battleManager;
-	private const string spriteFolderPath = "res://assets/pokemon/";
-	private Sprite2D _playerPokemon;
-	private Sprite2D _oppPokemon;
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		
-	}
-	
+    public partial class PlayerPokemon : Sprite2D
+    {
+        private const string spriteFolderPath = "res://assets/pokemon/";
 
-	
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+        public void Setup(PokemonID id)
+        {
+            string pokemonName = id.ToString().ToLower();
+            string path = $"{spriteFolderPath}{pokemonName}_back.png";
+            
+            if (FileAccess.FileExists(path))
+            {
+                Texture = GD.Load<Texture2D>(path);
+                Game.Core.Logger.Info($"Loaded player pokemon sprite: {path}");
+            }
+            else
+            {
+                Game.Core.Logger.Warning($"Could not find player pokemon sprite at: {path}");
+            }
+        }
+    }
 }

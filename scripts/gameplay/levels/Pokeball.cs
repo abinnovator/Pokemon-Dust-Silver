@@ -63,6 +63,7 @@ public partial class Pokeball : StaticBody2D
 						PokemonStarter.SQUIRTLE => StarterChoice.SQUIRTLE,
 						_ => StarterChoice.NONE 
 					};
+					SaveManager.Instance.CurrentSave.CompletedStoryProgress.Add(PlayerStoryState.HAS_STARTER);
 					
 					// Finalize the save to disk
 					SaveManager.Instance.SaveToDisk();

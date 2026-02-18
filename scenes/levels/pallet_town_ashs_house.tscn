@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cjtv16oqfbhkw"]
+[gd_scene load_steps=12 format=4 uid="uid://cjtv16oqfbhkw"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_uqwxn"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_0wopp"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_vfvhy"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_yk0ky"]
+[ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="5_0wopp"]
+[ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="6_vfvhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_es506"]
 size = Vector2(8, 160)
@@ -16,6 +18,13 @@ size = Vector2(7.999996, 204)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78r8n"]
 size = Vector2(12, 168)
+
+[sub_resource type="Resource" id="Resource_yk0ky"]
+script = ExtResource("6_vfvhy")
+Messages = Array[String](["Ash go to the lab fast!!!"])
+PatrolPoints = null
+EventTrigger = 2
+metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uqwxn")
@@ -37,7 +46,7 @@ tile_set = ExtResource("2_0wopp")
 [node name="Wall 3" type="StaticBody2D" parent="Boundaries"]
 position = Vector2(176, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall 3"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 3"]
 position = Vector2(-12, 32)
 shape = SubResource("RectangleShape2D_es506")
 
@@ -68,7 +77,6 @@ position = Vector2(80, 96)
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_vfvhy")]
 position = Vector2(-72, -16)
 scale = Vector2(2, 1)
-CurrentLevelTrigger = 1
 
 [node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("3_vfvhy")]
 position = Vector2(65, -128)
@@ -80,3 +88,6 @@ position = Vector2(48, 72)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_yk0ky")]
 position = Vector2(-8, 16)
+
+[node name="NPC" parent="." instance=ExtResource("5_0wopp")]
+InputConfig = SubResource("Resource_yk0ky")

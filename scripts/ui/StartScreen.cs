@@ -51,7 +51,7 @@ public partial class StartScreen : CanvasLayer
 		// 3. Hand it over to your Global Manager or SaveSystem
 		SaveManager.Instance.CurrentSave = newGameData;
 		SaveManager.Instance.SaveToDisk();
-		SceneManager.ChangeLevel(LevelName.pallet_town, 0, true);
+		SceneManager.ChangeLevel(LevelName.pallet_town_ashs_house_f1, 0, true);
 		QueueFree();
 	}
 }

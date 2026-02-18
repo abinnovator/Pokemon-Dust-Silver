@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dm2c6vkrt6vd6"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_43cv8"]
+
+[resource]
+script = ExtResource("1_43cv8")
+Name = "spore"
+Category = 2
+PokemonType = 5
+Accuracy = 100
+MaxHits = -1
+MaxTurns = 4
+MinHits = -1
+MinTurns = 2
+PP = 15
+Ailment = 6

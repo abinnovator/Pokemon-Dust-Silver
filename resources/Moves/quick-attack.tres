@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://wxvuut8377n3"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_6ivku"]
+
+[resource]
+script = ExtResource("1_6ivku")
+Name = "quick-attack"
+Accuracy = 100
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 40
+PP = 30

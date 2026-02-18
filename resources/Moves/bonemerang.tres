@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://qhxew430oxtl"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_gffxr"]
+
+[resource]
+script = ExtResource("1_gffxr")
+Name = "bonemerang"
+PokemonType = 9
+Accuracy = 90
+MaxHits = 2
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 50
+PP = 10

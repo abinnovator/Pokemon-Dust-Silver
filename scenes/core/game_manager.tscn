@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://k2c2g7m7kfqt"]
+[gd_scene load_steps=5 format=3 uid="uid://k2c2g7m7kfqt"]
 
 [ext_resource type="Script" uid="uid://bfkvajhrlatg" path="res://scripts/core/GameManager.cs" id="1_lv3y2"]
 [ext_resource type="PackedScene" uid="uid://ffjr21aedmvd" path="res://scenes/ui/message_manager.tscn" id="2_x6flg"]
+[ext_resource type="Texture2D" uid="uid://bpwpobh5ygtp8" path="res://assets/levels/board__brilliant_pearl_diamond_battle_interface_by_eurons_desqgls-fullview.jpg" id="3_lv3y2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vegsa"]
+atlas = ExtResource("3_lv3y2")
+region = Rect2(16.525467, 13.29405, 308.31897, 81.426735)
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("GameViewPort")]
 script = ExtResource("1_lv3y2")
@@ -32,3 +37,22 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="MessageManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_x6flg")]
+
+[node name="Control2" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="Control/Control2"]
+layout_mode = 0
+offset_left = -308.0
+offset_top = -82.0
+offset_bottom = -1.0
+texture_normal = SubResource("AtlasTexture_vegsa")

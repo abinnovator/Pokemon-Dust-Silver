@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://tkgyp5bayq5j"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_wbclp"]
+
+[resource]
+script = ExtResource("1_wbclp")
+Name = "high-jump-kick"
+PokemonType = 7
+Accuracy = 90
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 130
+PP = 10

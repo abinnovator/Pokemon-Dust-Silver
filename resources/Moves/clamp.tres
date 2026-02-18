@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c1x8cq51s75nx"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_k1tkg"]
+
+[resource]
+script = ExtResource("1_k1tkg")
+Name = "clamp"
+PokemonType = 3
+Accuracy = 85
+MaxHits = -1
+MaxTurns = 6
+MinHits = -1
+MinTurns = 5
+Power = 35
+PP = 15
+AilmentChance = 100
+Ailment = 8

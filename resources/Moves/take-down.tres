@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c7s5xooxogmwk"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_bx2kx"]
+
+[resource]
+script = ExtResource("1_bx2kx")
+Name = "take-down"
+Accuracy = 85
+Drain = -25
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 90
+PP = 20

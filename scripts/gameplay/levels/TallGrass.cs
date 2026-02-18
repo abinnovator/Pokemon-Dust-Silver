@@ -64,25 +64,12 @@ public partial class TallGrass : Area2D
 			{
 				await MessageManager.PlayText($"A wild {encounteredMonName.ToUpper()} appeared!");
 
-				// 4. Instantiate and Setup the Battle Scene
-				var battleScene = GD.Load<PackedScene>("res://scenes/core/battle_ui.tscn").Instantiate<BattleManager>();
-				
 				// Load the player save data
 				CurrentSave = ResourceLoader.Load<PlayerSaveResource>(SavePath);
-				
-				// Set IDs (Using the cast we fixed earlier)
-				battleScene.opponentPokemonId = id;
-				battleScene.playerPokemonId = (PokemonID)(int)CurrentSave.ChosenStarter;
+				PokemonID playerId = (PokemonID)(int)CurrentSave.ChosenStarter;
 
-				// 5. Add to Root to ensure it covers the whole screen
-				GetTree().Root.AddChild(battleScene);
-
-				// 6. Fade back out to reveal the battle
-				if (fade != null)
-				{
-					Tween tweenOut = CreateTween();
-					tweenOut.TweenProperty(fade, "color:a", 0.0f, 0.5f);
-				}
+				// 4. Use BattleManager to handle the wild battle transition and state saving
+				BattleManager.Instance.StartWildBattle(id, playerId);
 			}
 			else
 			{

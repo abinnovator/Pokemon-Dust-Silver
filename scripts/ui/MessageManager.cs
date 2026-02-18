@@ -46,30 +46,15 @@ namespace Game.Core
 				}
 			}
 
-			// 2. Final Choice Phase
-			// This loop waits specifically for a Yes (use) or No (back)
-			bool result = false;
-			while (true)
-			{
-				if (Input.IsActionJustPressed("use")) 
-				{
-					result = true; 
-					break;
-				}
-				if (Input.IsActionJustPressed("back"))
-				{
-					result = false; 
-					break;
-				}
-				await Instance.ToSignal(Instance.GetTree(), SceneTree.SignalName.ProcessFrame);
-			}
-
-			// 3. THE FIX: Clean up before closing
-			CloseBox();
+			bool result = true;
 			
-			// Wait 100ms or a few frames before returning. 
-			// This prevents the Player script from "seeing" the Space press and interacting again!
-			await Task.Delay(1500); 
+			// 3. THE FIX: Visual cleanup first, but delay the state change
+			Instance.Box.Visible = false;
+			
+			// Wait to clear inputs to prevent re-triggering in the same frame
+			await Task.Delay(200); 
+			
+			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, false);
 			
 			return result;
 		}

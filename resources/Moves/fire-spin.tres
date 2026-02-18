@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dhb5r0u3cy177"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jt60a"]
+
+[resource]
+script = ExtResource("1_jt60a")
+Name = "fire-spin"
+Category = 1
+PokemonType = 2
+Accuracy = 85
+MaxHits = -1
+MaxTurns = 6
+MinHits = -1
+MinTurns = 5
+Power = 35
+PP = 15
+AilmentChance = 100
+Ailment = 8

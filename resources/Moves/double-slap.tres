@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ch5dlolig347s"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_bcv46"]
+
+[resource]
+script = ExtResource("1_bcv46")
+Name = "double-slap"
+Accuracy = 85
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 15
+PP = 10

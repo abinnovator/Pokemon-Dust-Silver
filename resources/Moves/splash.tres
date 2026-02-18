@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://8tloittg1y2h"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_aft7x"]
+
+[resource]
+script = ExtResource("1_aft7x")
+Name = "splash"
+Target = 2
+Category = 2
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 40

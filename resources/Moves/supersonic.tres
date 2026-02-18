@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dpuryb56pw76f"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_lw0xj"]
+
+[resource]
+script = ExtResource("1_lw0xj")
+Name = "supersonic"
+Category = 2
+Accuracy = 55
+MaxHits = -1
+MaxTurns = 5
+MinHits = -1
+MinTurns = 2
+PP = 20
+Ailment = 7

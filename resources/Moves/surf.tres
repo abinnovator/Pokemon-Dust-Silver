@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://crrj6u8x0r6o6"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_dmvgi"]
+
+[resource]
+script = ExtResource("1_dmvgi")
+Name = "surf"
+Target = 4
+Category = 1
+PokemonType = 3
+Accuracy = 100
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 90
+PP = 15

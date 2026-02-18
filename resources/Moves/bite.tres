@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ddched3qr2kag"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_pam8b"]
+
+[resource]
+script = ExtResource("1_pam8b")
+Name = "bite"
+PokemonType = 16
+Accuracy = 100
+FlinchChance = 30
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 60
+PP = 25

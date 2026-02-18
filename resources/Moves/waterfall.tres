@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ch2eo5ouxekj3"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jxh14"]
+
+[resource]
+script = ExtResource("1_jxh14")
+Name = "waterfall"
+PokemonType = 3
+Accuracy = 100
+FlinchChance = 20
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 80
+PP = 15

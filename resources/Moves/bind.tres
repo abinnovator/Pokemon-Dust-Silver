@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dynbr7mv223yy"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_qlr0y"]
+
+[resource]
+script = ExtResource("1_qlr0y")
+Name = "bind"
+Accuracy = 85
+MaxHits = -1
+MaxTurns = 6
+MinHits = -1
+MinTurns = 5
+Power = 15
+PP = 20
+AilmentChance = 100
+Ailment = 8

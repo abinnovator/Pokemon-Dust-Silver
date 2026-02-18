@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bcjoeax1bt606"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_8vwrs"]
+
+[resource]
+script = ExtResource("1_8vwrs")
+Name = "meditate"
+Target = 2
+Category = 2
+PokemonType = 11
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 40
+StatChanges = Dictionary[int, int]({
+2: 1
+})

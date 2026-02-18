@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cqp15kinosl0e"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_5xmb5"]
+
+[resource]
+script = ExtResource("1_5xmb5")
+Name = "hypnosis"
+Category = 2
+PokemonType = 11
+Accuracy = 60
+MaxHits = -1
+MaxTurns = 4
+MinHits = -1
+MinTurns = 2
+PP = 20
+Ailment = 6

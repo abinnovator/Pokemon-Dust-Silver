@@ -1,100 +1,132 @@
+using System;
+using System.Collections.Generic;
 using Game.Core;
 using Game.Utilities;
 using Godot;
 using Godot.Collections;
-using System.Collections.Generic;
-using System;
 using Logger = Game.Core.Logger;
-
 
 namespace Game.Gameplay;
 
 [Tool]
 public partial class StoryNpc : CharacterBody2D
 {
-	private StoryNpcAppearance npcAppearance = StoryNpcAppearance.OldMan;
+	private StoryNpcAppearance _npcAppearance = StoryNpcAppearance.OldMan;
 
 	[ExportCategory("Traits")]
 	[Export]
 	public StoryNpcAppearance NpcAppearance
 	{
-		get => npcAppearance;
+		get => _npcAppearance;
 		set
 		{
-			if (npcAppearance != value)
+			if (_npcAppearance != value)
 			{
-				npcAppearance = value;
+				_npcAppearance = value;
 				UpdateAppearence();
-				
 			}
 		}
 	}
 
-	private AnimatedSprite2D animatedSprite2D;
-	private StoryNpcInput npcInput;
-	private StateMachine stateMachine;
-	private CharacterMovement characterMovement;
-
-	private readonly System.Collections.Generic.Dictionary<StoryNpcAppearance, SpriteFrames> appearanceFrames = new(){
-		{StoryNpcAppearance.Delia, GD.Load<SpriteFrames>("res://resources/spriteframes/Delia.tres")},
-		{StoryNpcAppearance.ProfessorOak, GD.Load<SpriteFrames>("res://resources/spriteframes/Oak.tres")},
-		{StoryNpcAppearance.OldMan, GD.Load<SpriteFrames>("res://resources/spriteframes/OldMan.tres")},
-	};
+	// Using base 'Resource' here bypasses the Godot 'InvalidCastException' 
+	// that happens when the Engine and C# types get out of sync.
 	[Export]
-	public StoryNpcInputConfig NpcInputConfig;
-	public override void _Ready(){
-		if (Engine.IsEditorHint()) {
-			UpdateAppearence();
-			return;
-		}
+	public Resource InputConfig { get; set; }
+
+	private AnimatedSprite2D _animatedSprite2D;
+	private StoryNpcInput _npcInput;
+	private StateMachine _stateMachine;
+	private CharacterMovement _characterMovement;
+
+	private readonly System.Collections.Generic.Dictionary<StoryNpcAppearance, SpriteFrames> _appearanceFrames = new()
+	{
+		{ StoryNpcAppearance.Delia, GD.Load<SpriteFrames>("res://resources/spriteframes/Delia.tres") },
+		{ StoryNpcAppearance.ProfessorOak, GD.Load<SpriteFrames>("res://resources/spriteframes/Oak.tres") },
+	};
+
+	public override void _Ready()
+	{
 		UpdateAppearence();
 
-		npcInput = GetNode<StoryNpcInput>("Input");
-		npcInput.NpcInputConfig = NpcInputConfig;
-
-		stateMachine ??= GetNode<StateMachine>("StateMachine");
-		stateMachine.ChangeState("Roam");
-
-		animatedSprite2D ??= GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-
-		characterMovement ??= GetNode<CharacterMovement>("Movement");
-		
-	}
-	public override void _Process(double delta){
 		if (Engine.IsEditorHint()) return;
-		var player = GameManager.GetPlayer();
-		if (player != null) {
-			ZIndex = (player.Position.Y <= Position.Y)?6 : 4;
-		};
-		
-	}
-	private void UpdateAppearence(){
-		Logger.Info($"Updating appearence for {NpcAppearance}");
-		
-		if (animatedSprite2D == null ){
-			animatedSprite2D = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
-			if (animatedSprite2D == null){
-				Logger.Error("AnimatedSprite2D not found");
-				return;
-			}
-		}
-		
-		if (appearanceFrames.TryGetValue(npcAppearance,out var spriteFrames)){
-			animatedSprite2D.SpriteFrames = spriteFrames;
-		}else{
-			animatedSprite2D.SpriteFrames =null;
-			Logger.Error($"SpriteFrames not found for {npcAppearance}");
-		}
-	}
-	public async System.Threading.Tasks.Task PlayMessage(Vector2 Direction){
-		if (Engine.IsEditorHint()) return;
-		if (characterMovement.IsMoving()) return;
-		if (npcInput.Direction != Direction * -1)
-		{
-			npcInput.Direction = Direction * -1;
-			npcInput.EmitSignal(CharecterInput.SignalName.Turn);
-		}
-		stateMachine.ChangeState("Message");
-		await MessageManager.PlayText([..NpcInputConfig.Messages]);
-	}
+
+		_npcInput = GetNode<StoryNpcInput>("Input");
+		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_characterMovement = GetNode<CharacterMovement>("Movement");
+		_stateMachine = GetNode<StateMachine>("StateMachine");
+
+		// MANUAL CAST: This is safer and prevents the crash you're seeing.
+        if (InputConfig is StoryNpcInputConfig config)
+        {
+            _npcInput.NpcInputConfig = config;
+        }
+        else if (InputConfig != null)
+        {
+            GD.PrintErr($"{Name}: InputConfig is the wrong type! Expected StoryNpcInputConfig.");
+        }
+        else
+        {
+            GD.PrintErr($"{Name}: InputConfig is missing in the Inspector!");
+        }
+
+        _stateMachine.ChangeState("Roam");
+    }
+
+    public override void _Process(double delta)
+    {
+        if (Engine.IsEditorHint()) return;
+
+        var player = GameManager.GetPlayer();
+        if (player != null)
+        {
+            ZIndex = (player.Position.Y <= Position.Y) ? 6 : 4;
+        }
+    }
+
+    private void UpdateAppearence()
+    {
+        if (!IsInsideTree()) return;
+
+        try
+        {
+            _animatedSprite2D ??= GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
+            if (_animatedSprite2D == null) return;
+
+            if (_appearanceFrames.TryGetValue(_npcAppearance, out var spriteFrames))
+            {
+                _animatedSprite2D.SpriteFrames = spriteFrames;
+            }
+            else
+            {
+                _animatedSprite2D.SpriteFrames = null;
+            }
+        }
+        catch (Exception e)
+        {
+            GD.PrintErr($"StoryNpc Appearance Error: {e.Message}");
+        }
+    }
+
+    public async System.Threading.Tasks.Task PlayMessage(Vector2 playerDirection)
+    {
+        if (Engine.IsEditorHint()) return;
+        if (_characterMovement.IsMoving()) return;
+
+        if (_npcInput.Direction != playerDirection * -1)
+        {
+            _npcInput.Direction = playerDirection * -1;
+            _npcInput.EmitSignal(CharecterInput.SignalName.Turn);
+        }
+		GD.Print("NPC: Attempting to play message...");
+
+        _stateMachine.ChangeState("Message");
+
+        // Cast check before playing messages
+        if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
+        {
+            await MessageManager.PlayText([.. config.Messages]);
+        }
+        
+        _stateMachine.ChangeState("Roam");
+    }
 }

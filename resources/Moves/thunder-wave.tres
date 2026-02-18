@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://disfbqyox3hn1"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_85hnv"]
+
+[resource]
+script = ExtResource("1_85hnv")
+Name = "thunder-wave"
+Category = 2
+PokemonType = 4
+Accuracy = 90
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 20
+Ailment = 3

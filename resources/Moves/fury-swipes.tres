@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bfeo1y41cj1jb"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_talra"]
+
+[resource]
+script = ExtResource("1_talra")
+Name = "fury-swipes"
+Accuracy = 80
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 18
+PP = 15

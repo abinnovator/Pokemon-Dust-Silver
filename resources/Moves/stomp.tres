@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b1keyk0pirful"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_rnb0t"]
+
+[resource]
+script = ExtResource("1_rnb0t")
+Name = "stomp"
+Accuracy = 100
+FlinchChance = 30
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 65
+PP = 20

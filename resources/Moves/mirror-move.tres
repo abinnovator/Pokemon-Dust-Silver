@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bl3w8a7ah4eiu"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_i5fcf"]
+
+[resource]
+script = ExtResource("1_i5fcf")
+Name = "mirror-move"
+Category = 2
+PokemonType = 10
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 20

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bof7gyairch2k"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_bwvgy"]
+
+[resource]
+script = ExtResource("1_bwvgy")
+Name = "wrap"
+Accuracy = 90
+MaxHits = -1
+MaxTurns = 4
+MinHits = -1
+MinTurns = 2
+Power = 15
+PP = 20
+AilmentChance = 100
+Ailment = 8

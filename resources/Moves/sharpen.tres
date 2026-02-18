@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b8xc1q2jmxo80"]
+
+[ext_resource type="Script" uid="uid://dr862v81xh0xx" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_kmrbq"]
+
+[resource]
+script = ExtResource("1_kmrbq")
+Name = "sharpen"
+Target = 2
+Category = 2
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+PP = 30
+StatChanges = Dictionary[int, int]({
+2: 1
+})

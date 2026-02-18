@@ -7,6 +7,13 @@
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="4_qhckv"]
 [ext_resource type="Script" uid="uid://bjko0kki6jq3a" path="res://scripts/gameplay/battle/PlayerPokemon.cs" id="7_pt2im"]
 [ext_resource type="Script" uid="uid://baw2y0jwto43u" path="res://scripts/gameplay/battle/OppPokemon.cs" id="9_l87i0"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/BattleMain.cs" id="Script_BattleMain"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/BattleStateMachine.cs" id="Script_BattleSM"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/states/BattleStartState.cs" id="Script_BattleStart"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/states/PlayerTurnState.cs" id="Script_PlayerTurn"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/states/EnemyTurnState.cs" id="Script_EnemyTurn"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/states/CheckFaintState.cs" id="Script_CheckFaint"]
+[ext_resource type="Script" path="res://scripts/gameplay/battle/states/BattleEndState.cs" id="Script_BattleEnd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1q6j"]
 atlas = ExtResource("1_64gik")
@@ -3447,10 +3454,48 @@ region = Rect2(20, 312, 304, 84)
 atlas = ExtResource("3_qhckv")
 region = Rect2(20, 212, 304, 84)
 
-[node name="BattleBase" type="CanvasLayer"]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "StateMachine", "PlayerSprite", "OpponentSprite")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
-script = ExtResource("1_q1q6j")
+script = ExtResource("Script_BattleMain")
+PlayerNameLabel = NodePath("Ui/Control/PokemonName")
+OpponentNameLabel = NodePath("Ui/Control/OppPokemonName")
+PlayerHPBar = NodePath("TextureProgressBar")
+EnemyHPBar = NodePath("TextureProgressBar")
+CommandMenu = NodePath("Ui/Controls")
+StateMachine = NodePath("BattleStateMachine")
+PlayerSprite = NodePath("Ui/PlayerPokemon")
+OpponentSprite = NodePath("Ui/OppPokemon")
+
+[node name="BattleStateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
+script = ExtResource("Script_BattleSM")
+Customer = NodePath("..")
+CurrentState = NodePath("BattleStartState")
+
+[node name="BattleStartState" type="Node" parent="BattleStateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("Script_BattleStart")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="PlayerTurnState" type="Node" parent="BattleStateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("Script_PlayerTurn")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="EnemyTurnState" type="Node" parent="BattleStateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("Script_EnemyTurn")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="CheckFaintState" type="Node" parent="BattleStateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("Script_CheckFaint")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="BattleEndState" type="Node" parent="BattleStateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("Script_BattleEnd")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
 
 [node name="Ui" type="CanvasLayer" parent="."]
 

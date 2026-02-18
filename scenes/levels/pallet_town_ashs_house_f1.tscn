@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_jm1dn"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_ml2pj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_es506"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mdla"]
 size = Vector2(8, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7at4i"]
@@ -20,8 +20,10 @@ size = Vector2(8, 152)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1mdla")
 LevelName = 2
-bottom = 320
-right = 512
+top = -48
+bottom = 96
+left = -16
+right = 160
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -31,34 +33,6 @@ tile_map_data = PackedByteArray("AAD/////CAAnAAMAAAD//wAACAAnAAQAAAD//wEACAAnAAU
 tile_set = ExtResource("2_f1djt")
 
 [node name="Boundaries" type="Node2D" parent="."]
-
-[node name="Wall 3" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(176, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall 3"]
-position = Vector2(-12, 28)
-shape = SubResource("RectangleShape2D_es506")
-
-[node name="Wall 2" type="StaticBody2D" parent="Boundaries"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 2"]
-position = Vector2(72, 100)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_7at4i")
-
-[node name="Wall 4" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(0, -96)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 4"]
-position = Vector2(72, 43.999996)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_wggpw")
-
-[node name="Wall 1" type="StaticBody2D" parent="Boundaries"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 1"]
-position = Vector2(-20, 28)
-shape = SubResource("RectangleShape2D_78r8n")
 
 [node name="SceneTriggers" type="Node2D" parent="."]
 position = Vector2(80, 96)
@@ -74,3 +48,31 @@ position = Vector2(48, 72)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_ml2pj")]
 position = Vector2(104, -72)
+
+[node name="Wall 3" type="StaticBody2D" parent="."]
+position = Vector2(176, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall 3"]
+position = Vector2(-12, 28)
+shape = SubResource("RectangleShape2D_1mdla")
+
+[node name="Wall 2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall 2"]
+position = Vector2(72, 100)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_7at4i")
+
+[node name="Wall 4" type="StaticBody2D" parent="."]
+position = Vector2(0, -96)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall 4"]
+position = Vector2(72, 43.999996)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wggpw")
+
+[node name="Wall 1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall 1"]
+position = Vector2(-20, 28)
+shape = SubResource("RectangleShape2D_78r8n")
