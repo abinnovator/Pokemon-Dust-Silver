@@ -43,19 +43,78 @@ public partial class SaveManager : Node
             CurrentSave = ResourceLoader.Load<PlayerSaveResource>(SavePath);
             GD.Print("Save Data Loaded from Disk!");
 
-            // 2. Tell the SceneManager to jump to the saved level
-            // We use the 'CurrentLevel' enum you defined in your resource
-            SceneManager.ChangeLevel(CurrentSave.CurrentLevel, 0, true);
+            // 2. Tell the SceneManager to jump to the saved level at the saved position
+            SceneManager.ChangeLevel(CurrentSave.CurrentLevel, 0, true, CurrentSave.GlobalPosition);
+            Game.Core.Logger.Info(CurrentSave.PartyDetails);
 
-            // 3. Deferred Positioning
-            // We wait for the scene to actually load before moving the player
+            // 3. Deferred Positioning & Direction
             GetTree().Connect("node_added", Callable.From((Node node) => {
-                if (node is Player player) // Check for your player class
+                if (node is Player player)
                 {
+                    // Ensure the player is exactly where they were
                     player.GlobalPosition = CurrentSave.GlobalPosition;
-                    GD.Print($"Player restored to {CurrentSave.GlobalPosition}");
+                    
+                    // Set the facing direction
+                    var playerInput = player.GetNodeOrNull<PlayerInput>("PlayerInput");
+                    if (playerInput != null)
+                    {
+                        playerInput.Direction = CurrentSave.FacingDirection;
+                        // Set TargetPosition to current pos to prevent it from moving immediately
+                        playerInput.TargetPosition = Vector2.Zero; 
+                    }
+                    
+                    GD.Print($"Player restored to {CurrentSave.GlobalPosition} facing {CurrentSave.FacingDirection}");
                 }
             }), (uint)ConnectFlags.OneShot);
+        }
+    }
+
+    public async void QuitGame()
+    {
+        if (CurrentSave == null) return;
+
+        // 1. Save current overworld state
+        var player = GameManager.GetPlayer();
+        if (player != null)
+        {
+            CurrentSave.GlobalPosition = player.GlobalPosition;
+            
+            // Capture facing direction from PlayerInput
+            var playerInput = player.GetNodeOrNull<PlayerInput>("PlayerInput");
+            if (playerInput != null)
+            {
+                CurrentSave.FacingDirection = playerInput.Direction;
+            }
+        }
+
+        if (SceneManager.GetCurrentLevel() != null)
+        {
+            CurrentSave.CurrentLevel = SceneManager.GetCurrentLevel().LevelName;
+        }
+
+        SaveToDisk();
+        GD.Print($"Game saved at {CurrentSave.GlobalPosition} facing {CurrentSave.FacingDirection}");
+
+        // 2. Visual Transition & Cleanup
+        if (SceneManager.Instance != null)
+        {
+            await SceneManager.Instance.FadeOut();
+            
+            // Centralized cleanup in SceneManager
+            SceneManager.Instance.ResetSession();
+
+            // Remove player
+            var playerNode = GameManager.GetPlayer();
+            if (playerNode != null)
+            {
+                playerNode.QueueFree();
+            }
+
+            // 3. Return to Start Screen
+            var startScreen = GD.Load<PackedScene>("res://scenes/ui/StartScreen.tscn").Instantiate();
+            GameManager.Instance.AddChild(startScreen);
+
+            await SceneManager.Instance.FadeIn();
         }
     }
 }

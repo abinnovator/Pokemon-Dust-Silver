@@ -346,6 +346,7 @@ TargetLevelName = 13
 position = Vector2(280, 72)
 scale = Vector2(3, 1)
 TargetLevelName = 14
+CurrentLevelTrigger = 1
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)

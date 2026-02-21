@@ -26,6 +26,7 @@ position = Vector2(80, 96)
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_krs6s")]
 position = Vector2(0, -128)
 TargetLevelName = 15
+CurrentLevelTrigger = 1
 
 [node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("3_krs6s")]
 position = Vector2(0, 16)

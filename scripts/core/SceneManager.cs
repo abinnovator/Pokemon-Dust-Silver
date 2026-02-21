@@ -48,7 +48,7 @@ namespace Game.Core
 			Game.Core.Logger.Info("Scene Manager Ready");
 		}
 
-		public static async void ChangeLevel(LevelName levelName = LevelName.pallet_town, int trigger = 0, bool spawn = false)
+		public static async void ChangeLevel(LevelName levelName = LevelName.pallet_town, int trigger = 0, bool spawn = false, Vector2? customPosition = null)
 		{
 			Game.Core.Logger.Info($"ChangeLevel called for {levelName}. isChanging: {isChanging}");
 			while (isChanging){
@@ -63,7 +63,7 @@ namespace Game.Core
 				await Instance.ToSignal(Instance.GetTree(), "process_frame");
 				if (spawn)
 				{
-					Instance.Spawn();
+					Instance.Spawn(customPosition);
 				}
 				else
 				{
@@ -91,9 +91,10 @@ namespace Game.Core
 				AllLevels = new Array<Level>();
 			}
 
-			if (CurrentLevel != null){
+			if (IsInstanceValid(CurrentLevel))
+			{
 				await Instance.FadeOut();
-				GameManager.GetGameViewPort().RemoveChild(CurrentLevel);
+				CurrentLevel.GetParent()?.RemoveChild(CurrentLevel);
 			}
 			
 			// Filter out nulls and find level
@@ -103,15 +104,42 @@ namespace Game.Core
 				GameManager.GetGameViewPort().AddChild(CurrentLevel);
 			}
 			else {
-				Game.Core.Logger.Error("Level not found, loading from resource");
-				CurrentLevel = GD.Load<PackedScene>("res://scenes/levels/" + levelName.ToString() + ".tscn").Instantiate<Level>();
+				string scenePath = "res://scenes/levels/" + levelName.ToString() + ".tscn";
+				if (levelName == LevelName.battle_scene)
+				{
+					scenePath = "res://scenes/core/battle_ui.tscn";
+				}
+				Game.Core.Logger.Info($"Level not found in AllLevels, attempting to load from resource: {scenePath}");
+				
+				var sceneResource = GD.Load<PackedScene>(scenePath);
+				if (sceneResource == null)
+				{
+					Game.Core.Logger.Error($"Failed to load level scene at path: {scenePath}. Check if file exists and name matches enum.");
+					return;
+				}
+
+				CurrentLevel = sceneResource.Instantiate<Level>();
+				if (CurrentLevel == null)
+				{
+					Game.Core.Logger.Error($"Failed to instantiate level from scene: {scenePath}");
+					return;
+				}
+
 				AllLevels.Add(CurrentLevel);
 				GameManager.GetGameViewPort().AddChild(CurrentLevel);
 			}
 
 		}
-		public void Spawn ()
+		public void Spawn (Vector2? customPosition = null)
 		{
+			if (customPosition.HasValue)
+			{
+				var playerNode = GD.Load<PackedScene>("res://scenes/charecters/player.tscn").Instantiate<Player>();
+				GameManager.AddPlayer(playerNode);
+				playerNode.GlobalPosition = customPosition.Value;
+				return;
+			}
+
 			var spawnPoints = CurrentLevel.GetTree().GetNodesInGroup(LevelGroups.SPAWNPOINTS.ToString());
 			if (spawnPoints.Count <= 0){
 				throw new Exception("No spawn points found in level"); 
@@ -169,10 +197,50 @@ namespace Game.Core
 			tween.TweenProperty(FadeRect, "color:a", 0.0, 0.25);
 			await ToSignal(tween, "finished");
 		}
+
+		public void ResetSession()
+		{
+			if (IsInstanceValid(CurrentLevel))
+			{
+				CurrentLevel.GetParent()?.RemoveChild(CurrentLevel);
+				CurrentLevel.QueueFree();
+			}
+			CurrentLevel = null;
+			
+			if (AllLevels != null)
+			{
+				foreach (var level in AllLevels)
+				{
+					if (IsInstanceValid(level))
+					{
+						level.QueueFree();
+					}
+				}
+				AllLevels.Clear();
+			}
+
+			isChanging = false;
+		}
+
 		public static Level GetCurrentLevel()
 		{
 			return Instance.CurrentLevel;
 		}
+
+		public override void _UnhandledInput(InputEvent @event)
+		{
+			if (@event.IsActionPressed("close"))
+			{
+				LeaveGame();
+			}
+		}
+
+		public static void LeaveGame()
+		{
+			if (SaveManager.Instance != null)
+			{
+				SaveManager.Instance.QuitGame();
+			}
+		}
 	}
-	
 }

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://daxtd577fm4ug"]
+[gd_scene load_steps=5 format=4 uid="uid://daxtd577fm4ug"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_uaq2p"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_ly3qh"]
 [ext_resource type="PackedScene" uid="uid://eem12pqtyb2s" path="res://scenes/levels/sign.tscn" id="3_5qodh"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_tldbw"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uaq2p")
@@ -41,3 +42,8 @@ tile_set = ExtResource("2_ly3qh")
 
 [node name="Sign" parent="Signs" instance=ExtResource("3_5qodh")]
 position = Vector2(304, 512)
+
+[node name="SceneTrigger4" parent="." instance=ExtResource("4_tldbw")]
+position = Vector2(-4, 328)
+scale = Vector2(6, 2)
+TargetLevelName = 15

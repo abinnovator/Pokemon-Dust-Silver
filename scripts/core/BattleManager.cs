@@ -96,6 +96,7 @@ namespace Game.Core
                 await SceneManager.Instance.FadeOut();
                 await SceneManager.Instance.GetLevel(SavedLevelName);
                 
+                
                 var player = GameManager.GetPlayer();
                 if (player != null)
                 {

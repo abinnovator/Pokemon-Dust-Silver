@@ -65,6 +65,29 @@ public partial class Pokeball : StaticBody2D
 					};
 					SaveManager.Instance.CurrentSave.CompletedStoryProgress.Add(PlayerStoryState.HAS_STARTER);
 					
+					// Map the starter selection to a PokemonID
+					PokemonID selectedId = PokemonName switch
+					{
+						PokemonStarter.BULBASAUR => PokemonID.bulbasaur,
+						PokemonStarter.CHARMANDER => PokemonID.charmander,
+						PokemonStarter.SQUIRTLE => PokemonID.squirtle,
+						_ => PokemonID.none
+					};
+
+					// Add the Pokemon to the party at slot 0 (since it's the starter)
+					Godot.Collections.Dictionary pokemonData = new Godot.Collections.Dictionary
+					{
+						{ "ID", (int)selectedId },
+						{ "Level", 5 }
+					};
+					SaveManager.Instance.CurrentSave.PartyDetails[0] = pokemonData;
+
+					// Sync with BattleManager so the first battle uses this Pokemon
+					if (BattleManager.Instance != null)
+					{
+						BattleManager.Instance.playerPokemonId = selectedId;
+					}
+
 					// Finalize the save to disk
 					SaveManager.Instance.SaveToDisk();
 					Game.Core.Logger.Info($"{PokemonName} has been saved to your trainer file.");

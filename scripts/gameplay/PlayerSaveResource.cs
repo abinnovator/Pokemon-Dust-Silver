@@ -1,4 +1,5 @@
 using Game.Core;
+using Game.Gameplay;
 using Godot;
 using Godot.Collections;
 
@@ -11,6 +12,7 @@ public partial class PlayerSaveResource : Resource
 
     // Pokemon Specific Data
     [Export] public StarterChoice ChosenStarter;
+    [Export] public Vector2 FacingDirection;
 
     // An array to store the names or IDs of every Pokemon the player has
 
