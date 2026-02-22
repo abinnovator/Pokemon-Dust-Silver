@@ -17,9 +17,29 @@ namespace Game.Gameplay
         {
             base.EnterState();
             
-            if (_battleSM != null)
+            if (_battleSM != null && _battleSM.Battle != null)
             {
-                _battleSM.ChangeState("PlayerTurnState");
+                var battle = _battleSM.Battle;
+                if (battle.OpponentHP <= 0)
+                {
+                    _battleSM.ChangeState("BattleEndState");
+                }
+                else if (battle.PlayerHP <= 0)
+                {
+                    _battleSM.ChangeState("BattleEndState");
+                }
+                else
+                {
+                    // If nobody fainted, switch turn
+                    if (battle.LastTurnWasPlayer)
+                    {
+                        _battleSM.ChangeState("EnemyTurnState");
+                    }
+                    else
+                    {
+                        _battleSM.ChangeState("PlayerTurnState");
+                    }
+                }
             }
         }
     }

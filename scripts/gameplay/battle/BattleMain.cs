@@ -20,6 +20,9 @@ namespace Game.Gameplay
         [Export] public Control CommandMenu;
         [Export] public Control MoveMenu;
         [Export] public Control PartyMenu;
+        [Export] public Control Bag;
+        [Export] public Control Pokeballs;
+        [Export] public Control Items;
 
 
         [ExportCategory("Buttons")]
@@ -28,8 +31,13 @@ namespace Game.Gameplay
         [Export] public BaseButton BackButton;
         [Export] public BaseButton PokemonBackButton;
         [Export] public BaseButton PokemonMenuButton;
+        [Export] public BaseButton BagMenuButton;
+        [Export] public BaseButton BagBackButton;
         [Export] public BaseButton[] MoveButtons;
         [Export] public BaseButton[] PokemonButtons;
+        [Export] public BaseButton[] BagButtons;
+        [Export] public BaseButton[] PokeballButtons;
+        [Export] public BaseButton[] ItemButtons;
 
         [ExportCategory("Systems")]
         [Export] public BattleStateMachine StateMachine;
@@ -40,8 +48,11 @@ namespace Game.Gameplay
         public PokemonID OpponentID { get; private set; }
         private PokemonResource _playerPokemon;
         private PokemonResource _oppPokemon;
-        private int _totalPokemonHp;
+        private int _playerPokemonHp;
         private int _oppPokemonHp;
+        public int PlayerHP => _playerPokemonHp;
+        public int OpponentHP => _oppPokemonHp;
+        public bool LastTurnWasPlayer { get; private set; }
         private int _oppPokemonLevel;
         private int _playerPokemonLevel;
         public override void _Ready()
@@ -77,6 +88,8 @@ namespace Game.Gameplay
             if (BackButton != null) BackButton.Pressed += () => OnBackButtonPressed();
             if (PokemonMenuButton != null) PokemonMenuButton.Pressed += () => OnPokemonMenuButtonPressed();
             if (PokemonBackButton != null) PokemonBackButton.Pressed += () => OnPokemonBackButtonPressed();
+            if (BagMenuButton != null) BagMenuButton.Pressed += () => OnBagMenuButtonPressed();
+            if (BagBackButton != null) BagBackButton.Pressed += () => OnBagBackButtonPressed();
             
             if (PokemonButtons!=null){
                 Logger.Info($"Connecting {PokemonButtons.Length} Party Slot Buttons");
@@ -92,10 +105,12 @@ namespace Game.Gameplay
             }
             _playerPokemon = PokeBase.LoadPokemon(PlayerID);
             _oppPokemon = PokeBase.LoadPokemon(OpponentID);
-            _totalPokemonHp = _playerPokemon.BaseHp;
+            _playerPokemonHp = _playerPokemon.BaseHp;
             _oppPokemonHp = _oppPokemon.BaseHp;
-            PlayerHPBar.MaxValue = _totalPokemonHp;
-            EnemyHPBar.MaxValue = _oppPokemonHp;
+            PlayerHPBar.MaxValue = _playerPokemon.BaseHp;
+            PlayerHPBar.Value = _playerPokemonHp;
+            EnemyHPBar.MaxValue = _oppPokemon.BaseHp;
+            EnemyHPBar.Value = _oppPokemonHp;
 
             Logger.Info($"Player Pokemon Learnable Moves: {string.Join(", ", _playerPokemon.LearnableMoves)}");
 
@@ -105,10 +120,10 @@ namespace Game.Gameplay
                 {
                     if (btn != null)
                     {
-                        btn.Pressed += () => 
+                        btn.Pressed += async () => 
                         {
                             string moveName = (btn as Button)?.Text ?? btn.Name.ToString();
-                            OnMoveSelectedAsync(moveName);
+                            await OnMoveSelectedAsync(moveName);
                         };
                     }
                 }
@@ -148,6 +163,13 @@ namespace Game.Gameplay
             if (PartyMenu != null) PartyMenu.Visible = false;
             BackButton.Visible = false;
             PokemonBackButton.Visible = false;
+        }
+        private void OnBagBackButtonPressed()
+        {
+            if (CommandMenu != null) CommandMenu.Visible = true;
+            if (Bag != null) Bag.Visible = false;
+            if (BackButton != null) BackButton.Visible = true;
+            if (BagBackButton != null) BagBackButton.Visible = false;
         }
 
         public void UpdateLog(string message)
@@ -216,27 +238,124 @@ namespace Game.Gameplay
 
         private async Task OnMoveSelectedAsync(string moveName)
         {
-            UpdateLog($"Player used {moveName}!");
-            var Move = PokeBase.LoadMove(moveName);
+            await ExecuteMoveAsync(_playerPokemon, _oppPokemon, moveName, true);
             
-            _oppPokemonHp -= CalculateDamage(_playerPokemon, _oppPokemon, Move.Power, 1);
-            Logger.Info("Opp pokemon hp down to:", _oppPokemonHp);
-            EnemyHPBar.Value = _oppPokemonHp;
-            
-
-            if (_oppPokemonHp <= 0)
+            if (StateMachine != null)
             {
-                EndBattle();
-                return;
+                StateMachine.ChangeState("CheckFaintState");
             }
-            else{
-                if (StateMachine != null)
+        }
+
+        public async Task ExecuteMoveAsync(PokemonResource attacker, PokemonResource defender, string moveName, bool isPlayerAttacking)
+        {
+            LastTurnWasPlayer = isPlayerAttacking;
+            UpdateLog($"{(isPlayerAttacking ? "Player" : "Enemy")} used {moveName}!");
+            var move = PokeBase.LoadMove(moveName);
+            if (move == null) return;
+
+            int damage = CalculateDamage(attacker, defender, move.Power, 1);
+            
+            if (isPlayerAttacking)
+            {
+                _oppPokemonHp = Math.Max(0, _oppPokemonHp - damage);
+                EnemyHPBar.Value = _oppPokemonHp;
+                if (OpponentSprite != null) await PlayFlickerAsync(OpponentSprite);
+                Logger.Info($"Enemy HP down to: {_oppPokemonHp}");
+            }
+            else
+            {
+                _playerPokemonHp = Math.Max(0, _playerPokemonHp - damage);
+                PlayerHPBar.Value = _playerPokemonHp;
+                if (PlayerSprite != null) await PlayFlickerAsync(PlayerSprite);
+                Logger.Info($"Player HP down to: {_playerPokemonHp}");
+            }
+
+            await Task.Delay(500);
+        }
+
+        private async Task PlayFlickerAsync(CanvasItem sprite)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                sprite.Visible = false;
+                await Task.Delay(100);
+                sprite.Visible = true;
+                await Task.Delay(100);
+            }
+        }
+
+        public async Task ExecuteEnemyTurnAsync()
+        {
+            if (_oppPokemon == null) return;
+            UpdateLog($"Enemy {_oppPokemon.Name} is thinking...");
+            await Task.Delay(1500);
+
+            // Simple AI: Pick move with highest power
+            string bestMove = _oppPokemon.LearnableMoves.Count > 0 ? _oppPokemon.LearnableMoves[0] : "Tackle";
+            int maxPower = -1;
+
+            foreach (var moveName in _oppPokemon.LearnableMoves)
+            {
+                var move = PokeBase.LoadMove(moveName);
+                if (move != null && move.Power > maxPower)
                 {
-                    StateMachine.ChangeState("EnemyTurnState");
+                    maxPower = move.Power;
+                    bestMove = moveName;
                 }
             }
+
+            await ExecuteMoveAsync(_oppPokemon, _playerPokemon, bestMove, false);
             
+            if (StateMachine != null)
+            {
+                StateMachine.ChangeState("CheckFaintState");
+            }
         }
+        private void OnBagMenuButtonPressed()
+        {
+            Logger.Info("OnBagMenuButtonPressed called");
+            if (Bag != null)
+            {
+                Bag.Visible = true;
+                CommandMenu.Visible = false;
+                MoveMenu.Visible = false;
+                PartyMenu.Visible = false;
+                
+                if (BackButton != null) BackButton.Visible = false;
+                if (BagBackButton != null) BagBackButton.Visible = true;
+                
+                PopulateBagItems();
+            }
+        }
+
+        private void PopulateBagItems()
+        {
+            var save = SaveManager.Instance?.CurrentSave;
+            if (save == null) return;
+
+            Logger.Info($"Populating Bag with {save.Pokeballs.Count} items");
+            
+            for (int i = 0; i < BagButtons.Length; i++)
+            {
+                var btn = BagButtons[i];
+                if (btn == null) continue;
+
+                if (i < save.Pokeballs.Count)
+                {
+                    var ball = save.Pokeballs[i];
+                    if (btn is Button b) b.Text = ball.ToString();
+                    btn.Visible = true;
+                    btn.Disabled = false;
+                }
+                else
+                {
+                    if (btn is Button b) b.Text = "---";
+                    btn.Visible = true; 
+                    btn.Disabled = true;
+                }
+            }
+        }
+
         private void OnPokemonMenuButtonPressed()
         {
             Logger.Info("onPokemonButtonPressed called");
@@ -292,11 +411,10 @@ namespace Game.Gameplay
         private void switchPokemon (PokemonResource pokemon){
             _playerPokemon = pokemon;
             PlayerSprite.Texture = pokemon.BackSprite;
-            _totalPokemonHp = pokemon.BaseHp;
-            PlayerHPBar.MaxValue = _totalPokemonHp;
-            PlayerHPBar.Value = _totalPokemonHp;
+            _playerPokemonHp = pokemon.BaseHp;
+            PlayerHPBar.MaxValue = pokemon.BaseHp;
+            PlayerHPBar.Value = _playerPokemonHp;
             PlayerNameLabel.Text = pokemon.Name;
-            
         }
     
     }

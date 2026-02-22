@@ -32,4 +32,5 @@ public partial class PlayerSaveResource : Resource
     [Export] public Array<Badge> Badges = new Array<Badge>();
 
     [Export] public Array<PlayerStoryState> CompletedStoryProgress = new Array<PlayerStoryState>();
+    [Export] public Array<Game.Core.Pokeball> Pokeballs = new();
 }

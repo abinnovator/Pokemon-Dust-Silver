@@ -85,6 +85,33 @@ namespace Game.Core{
 		Closed,
 		Open,
 	}
+	public enum Pokeball{
+		Normal,
+		Master,
+		Great,
+		Safari,
+		Level,
+		Lure,
+		Moon,
+		Friend,
+		Love,
+		Fast,
+		Sport,
+		Premier,
+		Net,
+		Dive,
+		Ultra,
+		Repeat,
+		Timer,
+		Nest,
+		Heal,
+		Quick,
+		Dusk,
+		Luxury,
+		Beast,
+		Heavy,
+		Origin
+	}
 	#endregion
 	#region Npcs
 	public enum NpcAppearance{

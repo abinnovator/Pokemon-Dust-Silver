@@ -19,7 +19,10 @@ namespace Game.Gameplay
             
             if (_battleSM != null && _battleSM.Battle != null)
             {
-                _battleSM.Battle.UpdateLog("What will you do?");
+                var battle = _battleSM.Battle;
+                battle.UpdateLog("What will you do?");
+                if (battle.CommandMenu != null) battle.CommandMenu.Visible = true;
+                if (battle.MoveMenu != null) battle.MoveMenu.Visible = false;
             }
         }
     }
