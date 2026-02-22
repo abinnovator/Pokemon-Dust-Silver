@@ -3461,7 +3461,7 @@ region = Rect2(350, 344, 185, 10)
 atlas = ExtResource("3_qhckv")
 region = Rect2(349, 358, 186, 11)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "BattleButton", "RunButton", "BackButton", "MoveButtons", "PokemonButtons", "StateMachine", "PlayerSprite", "OpponentSprite")]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "MoveButtons", "PokemonButtons", "StateMachine", "PlayerSprite", "OpponentSprite")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("Script_BattleMain")
@@ -3475,8 +3475,10 @@ PartyMenu = NodePath("Ui/PartyMenu")
 BattleButton = NodePath("Ui/Controls/Battle")
 RunButton = NodePath("Ui/Controls/Run")
 BackButton = NodePath("Ui/MoveMenu/Back")
+PokemonBackButton = NodePath("Ui/PartyMenu/Back")
+PokemonMenuButton = NodePath("Ui/Controls/Party")
 MoveButtons = [NodePath("Ui/MoveMenu/Move1"), NodePath("Ui/MoveMenu/Move2"), NodePath("Ui/MoveMenu/Move3"), NodePath("Ui/MoveMenu/Move4")]
-PokemonButtons = []
+PokemonButtons = [NodePath("Ui/PartyMenu/Pokemon1"), NodePath("Ui/PartyMenu/Pokemon2"), NodePath("Ui/PartyMenu/Pokemon3"), NodePath("Ui/PartyMenu/Pokemon4"), NodePath("Ui/PartyMenu/Pokemon5"), NodePath("Ui/PartyMenu/Pokemon6")]
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")

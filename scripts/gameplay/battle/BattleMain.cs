@@ -26,6 +26,8 @@ namespace Game.Gameplay
         [Export] public BaseButton BattleButton;
         [Export] public BaseButton RunButton;
         [Export] public BaseButton BackButton;
+        [Export] public BaseButton PokemonBackButton;
+        [Export] public BaseButton PokemonMenuButton;
         [Export] public BaseButton[] MoveButtons;
         [Export] public BaseButton[] PokemonButtons;
 
@@ -73,11 +75,17 @@ namespace Game.Gameplay
             if (BattleButton != null) BattleButton.Pressed += () => OnBattleButtonPressed();
             if (RunButton != null) RunButton.Pressed += () => RunAway();
             if (BackButton != null) BackButton.Pressed += () => OnBackButtonPressed();
+            if (PokemonMenuButton != null) PokemonMenuButton.Pressed += () => OnPokemonMenuButtonPressed();
+            if (PokemonBackButton != null) PokemonBackButton.Pressed += () => OnPokemonBackButtonPressed();
+            
             if (PokemonButtons!=null){
-                Logger.Info($"Connecting {PokemonButtons.Length} PokemonButtons");
+                Logger.Info($"Connecting {PokemonButtons.Length} Party Slot Buttons");
                 foreach (var button in PokemonButtons){
                     if (button != null)
-                        button.Pressed += () => onPokemonButtonPressed();
+                        button.Pressed += () => {
+                            // Logic for selecting a pokemon in the menu could go here
+                            Logger.Info($"Party slot {button.Name} pressed");
+                        };
                     else
                         Logger.Warning("Found NULL button in PokemonButtons array");
                 }
@@ -133,6 +141,14 @@ namespace Game.Gameplay
                 Logger.Warning("SaveManager.Instance or CurrentSave is NULL in _Ready");
             }
         }
+        private void OnPokemonBackButtonPressed()
+        {
+            if (CommandMenu != null) CommandMenu.Visible = true;
+            if (MoveMenu != null) MoveMenu.Visible = false;
+            if (PartyMenu != null) PartyMenu.Visible = false;
+            BackButton.Visible = false;
+            PokemonBackButton.Visible = false;
+        }
 
         public void UpdateLog(string message)
         {
@@ -179,6 +195,7 @@ namespace Game.Gameplay
             if (MoveMenu != null) MoveMenu.Visible = false;
             if (PartyMenu != null) PartyMenu.Visible = false;
         }
+
         public int CalculateDamage(PokemonResource attacker, PokemonResource defender, int movePower, int attackerLevel)
         {
             // 1. Calculate the core power based on level
@@ -220,7 +237,7 @@ namespace Game.Gameplay
             }
             
         }
-        private void onPokemonButtonPressed()
+        private void OnPokemonMenuButtonPressed()
         {
             Logger.Info("onPokemonButtonPressed called");
             if (PartyMenu != null)
@@ -228,6 +245,8 @@ namespace Game.Gameplay
                 PartyMenu.Visible = true;
                 CommandMenu.Visible = false;
                 MoveMenu.Visible = false;
+                BackButton.Visible = false;
+                PokemonBackButton.Visible = true;
                 
                 Logger.Info($"PartyMenu Visibility: {PartyMenu.Visible}, Children: {PartyMenu.GetChildCount()}");
                 var partyDetails = SaveManager.Instance.CurrentSave?.PartyDetails;
@@ -236,7 +255,10 @@ namespace Game.Gameplay
                 int buttonIdx = 0;
                 for (int i = 0; i < PartyMenu.GetChildCount(); i++)
                 {
-                    if (PartyMenu.GetChild(i) is Button btn)
+                    var child = PartyMenu.GetChild(i);
+                    if (child == PokemonBackButton) continue;
+
+                    if (child is Button btn)
                     {
                         if (partyDetails != null && partyDetails.ContainsKey(buttonIdx))
                         {
@@ -267,5 +289,15 @@ namespace Game.Gameplay
                 Logger.Error("PartyMenu is NULL in BattleMain!");
             }
         }
+        private void switchPokemon (PokemonResource pokemon){
+            _playerPokemon = pokemon;
+            PlayerSprite.Texture = pokemon.BackSprite;
+            _totalPokemonHp = pokemon.BaseHp;
+            PlayerHPBar.MaxValue = _totalPokemonHp;
+            PlayerHPBar.Value = _totalPokemonHp;
+            PlayerNameLabel.Text = pokemon.Name;
+            
+        }
+    
     }
 }
