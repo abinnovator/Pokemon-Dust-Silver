@@ -24,7 +24,7 @@ namespace Game.Gameplay
                 battle.UpdateLog("The battle has ended!");
                 
                 await Task.Delay(2000);
-                battle.EndBattle();
+                battle.EndBattle(1);
             }
         }
     }

@@ -3792,6 +3792,7 @@ theme_override_font_sizes/font_size = 48
 text = "Pokeballs"
 
 [node name="Exp" type="Button" parent="Ui/Bag"]
+visible = false
 layout_mode = 0
 offset_left = 1900.0
 offset_top = 1040.0

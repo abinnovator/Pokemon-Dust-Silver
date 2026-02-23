@@ -1,10 +1,37 @@
-[gd_scene load_steps=6 format=4 uid="uid://ef45hbtodin8"]
+[gd_scene load_steps=11 format=4 uid="uid://ef45hbtodin8"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_dwogr"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_tl55b"]
+[ext_resource type="Texture2D" uid="uid://bxav8slnkem0r" path="res://assets/particles/ELR-WindyLeafs/ELR_SpringlLeaf.png" id="3_6otbw"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_dln6w"]
 [ext_resource type="PackedScene" uid="uid://5jgdqs64hd23" path="res://scenes/levels/tall_grass.tscn" id="5_6otbw"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="5_756p4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uvoii"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_tdxcd"]
+offsets = PackedFloat32Array(0, 0.7075472, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vegsa"]
+gradient = SubResource("Gradient_tdxcd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7xak2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 200, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.099999994
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_vegsa")
+anim_offset_max = 1.0
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_dwogr")
@@ -567,3 +594,13 @@ position = Vector2(240, 464)
 
 [node name="Tall_grass163" parent="Grass" instance=ExtResource("5_6otbw")]
 position = Vector2(224, 464)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+material = SubResource("CanvasItemMaterial_uvoii")
+position = Vector2(179, 327)
+amount = 100
+texture = ExtResource("3_6otbw")
+visibility_rect = Rect2(-895, -200, 1800, 400)
+process_material = SubResource("ParticleProcessMaterial_7xak2")

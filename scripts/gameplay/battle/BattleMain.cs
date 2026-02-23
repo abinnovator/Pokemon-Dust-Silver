@@ -45,7 +45,7 @@ namespace Game.Gameplay
         [Export] public PlayerPokemon PlayerSprite;
         [Export] public OppPokemon OpponentSprite;
 
-        public PokemonID PlayerID { get; private set; }
+        public PokemonID PlayerID { get; set; }
         public PokemonID OpponentID { get; private set; }
         private PokemonResource _playerPokemon;
         private PokemonResource _oppPokemon;
@@ -93,14 +93,15 @@ namespace Game.Gameplay
             if (BagBackButton != null) BagBackButton.Pressed += () => OnBagBackButtonPressed();
             if (PokeballBackButton != null) PokeballBackButton.Pressed += () => onPokeballBackButtonPressed();
             
-            if (PokemonButtons!=null){
+            if (PokemonButtons != null)
+            {
                 Logger.Info($"Connecting {PokemonButtons.Length} Party Slot Buttons");
-                foreach (var button in PokemonButtons){
+                for (int i = 0; i < PokemonButtons.Length; i++)
+                {
+                    int capturedIndex = i;
+                    var button = PokemonButtons[capturedIndex];
                     if (button != null)
-                        button.Pressed += () => {
-                            // Logic for selecting a pokemon in the menu could go here
-                            Logger.Info($"Party slot {button.Name} pressed");
-                        };
+                        button.Pressed += () => OnPartyButtonPressed(capturedIndex);
                     else
                         Logger.Warning("Found NULL button in PokemonButtons array");
                 }
@@ -126,7 +127,7 @@ namespace Game.Gameplay
                         // Parse the button name to get the Pokeball enum value
                         if (Enum.TryParse<Game.Core.Pokeball>(btn.Name.ToString(), true, out var ballType))
                         {
-                            OnSelectPokeballButtonPressedAsync(ballType);
+                            _ = OnSelectPokeballButtonPressedAsync(ballType);
                         }
                     };
                 }
@@ -455,13 +456,46 @@ namespace Game.Gameplay
                 Logger.Error("PartyMenu is NULL in BattleMain!");
             }
         }
-        private void switchPokemon (PokemonResource pokemon){
+        private void switchPokemon(PokemonResource pokemon)
+        {
             _playerPokemon = pokemon;
             PlayerSprite.Texture = pokemon.BackSprite;
-            _playerPokemonHp = pokemon.BaseHp;
             PlayerHPBar.MaxValue = pokemon.BaseHp;
             PlayerHPBar.Value = _playerPokemonHp;
             PlayerNameLabel.Text = pokemon.Name;
+        }
+
+        private void OnPartyButtonPressed(int index)
+        {
+            var partyDetails = SaveManager.Instance?.CurrentSave?.PartyDetails;
+            if (partyDetails == null || !partyDetails.ContainsKey(index)) return;
+
+            var pokemonData = partyDetails[index].AsGodotDictionary();
+            if (pokemonData == null || !pokemonData.ContainsKey("ID")) return;
+
+            int idInt = (int)pokemonData["ID"];
+            PokemonID id = (PokemonID)idInt;
+
+            if (id == PlayerID)
+            {
+                Logger.Info($"{id} is already the active pokemon.");
+                OnPokemonBackButtonPressed();
+                return;
+            }
+
+            var pokemon = PokeBase.LoadPokemon(id);
+            if (pokemon == null) return;
+
+            // Restore saved HP if available, otherwise use full HP
+            _playerPokemonHp = pokemonData.ContainsKey("CurrentHP")
+                ? (int)pokemonData["CurrentHP"]
+                : pokemon.BaseHp;
+
+            PlayerID = id;
+            switchPokemon(pokemon);
+            Logger.Info($"Switched active pokemon to {id}");
+
+            OnPokemonBackButtonPressed();
         }
         private void OnPokeballButtonPressed(){
             Logger.Info("OnPokeballButtonPressed called");
