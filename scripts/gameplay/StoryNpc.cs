@@ -56,77 +56,77 @@ public partial class StoryNpc : CharacterBody2D
 		_stateMachine = GetNode<StateMachine>("StateMachine");
 
 		// MANUAL CAST: This is safer and prevents the crash you're seeing.
-        if (InputConfig is StoryNpcInputConfig config)
-        {
-            _npcInput.NpcInputConfig = config;
-        }
-        else if (InputConfig != null)
-        {
-            GD.PrintErr($"{Name}: InputConfig is the wrong type! Expected StoryNpcInputConfig.");
-        }
-        else
-        {
-            GD.PrintErr($"{Name}: InputConfig is missing in the Inspector!");
-        }
+		if (InputConfig is StoryNpcInputConfig config)
+		{
+			_npcInput.NpcInputConfig = config;
+		}
+		else if (InputConfig != null)
+		{
+			GD.PrintErr($"{Name}: InputConfig is the wrong type! Expected StoryNpcInputConfig.");
+		}
+		else
+		{
+			GD.PrintErr($"{Name}: InputConfig is missing in the Inspector!");
+		}
 
-        _stateMachine.ChangeState("Roam");
-    }
+		_stateMachine.ChangeState("Roam");
+	}
 
-    public override void _Process(double delta)
-    {
-        if (Engine.IsEditorHint()) return;
+	public override void _Process(double delta)
+	{
+		if (Engine.IsEditorHint()) return;
 
-        var player = GameManager.GetPlayer();
-        if (player != null)
-        {
-            ZIndex = (player.Position.Y <= Position.Y) ? 6 : 4;
-        }
-    }
+		var player = GameManager.GetPlayer();
+		if (player != null)
+		{
+			ZIndex = (player.Position.Y <= Position.Y) ? 6 : 4;
+		}
+	}
 
-    private void UpdateAppearence()
-    {
-        if (!IsInsideTree()) return;
+	private void UpdateAppearence()
+	{
+		if (!IsInsideTree()) return;
 
-        try
-        {
-            _animatedSprite2D ??= GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
-            if (_animatedSprite2D == null) return;
+		try
+		{
+			_animatedSprite2D ??= GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
+			if (_animatedSprite2D == null) return;
 
-            if (_appearanceFrames.TryGetValue(_npcAppearance, out var spriteFrames))
-            {
-                _animatedSprite2D.SpriteFrames = spriteFrames;
-            }
-            else
-            {
-                _animatedSprite2D.SpriteFrames = null;
-            }
-        }
-        catch (Exception e)
-        {
-            GD.PrintErr($"StoryNpc Appearance Error: {e.Message}");
-        }
-    }
+			if (_appearanceFrames.TryGetValue(_npcAppearance, out var spriteFrames))
+			{
+				_animatedSprite2D.SpriteFrames = spriteFrames;
+			}
+			else
+			{
+				_animatedSprite2D.SpriteFrames = null;
+			}
+		}
+		catch (Exception e)
+		{
+			GD.PrintErr($"StoryNpc Appearance Error: {e.Message}");
+		}
+	}
 
-    public async System.Threading.Tasks.Task PlayMessage(Vector2 playerDirection)
-    {
-        if (Engine.IsEditorHint()) return;
-        if (_characterMovement.IsMoving()) return;
+	public async System.Threading.Tasks.Task PlayMessage(Vector2 playerDirection)
+	{
+		if (Engine.IsEditorHint()) return;
+		if (_characterMovement.IsMoving()) return;
 
-        if (_npcInput.Direction != playerDirection * -1)
-        {
-            _npcInput.Direction = playerDirection * -1;
-            _npcInput.EmitSignal(CharecterInput.SignalName.Turn);
-        }
+		if (_npcInput.Direction != playerDirection * -1)
+		{
+			_npcInput.Direction = playerDirection * -1;
+			_npcInput.EmitSignal(CharecterInput.SignalName.Turn);
+		}
 		GD.Print("NPC: Attempting to play message...");
 
-        _stateMachine.ChangeState("Message");
+		_stateMachine.ChangeState("Message");
 
-        // Cast check before playing messages
-        if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
-        {
-            await MessageManager.PlayText([.. config.Messages]);
-        }
-        
-        _stateMachine.ChangeState("Roam");
-    }
+		// Cast check before playing messages
+		if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
+		{
+			await MessageManager.PlayText([.. config.Messages]);
+		}
+		
+		_stateMachine.ChangeState("Roam");
+	}
 }

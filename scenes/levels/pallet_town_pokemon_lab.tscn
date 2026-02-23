@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://pvyq3gdweho"]
+[gd_scene load_steps=12 format=4 uid="uid://pvyq3gdweho"]
 
-[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_68rbe"]
+[ext_resource type="Script" uid="uid://ckh1dxunmc7y3" path="res://scripts/gameplay/levels/PokemonLabLevel.cs" id="1_68rbe"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_jpmhg"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_ogny3"]
 [ext_resource type="PackedScene" uid="uid://bft0l053eiv7l" path="res://scenes/core/pokeball.tscn" id="4_prj1g"]
 [ext_resource type="Script" uid="uid://bsewtsvpwxbc5" path="res://scripts/gameplay/Pokeballs.cs" id="4_r5k76"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="6_4wgwr"]
+[ext_resource type="PackedScene" uid="uid://b61k6qbvycvqs" path="res://scenes/charecters/Oaknpc.tscn" id="7_fk5or"]
+[ext_resource type="Resource" path="res://resources/oak_lab_config.tres" id="8_oakconfig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prj1g"]
 size = Vector2(8, 224)
@@ -16,8 +18,9 @@ size = Vector2(4.0000153, 224)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5k76"]
 size = Vector2(8, 224)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("OakNode")]
 script = ExtResource("1_68rbe")
+OakNode = NodePath("NPC")
 LevelName = 4
 top = -48
 bottom = 176
@@ -65,7 +68,7 @@ Type = 3
 position = Vector2(88, -48)
 rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(112, -108)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_prj1g")
@@ -98,3 +101,9 @@ position = Vector2(56, 32)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("6_4wgwr")]
 position = Vector2(32, 112)
+
+[node name="NPC" parent="." node_paths=PackedStringArray("_animatedSprite2D") instance=ExtResource("7_fk5or")]
+position = Vector2(112, 48)
+NpcAppearance = 24
+InputConfig = ExtResource("8_oakconfig")
+_animatedSprite2D = NodePath("AnimatedSprite2D")

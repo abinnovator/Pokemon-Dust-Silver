@@ -8,6 +8,9 @@
 
 [node name="Pallet Town" type="Node2D"]
 script = ExtResource("1_tned5")
+LevelName = null
+encounterRate = null
+wildPokemonList = null
 top = -64
 bottom = 288
 left = -100
@@ -49,11 +52,18 @@ position = Vector2(80, 96)
 [node name="UsersHouse" parent="SceneTriggers" instance=ExtResource("2_tned5")]
 position = Vector2(-16, -32)
 TargetLevelName = 1
+TargetLevelTrigger = null
+CurrentLevelTrigger = null
+EntryDirection = null
+Locked = null
 
 [node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("2_tned5")]
 position = Vector2(144, -32)
 TargetLevelName = 3
+TargetLevelTrigger = null
 CurrentLevelTrigger = 2
+EntryDirection = null
+Locked = null
 
 [node name="SceneTrigger3" parent="SceneTriggers" instance=ExtResource("2_tned5")]
 position = Vector2(32, -148)
@@ -61,12 +71,16 @@ scale = Vector2(3, 1)
 TargetLevelName = 5
 TargetLevelTrigger = 1
 CurrentLevelTrigger = 3
+EntryDirection = null
+Locked = null
 
 [node name="PokemonLab" parent="SceneTriggers" instance=ExtResource("2_tned5")]
 position = Vector2(160, 96)
 TargetLevelName = 4
 TargetLevelTrigger = 1
 CurrentLevelTrigger = 1
+EntryDirection = null
+Locked = null
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)
@@ -76,15 +90,21 @@ position = Vector2(-2, 0)
 
 [node name="Signs" type="Node2D" parent="."]
 
-[node name="Sign" parent="Signs" instance=ExtResource("4_uiigf")]
+[node name="Sign" parent="Signs" node_paths=PackedStringArray("_sprite2D") instance=ExtResource("4_uiigf")]
 position = Vector2(112, 128)
 Messages = ["Hey! This is Pallet Town"]
+_signStyle = 0
+_isInteracting = false
+_sprite2D = NodePath("Sprite2D")
 
-[node name="Sign2" parent="Signs" instance=ExtResource("4_uiigf")]
+[node name="Sign2" parent="Signs" node_paths=PackedStringArray("_sprite2D") instance=ExtResource("4_uiigf")]
 texture_filter = 1
 position = Vector2(48, 176)
-Messages = []
 SignStyle = 2
+Messages = []
+_signStyle = 2
+_isInteracting = false
+_sprite2D = NodePath("Sprite2D")
 
 [node name="Grass" type="Node2D" parent="."]
 texture_filter = 1

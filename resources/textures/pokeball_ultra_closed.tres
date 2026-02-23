@@ -1,0 +1,10 @@
+[gd_resource type="AtlasTexture" load_steps=3 format=3 uid="uid://c8inq8vckkt36"]
+
+[ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="1_qumqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7elmt"]
+atlas = ExtResource("1_qumqp")
+region = Rect2(626, 20, 12, 11)
+
+[resource]
+atlas = SubResource("AtlasTexture_7elmt")

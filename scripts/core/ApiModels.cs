@@ -188,4 +188,28 @@ namespace Game.Core
         public List<FlavorTextEntry> FlavorTextEntries { get; set; }
     }
     #endregion
+
+    #region Item API Models
+    public class ItemSprites
+    {
+        [JsonProperty("default")]
+        public string Default { get; set; }
+    }
+
+    public class ItemApiResponse
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("cost")]
+        public int Cost { get; set; }
+        [JsonProperty("flavor_text_entries")]
+        public List<FlavorTextEntry> FlavorTextEntries { get; set; }
+        [JsonProperty("sprites")]
+        public ItemSprites Sprites { get; set; }
+        [JsonProperty("attributes")]
+        public List<ApiResource> Attributes { get; set; }
+    }
+    #endregion
 }

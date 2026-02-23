@@ -3461,7 +3461,7 @@ region = Rect2(350, 344, 185, 10)
 atlas = ExtResource("3_qhckv")
 region = Rect2(349, 358, 186, 11)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "StateMachine", "PlayerSprite", "OpponentSprite")]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("Script_BattleMain")
@@ -3486,6 +3486,7 @@ PokemonButtons = [NodePath("Ui/PartyMenu/Pokemon1"), NodePath("Ui/PartyMenu/Poke
 BagButtons = [NodePath("Ui/Bag/Pokeballs"), NodePath("Ui/Bag/Exp")]
 PokeballButtons = [NodePath("Ui/Pokeballs/Normal"), NodePath("Ui/Pokeballs/Heavy"), NodePath("Ui/Pokeballs/Ultra"), NodePath("Ui/Pokeballs/Master")]
 ItemButtons = []
+PokeballBackButton = NodePath("Ui/Pokeballs/Back")
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
@@ -3664,8 +3665,8 @@ text = "Bulbasaur"
 layout_mode = 0
 offset_left = 944.0
 offset_top = 48.0
-offset_right = 1024.0
-offset_bottom = 64.0
+offset_right = 1062.0
+offset_bottom = 68.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_qhckv")
 theme_override_font_sizes/normal_font_size = 20

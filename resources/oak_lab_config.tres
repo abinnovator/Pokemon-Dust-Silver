@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OakNpcInputConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/VipNpcs/Oak/StoryNpcInputConfig.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+NpcMovementType = 0
+Messages = Array[String](["Welcome to my Pokemon Laboratory!", "Here, we study Pokemon from all over the world!", "I have a special gift for you - a Pokemon of your very own!", "Go ahead and choose one from the table!"])
+EventTrigger = 0
+HasBattle = false
+PokemonID = 0
+PokemonLevel = 5
+IsFemale = false
+IsMale = false
+IsShiny = false

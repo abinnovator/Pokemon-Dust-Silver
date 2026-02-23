@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://b61k6qbvycvqs"]
+
+[ext_resource type="Script" uid="uid://bubbhu6y37lts" path="res://scripts/gameplay/VipNpcs/Oak/StoryNpc.cs" id="1_mii3g"]
+[ext_resource type="Script" uid="uid://bx8vtyjtnxnc2" path="res://scripts/gameplay/VipNpcs/Oak/StoryNpcInput.cs" id="2_mii3g"]
+[ext_resource type="Script" uid="uid://ojrerf85ncwv" path="res://scripts/gameplay/CharacterMovement.cs" id="3_gqsll"]
+[ext_resource type="SpriteFrames" uid="uid://n4qxpr53lfl7" path="res://resources/spriteframes/Oak.tres" id="4_bmn3k"]
+[ext_resource type="Script" uid="uid://noyq6csxc7hf" path="res://scripts/gameplay/CharacterAnimation.cs" id="5_efb3r"]
+[ext_resource type="Script" uid="uid://gmo2xmi834dp" path="res://scripts/utilities/StateMachine.cs" id="6_2j8b4"]
+[ext_resource type="Script" uid="uid://caow6viuphkvr" path="res://scripts/gameplay/states/StoryNpcRoamState.cs" id="7_aosfr"]
+[ext_resource type="Script" uid="uid://dnqevjbmypb60" path="res://scripts/gameplay/states/StoryNpcMessageState.cs" id="8_1ykie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msjke"]
+size = Vector2(16, 16)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_mii3g")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_msjke")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("2_mii3g")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput")]
+script = ExtResource("3_gqsll")
+Character = NodePath("..")
+CharacterInput = NodePath("../Input")
+TargetPosition = null
+IsWalking = null
+CollisionDetected = null
+IsJumping = null
+JumpHeight = null
+LerpSpeed = null
+Progress = null
+ECharacterMovement = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("CharacterMovement", "CharacterInput")]
+texture_filter = 1
+position = Vector2(8, 4)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_bmn3k")
+animation = &"idle_down"
+script = ExtResource("5_efb3r")
+CharacterMovement = NodePath("../Movement")
+CharacterInput = NodePath("../Input")
+CurrentAnimationState = null
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer")]
+script = ExtResource("6_2j8b4")
+Customer = NodePath("..")
+
+[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement", "StateOwner", "StateMachine")]
+script = ExtResource("7_aosfr")
+NpcInput = NodePath("../../Input")
+CharacterMovement = NodePath("../../Movement")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="Message" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("8_1ykie")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")

@@ -9,6 +9,8 @@ public partial class PokeBase : Node
 {
     private const string pokemonPath = "res://resources/pokemon/";
 	private const string movePath = "res://resources/Moves/";
+	private const string pokeballPath = "res://resources/items/pokeballs/";
+
 	public static PokemonResource LoadPokemon(PokemonID id)
 	{
 		var pokemon = GD.Load<PokemonResource>(pokemonPath + id.ToString() + ".tres");
@@ -39,5 +41,16 @@ public partial class PokeBase : Node
             return null;
         }
         return move;
+    }
+
+    public static PokeballResource LoadPokeball(Game.Core.Pokeball id)
+    {
+        var ball = GD.Load<PokeballResource>(pokeballPath + id.ToString().ToLower() + ".tres");
+        if (ball == null)
+        {
+            Logger.Warning($"Pokeball resource '{id}' not found, using default catch rate.");
+            return null;
+        }
+        return ball;
     }
 }

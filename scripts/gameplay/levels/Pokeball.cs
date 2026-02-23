@@ -88,13 +88,19 @@ public partial class Pokeball : StaticBody2D
 						BattleManager.Instance.playerPokemonId = selectedId;
 					}
 
+					// Give the player some Pokeballs
+					for (int i = 0; i < 5; i++)
+					{
+						SaveManager.Instance.CurrentSave.Pokeballs.Add(Game.Core.Pokeball.Normal);
+					}
+
 					// Finalize the save to disk
 					SaveManager.Instance.SaveToDisk();
 					Game.Core.Logger.Info($"{PokemonName} has been saved to your trainer file.");
 				}
 				
 				// Show success message and wait for it to close
-				await MessageManager.PlayText($"You received {PokemonName}!");
+				await MessageManager.PlayText($"You received {PokemonName}!", "Professor Oak gave you 5 Poke Balls!");
 				BallSprite.Texture = _textures[PokeballType.Closed];
 
 			}

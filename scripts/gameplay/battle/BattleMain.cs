@@ -38,6 +38,7 @@ namespace Game.Gameplay
         [Export] public BaseButton[] BagButtons;
         [Export] public BaseButton[] PokeballButtons;
         [Export] public BaseButton[] ItemButtons;
+        [Export] public BaseButton PokeballBackButton;
 
         [ExportCategory("Systems")]
         [Export] public BattleStateMachine StateMachine;
@@ -90,6 +91,7 @@ namespace Game.Gameplay
             if (PokemonBackButton != null) PokemonBackButton.Pressed += () => OnPokemonBackButtonPressed();
             if (BagMenuButton != null) BagMenuButton.Pressed += () => OnBagMenuButtonPressed();
             if (BagBackButton != null) BagBackButton.Pressed += () => OnBagBackButtonPressed();
+            if (PokeballBackButton != null) PokeballBackButton.Pressed += () => onPokeballBackButtonPressed();
             
             if (PokemonButtons!=null){
                 Logger.Info($"Connecting {PokemonButtons.Length} Party Slot Buttons");
@@ -111,9 +113,27 @@ namespace Game.Gameplay
             PlayerHPBar.Value = _playerPokemonHp;
             EnemyHPBar.MaxValue = _oppPokemon.BaseHp;
             EnemyHPBar.Value = _oppPokemonHp;
+            if (Bag.GetChild(0) is Button expBtn) expBtn.Pressed += () => OnItemButtonPressed();
+            if (Bag.GetChild(1) is Button pokeballBtn) pokeballBtn.Pressed += () => OnPokeballButtonPressed();
+            for (int i = 0; i < PokeballButtons.Length; i++)
+            {
+                var child = PokeballButtons[i];
+                if (child is Button btn)
+                {
+                    btn.Pressed += () =>
+                    {
+                        Logger.Info($"Pokeball button {btn.Name} pressed");
+                        // Parse the button name to get the Pokeball enum value
+                        if (Enum.TryParse<Game.Core.Pokeball>(btn.Name.ToString(), true, out var ballType))
+                        {
+                            OnSelectPokeballButtonPressedAsync(ballType);
+                        }
+                    };
+                }
+            }
 
             Logger.Info($"Player Pokemon Learnable Moves: {string.Join(", ", _playerPokemon.LearnableMoves)}");
-
+            
             if (MoveButtons != null)
             {
                 foreach (var btn in MoveButtons)
@@ -155,6 +175,10 @@ namespace Game.Gameplay
             {
                 Logger.Warning("SaveManager.Instance or CurrentSave is NULL in _Ready");
             }
+            // for (int i=0; i<PokemonButtons.Length; i++)
+            // {
+            //     PokemonButtons[i].Pressed += () => switchPokemon();
+            // }
         }
         private void OnPokemonBackButtonPressed()
         {
@@ -170,6 +194,7 @@ namespace Game.Gameplay
             if (Bag != null) Bag.Visible = false;
             if (BackButton != null) BackButton.Visible = true;
             if (BagBackButton != null) BagBackButton.Visible = false;
+
         }
 
         public void UpdateLog(string message)
@@ -177,9 +202,17 @@ namespace Game.Gameplay
             Logger.Info($"BATTLE LOG: {message}");
         }
 
-        public async void EndBattle()
+        public async void EndBattle(int type)
         {
-            await MessageManager.PlayText("The Opponent Pokemon has fainted! You won!");
+            switch (type)
+            {
+                case 1:
+                    await MessageManager.PlayText("The Opponent Pokemon has fainted! You won!");
+                    break;
+                case 2:
+                    await MessageManager.PlayText($"You caught the {_oppPokemon.Name}!");
+                    break;
+            }
             if (BattleManager.Instance != null)
             {
                 BattleManager.Instance.EndBattle();
@@ -210,7 +243,14 @@ namespace Game.Gameplay
             button4.Text = _playerPokemon.LearnableMoves[3];
             }
         }
-
+        private async void BattleLost (){
+            await MessageManager.PlayText("Your Pokemon has fainted! You lost!");
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.EndBattle();
+                QueueFree();
+            }
+        }
         private void OnBackButtonPressed()
         {
             if (CommandMenu != null) CommandMenu.Visible = true;
@@ -305,6 +345,9 @@ namespace Game.Gameplay
             }
 
             await ExecuteMoveAsync(_oppPokemon, _playerPokemon, bestMove, false);
+            if (_playerPokemonHp<=0){
+                BattleLost();
+            }
             
             if (StateMachine != null)
             {
@@ -323,6 +366,10 @@ namespace Game.Gameplay
                 
                 if (BackButton != null) BackButton.Visible = false;
                 if (BagBackButton != null) BagBackButton.Visible = true;
+                if (Bag.GetChild(0) is Button expBtn) { expBtn.Text = "Exp"; expBtn.Visible = true; }
+                if (Bag.GetChild(1) is Button pbBtn) { pbBtn.Text = "Pokeballs"; pbBtn.Visible = true; }
+                if (Bag.GetChild(2) is Button backBtn) { backBtn.Text = "Back"; backBtn.Visible = true; }
+                
                 
                 PopulateBagItems();
             }
@@ -335,25 +382,25 @@ namespace Game.Gameplay
 
             Logger.Info($"Populating Bag with {save.Pokeballs.Count} items");
             
-            for (int i = 0; i < BagButtons.Length; i++)
-            {
-                var btn = BagButtons[i];
-                if (btn == null) continue;
+            // for (int i = 0; i < BagButtons.Length; i++)
+            // {
+            //     var btn = BagButtons[i];
+            //     if (btn == null) continue;
 
-                if (i < save.Pokeballs.Count)
-                {
-                    var ball = save.Pokeballs[i];
-                    if (btn is Button b) b.Text = ball.ToString();
-                    btn.Visible = true;
-                    btn.Disabled = false;
-                }
-                else
-                {
-                    if (btn is Button b) b.Text = "---";
-                    btn.Visible = true; 
-                    btn.Disabled = true;
-                }
-            }
+            //     if (i < save.Pokeballs.Count)
+            //     {
+            //         var ball = save.Pokeballs[i];
+            //         if (btn is Button b) b.Text = ball.ToString();
+            //         btn.Visible = true;
+            //         btn.Disabled = false;
+            //     }
+            //     else
+            //     {
+            //         if (btn is Button b) b.Text = "---";
+            //         btn.Visible = true; 
+            //         btn.Disabled = true;
+            //     }
+            // }
         }
 
         private void OnPokemonMenuButtonPressed()
@@ -416,6 +463,115 @@ namespace Game.Gameplay
             PlayerHPBar.Value = _playerPokemonHp;
             PlayerNameLabel.Text = pokemon.Name;
         }
-    
+        private void OnPokeballButtonPressed(){
+            Logger.Info("OnPokeballButtonPressed called");
+            if (Pokeballs != null)
+            {
+                Pokeballs.Visible = true;
+                Bag.Visible = false;
+                PopulatePokeballItems();
+            }
+        }
+        private void OnItemButtonPressed(){
+            Logger.Info("OnItemButtonPressed (Exp) called");
+            if (Items != null)
+            {
+                Items.Visible = true;
+                Bag.Visible = false;
+            }
+        }
+        private void onPokeballBackButtonPressed(){
+            if (CommandMenu != null) CommandMenu.Visible = false;
+            if (MoveMenu != null) MoveMenu.Visible = false;
+            if (PartyMenu != null) PartyMenu.Visible = false;
+            if (Pokeballs != null) Pokeballs.Visible = false;
+            if (Items != null) Items.Visible = false;
+            if (Bag != null) Bag.Visible = true;
+            if (BagBackButton != null) BagBackButton.Visible = true;
+        }
+
+        private void PopulatePokeballItems()
+        {
+            var save = SaveManager.Instance?.CurrentSave;
+            if (save == null) return;
+
+            // Group balls by type for counting
+            var counts = new System.Collections.Generic.Dictionary<Game.Core.Pokeball, int>();
+            foreach (var ball in save.Pokeballs)
+            {
+                if (counts.ContainsKey(ball)) counts[ball]++;
+                else counts[ball] = 1;
+            }
+
+            // Define the order of Pokeballs to display (matching button indices)
+            Game.Core.Pokeball[] displayOrder = {
+                Game.Core.Pokeball.Normal,
+                Game.Core.Pokeball.Great,
+                Game.Core.Pokeball.Ultra,
+                Game.Core.Pokeball.Master
+            };
+
+            for (int i = 0; i < PokeballButtons.Length; i++)
+            {
+                if (PokeballButtons[i] is Button btn)
+                {
+                    if (i < displayOrder.Length)
+                    {
+                        var type = displayOrder[i];
+                        int count = counts.ContainsKey(type) ? counts[type] : 0;
+                        btn.Text = $"{type} (x{count})";
+                        btn.Disabled = count == 0;
+                        btn.Visible = true;
+                    }
+                    else
+                    {
+                        btn.Visible = false;
+                    }
+                }
+            }
+        }
+        private async Task<bool> AttemptCatch(Game.Core.Pokeball ball){
+            int chance = GD.RandRange(0, 255);
+            var ballResource = PokeBase.LoadPokeball(ball);
+            float catchMultiplier = ballResource != null ? ballResource.CatchRate : 1.0f;
+            int catchRate = (int)(((3f * _oppPokemon.BaseHp - 2f * _oppPokemonHp) * catchMultiplier) / (3f * _oppPokemon.BaseHp) * 255);
+            await Task.Delay(1000); // animation delay
+            return chance <= catchRate;
+        }
+        private async Task PokeballthrownAsync (Game.Core.Pokeball ball){
+            OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball}_closed.tres");
+            
+            await AttemptCatch(ball);
+            SaveManager.Instance.CurrentSave.Pokeballs.Remove(ball);
+            SaveManager.Instance.SaveToDisk();
+            if (await AttemptCatch(ball))
+            {
+                SavePokemonToParty((PokemonID)_oppPokemon.Id);
+                Logger.Info("Pokemon caught!");
+                EndBattle(2);
+                QueueFree();
+            }else{
+                OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball}_open.tres");
+                await Task.Delay(1000); // animation delay
+                OpponentSprite.Texture = _oppPokemon.FrontSprite;
+            }
+        }
+        private void SavePokemonToParty(PokemonID id)
+        {
+            var party = SaveManager.Instance.CurrentSave.PartyDetails;
+            if (party.Count < 6)
+            {
+                var newPokeData = new Godot.Collections.Dictionary {
+                    { "ID", (int)id },
+                    { "Level", 5 },
+                    { "CurrentHP", _oppPokemonHp } 
+                };
+                party[party.Count] = newPokeData;
+                SaveManager.Instance.SaveToDisk(); // Use your new X-key save logic!
+            }
+        }
+        private async Task OnSelectPokeballButtonPressedAsync(Game.Core.Pokeball ball){
+            await PokeballthrownAsync(ball);
+        }
     }
 }

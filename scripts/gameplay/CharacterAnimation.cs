@@ -30,6 +30,9 @@ namespace Game.Gameplay
 
 		public void PlayAnimation(string animationType)
 		{
+			if (CharacterInput == null) return;
+			if (CharacterMovement == null) return;
+			
 			ECharacterAnimationState previousAnimation = CurrentAnimationState;
 
 			if (CharacterMovement.IsMoving()) return;
