@@ -90,6 +90,9 @@ namespace Game.Gameplay.States
 						case "StoryNpc":
 							await ((StoryNpc)collider).PlayMessage(PlayerInput.Direction);
 							break;
+						case "JoyNpc":
+							await ((JoyNpc)collider).PlayMessage(PlayerInput.Direction);
+							break;
 						case "Pokeball":
 							await ((Pokeball)collider).OnInteractAsync();
 							break;

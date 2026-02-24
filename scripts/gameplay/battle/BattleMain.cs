@@ -74,8 +74,7 @@ namespace Game.Gameplay
                 PlayerID = BattleManager.Instance?.GetSavedPlayerPokemon() ?? PokemonID.bulbasaur;
             }
 
-            // Basic UI Setup
-            if (PlayerNameLabel != null) PlayerNameLabel.Text = PlayerID != PokemonID.none ? PlayerID.ToString() : "Player";
+            // Basic UI Setup (player name label updated after level loads below)
             if (OpponentNameLabel != null) OpponentNameLabel.Text = OpponentID != PokemonID.none ? OpponentID.ToString() : "Opponent";
 
             if (PlayerSprite != null) PlayerSprite.Setup(PlayerID);
@@ -108,7 +107,32 @@ namespace Game.Gameplay
             }
             _playerPokemon = PokeBase.LoadPokemon(PlayerID);
             _oppPokemon = PokeBase.LoadPokemon(OpponentID);
-            _playerPokemonHp = _playerPokemon.BaseHp;
+
+            // Load the active player pokemon's level from save data
+            var partyData = SaveManager.Instance?.CurrentSave?.PartyDetails;
+            if (partyData != null)
+            {
+                for (int i = 0; i < partyData.Count; i++)
+                {
+                    var entry = partyData[i].AsGodotDictionary();
+                    if (entry != null && entry.ContainsKey("ID") && (PokemonID)(int)entry["ID"] == PlayerID)
+                    {
+                        _playerPokemonLevel = entry.ContainsKey("Level") ? (int)entry["Level"] : 5;
+                        // Restore persisted HP; fall back to full HP if not saved yet
+                        if (entry.ContainsKey("CurrentHP"))
+                            _playerPokemonHp = (int)entry["CurrentHP"];
+                        break;
+                    }
+                }
+            }
+            if (_playerPokemonLevel <= 0) _playerPokemonLevel = 5;
+            _oppPokemonLevel = 5;
+
+            // Update name label now that level is known
+            if (PlayerNameLabel != null) PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";
+
+            // Use persisted HP if loaded above; otherwise start at full HP
+            if (_playerPokemonHp <= 0) _playerPokemonHp = _playerPokemon.BaseHp;
             _oppPokemonHp = _oppPokemon.BaseHp;
             PlayerHPBar.MaxValue = _playerPokemon.BaseHp;
             PlayerHPBar.Value = _playerPokemonHp;
@@ -209,11 +233,13 @@ namespace Game.Gameplay
             {
                 case 1:
                     await MessageManager.PlayText("The Opponent Pokemon has fainted! You won!");
+                    AwardExpToActivePokemon(_oppPokemon.BaseExperience);
                     break;
                 case 2:
                     await MessageManager.PlayText($"You caught the {_oppPokemon.Name}!");
                     break;
             }
+            SaveActivePokemonHp();
             if (BattleManager.Instance != null)
             {
                 BattleManager.Instance.EndBattle();
@@ -223,6 +249,7 @@ namespace Game.Gameplay
         public async void RunAway ()
         {
             await MessageManager.PlayText("You ran away!");
+            SaveActivePokemonHp();
             if (BattleManager.Instance != null)
             {
                 BattleManager.Instance.EndBattle();
@@ -246,6 +273,7 @@ namespace Game.Gameplay
         }
         private async void BattleLost (){
             await MessageManager.PlayText("Your Pokemon has fainted! You lost!");
+            SaveActivePokemonHp(); // saves HP as 0 so it's clearly fainted
             if (BattleManager.Instance != null)
             {
                 BattleManager.Instance.EndBattle();
@@ -294,7 +322,8 @@ namespace Game.Gameplay
             var move = PokeBase.LoadMove(moveName);
             if (move == null) return;
 
-            int damage = CalculateDamage(attacker, defender, move.Power, 1);
+            int attackerLevel = isPlayerAttacking ? _playerPokemonLevel : _oppPokemonLevel;
+            int damage = CalculateDamage(attacker, defender, move.Power, attackerLevel);
             
             if (isPlayerAttacking)
             {
@@ -434,7 +463,8 @@ namespace Game.Gameplay
                             {
                                 int idInt = (int)pokemonData["ID"];
                                 PokemonID id = (PokemonID)idInt;
-                                btn.Text = id.ToString();
+                                int lvl = pokemonData.ContainsKey("Level") ? (int)pokemonData["Level"] : 5;
+                                btn.Text = $"{id} (Lv.{lvl})";
                                 btn.Disabled = false;
                                 btn.Visible = true;
                                 Logger.Info($"Set button {buttonIdx} to {id}");
@@ -462,7 +492,7 @@ namespace Game.Gameplay
             PlayerSprite.Texture = pokemon.BackSprite;
             PlayerHPBar.MaxValue = pokemon.BaseHp;
             PlayerHPBar.Value = _playerPokemonHp;
-            PlayerNameLabel.Text = pokemon.Name;
+            PlayerNameLabel.Text = $"{pokemon.Name} Lv.{_playerPokemonLevel}";
         }
 
         private void OnPartyButtonPressed(int index)
@@ -490,6 +520,8 @@ namespace Game.Gameplay
             _playerPokemonHp = pokemonData.ContainsKey("CurrentHP")
                 ? (int)pokemonData["CurrentHP"]
                 : pokemon.BaseHp;
+
+            _playerPokemonLevel = pokemonData.ContainsKey("Level") ? (int)pokemonData["Level"] : 5;
 
             PlayerID = id;
             switchPokemon(pokemon);
@@ -606,6 +638,66 @@ namespace Game.Gameplay
         }
         private async Task OnSelectPokeballButtonPressedAsync(Game.Core.Pokeball ball){
             await PokeballthrownAsync(ball);
+        }
+
+        /// <summary>
+        /// Persists the active player Pokemon's current HP to the save data.
+        /// </summary>
+        private void SaveActivePokemonHp()
+        {
+            var party = SaveManager.Instance?.CurrentSave?.PartyDetails;
+            if (party == null) return;
+
+            for (int i = 0; i < party.Count; i++)
+            {
+                var entry = party[i].AsGodotDictionary();
+                if (entry == null || !entry.ContainsKey("ID")) continue;
+                if ((PokemonID)(int)entry["ID"] != PlayerID) continue;
+
+                entry["CurrentHP"] = _playerPokemonHp;
+                party[i] = entry;
+                SaveManager.Instance.SaveToDisk();
+                break;
+            }
+        }
+
+        /// <summary>
+        /// Awards EXP to the active player Pokemon after defeating an opponent.
+        /// Levels up the Pokemon if enough EXP has been accumulated (level * 10 per level).
+        /// </summary>
+        private async void AwardExpToActivePokemon(int baseExp)
+        {
+            var party = SaveManager.Instance?.CurrentSave?.PartyDetails;
+            if (party == null) return;
+
+            for (int i = 0; i < party.Count; i++)
+            {
+                var entry = party[i].AsGodotDictionary();
+                if (entry == null || !entry.ContainsKey("ID")) continue;
+                if ((PokemonID)(int)entry["ID"] != PlayerID) continue;
+
+                int currentLevel = entry.ContainsKey("Level") ? (int)entry["Level"] : 5;
+                int currentExp = entry.ContainsKey("Exp") ? (int)entry["Exp"] : 0;
+                int expGained = Math.Max(1, baseExp / 5);
+                currentExp += expGained;
+
+                int expThreshold = currentLevel * 10;
+                if (currentExp >= expThreshold && currentLevel < 100)
+                {
+                    currentLevel++;
+                    currentExp -= expThreshold;
+                    _playerPokemonLevel = currentLevel;
+                    if (PlayerNameLabel != null)
+                        PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";
+                    await MessageManager.PlayText($"{PlayerID} grew to Lv.{currentLevel}!");
+                }
+
+                entry["Level"] = currentLevel;
+                entry["Exp"] = currentExp;
+                party[i] = entry;
+                SaveManager.Instance.SaveToDisk();
+                break;
+            }
         }
     }
 }
