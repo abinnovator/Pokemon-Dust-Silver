@@ -1,53 +1,44 @@
 ![alt text](image.png)
-#🎮 Pokemon XY - Godot C# Edition
+# 🎮 Pokemon DustGrey - 100 Hour Alpha Edition
 
-A grid-based RPG engine inspired by Pokémon X/Y, built with Godot 4.3+ and C# (.NET 8). This project focuses on a modular architecture using State Machines and custom Loggers for a scalable development experience.
+A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.3+ and C# (.NET 8)**. This project represents a **100-hour development sprint**, moving from a blank engine to a functional "Vertical Slice" of the Kanto region.
 
-## Features
+## ✨ Major Milestone: The 100-Hour Ship
+This version marks the completion of the initial engine and the implementation of the first story arc.
+- **Time Logged:** 100 Hours exactly.
+- **Status:** Alpha v1.0 - Shipped.
 
-- Grid-Based Movement: Pixel-perfect tile movement with automated grid snapping.
-- Modular State Machine: A custom StateMachine node for managing entity behaviors (Player, NPCs, Battles).
-- Custom Logging System: A rich-text, color-coded Logger that tracks namespaces and calling methods for easier debugging.
-- Animation State Controller: Signal-driven animation system that handles transitions between walking, idling, and turning.
-- Tailwind-Inspired UI: Integrated color palette and design system ready for UI implementation.
+## 🚀 Features & New Content
 
-## 🗺️ Development Roadmap
+- **Modular Battle System:** A C# driven combat engine featuring level-scaling and move logic.
+- **Reactive Story NPCs:** Advanced NPC logic using an Event-State Machine for path-blocking and forced interceptions (e.g., Prof. Oak and Giovanni).
+- **Custom Pixel Art:** Includes hand-drawn sprites for Gym Leaders like Brock.
+- **Save/Load Persistence:** Integrated system to track badges and player progress.
 
-Phase 1: Core Engine 🟢
-[x] Custom C# Logger
+## 🗺️ World Map Progress
 
-[x] Grid-Based Movement
+- **Pallet Town:** Home base featuring Delia (Healer) and Prof. Oak (Starter/Blocker).
+- **Viridian City:** Featuring the high-stakes early encounter with Giovanni.
+- **Pewter City:** Fully mapped Gym with a functional Brock boss fight.
+- **Lavender Town:** Foundations and map layout implemented (Access restricted in Alpha).
+- **Route Connectivity:** 4 fully playable routes with active NPC interaction.
 
-[x] Signal-Based Animation
+## 🛠️ Updated Roadmap
 
-[x] Collision Detection logic
+### **Phase 1: Core Engine 🟢 (COMPLETE)**
+- [x] Custom C# Logger
+- [x] Grid-Based Movement & Snapping
+- [x] Signal-Based Animation System
 
-Phase 2: World & Interaction 🟡
-[x] Dialogue System
+### **Phase 2: World & Interaction 🟢 (COMPLETE)**
+- [x] Dialogue System & Save Manager
+- [x] Story-State NPC Logic (Path Blocking)
+- [x] Gym Leader Boss AI
 
-[x] NPC AI & Wandering
-
-## Installation
-
-1. Clone the repository:
-
-```
-git clone https://github.com/your-username/pokemon-xy-c.git
-```
-
-2. Open in Godot:
-
-- Ensure you have the Godot Engine - .NET Edition installed.
-- Import project.godot.
-
-3. Build the Solution:
-
-- Click the Hammer Icon in the top right of the Godot editor.
-- This generates the .sln and .csproj files for your IDE.
-
-4. Editor Setup:
-
-- Set Globals.cs as an Autoload in Project Settings.
+### **Phase 3: Expansion 🟡 (NEXT STEPS)**
+- [ ] Full Lavender Town scripts.
+- [ ] Inventory and Item usage.
+- [ ] Wild Encounter tables.
 
 ## 📂 Project Structure
 
@@ -67,3 +58,7 @@ assets/
 - [Engine](https://godotengine.org/)
 - Inspiration: Pokémon X/Y (Nintendo/GameFreak)
 - Tutorial Foundations: Inspired by The Nerdy Canuck's Pokémon Clone series.
+- Player and npc - https://www.deviantart.com/aveontrainer
+- Tileset = https://www.deviantart.com/flurmimon/gallery/75279275/pokemon-rhin-concept
+- Other assets - https://www.spriters-resource.com
+- Brok sprite - JoshR691
