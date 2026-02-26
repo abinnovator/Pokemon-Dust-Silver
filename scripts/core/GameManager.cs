@@ -42,6 +42,8 @@ namespace Game.Core
 			Instance.Player = player;
 			return Instance.Player;
 		}
+		public static bool IsPlayerMovementLocked { get; set; } = false;
+
 		public static Player GetPlayer()
 		{
 			return Instance.Player;

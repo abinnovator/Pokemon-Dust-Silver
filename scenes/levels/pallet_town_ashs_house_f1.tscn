@@ -47,7 +47,7 @@ TargetLevelTrigger = 1
 position = Vector2(48, 72)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_ml2pj")]
-position = Vector2(104, -72)
+position = Vector2(57, -28)
 
 [node name="Wall 3" type="StaticBody2D" parent="."]
 position = Vector2(176, 0)

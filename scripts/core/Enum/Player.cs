@@ -2,11 +2,26 @@ namespace Game.Core;
 
 public enum PlayerStoryState 
 {
-    NEW_GAME,        // Just started, hasn't reached the lab
-    MET_OAK,         // In the lab, currently choosing
-    HAS_STARTER,     // Chosen a Pokemon, ready for Route 1
-    DEFEATED_RIVAL,  // Completed first battle
-    PARCEL_DELIVERED // Finished the "delivery" quest
+    NEW_GAME,
+    MET_OAK,
+    HAS_STARTER,
+    DEFEATED_RIVAL,
+    PARCEL_DELIVERED,
+    // Gym Badges
+    HAS_BOULDER_BADGE,
+    HAS_CASCADE_BADGE,
+    HAS_THUNDER_BADGE,
+    HAS_RAINBOW_BADGE,
+    HAS_SOUL_BADGE,
+    HAS_MARSH_BADGE,
+    HAS_VOLCANO_BADGE,
+    HAS_EARTH_BADGE,
+    // Story milestones
+    CLEARED_MT_MOON,
+    CLEARED_SS_ANNE,
+    CLEARED_POKEMON_TOWER,
+    CLEARED_SILPH_CO,
+    CLEARED_VICTORY_ROAD,
 }
 
 public enum StarterChoice

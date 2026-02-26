@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://pvyq3gdweho"]
+[gd_scene load_steps=15 format=4 uid="uid://pvyq3gdweho"]
 
 [ext_resource type="Script" uid="uid://ckh1dxunmc7y3" path="res://scripts/gameplay/levels/PokemonLabLevel.cs" id="1_68rbe"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_jpmhg"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bsewtsvpwxbc5" path="res://scripts/gameplay/Pokeballs.cs" id="4_r5k76"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="6_4wgwr"]
 [ext_resource type="PackedScene" uid="uid://b61k6qbvycvqs" path="res://scenes/charecters/Oaknpc.tscn" id="7_fk5or"]
+[ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="7_yh85e"]
+[ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="8_2cg4k"]
 [ext_resource type="Resource" path="res://resources/oak_lab_config.tres" id="8_oakconfig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prj1g"]
@@ -17,6 +19,14 @@ size = Vector2(4.0000153, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5k76"]
 size = Vector2(8, 224)
+
+[sub_resource type="Resource" id="Resource_il7k2"]
+script = ExtResource("8_2cg4k")
+Messages = null
+PatrolPoints = null
+HasForcedInterception = true
+InterceptMessages = Array[String](["Hey Ash! Happy Birthday! Lets get you your starter Pokemon! Just approach one of the pokeballs and press space"])
+metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("OakNode")]
 script = ExtResource("1_68rbe")
@@ -102,7 +112,13 @@ position = Vector2(56, 32)
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("6_4wgwr")]
 position = Vector2(32, 112)
 
+[node name="NPC2" parent="." instance=ExtResource("7_yh85e")]
+position = Vector2(112, 48)
+NpcAppearance = 23
+InputConfig = SubResource("Resource_il7k2")
+
 [node name="NPC" parent="." node_paths=PackedStringArray("_animatedSprite2D") instance=ExtResource("7_fk5or")]
+visible = false
 position = Vector2(112, 48)
 NpcAppearance = 24
 InputConfig = ExtResource("8_oakconfig")

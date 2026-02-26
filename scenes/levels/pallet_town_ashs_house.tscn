@@ -24,6 +24,9 @@ script = ExtResource("6_vfvhy")
 Messages = Array[String](["Ash go to the lab fast!!!"])
 PatrolPoints = null
 EventTrigger = 2
+IsBlocker = true
+HasForcedInterception = true
+InterceptMessages = Array[String](["hey ash come quick you have to go to the lab to meet  Proffeser oak!"])
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]

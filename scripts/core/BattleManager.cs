@@ -21,6 +21,7 @@ namespace Game.Core
         // --- Battle Config (Passed to the local battle scene) ---
         public PokemonID opponentPokemonId;
         public PokemonID playerPokemonId;
+        public GymNpcInputConfig CurrentGymConfig { get; private set; }
 
         public override void _Ready()
         {
@@ -33,6 +34,27 @@ namespace Game.Core
             {
                 QueueFree();
             }
+        }
+
+        public void StartGymBattle(GymNpcInputConfig config)
+        {
+            if (SceneManager.isChanging) return;
+
+            Logger.Info($"StartGymBattle called for {config.LeaderName}");
+            SaveOverworldState();
+            CurrentGymConfig = config;
+
+            // Use the first Pokémon in the team as the initial opponent ID
+            opponentPokemonId = PokemonID.none;
+            foreach (var entry in config.TrainerTeam)
+            {
+                opponentPokemonId = entry.Key;
+                break;
+            }
+            playerPokemonId = GetSavedPlayerPokemon();
+
+            var battleScene = GD.Load<PackedScene>("res://scenes/core/trainer_battle_ui.tscn").Instantiate();
+            GetTree().Root.AddChild(battleScene);
         }
 
         public void StartBattle(StoryNpcInputConfig config)
@@ -80,6 +102,7 @@ namespace Game.Core
         public void EndBattle()
         {
             Logger.Info("EndBattle called, returning to overworld");
+            CurrentGymConfig = null;
             ReturnToOverworld();
         }
 

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://8ir6dan7b2ph"]
+
+[ext_resource type="Texture2D" uid="uid://cxkqis488at51" path="res://assets/characters/team_rainbow_rocket_sprites_for_pokemon_essentials_by_prodigal96_ddqnnmo.png" id="1_tgebd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3sd3"]
+atlas = ExtResource("1_tgebd")
+region = Rect2(0, 126, 30, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3sd3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

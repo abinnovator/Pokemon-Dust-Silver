@@ -164,6 +164,17 @@ namespace Game.Core{
 		Champion,
 		Delia
 	}
+	public enum GymLeaderAppearanceType{
+		Brock,
+		Misty,
+		LtSurge,
+		Erika,
+		Koga,
+		Sabrina,
+		Blaine,
+		Giovanni
+	}
+	
 	#endregion
 	#region Badges
 	public enum Badge

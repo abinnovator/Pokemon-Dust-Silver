@@ -342,6 +342,12 @@ TargetLevelName = 6
 position = Vector2(272, -256)
 TargetLevelName = 13
 
+[node name="SceneTrigger7" parent="SceneTriggers" instance=ExtResource("4_2f5rf")]
+position = Vector2(140, -579)
+scale = Vector2(3, 1)
+TargetLevelName = 16
+CurrentLevelTrigger = 3
+
 [node name="SceneTrigger6" parent="SceneTriggers" instance=ExtResource("4_2f5rf")]
 position = Vector2(280, 72)
 scale = Vector2(3, 1)

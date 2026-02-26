@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://data6msd74fv5"]
+
+[ext_resource type="PackedScene" uid="uid://djso2c744570x" path="res://scenes/levels/pallet_town.tscn" id="1_qu2ul"]
+[ext_resource type="PackedScene" uid="uid://ef45hbtodin8" path="res://scenes/levels/route1.tscn" id="2_uimdc"]
+[ext_resource type="PackedScene" uid="uid://ba86mi2ubb2rm" path="res://scenes/levels/route22.tscn" id="3_kase7"]
+[ext_resource type="PackedScene" uid="uid://3g2ds4xjc4c5" path="res://scenes/levels/virdian_city.tscn" id="4_cjvgp"]
+[ext_resource type="PackedScene" uid="uid://qqor6j7tqpiq" path="res://scenes/levels/route3.tscn" id="5_c8try"]
+[ext_resource type="PackedScene" uid="uid://daxtd577fm4ug" path="res://scenes/levels/cerulean_city.tscn" id="6_6c3xg"]
+[ext_resource type="PackedScene" uid="uid://lj4nhkfk7vg7" path="res://scenes/levels/pewter_city.tscn" id="7_mmh18"]
+[ext_resource type="PackedScene" uid="uid://dy5phx7d04ykv" path="res://scenes/levels/route2.tscn" id="8_fdi7v"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Pallet Town" parent="." instance=ExtResource("1_qu2ul")]
+
+[node name="Level" parent="." instance=ExtResource("2_uimdc")]
+position = Vector2(-72, -928)
+
+[node name="Level3" parent="." instance=ExtResource("3_kase7")]
+position = Vector2(-1520, -1512)
+
+[node name="Level2" parent="." instance=ExtResource("4_cjvgp")]
+position = Vector2(8, -1720)
+
+[node name="Level7" parent="." instance=ExtResource("5_c8try")]
+position = Vector2(480, -3408)
+
+[node name="Level6" parent="." instance=ExtResource("6_6c3xg")]
+position = Vector2(1488, -4280)
+
+[node name="Level5" parent="." instance=ExtResource("7_mmh18")]
+position = Vector2(-224, -3464)
+
+[node name="Level4" parent="." instance=ExtResource("8_fdi7v")]
+position = Vector2(-104, -2296)

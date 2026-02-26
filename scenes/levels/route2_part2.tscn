@@ -332,6 +332,11 @@ position = Vector2(-56, -728)
 
 [node name="SceneTriggers" type="Node2D" parent="."]
 
+[node name="SceneTrigger7" parent="SceneTriggers" instance=ExtResource("4_048v8")]
+position = Vector2(160, -560)
+TargetLevelName = 16
+CurrentLevelTrigger = 3
+
 [node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("4_048v8")]
 position = Vector2(281, -20)
 scale = Vector2(3, 1)
@@ -347,7 +352,3 @@ position = Vector2(136, 134)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("5_s1bqu")]
 position = Vector2(168, -174)
-
-[node name="SceneTrigger7" parent="." instance=ExtResource("4_048v8")]
-position = Vector2(160, -592)
-TargetLevelName = 16

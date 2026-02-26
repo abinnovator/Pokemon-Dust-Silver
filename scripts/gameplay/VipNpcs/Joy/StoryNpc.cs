@@ -123,7 +123,7 @@ public partial class JoyNpc : CharacterBody2D
 		_stateMachine.ChangeState("Message");
 
 		// Cast check before playing messages
-		if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
+		if (InputConfig is StoryNpcInputConfig config)
 		{
 			await MessageManager.PlayText(["Hey! My name is Nurse Joy.", "I heal your pokemon for you."]);	
 			await Task.Delay(100);

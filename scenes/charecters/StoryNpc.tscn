@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bka1yd3j2lqam"]
+[gd_scene load_steps=11 format=3 uid="uid://bka1yd3j2lqam"]
 
 [ext_resource type="Script" uid="uid://b1twteam45fh1" path="res://scripts/gameplay/StoryNpc.cs" id="1_qwxu4"]
 [ext_resource type="Script" uid="uid://d2gbb13vqqa7m" path="res://scripts/gameplay/StoryNpcInput.cs" id="2_qwxu4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://gmo2xmi834dp" path="res://scripts/utilities/StateMachine.cs" id="7_gcq7g"]
 [ext_resource type="Script" uid="uid://caow6viuphkvr" path="res://scripts/gameplay/states/StoryNpcRoamState.cs" id="7_qwxu4"]
 [ext_resource type="Script" uid="uid://dnqevjbmypb60" path="res://scripts/gameplay/states/StoryNpcMessageState.cs" id="8_hebln"]
+[ext_resource type="Script" path="res://scripts/gameplay/states/StoryNpcInterceptState.cs" id="9_intrc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msjke"]
 size = Vector2(16, 16)
@@ -51,5 +52,12 @@ StateMachine = NodePath("..")
 
 [node name="Message" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
 script = ExtResource("8_hebln")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="Intercept" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement", "StateOwner", "StateMachine")]
+script = ExtResource("9_intrc")
+NpcInput = NodePath("../../Input")
+CharacterMovement = NodePath("../../Movement")
 StateOwner = NodePath("../..")
 StateMachine = NodePath("..")

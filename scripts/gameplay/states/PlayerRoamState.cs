@@ -20,6 +20,7 @@ namespace Game.Gameplay.States
 			};
 		}
 		public override void _Process(double delta) {
+			if (GameManager.IsPlayerMovementLocked) return;
 			GetInputDirection();
 			GetInput(delta);
 			GetUseInput();
@@ -90,8 +91,12 @@ namespace Game.Gameplay.States
 						case "StoryNpc":
 							await ((StoryNpc)collider).PlayMessage(PlayerInput.Direction);
 							break;
+
 						case "JoyNpc":
 							await ((JoyNpc)collider).PlayMessage(PlayerInput.Direction);
+							break;
+						case "GymLeader":
+							((GymLeader)collider).StartBattle();
 							break;
 						case "Pokeball":
 							await ((Pokeball)collider).OnInteractAsync();

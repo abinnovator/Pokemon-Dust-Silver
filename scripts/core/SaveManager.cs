@@ -63,6 +63,10 @@ public partial class SaveManager : Node
                         playerInput.TargetPosition = Vector2.Zero; 
                     }
                     
+                    // Reset camera to prevent glitch after teleporting player
+                    var camera = player.GetNodeOrNull<Camera2D>("Camera2D");
+                    camera?.ResetSmoothing();
+                    
                     GD.Print($"Player restored to {CurrentSave.GlobalPosition} facing {CurrentSave.FacingDirection}");
                 }
             }), (uint)ConnectFlags.OneShot);

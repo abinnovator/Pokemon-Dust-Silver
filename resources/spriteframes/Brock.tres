@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://ii4g8jda4y6c"]
+
+[ext_resource type="Texture2D" uid="uid://dvmxgyfub3cm4" path="res://assets/characters/New Piskel.png" id="1_2uu4m"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2uu4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
