@@ -63,7 +63,8 @@ namespace Game.Core{
 		route22,
 		route_22_gate,
 		route_23,
-		victory_map
+		victory_map,
+		mount_moon,
 	}
 	public enum LevelGroups{
 		SPAWNPOINTS,

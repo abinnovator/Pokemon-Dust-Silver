@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://dvk4ux81k747h"]
+[gd_scene load_steps=5 format=4 uid="uid://dvk4ux81k747h"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_4t42p"]
 [ext_resource type="TileSet" uid="uid://hrbtldnhrb0e" path="res://resources/tilesets/mount_moon.tres" id="2_hs6la"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_iftf2"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_dhuqn"]
 
 [node name="Mount Moon" type="Node2D"]
@@ -38,10 +39,14 @@ tile_set = ExtResource("2_hs6la")
 [node name="SceneTriggers" type="Node2D" parent="."]
 position = Vector2(80, 96)
 
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_iftf2")]
+position = Vector2(208, 80)
+CurrentLevelTrigger = 1
+
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_dhuqn")]
-position = Vector2(-2, 0)
+position = Vector2(-41, -62)
 
 [node name="Signs" type="Node2D" parent="."]

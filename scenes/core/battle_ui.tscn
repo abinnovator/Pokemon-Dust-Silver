@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cgnawqrs4gkc7"]
+[gd_scene load_steps=26 format=4 uid="uid://cgnawqrs4gkc7"]
 
 [ext_resource type="Texture2D" uid="uid://b7whvj6qo10hi" path="res://assets/levels/woodland_wall_background_by_princess_phoenix_ddh7uzp.png" id="1_64gik"]
 [ext_resource type="Texture2D" uid="uid://cfo70ijls83xj" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Battle Effects - HP Bars & In-battle Menu (1).png" id="2_ve8l1"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="4_qhckv"]
 [ext_resource type="Script" uid="uid://bjko0kki6jq3a" path="res://scripts/gameplay/battle/PlayerPokemon.cs" id="7_pt2im"]
 [ext_resource type="Script" uid="uid://baw2y0jwto43u" path="res://scripts/gameplay/battle/OppPokemon.cs" id="9_l87i0"]
+[ext_resource type="AudioStream" uid="uid://bn5qypjhovx4n" path="res://assets/audio/firered_00A7.wav" id="14_3ouso"]
 [ext_resource type="Script" uid="uid://c7271a6o6k6hn" path="res://scripts/gameplay/battle/states/BattleEndState.cs" id="Script_BattleEnd"]
 [ext_resource type="Script" uid="uid://bbwcheh1kr6gs" path="res://scripts/gameplay/battle/BattleMain.cs" id="Script_BattleMain"]
 [ext_resource type="Script" uid="uid://d26urwlvh3tl0" path="res://scripts/gameplay/battle/BattleStateMachine.cs" id="Script_BattleSM"]
@@ -3879,3 +3880,6 @@ script = ExtResource("7_pt2im")
 position = Vector2(832, 289)
 scale = Vector2(3, 3)
 script = ExtResource("9_l87i0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_3ouso")

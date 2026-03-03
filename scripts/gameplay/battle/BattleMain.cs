@@ -56,8 +56,10 @@ namespace Game.Gameplay
 		public bool LastTurnWasPlayer { get; private set; }
 		private int _oppPokemonLevel;
 		private int _playerPokemonLevel;
+		private AudioStreamPlayer _audioStreamPlayer;
 		public override void _Ready()
 		{
+			 _audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 			Logger.Info("BattleMain initializing...");
 			
 			// Get data from Autoload
@@ -614,6 +616,7 @@ namespace Game.Gameplay
 			{
 				SavePokemonToParty((PokemonID)_oppPokemon.Id);
 				Logger.Info("Pokemon caught!");
+				_audioStreamPlayer.Play();
 				EndBattle(2);
 				QueueFree();
 			}else{

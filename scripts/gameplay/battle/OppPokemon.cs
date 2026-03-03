@@ -12,16 +12,25 @@ namespace Game.Gameplay
         public void Setup(PokemonID id)
         {
             string pokemonName = id.ToString().ToLower();
-            string path = $"{spriteFolderPath}{pokemonName}_front.png";
+            string path = $"{spriteFolderPath}{pokemonName}_front.png"; // or _back.png
             
-            if (FileAccess.FileExists(path))
+            // REMOVE FileAccess.FileExists(path). It doesn't play nice with .pck files.
+            try 
             {
-                Texture = GD.Load<Texture2D>(path);
-                Logger.Info($"Loaded opponent pokemon sprite: {path}");
+                var tex = GD.Load<Texture2D>(path);
+                if (tex != null)
+                {
+                    Texture = tex;
+                    Logger.Info($"Successfully loaded: {path}");
+                }
+                else 
+                {
+                    Logger.Warning($"GD.Load returned null for: {path}");
+                }
             }
-            else
+            catch (Exception e)
             {
-                Logger.Warning($"Could not find opponent pokemon sprite at: {path}");
+                Logger.Error($"Critical error loading sprite {path}: {e.Message}");
             }
         }
     }

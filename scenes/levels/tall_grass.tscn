@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://5jgdqs64hd23"]
+[gd_scene load_steps=8 format=3 uid="uid://5jgdqs64hd23"]
 
 [ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="1_0sej8"]
 [ext_resource type="Script" uid="uid://bwlmcfk02kd61" path="res://scripts/gameplay/levels/TallGrass.cs" id="1_6d3tt"]
+[ext_resource type="AudioStream" uid="uid://ci6pqad02h87" path="res://assets/audio/firered_00A1.wav" id="3_8hq6g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3tt"]
 size = Vector2(16, 16)
@@ -46,3 +47,7 @@ texture_filter = 1
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_4x72v")
 animation = &"up"
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8hq6g")
+volume_db = 1.908

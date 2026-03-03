@@ -12,8 +12,10 @@ public partial class TallGrass : Area2D
 	[Export]
 	public AnimatedSprite2D AnimatedSprite;
 	// Called when the node enters the scene tree for the first time.
+	private AudioStreamPlayer _audioStreamPlayer;
 	public override void _Ready()
 	{
+		 _audioStreamPlayer = GetNode<AudioStreamPlayer>("Audio");
 		AnimatedSprite ??= GetNode<AnimatedSprite2D>("AnimatedSprite2D");	
 		BodyEntered += onBodyEntered;
 		BodyExited += onBodyExited;
@@ -26,6 +28,7 @@ public partial class TallGrass : Area2D
 				break;
 		}
 		AnimatedSprite.Play("down");
+		_audioStreamPlayer.Play();
 	}
 	public void onBodyExited(Node2D node2d){
 		AnimatedSprite.Play("up");

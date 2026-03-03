@@ -58,8 +58,3 @@ text = "Start New Game"
 [node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Continue"
-
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Settings
-"
