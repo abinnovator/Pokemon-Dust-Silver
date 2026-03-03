@@ -55,6 +55,11 @@ assets/
 
 ## Demo gameplay
 
+**Controls**
+- Movement: WASD keys or arrow keys
+- Save game -Press  x to savhe the game
+- Doing battles and quing messages - space(stuff like npcs, signs,more to come).
+
 Steps to Play
  - Go to the first floor of the house and talk to mom.
  - navigate to0 the pokemon lab and meet proffeser oak to get your first pokemon.
