@@ -43,6 +43,18 @@ tile_set = ExtResource("2_ly3qh")
 [node name="Sign" parent="Signs" instance=ExtResource("3_5qodh")]
 position = Vector2(304, 512)
 
+[node name="SceneTrigger5" parent="." instance=ExtResource("4_tldbw")]
+position = Vector2(248, 592)
+scale = Vector2(4, 1)
+TargetLevelName = 31
+CurrentLevelTrigger = 1
+
+[node name="SceneTrigger6" parent="." instance=ExtResource("4_tldbw")]
+position = Vector2(472, 592)
+scale = Vector2(4, 1)
+TargetLevelName = 31
+CurrentLevelTrigger = 2
+
 [node name="SceneTrigger4" parent="." instance=ExtResource("4_tldbw")]
 position = Vector2(-4, 328)
 scale = Vector2(6, 2)

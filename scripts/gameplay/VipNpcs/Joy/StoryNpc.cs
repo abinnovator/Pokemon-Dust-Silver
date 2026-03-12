@@ -119,7 +119,7 @@ public partial class JoyNpc : CharacterBody2D
 			_npcInput.EmitSignal(CharecterInput.SignalName.Turn);
 		}
 		GD.Print("NPC: Attempting to play message...");
-
+		
 		_stateMachine.ChangeState("Message");
 
 		// Cast check before playing messages

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://data6msd74fv5"]
+[gd_scene load_steps=15 format=3 uid="uid://data6msd74fv5"]
 
 [ext_resource type="PackedScene" uid="uid://djso2c744570x" path="res://scenes/levels/pallet_town.tscn" id="1_qu2ul"]
 [ext_resource type="PackedScene" uid="uid://ef45hbtodin8" path="res://scenes/levels/route1.tscn" id="2_uimdc"]
@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://daxtd577fm4ug" path="res://scenes/levels/cerulean_city.tscn" id="6_6c3xg"]
 [ext_resource type="PackedScene" uid="uid://lj4nhkfk7vg7" path="res://scenes/levels/pewter_city.tscn" id="7_mmh18"]
 [ext_resource type="PackedScene" uid="uid://dy5phx7d04ykv" path="res://scenes/levels/route2.tscn" id="8_fdi7v"]
+[ext_resource type="PackedScene" uid="uid://dp7fnvryq8fhi" path="res://scenes/levels/route4.tscn" id="8_uimdc"]
+[ext_resource type="PackedScene" uid="uid://dvk4ux81k747h" path="res://scenes/levels/mount_moon.tscn" id="9_kase7"]
+[ext_resource type="PackedScene" uid="uid://k5nx08ud3d31" path="res://scenes/levels/route5.tscn" id="10_cjvgp"]
+[ext_resource type="PackedScene" uid="uid://ppds4n6l2n0m" path="res://scenes/levels/route24.tscn" id="12_c8try"]
+[ext_resource type="PackedScene" uid="uid://cj7micgnk1yef" path="res://scenes/levels/route25.tscn" id="13_mmh18"]
+[ext_resource type="PackedScene" uid="uid://d11lat4u7l5d1" path="res://scenes/levels/route9.tscn" id="14_fdi7v"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -26,11 +32,29 @@ position = Vector2(8, -1720)
 [node name="Level7" parent="." instance=ExtResource("5_c8try")]
 position = Vector2(480, -3408)
 
-[node name="Level6" parent="." instance=ExtResource("6_6c3xg")]
-position = Vector2(1488, -4280)
+[node name="Level8" parent="." instance=ExtResource("6_6c3xg")]
+position = Vector2(3160, -3904)
+
+[node name="Level4" parent="." instance=ExtResource("8_fdi7v")]
+position = Vector2(-104, -2296)
+
+[node name="Level6" parent="." instance=ExtResource("8_uimdc")]
+position = Vector2(344, -3408)
+
+[node name="Level10" parent="." instance=ExtResource("10_cjvgp")]
+position = Vector2(3160, -3264)
 
 [node name="Level5" parent="." instance=ExtResource("7_mmh18")]
 position = Vector2(-224, -3464)
 
-[node name="Level4" parent="." instance=ExtResource("8_fdi7v")]
-position = Vector2(-104, -2296)
+[node name="Mount Moon" parent="." instance=ExtResource("9_kase7")]
+position = Vector2(1760, -4440)
+
+[node name="Level9" parent="." instance=ExtResource("12_c8try")]
+position = Vector2(3320, -4880)
+
+[node name="Level11" parent="." instance=ExtResource("13_mmh18")]
+position = Vector2(2656, -4432)
+
+[node name="Level" parent="Level11" instance=ExtResource("14_fdi7v")]
+position = Vector2(232, 656)

@@ -44,15 +44,26 @@ position = Vector2(88, 232)
 
 [node name="SceneTriggers" type="Node2D" parent="."]
 
-[node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
 position = Vector2(264, 560)
 scale = Vector2(5, 1)
-TargetLevelName = 15
+TargetLevelName = 12
 TargetLevelTrigger = 3
+
+[node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
+position = Vector2(602, 219)
+scale = Vector2(1, 4)
+TargetLevelName = 22
+CurrentLevelTrigger = 10
 
 [node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
 position = Vector2(432, 192)
 TargetLevelName = 17
+
+[node name="SceneTrigger8" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
+position = Vector2(224, 304)
+TargetLevelName = 18
+CurrentLevelTrigger = 5
 
 [node name="SceneTrigger6" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
 position = Vector2(224, 144)

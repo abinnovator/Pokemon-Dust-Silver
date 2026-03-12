@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://eem12pqtyb2s" path="res://scenes/levels/sign.tscn" id="6_eefww"]
 
 [node name="Level" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_lli62")
 LevelName = 22
 encounterRate = 2
