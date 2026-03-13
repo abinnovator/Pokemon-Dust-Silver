@@ -1,0 +1,205 @@
+[gd_scene load_steps=12 format=3 uid="uid://dp8tgka14lb4q"]
+
+[ext_resource type="Texture2D" uid="uid://x0fr76jx2k30" path="res://assets/ui/Pokemon Party/party_background.png" id="1_2brxe"]
+[ext_resource type="Script" uid="uid://de1at2ouxfgn0" path="res://scripts/ui/PokemonPartyScreen.cs" id="1_otnpw"]
+[ext_resource type="Texture2D" uid="uid://cn65hsbrrx7uw" path="res://assets/ui/Pokemon Party/main_pokemon_background.png" id="2_k15ds"]
+[ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="3_275ky"]
+[ext_resource type="Texture2D" uid="uid://dshp2iupqskrt" path="res://assets/ui/Pokemon Party/standby_pokemon_background.png" id="3_k6hi1"]
+[ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="4_275ky"]
+[ext_resource type="Texture2D" uid="uid://skvcu4o2y4hr" path="res://assets/pokemon/charmander_menu_icon.png" id="4_s5jai"]
+[ext_resource type="FontFile" uid="uid://dc0mwqixt1bsq" path="res://assets/ui/pkmnfl.ttf" id="5_u51f5"]
+[ext_resource type="Texture2D" uid="uid://b86ovldcqeqsp" path="res://assets/pokemon/abra_menu_icon.png" id="7_ul0cq"]
+[ext_resource type="Texture2D" uid="uid://c2r4sqf3hwkhq" path="res://assets/pokemon/aerodactyl_menu_icon.png" id="8_otnpw"]
+[ext_resource type="Texture2D" uid="uid://byl7538w3820w" path="res://assets/pokemon/arbok_menu_icon.png" id="9_2jlkp"]
+
+[node name="PokemonPartyScreen" type="Node2D" node_paths=PackedStringArray("Pokemon1Label", "Pokemon1Level", "Pokemon1HpBar", "Pokemon1Sprite", "Pokemon2HpBar", "Pokemon2Sprite", "Pokemon3HpBar", "Pokemon3Sprite", "Pokemon4HpBar", "Pokemon4Sprite", "Pokemon5HpBar", "Pokemon5Sprite", "Pokemon6HpBar", "Pokemon6Sprite")]
+script = ExtResource("1_otnpw")
+Pokemon1Label = NodePath("Slot1/name")
+Pokemon1Level = NodePath("Slot1/Level")
+Pokemon1HpBar = NodePath("Slot1/TextureProgressBar")
+Pokemon1Sprite = NodePath("Slot1/Sprite2D")
+Pokemon2HpBar = NodePath("Slot2/TextureProgressBar2")
+Pokemon2Sprite = NodePath("Slot2/Sprite2D")
+Pokemon3HpBar = NodePath("Slot3/TextureProgressBar3")
+Pokemon3Sprite = NodePath("Slot3/Sprite2D2")
+Pokemon4HpBar = NodePath("Slot4/TextureProgressBar4")
+Pokemon4Sprite = NodePath("Slot4/Sprite2D3")
+Pokemon5HpBar = NodePath("Slot5/TextureProgressBar5")
+Pokemon5Sprite = NodePath("Slot5/Sprite2D")
+Pokemon6HpBar = NodePath("Slot6/TextureProgressBar6")
+Pokemon6Sprite = NodePath("Slot6/Sprite2D2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_2brxe")
+
+[node name="Slot1" type="Node2D" parent="."]
+
+[node name="Backgroun" type="Sprite2D" parent="Slot1"]
+position = Vector2(216, 180)
+scale = Vector2(4.7619047, 4.3508773)
+texture = ExtResource("2_k15ds")
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 57)
+
+[node name="Pokeicon" type="Sprite2D" parent="Slot1"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot1"]
+offset_left = 159.0
+offset_top = 239.0
+offset_right = 207.0
+offset_bottom = 242.0
+scale = Vector2(4.755, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot1"]
+position = Vector2(88, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("4_s5jai")
+
+[node name="Level" type="RichTextLabel" parent="Slot1"]
+offset_left = 240.0
+offset_top = 184.0
+offset_right = 280.0
+offset_bottom = 224.0
+theme_override_fonts/normal_font = ExtResource("5_u51f5")
+theme_override_font_sizes/normal_font_size = 50
+text = "4
+"
+
+[node name="name" type="RichTextLabel" parent="Slot1"]
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 352.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("5_u51f5")
+theme_override_font_sizes/normal_font_size = 40
+text = "Charmander"
+
+[node name="Slot2" type="Node2D" parent="."]
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Slot2"]
+position = Vector2(784, 80)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("3_k6hi1")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Slot2"]
+offset_left = 886.00006
+offset_top = 69.99999
+offset_right = 935.2114
+offset_bottom = 72.99999
+scale = Vector2(4.855, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot2"]
+position = Vector2(480, 40)
+scale = Vector2(1.6428574, 1.6071428)
+texture = ExtResource("7_ul0cq")
+
+[node name="Slot3" type="Node2D" parent="."]
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Slot3"]
+position = Vector2(784.00006, 176)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("3_k6hi1")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="Slot3"]
+offset_left = 887.00006
+offset_top = 166.0
+offset_right = 936.2114
+offset_bottom = 169.0
+scale = Vector2(4.855, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Slot3"]
+position = Vector2(480, 136)
+scale = Vector2(1.6428574, 1.6071428)
+texture = ExtResource("8_otnpw")
+
+[node name="Slot4" type="Node2D" parent="."]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Slot4"]
+position = Vector2(784, 244)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("3_k6hi1")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="Slot4"]
+offset_left = 886.0
+offset_top = 234.00002
+offset_right = 935.21136
+offset_bottom = 237.00002
+scale = Vector2(4.855, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Slot4"]
+position = Vector2(480, 203.00002)
+scale = Vector2(1.6428574, 1.6071428)
+texture = ExtResource("9_2jlkp")
+
+[node name="Slot5" type="Node2D" parent="."]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Slot5"]
+position = Vector2(784.00006, 347.00003)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("3_k6hi1")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar5" type="TextureProgressBar" parent="Slot5"]
+offset_left = 886.00006
+offset_top = 337.0
+offset_right = 935.2114
+offset_bottom = 340.0
+scale = Vector2(4.855, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot5"]
+position = Vector2(481, 305)
+scale = Vector2(1.643, 1.607)
+texture = ExtResource("7_ul0cq")
+
+[node name="Slot6" type="Node2D" parent="."]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Slot6"]
+position = Vector2(784, 443.00003)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("3_k6hi1")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar6" type="TextureProgressBar" parent="Slot6"]
+offset_left = 886.00006
+offset_top = 433.0
+offset_right = 935.2114
+offset_bottom = 436.0
+scale = Vector2(4.855, 4.1)
+value = 100.0
+texture_progress = ExtResource("3_275ky")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Slot6"]
+position = Vector2(480, 403)
+scale = Vector2(1.643, 1.607)
+texture = ExtResource("7_ul0cq")
+
+[node name="ExitBackgroundButton" type="Sprite2D" parent="."]
+position = Vector2(1009.5625, 580.1458)
+scale = Vector2(4.979166, 4.71402)
+texture = ExtResource("4_275ky")
+region_enabled = true
+region_rect = Rect2(0, 0, 54, 22)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bcx3q45fm60n0"]
+[gd_scene load_steps=42 format=3 uid="uid://bcx3q45fm60n0"]
 
 [ext_resource type="Script" uid="uid://cuscl4fx0ln6f" path="res://scripts/gameplay/PlayerInput.cs" id="1_kr223"]
 [ext_resource type="Script" uid="uid://dfvpjxa7mquh8" path="res://scripts/gameplay/Player.cs" id="1_oyoi4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ik46a47bkjg6" path="res://scripts/gameplay/CharacterCollisionRaycast.cs" id="6_c3dia"]
 [ext_resource type="Script" uid="uid://b2ml77617bnxk" path="res://scripts/gameplay/states/PlayerRoamState.cs" id="6_you3v"]
 [ext_resource type="Script" uid="uid://csw4elxgg2e56" path="res://scripts/gameplay/states/PlayerMessageState.cs" id="9_bypac"]
+[ext_resource type="Script" uid="uid://cy636f2tiguf8" path="res://scripts/gameplay/states/PlayerMenuState.cs" id="11_bjy73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
 size = Vector2(16, 16)
@@ -328,3 +329,6 @@ StateMachine = NodePath("..")
 script = ExtResource("9_bypac")
 StateOwner = NodePath("../..")
 StateMachine = NodePath("..")
+
+[node name="Menu" type="Node" parent="StateMachine"]
+script = ExtResource("11_bjy73")

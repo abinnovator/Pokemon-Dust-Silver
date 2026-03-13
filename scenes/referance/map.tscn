@@ -1,19 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://data6msd74fv5"]
+[gd_scene load_steps=20 format=3 uid="uid://data6msd74fv5"]
 
 [ext_resource type="PackedScene" uid="uid://djso2c744570x" path="res://scenes/levels/pallet_town.tscn" id="1_qu2ul"]
 [ext_resource type="PackedScene" uid="uid://ef45hbtodin8" path="res://scenes/levels/route1.tscn" id="2_uimdc"]
 [ext_resource type="PackedScene" uid="uid://ba86mi2ubb2rm" path="res://scenes/levels/route22.tscn" id="3_kase7"]
 [ext_resource type="PackedScene" uid="uid://3g2ds4xjc4c5" path="res://scenes/levels/virdian_city.tscn" id="4_cjvgp"]
 [ext_resource type="PackedScene" uid="uid://qqor6j7tqpiq" path="res://scenes/levels/route3.tscn" id="5_c8try"]
+[ext_resource type="PackedScene" uid="uid://cn2rbl2tgt17g" path="res://scenes/levels/saffroncity.tscn" id="5_unuon"]
 [ext_resource type="PackedScene" uid="uid://daxtd577fm4ug" path="res://scenes/levels/cerulean_city.tscn" id="6_6c3xg"]
 [ext_resource type="PackedScene" uid="uid://lj4nhkfk7vg7" path="res://scenes/levels/pewter_city.tscn" id="7_mmh18"]
 [ext_resource type="PackedScene" uid="uid://dy5phx7d04ykv" path="res://scenes/levels/route2.tscn" id="8_fdi7v"]
 [ext_resource type="PackedScene" uid="uid://dp7fnvryq8fhi" path="res://scenes/levels/route4.tscn" id="8_uimdc"]
 [ext_resource type="PackedScene" uid="uid://dvk4ux81k747h" path="res://scenes/levels/mount_moon.tscn" id="9_kase7"]
 [ext_resource type="PackedScene" uid="uid://k5nx08ud3d31" path="res://scenes/levels/route5.tscn" id="10_cjvgp"]
+[ext_resource type="PackedScene" uid="uid://bsgqexr1oe3by" path="res://scenes/levels/route_7.tscn" id="10_jpopv"]
 [ext_resource type="PackedScene" uid="uid://ppds4n6l2n0m" path="res://scenes/levels/route24.tscn" id="12_c8try"]
+[ext_resource type="PackedScene" uid="uid://d24gfnnx2mduc" path="res://scenes/levels/route8.tscn" id="13_d2gbn"]
 [ext_resource type="PackedScene" uid="uid://cj7micgnk1yef" path="res://scenes/levels/route25.tscn" id="13_mmh18"]
 [ext_resource type="PackedScene" uid="uid://d11lat4u7l5d1" path="res://scenes/levels/route9.tscn" id="14_fdi7v"]
+[ext_resource type="PackedScene" uid="uid://dcc06a7coo1nc" path="res://scenes/levels/route10.tscn" id="15_u0nhh"]
+[ext_resource type="PackedScene" uid="uid://iulrh3p8ccje" path="res://scenes/levels/lavender_town.tscn" id="16_d2gbn"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -29,6 +34,9 @@ position = Vector2(-1520, -1512)
 [node name="Level2" parent="." instance=ExtResource("4_cjvgp")]
 position = Vector2(8, -1720)
 
+[node name="Level15" parent="." instance=ExtResource("5_unuon")]
+position = Vector2(3000, -2712)
+
 [node name="Level7" parent="." instance=ExtResource("5_c8try")]
 position = Vector2(480, -3408)
 
@@ -40,6 +48,9 @@ position = Vector2(-104, -2296)
 
 [node name="Level6" parent="." instance=ExtResource("8_uimdc")]
 position = Vector2(344, -3408)
+
+[node name="Route 7" parent="." instance=ExtResource("10_jpopv")]
+position = Vector2(2776, -2440)
 
 [node name="Level10" parent="." instance=ExtResource("10_cjvgp")]
 position = Vector2(3160, -3264)
@@ -53,8 +64,17 @@ position = Vector2(1760, -4440)
 [node name="Level9" parent="." instance=ExtResource("12_c8try")]
 position = Vector2(3320, -4880)
 
+[node name="Level14" parent="." instance=ExtResource("13_d2gbn")]
+position = Vector2(2944, -2448)
+
+[node name="Level13" parent="." instance=ExtResource("14_fdi7v")]
+position = Vector2(2888, -3776)
+
 [node name="Level11" parent="." instance=ExtResource("13_mmh18")]
 position = Vector2(2656, -4432)
 
-[node name="Level" parent="Level11" instance=ExtResource("14_fdi7v")]
-position = Vector2(232, 656)
+[node name="Level12" parent="." instance=ExtResource("15_u0nhh")]
+position = Vector2(4184, -3728)
+
+[node name="Pallet Town2" parent="." instance=ExtResource("16_d2gbn")]
+position = Vector2(5224, -2496)
