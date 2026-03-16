@@ -41,11 +41,14 @@ func _unhandled_input(event):
 				if select_arrow:
 					select_arrow.position.y = 8 + (selected_option % 6) * 14
 			elif event.is_action("z") and event.pressed:
-				if party_screen == null:
-					party_screen = load("res://scenes/ui/PokemonPartyScreen.tscn").instantiate()
-					add_child(party_screen)
-				screen_loaded = ScreenLoaded.PARTY_SCREEN
-				get_viewport().set_input_as_handled()
+				if selected_option == 0:
+					if party_screen == null:
+						party_screen = load("res://scenes/ui/PokemonPartyScreen.tscn").instantiate()
+						add_child(party_screen)
+					screen_loaded = ScreenLoaded.PARTY_SCREEN
+					get_viewport().set_input_as_handled()
+				elif selected_option == 2:
+					SaveManager.QuitGame();
 
 		ScreenLoaded.PARTY_SCREEN:
 			if event.is_action("c") and event.pressed:
