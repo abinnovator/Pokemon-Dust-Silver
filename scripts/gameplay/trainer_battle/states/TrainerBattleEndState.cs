@@ -23,17 +23,37 @@ namespace Game.Gameplay
                 var battle = _battleSM.Battle;
                 battle.UpdateLog("The battle has ended!");
 
-                // Player won (opponent fainted) and this is a gym leader battle
-                if (battle.PlayerHP > 0 && battle.IsGymLeader)
+                // Player won (opponent fainted)
+                if (battle.PlayerHP > 0)
                 {
                     var save = SaveManager.Instance?.CurrentSave;
-                    if (save != null && !save.Badges.Contains(battle.GymBadge))
+                    
+                    // Handle gym leader battles
+                    if (battle.IsGymLeader)
                     {
-                        save.Badges.Add(battle.GymBadge);
-                        SaveManager.Instance.SaveToDisk();
-                    }
+                        if (save != null && !save.Badges.Contains(battle.GymBadge))
+                        {
+                            save.Badges.Add(battle.GymBadge);
+                            SaveManager.Instance.SaveToDisk();
+                        }
 
-                    await battle.PlayVictoryDialogueAsync();
+                        await battle.PlayVictoryDialogueAsync();
+                    }
+                    // Handle regular trainer battles
+                    else if (Game.Core.BattleManager.Instance?.CurrentBattleConfig != null)
+                    {
+                        var config = Game.Core.BattleManager.Instance.CurrentBattleConfig;
+                        
+                        // Mark trainer as defeated if they have a TrainerID
+                        if (save != null && !string.IsNullOrEmpty(config.TrainerID))
+                        {
+                            if (!save.DefeatedTrainers.Contains(config.TrainerID))
+                            {
+                                save.DefeatedTrainers.Add(config.TrainerID);
+                                SaveManager.Instance.SaveToDisk();
+                            }
+                        }
+                    }
                 }
                 
                 await Task.Delay(2000);

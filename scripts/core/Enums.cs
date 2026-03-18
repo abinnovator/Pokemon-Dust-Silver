@@ -157,6 +157,7 @@ namespace Game.Core{
 		BattleGirl,
 		AceTrainer,   // Professional look
 		HexManiac,    // Ghost/Psychic vibe
+		Jackson, // Viridian city: evee
 
 		// --- Story-Specific ---
 		Rival,

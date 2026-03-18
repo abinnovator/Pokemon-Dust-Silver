@@ -132,6 +132,28 @@ namespace Game.Gameplay
 				}
 				Logger.Info($"Loaded {EnemyParty.Count} Pokémon from gym config for {gymConfig.LeaderName}");
 			}
+			// Handle regular trainer battle (single Pokemon)
+			else
+			{
+				var trainerConfig = BattleManager.Instance?.CurrentBattleConfig;
+				if (trainerConfig != null && trainerConfig.HasBattle)
+				{
+					IsGymLeader = false;
+					EnemyParty = new Godot.Collections.Array<PokemonResource>();
+					var pokemon = PokeBase.LoadPokemon(trainerConfig.PokemonID);
+					if (pokemon != null)
+					{
+						EnemyParty.Add(pokemon);
+						Logger.Info($"Loaded trainer battle with {trainerConfig.PokemonID}");
+					}
+					
+					// Set opponent level from config
+					if (trainerConfig.PokemonLevel > 0)
+					{
+						_oppPokemonLevel = trainerConfig.PokemonLevel;
+					}
+				}
+			}
 
 			// Load the active player pokemon's level from save data
 			var partyData = SaveManager.Instance?.CurrentSave?.PartyDetails;
@@ -151,7 +173,8 @@ namespace Game.Gameplay
 				}
 			}
 			if (_playerPokemonLevel <= 0) _playerPokemonLevel = 5;
-			_oppPokemonLevel = 5;
+			// Only set default opponent level if not already set from config
+			if (_oppPokemonLevel <= 0) _oppPokemonLevel = 5;
 
 			// Update name label now that level is known
 			if (PlayerNameLabel != null) PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";

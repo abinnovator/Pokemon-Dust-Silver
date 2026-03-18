@@ -33,4 +33,7 @@ public partial class PlayerSaveResource : Resource
 
     [Export] public Array<PlayerStoryState> CompletedStoryProgress = new Array<PlayerStoryState>();
     [Export] public Array<Game.Core.Pokeball> Pokeballs = new();
+    
+    // Track defeated trainers to prevent re-battling
+    [Export] public Array<string> DefeatedTrainers = new Array<string>();
 }

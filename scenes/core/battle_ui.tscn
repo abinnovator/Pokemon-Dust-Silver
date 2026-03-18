@@ -1,12 +1,19 @@
-[gd_scene load_steps=26 format=4 uid="uid://cgnawqrs4gkc7"]
+[gd_scene load_steps=34 format=4 uid="uid://cgnawqrs4gkc7"]
 
 [ext_resource type="Texture2D" uid="uid://b7whvj6qo10hi" path="res://assets/levels/woodland_wall_background_by_princess_phoenix_ddh7uzp.png" id="1_64gik"]
 [ext_resource type="Texture2D" uid="uid://cfo70ijls83xj" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Battle Effects - HP Bars & In-battle Menu (1).png" id="2_ve8l1"]
 [ext_resource type="Texture2D" uid="uid://bpwpobh5ygtp8" path="res://assets/levels/board__brilliant_pearl_diamond_battle_interface_by_eurons_desqgls-fullview.jpg" id="3_qhckv"]
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="4_qhckv"]
 [ext_resource type="Script" uid="uid://bjko0kki6jq3a" path="res://scripts/gameplay/battle/PlayerPokemon.cs" id="7_pt2im"]
+[ext_resource type="Texture2D" uid="uid://x0fr76jx2k30" path="res://assets/ui/Pokemon Party/party_background.png" id="9_2v2ye"]
 [ext_resource type="Script" uid="uid://baw2y0jwto43u" path="res://scripts/gameplay/battle/OppPokemon.cs" id="9_l87i0"]
+[ext_resource type="Texture2D" uid="uid://cn65hsbrrx7uw" path="res://assets/ui/Pokemon Party/main_pokemon_background.png" id="10_g7inr"]
+[ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="11_u74jg"]
+[ext_resource type="FontFile" uid="uid://dc0mwqixt1bsq" path="res://assets/ui/pkmnfl.ttf" id="12_podox"]
+[ext_resource type="Texture2D" uid="uid://dshp2iupqskrt" path="res://assets/ui/Pokemon Party/standby_pokemon_background.png" id="13_x5dh5"]
 [ext_resource type="AudioStream" uid="uid://bn5qypjhovx4n" path="res://assets/audio/firered_00A7.wav" id="14_3ouso"]
+[ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="14_u74jg"]
+[ext_resource type="Script" uid="uid://bjqd2mt8rnx3x" path="res://scenes/ui/ExitBackgroundButton.cs" id="15_podox"]
 [ext_resource type="Script" uid="uid://c7271a6o6k6hn" path="res://scripts/gameplay/battle/states/BattleEndState.cs" id="Script_BattleEnd"]
 [ext_resource type="Script" uid="uid://bbwcheh1kr6gs" path="res://scripts/gameplay/battle/BattleMain.cs" id="Script_BattleMain"]
 [ext_resource type="Script" uid="uid://d26urwlvh3tl0" path="res://scripts/gameplay/battle/BattleStateMachine.cs" id="Script_BattleSM"]
@@ -3462,7 +3469,11 @@ region = Rect2(350, 344, 185, 10)
 atlas = ExtResource("3_qhckv")
 region = Rect2(349, 358, 186, 11)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5dh5"]
+atlas = ExtResource("14_u74jg")
+region = Rect2(0, 0, 54, 24)
+
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "PokeBackButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "PokeButtons", "StateMachine", "PlayerSprite", "OpponentSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("Script_BattleMain")
@@ -3480,6 +3491,7 @@ RunButton = NodePath("Ui/Controls/Run")
 BackButton = NodePath("Ui/MoveMenu/Back")
 PokemonBackButton = NodePath("Ui/PartyMenu/Back")
 PokemonMenuButton = NodePath("Ui/Controls/Party")
+PokeBackButton = NodePath("Ui/Party/TextureButton")
 BagMenuButton = NodePath("Ui/Controls/Bag")
 BagBackButton = NodePath("Ui/Bag/Back")
 MoveButtons = [NodePath("Ui/MoveMenu/Move1"), NodePath("Ui/MoveMenu/Move2"), NodePath("Ui/MoveMenu/Move3"), NodePath("Ui/MoveMenu/Move4")]
@@ -3488,9 +3500,15 @@ BagButtons = [NodePath("Ui/Bag/Pokeballs"), NodePath("Ui/Bag/Exp")]
 PokeballButtons = [NodePath("Ui/Pokeballs/Normal"), NodePath("Ui/Pokeballs/Heavy"), NodePath("Ui/Pokeballs/Ultra"), NodePath("Ui/Pokeballs/Master")]
 ItemButtons = []
 PokeballBackButton = NodePath("Ui/Pokeballs/Back")
+PokeButtons = [NodePath("Ui/Party/Slot1/name"), NodePath("Ui/Party/Slot2/name"), NodePath("Ui/Party/Slot3/name"), NodePath("Ui/Party/Slot4/name"), NodePath("Ui/Party/Slot5/name"), NodePath("Ui/Party/Slot6/name")]
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
+NameLabels = [NodePath("Ui/Party/Slot1/name"), NodePath("Ui/Party/Slot2/name"), NodePath("Ui/Party/Slot3/name"), NodePath("Ui/Party/Slot4/name"), NodePath("Ui/Party/Slot5/name"), NodePath("Ui/Party/Slot6/name")]
+LevelLabels = [NodePath("Ui/Party/Slot1/Level"), NodePath("Ui/Party/Slot2/Level"), NodePath("Ui/Party/Slot3/Level"), NodePath("Ui/Party/Slot4/Level"), NodePath("Ui/Party/Slot5/Level"), NodePath("Ui/Party/Slot6/Level")]
+HpBars = [NodePath("Ui/Party/Slot1/TextureProgressBar"), NodePath("Ui/Party/Slot2/TextureProgressBar2"), NodePath("Ui/Party/Slot3/TextureProgressBar3"), NodePath("Ui/Party/Slot4/TextureProgressBar4"), NodePath("Ui/Party/Slot5/TextureProgressBar5"), NodePath("Ui/Party/Slot6/TextureProgressBar6")]
+Sprites = [NodePath("Ui/Party/Slot1/Sprite2D"), NodePath("Ui/Party/Slot2/Sprite2D"), NodePath("Ui/Party/Slot3/Sprite2D2"), NodePath("Ui/Party/Slot4/Sprite2D3"), NodePath("Ui/Party/Slot5/Sprite2D"), NodePath("Ui/Party/Slot6/Sprite2D2")]
+Party = NodePath("Ui/Party")
 
 [node name="BattleStateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("Script_BattleSM")
@@ -3880,6 +3898,260 @@ script = ExtResource("7_pt2im")
 position = Vector2(832, 289)
 scale = Vector2(3, 3)
 script = ExtResource("9_l87i0")
+
+[node name="Party" type="Node2D" parent="Ui"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Party"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("9_2v2ye")
+
+[node name="Slot1" type="Node2D" parent="Ui/Party"]
+
+[node name="Backgroun" type="Sprite2D" parent="Ui/Party/Slot1"]
+position = Vector2(216, 180)
+scale = Vector2(4.7619047, 4.3508773)
+texture = ExtResource("10_g7inr")
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 57)
+
+[node name="Pokeicon" type="Sprite2D" parent="Ui/Party/Slot1"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot1"]
+offset_left = 159.0
+offset_top = 235.0
+offset_right = 207.0
+offset_bottom = 238.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot1"]
+position = Vector2(88, 96)
+scale = Vector2(2, 2)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot1"]
+offset_left = 240.0
+offset_top = 184.0
+offset_right = 280.0
+offset_bottom = 224.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+text = "
+"
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot1"]
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 352.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Slot2" type="Node2D" parent="Ui/Party"]
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Ui/Party/Slot2"]
+position = Vector2(784, 80)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("13_x5dh5")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Ui/Party/Slot2"]
+offset_left = 886.00006
+offset_top = 69.99999
+offset_right = 935.2114
+offset_bottom = 72.99999
+scale = Vector2(4.855, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot2"]
+position = Vector2(480, 40)
+scale = Vector2(1.6428574, 1.6071428)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot2"]
+offset_left = 664.0
+offset_top = 96.0
+offset_right = 704.0
+offset_bottom = 136.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot2"]
+offset_left = 520.0
+offset_top = 64.0
+offset_right = 720.0
+offset_bottom = 96.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Slot3" type="Node2D" parent="Ui/Party"]
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Ui/Party/Slot3"]
+position = Vector2(784.00006, 176)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("13_x5dh5")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="Ui/Party/Slot3"]
+offset_left = 887.00006
+offset_top = 166.0
+offset_right = 936.2114
+offset_bottom = 169.0
+scale = Vector2(4.855, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ui/Party/Slot3"]
+position = Vector2(480, 136)
+scale = Vector2(1.6428574, 1.6071428)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot3"]
+offset_left = 664.0
+offset_top = 192.0
+offset_right = 704.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot3"]
+offset_left = 544.0
+offset_top = 160.0
+offset_right = 744.0
+offset_bottom = 192.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Slot4" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Ui/Party/Slot4"]
+position = Vector2(784, 244)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("13_x5dh5")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="Ui/Party/Slot4"]
+offset_left = 886.0
+offset_top = 234.00002
+offset_right = 935.21136
+offset_bottom = 237.00002
+scale = Vector2(4.855, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Ui/Party/Slot4"]
+position = Vector2(480, 203.00002)
+scale = Vector2(1.6428574, 1.6071428)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot4"]
+offset_left = 664.0
+offset_top = 259.0
+offset_right = 704.0
+offset_bottom = 299.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot4"]
+offset_left = 520.0
+offset_top = 227.0
+offset_right = 720.0
+offset_bottom = 259.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Slot5" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Ui/Party/Slot5"]
+position = Vector2(784.00006, 347.00003)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("13_x5dh5")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar5" type="TextureProgressBar" parent="Ui/Party/Slot5"]
+offset_left = 886.00006
+offset_top = 337.0
+offset_right = 935.2114
+offset_bottom = 340.0
+scale = Vector2(4.855, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot5"]
+position = Vector2(481, 305)
+scale = Vector2(1.643, 1.607)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot5"]
+offset_left = 664.0
+offset_top = 363.0
+offset_right = 704.0
+offset_bottom = 403.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+text = "
+"
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot5"]
+offset_left = 520.0
+offset_top = 331.0
+offset_right = 720.0
+offset_bottom = 363.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Slot6" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 29)
+
+[node name="StandbyPokemonBackground" type="Sprite2D" parent="Ui/Party/Slot6"]
+position = Vector2(784, 443.00003)
+scale = Vector2(4.8533335, 4.1739125)
+texture = ExtResource("13_x5dh5")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 23)
+
+[node name="TextureProgressBar6" type="TextureProgressBar" parent="Ui/Party/Slot6"]
+offset_left = 886.00006
+offset_top = 433.0
+offset_right = 935.2114
+offset_bottom = 436.0
+scale = Vector2(4.855, 4.1)
+texture_progress = ExtResource("11_u74jg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ui/Party/Slot6"]
+position = Vector2(480, 403)
+scale = Vector2(1.643, 1.607)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot6"]
+offset_left = 664.0
+offset_top = 451.0
+offset_right = 704.0
+offset_bottom = 491.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot6"]
+offset_left = 520.0
+offset_top = 419.0
+offset_right = 720.0
+offset_bottom = 451.0
+theme_override_fonts/normal_font = ExtResource("12_podox")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="TextureButton" type="TextureButton" parent="Ui/Party"]
+offset_left = 880.0
+offset_top = 528.0
+offset_right = 1144.0
+offset_bottom = 632.0
+texture_normal = SubResource("AtlasTexture_x5dh5")
+stretch_mode = 0
+script = ExtResource("15_podox")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_3ouso")

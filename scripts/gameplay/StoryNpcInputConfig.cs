@@ -42,6 +42,7 @@ public partial class StoryNpcInputConfig : Resource
 
 	[ExportGroup("Story Triggers")]
 	[Export] public PlayerStoryState EventTrigger;
+	[Export] public string StoryNotMetMessage = "I'm not ready to talk to you yet. Come back later!";
 
 	[ExportGroup("Blocking")]
 	[Export] public bool IsBlocker = false;
@@ -62,10 +63,12 @@ public partial class StoryNpcInputConfig : Resource
 	}
 
 	[ExportGroup("Battle")]
+	[Export] public string TrainerID = ""; // Unique ID for this trainer (e.g., "route1_youngster_joey")
 	[Export] public bool HasBattle = false;
 	[Export] public PokemonID PokemonID = PokemonID.none;
 	[Export] public int PokemonLevel = 5;
 	[Export] public bool IsFemale = false;
 	[Export] public bool IsMale = false;
 	[Export] public bool IsShiny = false;
+	[Export] public string AfterBattleMessage = "You're pretty strong!";
 }

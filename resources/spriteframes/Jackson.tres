@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dwluscoleyur5"]
+
+[ext_resource type="Texture2D" uid="uid://coi56g065rx0j" path="res://assets/characters/drake_by_aveontrainer_dd2y1l2.png" id="1_8ffgm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjopk"]
+atlas = ExtResource("1_8ffgm")
+region = Rect2(0, 0, 32, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjopk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

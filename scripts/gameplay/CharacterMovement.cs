@@ -29,7 +29,7 @@ namespace Game.Gameplay
 		[Export]
 		public float JumpHeight = 10f;
 		[Export]
-		public float LerpSpeed = 2f;
+		public float LerpSpeed = 1.2f;
 		[Export]
 		public float Progress = 0f;
 		[Export]
@@ -223,10 +223,9 @@ namespace Game.Gameplay
 			{
 				Progress += LerpSpeed * (float)delta;
 				Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
-				float parabolicOffset = JumpHeight * 4 * Progress * (1 - Progress); // Parabola: 4x(1-x) peaks at 0.5
+				float parabolicOffset = JumpHeight * 4 * Progress * (1 - Progress);
 				position.Y -= parabolicOffset;
 				Character.Position = position;
-
 
 				if (Progress >= 1.0f)
 				{

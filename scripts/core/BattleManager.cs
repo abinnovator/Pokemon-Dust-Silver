@@ -72,7 +72,9 @@ namespace Game.Core
             }
             playerPokemonId = GetSavedPlayerPokemon();
 
-            SceneManager.ChangeLevel(LevelName.battle_scene, 0, false);
+            // Use the same trainer battle UI as gym battles
+            var battleScene = GD.Load<PackedScene>("res://scenes/core/trainer_battle_ui.tscn").Instantiate();
+            GetTree().Root.AddChild(battleScene);
         }
 
         public void StartWildBattle(PokemonID wildId, PokemonID playerId)

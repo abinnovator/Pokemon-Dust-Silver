@@ -42,6 +42,8 @@ public partial class StoryNpc : CharacterBody2D
 	{
 		{ StoryNpcAppearance.Delia, GD.Load<SpriteFrames>("res://resources/spriteframes/Delia.tres") },
 		{ StoryNpcAppearance.ProfessorOak, GD.Load<SpriteFrames>("res://resources/spriteframes/Oak.tres") },
+		{ StoryNpcAppearance.FatMan, GD.Load<SpriteFrames>("res://resources/spriteframes/FatMan.tres") },
+		{StoryNpcAppearance.Jackson, GD.Load<SpriteFrames>("res://resources/spriteframes/Jackson.tres")}
 	};
 
 	public override void _Ready()
@@ -245,12 +247,88 @@ public partial class StoryNpc : CharacterBody2D
 
 		_stateMachine.ChangeState("Message");
 
-		if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
+		if (InputConfig is StoryNpcInputConfig config)
 		{
-			await MessageManager.PlayText([.. config.Messages]);
+			// Check if this trainer was already defeated
+			if (config.HasBattle && !string.IsNullOrEmpty(config.TrainerID))
+			{
+				if (IsTrainerDefeated(config.TrainerID))
+				{
+					// Show after-battle message
+					string message = !string.IsNullOrEmpty(config.AfterBattleMessage) 
+						? config.AfterBattleMessage 
+						: "You're pretty strong!";
+					await MessageManager.PlayText(new[] { message });
+					_stateMachine.ChangeState("Roam");
+					return;
+				}
+			}
+
+			// Check if story trigger requirement is met
+			bool storyRequirementMet = CheckStoryRequirement(config);
+
+			if (!storyRequirementMet)
+			{
+				// Show alternate message if story trigger not reached
+				string message = !string.IsNullOrEmpty(config.StoryNotMetMessage) 
+					? config.StoryNotMetMessage 
+					: "I'm not ready to talk to you yet. Come back later!";
+				await MessageManager.PlayText(new[] { message });
+				_stateMachine.ChangeState("Roam");
+				return;
+			}
+
+			// Show regular messages
+			if (config.Messages.Count > 0)
+			{
+				await MessageManager.PlayText([.. config.Messages]);
+			}
+
+			// Check if this NPC has a battle
+			if (config.HasBattle && config.PokemonID != PokemonID.none)
+			{
+				// Add a small delay to let messages fully close and player prepare
+				await Task.Delay(500);
+				
+				// Initiate trainer battle
+				_stateMachine.ChangeState("Roam");
+				BattleManager.Instance.StartBattle(config);
+				return;
+			}
 		}
 
 		_stateMachine.ChangeState("Roam");
+	}
+
+	private bool IsTrainerDefeated(string trainerID)
+	{
+		if (SaveManager.Instance?.CurrentSave != null)
+		{
+			return SaveManager.Instance.CurrentSave.DefeatedTrainers.Contains(trainerID);
+		}
+		return false;
+	}
+
+	private bool CheckStoryRequirement(StoryNpcInputConfig config)
+	{
+		// If no specific event trigger is set, allow interaction
+		if (config.EventTrigger == PlayerStoryState.NEW_GAME)
+		{
+			return true;
+		}
+
+		// Check if player has reached the required story state
+		if (SaveManager.Instance?.CurrentSave != null)
+		{
+			var playerProgress = SaveManager.Instance.CurrentSave.StoryProgress;
+			
+			// Check if the player's story progress is >= the required trigger
+			// This allows interactions once the requirement is met
+			return playerProgress >= config.EventTrigger;
+		}
+
+		// If no save exists, default to allowing interaction
+		return true;
 	}
 
 	public bool HasUnblocked
