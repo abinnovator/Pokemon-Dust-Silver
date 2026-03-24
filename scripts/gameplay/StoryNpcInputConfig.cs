@@ -71,4 +71,16 @@ public partial class StoryNpcInputConfig : Resource
 	[Export] public bool IsMale = false;
 	[Export] public bool IsShiny = false;
 	[Export] public string AfterBattleMessage = "You're pretty strong!";
+	[Export] public int MoneyReward = 0; // Money awarded for winning battle
+
+	[ExportGroup("Shop")]
+	[Export] public bool IsShopClerk = false;
+	private Array<ShopItem> _shopItems = new();
+	[Export]
+	public Array<ShopItem> ShopItems
+	{
+		get => _shopItems ??= new();
+		set => _shopItems = value;
+	}
+	[Export] public string ShopGreeting = "Welcome to my shop! Take a look at my wares.";
 }

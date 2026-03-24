@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=2 format=3 uid="uid://bvn8shop003"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/ShopItem.cs" id="1_antidote"]
+
+[resource]
+script = ExtResource("1_antidote")
+ItemName = "Antidote"
+ItemId = 3
+Description = "Cures a Pokemon of poison."
+Price = 100
+Category = 1
+Stock = -1
+IsKeyItem = false

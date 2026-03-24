@@ -110,6 +110,7 @@ namespace Game.Gameplay
 						"TallGrass" => false,
 						"TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider,adjustedTargetPosition),
 						"SceneTrigger"=> false,
+						"BreakableTree" => true,
 						_ => true,
 					};
 				

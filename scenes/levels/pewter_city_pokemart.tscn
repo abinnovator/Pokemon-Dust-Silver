@@ -23,6 +23,7 @@ tile_set = ExtResource("2_es1m4")
 position = Vector2(56.00001, 112)
 scale = Vector2(1.85, 1)
 TargetLevelName = 16
+TargetLevelTrigger = 11
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)

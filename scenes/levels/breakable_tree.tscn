@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf5p3gn12uuo4"]
+
+[ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="1_7grtq"]
+[ext_resource type="Script" uid="uid://bpm7debvti3i1" path="res://scripts/gameplay/BreakableTree.cs" id="1_wan8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wan8w"]
+size = Vector2(16, 32)
+
+[node name="BreakableTree" type="Area2D" node_paths=PackedStringArray("tree", "collisionshape")]
+script = ExtResource("1_wan8w")
+tree = NodePath("TileMapLayer")
+collisionshape = NodePath("CollisionShape2D")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 15, 0, 0, 0)
+tile_set = ExtResource("1_7grtq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_wan8w")

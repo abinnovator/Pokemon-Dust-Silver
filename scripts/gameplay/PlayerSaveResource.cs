@@ -36,4 +36,65 @@ public partial class PlayerSaveResource : Resource
     
     // Track defeated trainers to prevent re-battling
     [Export] public Array<string> DefeatedTrainers = new Array<string>();
+
+    // Money and Inventory System
+    [Export] public int Money = 3000; // Starting money
+    
+    // Inventory: Key = ItemId (or ItemName), Value = Quantity
+    [Export] public Dictionary Inventory = new Dictionary();
+    
+    // Track visited shops (optional - for special dialogues)
+    [Export] public Array<string> VisitedShops = new Array<string>();
+    
+    // Helper method to add item to inventory
+    public void AddItem(int itemId, int quantity = 1)
+    {
+        string key = itemId.ToString();
+        if (Inventory.ContainsKey(key))
+        {
+            int current = Inventory[key].AsInt32();
+            Inventory[key] = current + quantity;
+        }
+        else
+        {
+            Inventory[key] = quantity;
+        }
+    }
+    
+    // Helper method to remove item from inventory
+    public bool RemoveItem(int itemId, int quantity = 1)
+    {
+        string key = itemId.ToString();
+        if (!Inventory.ContainsKey(key)) return false;
+        
+        int current = Inventory[key].AsInt32();
+        if (current < quantity) return false;
+        
+        int newQuantity = current - quantity;
+        if (newQuantity <= 0)
+        {
+            Inventory.Remove(key);
+        }
+        else
+        {
+            Inventory[key] = newQuantity;
+        }
+        return true;
+    }
+    
+    // Helper method to check if player has item
+    public bool HasItem(int itemId, int quantity = 1)
+    {
+        string key = itemId.ToString();
+        if (!Inventory.ContainsKey(key)) return false;
+        return Inventory[key].AsInt32() >= quantity;
+    }
+    
+    // Helper method to get item quantity
+    public int GetItemQuantity(int itemId)
+    {
+        string key = itemId.ToString();
+        if (!Inventory.ContainsKey(key)) return 0;
+        return Inventory[key].AsInt32();
+    }
 }

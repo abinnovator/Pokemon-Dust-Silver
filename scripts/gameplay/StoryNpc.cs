@@ -43,7 +43,10 @@ public partial class StoryNpc : CharacterBody2D
 		{ StoryNpcAppearance.Delia, GD.Load<SpriteFrames>("res://resources/spriteframes/Delia.tres") },
 		{ StoryNpcAppearance.ProfessorOak, GD.Load<SpriteFrames>("res://resources/spriteframes/Oak.tres") },
 		{ StoryNpcAppearance.FatMan, GD.Load<SpriteFrames>("res://resources/spriteframes/FatMan.tres") },
-		{StoryNpcAppearance.Jackson, GD.Load<SpriteFrames>("res://resources/spriteframes/Jackson.tres")}
+		{StoryNpcAppearance.Jackson, GD.Load<SpriteFrames>("res://resources/spriteframes/Jackson.tres")},
+		{StoryNpcAppearance.BugCatcher, GD.Load<SpriteFrames>("res://resources/spriteframes/bug_catcher.tres")},
+		{StoryNpcAppearance.lass, GD.Load<SpriteFrames>("res://resources/spriteframes/lass.tres")},
+		{StoryNpcAppearance.bird_keeper, GD.Load<SpriteFrames>("res://resources/spriteframes/bird_keeper.tres")}
 	};
 
 	public override void _Ready()
@@ -249,6 +252,30 @@ public partial class StoryNpc : CharacterBody2D
 
 		if (InputConfig is StoryNpcInputConfig config)
 		{
+			// Check if this is a shop clerk
+			if (config.IsShopClerk)
+			{
+				// Show shop greeting
+				string greeting = !string.IsNullOrEmpty(config.ShopGreeting) 
+					? config.ShopGreeting 
+					: "Welcome to my shop! Take a look at my wares.";
+				
+				await MessageManager.PlayText(greeting);
+				
+				// Open shop if items are available
+				if (config.ShopItems.Count > 0 && ShopManager.Instance != null)
+				{
+					await ShopManager.Instance.OpenShop(config.ShopItems, greeting);
+				}
+				else
+				{
+					await MessageManager.PlayText("Sorry, I'm out of stock right now.");
+				}
+				
+				_stateMachine.ChangeState("Roam");
+				return;
+			}
+
 			// Check if this trainer was already defeated
 			if (config.HasBattle && !string.IsNullOrEmpty(config.TrainerID))
 			{

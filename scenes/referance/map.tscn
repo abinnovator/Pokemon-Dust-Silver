@@ -29,52 +29,52 @@ y_sort_enabled = true
 position = Vector2(-72, -928)
 
 [node name="Level3" parent="." instance=ExtResource("3_kase7")]
-position = Vector2(-1520, -1512)
+position = Vector2(-2768, -2096)
 
 [node name="Level2" parent="." instance=ExtResource("4_cjvgp")]
-position = Vector2(8, -1720)
+position = Vector2(-344, -2104)
 
 [node name="Level15" parent="." instance=ExtResource("5_unuon")]
-position = Vector2(3000, -2712)
+position = Vector2(4000, -2744)
 
 [node name="Level7" parent="." instance=ExtResource("5_c8try")]
-position = Vector2(480, -3408)
+position = Vector2(1136, -4344)
 
 [node name="Level8" parent="." instance=ExtResource("6_6c3xg")]
-position = Vector2(3160, -3904)
+position = Vector2(4256, -4280)
 
 [node name="Level4" parent="." instance=ExtResource("8_fdi7v")]
-position = Vector2(-104, -2296)
+position = Vector2(-224, -3088)
 
 [node name="Level6" parent="." instance=ExtResource("8_uimdc")]
-position = Vector2(344, -3408)
+position = Vector2(1616, -4328)
 
 [node name="Route 7" parent="." instance=ExtResource("10_jpopv")]
-position = Vector2(2776, -2440)
+position = Vector2(7752, -3344)
 
 [node name="Level10" parent="." instance=ExtResource("10_cjvgp")]
-position = Vector2(3160, -3264)
+position = Vector2(4160, -3432)
 
 [node name="Level5" parent="." instance=ExtResource("7_mmh18")]
-position = Vector2(-224, -3464)
+position = Vector2(176, -4656)
 
 [node name="Mount Moon" parent="." instance=ExtResource("9_kase7")]
-position = Vector2(1760, -4440)
+position = Vector2(2304, -4960)
 
 [node name="Level9" parent="." instance=ExtResource("12_c8try")]
-position = Vector2(3320, -4880)
+position = Vector2(4736, -5408)
 
 [node name="Level14" parent="." instance=ExtResource("13_d2gbn")]
-position = Vector2(2944, -2448)
+position = Vector2(4128, -2176)
 
 [node name="Level13" parent="." instance=ExtResource("14_fdi7v")]
-position = Vector2(2888, -3776)
+position = Vector2(4192, -3912)
 
 [node name="Level11" parent="." instance=ExtResource("13_mmh18")]
-position = Vector2(2656, -4432)
-
-[node name="Level12" parent="." instance=ExtResource("15_u0nhh")]
-position = Vector2(4184, -3728)
+position = Vector2(6288, -4296)
 
 [node name="Pallet Town2" parent="." instance=ExtResource("16_d2gbn")]
-position = Vector2(5224, -2496)
+position = Vector2(6392, -2376)
+
+[node name="Level12" parent="." instance=ExtResource("15_u0nhh")]
+position = Vector2(5216, -3352)

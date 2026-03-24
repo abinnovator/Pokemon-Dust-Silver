@@ -25,6 +25,7 @@ tile_set = ExtResource("2_5im7o")
 position = Vector2(216, 168)
 scale = Vector2(1.85, 1)
 TargetLevelName = 16
+TargetLevelTrigger = 11
 
 [node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("3_umopb")]
 position = Vector2(160, 136)

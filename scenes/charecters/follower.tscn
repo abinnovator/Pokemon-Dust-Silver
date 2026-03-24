@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3phllvpu0l2q"]
+
+[ext_resource type="Script" uid="uid://b45qyf002a84e" path="res://scripts/gameplay/Follower.cs" id="1_bvfxs"]
+[ext_resource type="Script" uid="uid://bo2clbvvfw0rs" path="res://scripts/gameplay/FollowerInput.cs" id="2_7bhmb"]
+[ext_resource type="Script" uid="uid://ojrerf85ncwv" path="res://scripts/gameplay/CharacterMovement.cs" id="3_8v2np"]
+[ext_resource type="SpriteFrames" uid="uid://cpe7f1bx0htgk" path="res://resources/spriteframes/squirtle.tres" id="4_bvfxs"]
+[ext_resource type="Script" uid="uid://noyq6csxc7hf" path="res://scripts/gameplay/CharacterAnimation.cs" id="5_ashni"]
+[ext_resource type="Script" uid="uid://ik46a47bkjg6" path="res://scripts/gameplay/CharacterCollisionRaycast.cs" id="7_my06k"]
+[ext_resource type="Script" uid="uid://gmo2xmi834dp" path="res://scripts/utilities/StateMachine.cs" id="8_456yr"]
+[ext_resource type="Script" uid="uid://bg4c002tsaccj" path="res://scripts/gameplay/states/FollowerRoamState.cs" id="9_5he5x"]
+[ext_resource type="Script" uid="uid://csw4elxgg2e56" path="res://scripts/gameplay/states/PlayerMessageState.cs" id="10_g7j62"]
+[ext_resource type="Script" uid="uid://cy636f2tiguf8" path="res://scripts/gameplay/states/PlayerMenuState.cs" id="11_syf83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
+size = Vector2(16, 16)
+
+[node name="Follower" type="CharacterBody2D" node_paths=PackedStringArray("StateMachine", "Sprite")]
+z_index = 5
+script = ExtResource("1_bvfxs")
+StateMachine = NodePath("StateMachine")
+Sprite = NodePath("AnimatedSprite2D")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_08t41")
+
+[node name="Input" type="Node2D" parent="."]
+script = ExtResource("2_7bhmb")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput", "CharacterCollisionRaycast")]
+script = ExtResource("3_8v2np")
+Character = NodePath("..")
+CharacterInput = NodePath("../Input")
+CharacterCollisionRaycast = NodePath("../CollisonRayCast")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("CharacterMovement", "CharacterInput")]
+texture_filter = 1
+position = Vector2(4, 4)
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("4_bvfxs")
+animation = &"idle_down"
+script = ExtResource("5_ashni")
+CharacterMovement = NodePath("../Movement")
+CharacterInput = NodePath("../Input")
+
+[node name="CollisonRayCast" type="RayCast2D" parent="." node_paths=PackedStringArray("CharecterInput")]
+position = Vector2(8, 0)
+target_position = Vector2(0, 24)
+collide_with_areas = true
+script = ExtResource("7_my06k")
+CharecterInput = NodePath("../Input")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer")]
+script = ExtResource("8_456yr")
+Customer = NodePath("..")
+
+[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("FollowerInput", "CharacterMovement", "StateOwner", "StateMachine")]
+script = ExtResource("9_5he5x")
+FollowerInput = NodePath("../../Input")
+CharacterMovement = NodePath("../../Movement")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="Message" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
+script = ExtResource("10_g7j62")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
+
+[node name="Menu" type="Node" parent="StateMachine"]
+script = ExtResource("11_syf83")

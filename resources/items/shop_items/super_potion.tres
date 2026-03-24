@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=2 format=3 uid="uid://bvn8shop002"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/ShopItem.cs" id="1_super_potion"]
+
+[resource]
+script = ExtResource("1_super_potion")
+ItemName = "Super Potion"
+ItemId = 2
+Description = "Restores 50 HP to a single Pokemon."
+Price = 700
+Category = 1
+Stock = -1
+IsKeyItem = false

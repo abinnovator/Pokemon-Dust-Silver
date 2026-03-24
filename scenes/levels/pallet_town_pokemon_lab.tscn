@@ -114,7 +114,7 @@ position = Vector2(32, 112)
 
 [node name="NPC2" parent="." instance=ExtResource("7_yh85e")]
 position = Vector2(112, 48)
-NpcAppearance = 23
+NpcAppearance = 24
 InputConfig = SubResource("Resource_il7k2")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("_animatedSprite2D") instance=ExtResource("7_fk5or")]

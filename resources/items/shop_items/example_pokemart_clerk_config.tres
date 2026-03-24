@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="StoryNpcInputConfig" load_steps=8 format=3 uid="uid://example_shop_clerk"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="1_clerk"]
+[ext_resource type="Resource" uid="uid://bvn8shop001" path="res://resources/items/shop_items/potion.tres" id="2_potion"]
+[ext_resource type="Resource" uid="uid://bvn8shop002" path="res://resources/items/shop_items/super_potion.tres" id="3_super_potion"]
+[ext_resource type="Resource" uid="uid://bvn8shop003" path="res://resources/items/shop_items/antidote.tres" id="4_antidote"]
+[ext_resource type="Resource" uid="uid://bvn8shop004" path="res://resources/items/shop_items/pokeball.tres" id="5_pokeball"]
+[ext_resource type="Resource" uid="uid://bvn8shop005" path="res://resources/items/shop_items/great_ball.tres" id="6_great_ball"]
+[ext_resource type="Resource" uid="uid://bvn8shop006" path="res://resources/items/shop_items/repel.tres" id="7_repel"]
+
+[resource]
+script = ExtResource("1_clerk")
+NpcMovementType = 0
+Messages = []
+WanderOrigin = Vector2(0, 0)
+WanderRadius = 64.0
+WanderMoveInterval = 2.0
+PatrolPoints = []
+PatrolMoveInterval = 2.0
+PatrolIndex = 0
+LookAroundInterval = 2.0
+LookAroundMoveInterval = 2.0
+EventTrigger = 0
+StoryNotMetMessage = "I'm not ready to talk to you yet. Come back later!"
+IsBlocker = false
+UnblockCondition = 0
+ClearPosition = Vector2(0, 0)
+HasForcedInterception = false
+TriggerZoneSize = Vector2(16, 48)
+TriggerZoneOffset = Vector2(0, 0)
+InterceptMessages = []
+TrainerID = ""
+HasBattle = false
+PokemonID = 0
+PokemonLevel = 5
+IsFemale = false
+IsMale = false
+IsShiny = false
+AfterBattleMessage = "You're pretty strong!"
+MoneyReward = 0
+IsShopClerk = true
+ShopItems = Array[Resource]([ExtResource("2_potion"), ExtResource("3_super_potion"), ExtResource("4_antidote"), ExtResource("5_pokeball"), ExtResource("6_great_ball"), ExtResource("7_repel")])
+ShopGreeting = "Welcome to the Poke Mart! We have everything a trainer needs!"

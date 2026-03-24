@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=2 format=3 uid="uid://bvn8shop004"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/ShopItem.cs" id="1_pokeball"]
+
+[resource]
+script = ExtResource("1_pokeball")
+ItemName = "Poke Ball"
+ItemId = 4
+Description = "A device for catching wild Pokemon."
+Price = 200
+Category = 0
+Stock = -1
+IsKeyItem = false

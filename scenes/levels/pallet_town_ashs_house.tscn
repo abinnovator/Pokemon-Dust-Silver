@@ -93,4 +93,5 @@ position = Vector2(48, 72)
 position = Vector2(-8, 16)
 
 [node name="NPC" parent="." instance=ExtResource("5_0wopp")]
+NpcAppearance = 29
 InputConfig = SubResource("Resource_yk0ky")

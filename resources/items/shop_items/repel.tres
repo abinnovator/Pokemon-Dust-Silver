@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=2 format=3 uid="uid://bvn8shop006"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/ShopItem.cs" id="1_repel"]
+
+[resource]
+script = ExtResource("1_repel")
+ItemName = "Repel"
+ItemId = 6
+Description = "Keeps weak wild Pokemon away for 100 steps."
+Price = 350
+Category = 7
+Stock = -1
+IsKeyItem = false

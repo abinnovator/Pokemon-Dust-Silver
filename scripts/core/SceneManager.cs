@@ -13,6 +13,9 @@ namespace Game.Core
 	{
 		public static SceneManager Instance {get; private set;}
 		public static bool isChanging {get; private set;}
+		
+		private static Follower followerInstance;
+		
 		[ExportCategory("Scene Manager Vars")]
 		[Export]
 
@@ -108,6 +111,25 @@ namespace Game.Core
 				if (levelName == LevelName.battle_scene)
 				{
 					scenePath = "res://scenes/core/battle_ui.tscn";
+					Game.Core.Logger.Info($"Loading battle scene from: {scenePath}");
+					
+					var battleSceneResource = GD.Load<PackedScene>(scenePath);
+					if (battleSceneResource == null)
+					{
+						Game.Core.Logger.Error($"Failed to load battle scene at path: {scenePath}");
+						return;
+					}
+					
+					var battleScene = battleSceneResource.Instantiate();
+					if (battleScene == null)
+					{
+						Game.Core.Logger.Error($"Failed to instantiate battle scene from: {scenePath}");
+						return;
+					}
+					
+					GameManager.GetGameViewPort().AddChild(battleScene);
+					// Note: CurrentLevel remains as the previous level since battle is an overlay
+					return;
 				}
 				Game.Core.Logger.Info($"Level not found in AllLevels, attempting to load from resource: {scenePath}");
 				
@@ -118,7 +140,15 @@ namespace Game.Core
 					return;
 				}
 
-				CurrentLevel = sceneResource.Instantiate<Level>();
+				try
+{
+CurrentLevel = sceneResource.Instantiate<Level>();
+}
+catch (System.InvalidCastException ex)
+{
+Game.Core.Logger.Error($"Failed to cast scene at {scenePath} to Level type. The scene root node must inherit from Level (Node2D). Error: {ex.Message}");
+return;
+}
 				if (CurrentLevel == null)
 				{
 					Game.Core.Logger.Error($"Failed to instantiate level from scene: {scenePath}");
@@ -137,7 +167,8 @@ namespace Game.Core
 				var playerNode = GD.Load<PackedScene>("res://scenes/charecters/player.tscn").Instantiate<Player>();
 				GameManager.AddPlayer(playerNode);
 				playerNode.GlobalPosition = customPosition.Value;
-				return;
+SpawnFollower(playerNode, customPosition.Value);
+return;
 			}
 
 			var spawnPoints = CurrentLevel.GetTree().GetNodesInGroup(LevelGroups.SPAWNPOINTS.ToString());
@@ -151,8 +182,8 @@ namespace Game.Core
  
 			GameManager.AddPlayer(player);
 			GameManager.GetPlayer().GlobalPosition = spawnPoint.GlobalPosition;
-			
-		}
+SpawnFollower(player, spawnPoint.GlobalPosition);
+}
  
 		public void Switch(int triggerId)
 		{
@@ -180,7 +211,46 @@ namespace Game.Core
 			
 			Vector2 spawnPos = targetTrigger.GlobalPosition + (targetTrigger.EntryDirection * Globals.GridSize);
 			GameManager.GetPlayer().GlobalPosition = spawnPos;
-		}
+
+// Move the follower to be behind the player
+if (followerInstance != null && IsInstanceValid(followerInstance))
+{
+Vector2 followerPos = spawnPos - (targetTrigger.EntryDirection * Globals.GridSize);
+followerInstance.GlobalPosition = followerPos;
+}
+}
+
+private void SpawnFollower(Player player, Vector2 playerPosition)
+{
+// Remove old follower if it exists
+if (followerInstance != null && IsInstanceValid(followerInstance))
+{
+followerInstance.QueueFree();
+}
+
+// Create new follower
+var followerScene = GD.Load<PackedScene>("res://scenes/charecters/follower.tscn");
+followerInstance = followerScene.Instantiate<Follower>();
+
+// Add to the same parent as the player (GameViewPort)
+GameManager.GetGameViewPort().AddChild(followerInstance);
+
+// Position follower one tile behind the player (down direction by default)
+followerInstance.GlobalPosition = playerPosition + new Vector2(0, Globals.GridSize);
+
+// Set up the follower's input references
+var followerInput = followerInstance.GetNode<FollowerInput>("Input");
+if (followerInput != null)
+{
+followerInput.PlayerNode = player;
+followerInput.FollowerNode = followerInstance;
+}
+}
+
+public static Follower GetFollower()
+{
+return followerInstance;
+}
  
  
 		public async Task FadeOut()
@@ -217,9 +287,16 @@ namespace Game.Core
 					}
 				}
 				AllLevels.Clear();
-			}
+}
 
-			isChanging = false;
+// Clean up follower instance
+if (followerInstance != null && IsInstanceValid(followerInstance))
+{
+followerInstance.QueueFree();
+followerInstance = null;
+}
+
+isChanging = false;
 		}
 
 		public static Level GetCurrentLevel()

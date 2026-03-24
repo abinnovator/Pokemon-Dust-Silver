@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=4 uid="uid://r343skedc5gq"]
+
+[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_3bvqj"]
+[ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_35ld8"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_7r4e2"]
+[ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_vk3rx"]
+[ext_resource type="PackedScene" uid="uid://bknu1qrgrqmna" path="res://scenes/charecters/NurseJoy.tscn" id="5_ibtaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te6uv"]
+size = Vector2(8, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnsu"]
+size = Vector2(8, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqhko"]
+size = Vector2(8, 256)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_3bvqj")
+LevelName = 25
+top = 96
+bottom = 320
+left = -80
+right = 160
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="PokecenterTextures" type="TileMapLayer" parent="Tiles"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD7//3/BgAAAAEAAAD7//7/BgAAAAIAAAD7////BgAAAAMAAAD7/wAABgAAAAQAAAD7/wEABgAAAAUAAAD7/wIABgAAAAYAAAD7/wMABgAAAAcAAAD7/wQABgAAAAgAAAD7/wUABgAAAAkAAAD8//3/BgABAAEAAAD8//7/BgABAAIAAAD8////BgABAAMAAAD8/wAABgABAAQAAAD8/wEABgABAAUAAAD8/wIABgABAAYAAAD8/wMABgABAAcAAAD8/wQABgABAAgAAAD8/wUABgABAAkAAAD9//3/BgACAAEAAAD9//7/BgACAAIAAAD9////BgACAAMAAAD9/wAABgACAAQAAAD9/wEABgACAAUAAAD9/wIABgACAAYAAAD9/wMABgACAAcAAAD9/wQABgACAAgAAAD9/wUABgACAAkAAAD+//3/BgADAAEAAAD+//7/BgADAAIAAAD+////BgADAAMAAAD+/wAABgADAAQAAAD+/wEABgADAAUAAAD+/wIABgADAAYAAAD+/wMABgADAAcAAAD+/wQABgADAAgAAAD+/wUABgADAAkAAAD///3/BgAEAAEAAAD///7/BgAEAAIAAAD/////BgAEAAMAAAD//wAABgAEAAQAAAD//wEABgAEAAUAAAD//wIABgAEAAYAAAD//wMABgAEAAcAAAD//wQABgAEAAgAAAD//wUABgAEAAkAAAAAAP3/BgAFAAEAAAAAAP7/BgAFAAIAAAAAAP//BgAFAAMAAAAAAAAABgAFAAQAAAAAAAEABgAFAAUAAAAAAAIABgAFAAYAAAAAAAMABgAFAAcAAAAAAAQABgAFAAgAAAAAAAUABgAFAAkAAAABAP3/BgAGAAEAAAABAP7/BgAGAAIAAAABAP//BgAGAAMAAAABAAAABgAGAAQAAAABAAEABgAGAAUAAAABAAIABgAGAAYAAAABAAMABgAGAAcAAAABAAQABgAGAAgAAAABAAUABgAGAAkAAAACAP3/BgAHAAEAAAACAP7/BgAHAAIAAAACAP//BgAHAAMAAAACAAAABgAHAAQAAAACAAEABgAHAAUAAAACAAIABgAHAAYAAAACAAMABgAHAAcAAAACAAQABgAHAAgAAAACAAUABgAHAAkAAAADAP3/BgAIAAEAAAADAP7/BgAIAAIAAAADAP//BgAIAAMAAAADAAAABgAIAAQAAAADAAEABgAIAAUAAAADAAIABgAIAAYAAAADAAMABgAIAAcAAAADAAQABgAIAAgAAAADAAUABgAIAAkAAAAEAP3/BgAJAAEAAAAEAP7/BgAJAAIAAAAEAP//BgAJAAMAAAAEAAAABgAJAAQAAAAEAAEABgAJAAUAAAAEAAIABgAJAAYAAAAEAAMABgAJAAcAAAAEAAQABgAJAAgAAAAEAAUABgAJAAkAAAAFAP3/BgAKAAEAAAAFAP7/BgAKAAIAAAAFAP//BgAKAAMAAAAFAAAABgAKAAQAAAAFAAEABgAKAAUAAAAFAAIABgAKAAYAAAAFAAMABgAKAAcAAAAFAAQABgAKAAgAAAAFAAUABgAKAAkAAAAGAP3/BgALAAEAAAAGAP7/BgALAAIAAAAGAP//BgALAAMAAAAGAAAABgALAAQAAAAGAAEABgALAAUAAAAGAAIABgALAAYAAAAGAAMABgALAAcAAAAGAAQABgALAAgAAAAGAAUABgALAAkAAAAHAP3/BgAMAAEAAAAHAP7/BgAMAAIAAAAHAP//BgAMAAMAAAAHAAAABgAMAAQAAAAHAAEABgAMAAUAAAAHAAIABgAMAAYAAAAHAAMABgAMAAcAAAAHAAQABgAMAAgAAAAHAAUABgAMAAkAAAAIAP3/BgANAAEAAAAIAP7/BgANAAIAAAAIAP//BgANAAMAAAAIAAAABgANAAQAAAAIAAEABgANAAUAAAAIAAIABgANAAYAAAAIAAMABgANAAcAAAAIAAQABgANAAgAAAAIAAUABgANAAkAAAAJAP3/BgAOAAEAAAAJAP7/BgAOAAIAAAAJAP//BgAOAAMAAAAJAAAABgAOAAQAAAAJAAEABgAOAAUAAAAJAAIABgAOAAYAAAAJAAMABgAOAAcAAAAJAAQABgAOAAgAAAAJAAUABgAOAAkAAAA=")
+tile_set = ExtResource("2_35ld8")
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+position = Vector2(80, 96)
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_7r4e2")]
+position = Vector2(-48, -16)
+TargetLevelName = 23
+TargetLevelTrigger = 13
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(56, 32)
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_vk3rx")]
+position = Vector2(-24, 48)
+
+[node name="NPC" parent="." instance=ExtResource("5_ibtaj")]
+position = Vector2(-32, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(162, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 24)
+shape = SubResource("RectangleShape2D_te6uv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-246, 24)
+shape = SubResource("RectangleShape2D_fdnsu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-122, 100)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_nqhko")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-122, -52)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_nqhko")
