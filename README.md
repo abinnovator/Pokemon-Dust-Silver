@@ -1,12 +1,16 @@
 ![alt text](image.png)
-# 🎮 Pokemon DustGrey - 100 Hour Alpha Edition
+# 🎮 Pokemon DustGrey - 100 Hour Alpha V1.5 Edition
 
-A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.3+ and C# (.NET 8)**. This project represents a **100-hour development sprint**, moving from a blank engine to a functional "Vertical Slice" of the Kanto region.
+A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.3+ and C# (.NET 8)**. This project represents a **200-hour development sprint**, moving from a blank engine to a functional "Vertical Slice" of the Kanto region.
 
 ## ✨ Major Milestone: The 100-Hour Ship
 This version marks the completion of the initial engine and the implementation of the first story arc.
 - **Time Logged:** 100 Hours exactly.
-- **Status:** Alpha v1.0 - Shipped.
+- **Status:** Alpha v1.0 - Shipped
+
+## Whats goimg on after the 100 hours?
+Now that I have a base engine to wok on I can just work on expanding the maps an placing npc' while the new features have become easier to add because fo the data based structureill call it ig?
+
 
 ## 🚀 Features & New Content
 
@@ -22,6 +26,7 @@ This version marks the completion of the initial engine and the implementation o
 - **Pewter City:** Fully mapped Gym with a functional Brock boss fight.
 - **Lavender Town:** Foundations and map layout implemented (Access restricted in Alpha).
 - **Route Connectivity:** 4 fully playable routes with active NPC interaction.
+- **Visual Revamp** I started doing a visual revamp of the whole map! Im moving to heart gold assets cause they look more mordern!
 
 ## 🛠️ Updated Roadmap
 
@@ -38,7 +43,7 @@ This version marks the completion of the initial engine and the implementation o
 ### **Phase 3: Expansion 🟡 (NEXT STEPS)**
 - [ ] Full Lavender Town scripts.
 - [ ] Inventory and Item usage.
-- [ ] Wild Encounter tables.
+- [ ] Finish kanto and visual revamp(Help appreciated)
 
 ## 📂 Project Structure
 
@@ -57,27 +62,15 @@ assets/
 
 **Controls**
 - Movement: WASD keys or arrow keys
-- Save game -Press  x to savhe the game
+- Save game -Press  x to save the game
+- Menu - press 'm', arrow keys to navigate, z to select and c to go back
 - Doing battles and quing messages - space(stuff like npcs, signs,more to come).
 
 Steps to Play
  - Go to the first floor of the house and talk to mom.
  - navigate to0 the pokemon lab and meet proffeser oak to get your first pokemon.
-- then you ccanj go exploring. Nore depth and lore will come in later updates. This release is meant to establish the base structure of the running game. The expansions will include an option to play the game in 3d and IOk will also bhe adding all of the regions one by one. Hope you like it !!
-[(https://drive.google.com/file/d/1_hluYmmO07SBG4c6u8KExGsz6OPXV322/view?usp=sharing)]
-
-
-## Demo gameplay
-
-**Controls**
-- Movement: WASD keys or arrow keys
-- Save game -Press  x to savhe the game
-- Doing battles and quing messages - space(stuff like npcs, signs,more to come).
-
-Steps to Play
- - Go to the first floor of the house and talk to mom.
- - navigate to0 the pokemon lab and meet proffeser oak to get your first pokemon.
-- then you ccanj go exploring. Nore depth and lore will come in later updates. This release is meant to establish the base structure of the running game. The expansions will include an option to play the game in 3d and IOk will also bhe adding all of the regions one by one. Hope you like it !!
+- then you ccanj go exploring. Nore depth and lore will come in later updates. This release is meant to establish the base structure of the running game. The expansions will include an option to play the game in 3d and IOk will also be adding all of the regions one by one. Hope you like it !!
+- After this head to route 1. Here youll find some battelable npcs! Then you can also go to viridian city!
 - Demo video - [(https://drive.google.com/file/d/1_hluYmmO07SBG4c6u8KExGsz6OPXV322/view?usp=sharing)]
 ## Acknowledgements
 
