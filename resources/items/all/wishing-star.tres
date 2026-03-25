@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b0pwuhsbueltn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_4x5yd"]
+
+[resource]
+script = ExtResource("1_4x5yd")
+Name = "wishing-star"
+Id = 1140
+Category = "plot-advancement"

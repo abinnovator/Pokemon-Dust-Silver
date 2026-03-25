@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://resf7nnmevax"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vnc0w"]
+
+[resource]
+script = ExtResource("1_vnc0w")
+Name = "fairy-tera-shard"
+Id = 1695
+Cost = 500
+Category = "tera-shard"

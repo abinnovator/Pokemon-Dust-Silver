@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c5iw3eo5q83x4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_0ccdm"]
+
+[resource]
+script = ExtResource("1_0ccdm")
+Name = "vinegar"
+Id = 1718
+Cost = 300
+Category = "sandwich-ingredients"

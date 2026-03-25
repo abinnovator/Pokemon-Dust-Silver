@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ccm0e3ydvty07"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_y3pwo"]
+
+[resource]
+script = ExtResource("1_y3pwo")
+Name = "mark-charm"
+Id = 1640
+Category = "gameplay"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dldxuw6t3q6bf"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_n2p5r"]
+
+[resource]
+script = ExtResource("1_n2p5r")
+Name = "varoom-fume"
+Id = 1919
+Cost = 80
+Category = "tm-materials"

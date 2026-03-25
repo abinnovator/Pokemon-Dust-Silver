@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c7f5jn54sny0l"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_hgb70"]
+
+[resource]
+script = ExtResource("1_hgb70")
+Name = "bobs-food-tin"
+Id = 1145
+Cost = 950
+Category = "curry-ingredients"
+FlingPower = 80

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dd7mk7bqcethl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ql5w1"]
+
+[resource]
+script = ExtResource("1_ql5w1")
+Name = "lotad-leaf"
+Id = 2137
+Cost = 20
+Category = "tm-materials"

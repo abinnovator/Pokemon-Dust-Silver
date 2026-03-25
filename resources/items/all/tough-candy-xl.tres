@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c61bf0fe16ivc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_0j24a"]
+
+[resource]
+script = ExtResource("1_0j24a")
+Name = "tough-candy-xl"
+Id = 1054
+Cost = 20
+Category = "vitamins"

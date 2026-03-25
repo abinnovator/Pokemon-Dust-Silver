@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bms37y8w0ef3k"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_35t52"]
+
+[resource]
+script = ExtResource("1_35t52")
+Name = "ducklett-feather"
+Id = 2148
+Cost = 15
+Category = "tm-materials"

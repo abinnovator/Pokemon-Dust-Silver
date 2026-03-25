@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://fau7rug8ifo4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_7mw7q"]
+
+[resource]
+script = ExtResource("1_7mw7q")
+Name = "radiant-petal"
+Id = 1650
+Category = "plot-advancement"

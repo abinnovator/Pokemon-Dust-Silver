@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://x8vbwgchmlm1"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_6nw6u"]
+
+[resource]
+script = ExtResource("1_6nw6u")
+Name = "ham"
+Id = 1736
+Cost = 170
+Category = "sandwich-ingredients"

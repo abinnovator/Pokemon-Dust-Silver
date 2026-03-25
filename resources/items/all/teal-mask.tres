@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dwhjd6r3qd1ve"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ebjux"]
+
+[resource]
+script = ExtResource("1_ebjux")
+Name = "teal-mask"
+Id = 2102
+Category = "event-items"

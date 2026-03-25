@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cn5du2n78uwyy"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3seqi"]
+
+[resource]
+script = ExtResource("1_3seqi")
+Name = "hatenna-dust"
+Id = 1902
+Cost = 80
+Category = "tm-materials"

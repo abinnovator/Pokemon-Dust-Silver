@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cwupwbclysd30"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_e70ei"]
+
+[resource]
+script = ExtResource("1_e70ei")
+Name = "linking-cord"
+Id = 2160
+Cost = 8000
+Category = "evolution"
+Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "holdable")
+ShortEffect = "Allows a Pokemon whose evolution is usually triggered by trading to evolve"
+Effect = " The Linking Cord triggers the evolution of certain Pokémon (all of which can alternatively evolve when traded) upon use. This consumes the Linking Cord."

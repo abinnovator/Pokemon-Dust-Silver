@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cmrp4l0ii6rar"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_2unm4"]
+
+[resource]
+script = ExtResource("1_2unm4")
+Name = "cramorant-down"
+Id = 2157
+Cost = 30
+Category = "tm-materials"

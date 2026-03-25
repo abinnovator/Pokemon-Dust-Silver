@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://brlr1s7e2tqhw"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_t4c4g"]
+
+[resource]
+script = ExtResource("1_t4c4g")
+Name = "dynamax-crystal-gem2286"
+Id = 1546
+Cost = 20
+Category = "dynamax-crystals"

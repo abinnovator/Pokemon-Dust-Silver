@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://i6jf10ak3bbo"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_aos1v"]
+
+[resource]
+script = ExtResource("1_aos1v")
+Name = "eevee-cup"
+Id = 2061
+Cost = 2000
+Category = "picnic"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dsj0p2dlp7ehy"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_b1ly3"]
+
+[resource]
+script = ExtResource("1_b1ly3")
+Name = "swablu-fluff"
+Id = 1814
+Cost = 100
+Category = "tm-materials"

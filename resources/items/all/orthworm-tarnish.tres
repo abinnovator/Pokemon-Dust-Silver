@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bf5lv3gb6reja"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_71saf"]
+
+[resource]
+script = ExtResource("1_71saf")
+Name = "orthworm-tarnish"
+Id = 1920
+Cost = 200
+Category = "tm-materials"

@@ -35,28 +35,28 @@ position = Vector2(-2768, -2096)
 position = Vector2(-344, -2104)
 
 [node name="Level15" parent="." instance=ExtResource("5_unuon")]
-position = Vector2(4000, -2744)
+position = Vector2(4064, -2504)
 
 [node name="Level7" parent="." instance=ExtResource("5_c8try")]
-position = Vector2(1136, -4344)
+position = Vector2(1000, -4328)
 
 [node name="Level8" parent="." instance=ExtResource("6_6c3xg")]
-position = Vector2(4256, -4280)
+position = Vector2(4080, -4216)
 
 [node name="Level4" parent="." instance=ExtResource("8_fdi7v")]
-position = Vector2(-224, -3088)
+position = Vector2(-440, -3088)
 
 [node name="Level6" parent="." instance=ExtResource("8_uimdc")]
-position = Vector2(1616, -4328)
+position = Vector2(1416, -4240)
 
 [node name="Route 7" parent="." instance=ExtResource("10_jpopv")]
 position = Vector2(7752, -3344)
 
 [node name="Level10" parent="." instance=ExtResource("10_cjvgp")]
-position = Vector2(4160, -3432)
+position = Vector2(4152, -3248)
 
 [node name="Level5" parent="." instance=ExtResource("7_mmh18")]
-position = Vector2(176, -4656)
+position = Vector2(-48, -4624)
 
 [node name="Mount Moon" parent="." instance=ExtResource("9_kase7")]
 position = Vector2(2304, -4960)

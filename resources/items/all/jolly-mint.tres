@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://hlvq0wlrncj1"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_5a1wj"]
+
+[resource]
+script = ExtResource("1_5a1wj")
+Name = "jolly-mint"
+Id = 1307
+Cost = 20
+Category = "nature-mints"
+FlingPower = 10

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://kuumeldi6bjs"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_63lsp"]
+
+[resource]
+script = ExtResource("1_63lsp")
+Name = "auspicious-armor"
+Id = 2045
+Cost = 3000
+Category = "picnic"

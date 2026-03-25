@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://drkbna5x4pyvq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jaaco"]
+
+[resource]
+script = ExtResource("1_jaaco")
+Name = "tofu"
+Id = 1746
+Cost = 260
+Category = "sandwich-ingredients"

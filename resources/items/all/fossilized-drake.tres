@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://vvyjbbgs2em8"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_0sj78"]
+
+[resource]
+script = ExtResource("1_0sj78")
+Name = "fossilized-drake"
+Id = 1165
+Cost = 5000
+Category = "dex-completion"
+FlingPower = 100

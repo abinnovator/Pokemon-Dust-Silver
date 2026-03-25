@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cqaqgsk8ma8i4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_cdhjf"]
+
+[resource]
+script = ExtResource("1_cdhjf")
+Name = "diamond-pattern-cup"
+Id = 2055
+Cost = 800
+Category = "picnic"

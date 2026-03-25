@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cbnfkw07uvoiu"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3im1p"]
+
+[resource]
+script = ExtResource("1_3im1p")
+Name = "mint-tablecloth"
+Id = 2075
+Cost = 1000
+Category = "picnic"

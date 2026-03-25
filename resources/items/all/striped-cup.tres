@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b0jp4j7tfhovp"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ixwer"]
+
+[resource]
+script = ExtResource("1_ixwer")
+Name = "striped-cup"
+Id = 2023
+Cost = 800
+Category = "picnic"

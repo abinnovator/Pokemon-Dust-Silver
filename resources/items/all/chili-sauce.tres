@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bvx8vvte8uuj4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_h3368"]
+
+[resource]
+script = ExtResource("1_h3368")
+Name = "chili-sauce"
+Id = 1709
+Cost = 320
+Category = "sandwich-ingredients"

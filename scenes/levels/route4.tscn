@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dp7fnvryq8fhi"]
+[gd_scene load_steps=11 format=4 uid="uid://dp7fnvryq8fhi"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_ujx6r"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_rrxnf"]
@@ -16,26 +16,13 @@ NpcMovementType = 1
 Messages = Array[String](["Hey be quit! Im looking for bug type pokemon"])
 PatrolPoints = null
 InterceptMessages = null
-metadata/_custom_type_script = "uid://kah8oayhjg5f"
-
-[sub_resource type="Resource" id="Resource_4n8nw"]
-script = ExtResource("9_he7we")
-NpcMovementType = 1
-Messages = null
-PatrolPoints = null
-HasForcedInterception = true
-TriggerZoneSize = Vector2(4, 4)
-InterceptMessages = null
-HasBattle = true
-PokemonID = 18
-PokemonLevel = 34
-IsMale = true
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
 position = Vector2(-1080, 16)
 script = ExtResource("1_ujx6r")
-LevelName = 30
+LevelName = 39
 encounterRate = 2
 bottom = 560
 right = 1504
@@ -306,7 +293,7 @@ tile_map_data = PackedByteArray("AACgABAABAAgAAEAAACgABEABAAgAAEAAACgABIABAAgAAI
 tile_set = ExtResource("2_rrxnf")
 
 [node name="Tree" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AACXABwACAAAAAAAAACVABwACAAAAAAAAACXABoACAAAAAAAAACVABoACAAAAAAAAACXABgACAAAAAAAAACVABgACAAAAAAAAACXABYACAAAAAAAAACVABYACAAAAAAAAACXABIACAAAAAAAAACVABIACAAAAAAAAACTABIACAAAAAAAAACRABIACAAAAAAAAACNABIACAAAAAAAAACPABIACAAAAAAAAACdAA0ACAAAAAAAAACbAA0ACAAAAAAAAACdAAsACAAAAAAAAACbAAsACAAAAAAAAACLABUACAAAAAAAAACJABUACAAAAAAAAACLABcACAAAAAAAAACJABcACAAAAAAAAACLABkACAAAAAAAAACJABkACAAAAAAAAACLABsACAAAAAAAAACJABsACAAAAAAAAACLAB0ACAAAAAAAAACJAB0ACAAAAAAAAACHABkACAAAAAAAAACFABkACAAAAAAAAACBABkACAAAAAAAAACHAB0ACAAAAAAAAACFAB0ACAAAAAAAAACDAB0ACAAAAAAAAAB7AB0ACAAAAAAAAAB9AB0ACAAAAAAAAAB/AB0ACAAAAAAAAACBAB0ACAAAAAAAAAB3ABsACAAAAAAAAAB3ABkACAAAAAAAAAB3ABIACAAAAAAAAAB3ABAACAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AACXABwACAAAAAAAAACVABwACAAAAAAAAACXABoACAAAAAAAAACVABoACAAAAAAAAACXABgACAAAAAAAAACVABgACAAAAAAAAACXABYACAAAAAAAAACVABYACAAAAAAAAACXABIACAAAAAAAAACVABIACAAAAAAAAACTABIACAAAAAAAAACRABIACAAAAAAAAACNABIACAAAAAAAAACPABIACAAAAAAAAACdAA0ACAAAAAAAAACbAA0ACAAAAAAAAACdAAsACAAAAAAAAACbAAsACAAAAAAAAACLABcACAAAAAAAAACJABcACAAAAAAAAACLABkACAAAAAAAAACJABkACAAAAAAAAACLABsACAAAAAAAAACJABsACAAAAAAAAACLAB0ACAAAAAAAAACJAB0ACAAAAAAAAACHABkACAAAAAAAAACFABkACAAAAAAAAACBABkACAAAAAAAAACHAB0ACAAAAAAAAACFAB0ACAAAAAAAAACDAB0ACAAAAAAAAAB7AB0ACAAAAAAAAAB9AB0ACAAAAAAAAAB/AB0ACAAAAAAAAACBAB0ACAAAAAAAAAB3ABsACAAAAAAAAAB3ABkACAAAAAAAAAB3ABIACAAAAAAAAAB3ABAACAAAAAAAAAA=")
 tile_set = ExtResource("2_rrxnf")
 
 [node name="Ledge" type="TileMapLayer" parent="Tiles"]
@@ -323,7 +310,7 @@ position = Vector2(80, 96)
 [node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("4_m4o5i")]
 position = Vector2(1192, 112)
 scale = Vector2(2, 1)
-TargetLevelName = 29
+TargetLevelName = 38
 TargetLevelTrigger = 1
 
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("4_m4o5i")]
@@ -347,8 +334,3 @@ position = Vector2(-112, 42)
 position = Vector2(2304, 376)
 NpcAppearance = 17
 InputConfig = SubResource("Resource_0jpxt")
-
-[node name="NPC" parent="NPC\'s" instance=ExtResource("8_0jpxt")]
-position = Vector2(2136, 296)
-NpcAppearance = 31
-InputConfig = SubResource("Resource_4n8nw")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b746mad7u2qe0"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vli46"]
+
+[resource]
+script = ExtResource("1_vli46")
+Name = "hearthflame-mask"
+Id = 2107
+Category = "held-items"

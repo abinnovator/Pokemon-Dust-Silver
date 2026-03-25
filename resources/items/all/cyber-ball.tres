@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dua3wwdtq60kl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_10u46"]
+
+[resource]
+script = ExtResource("1_10u46")
+Name = "cyber-ball"
+Id = 2035
+Cost = 2000
+Category = "picnic"

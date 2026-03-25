@@ -7,7 +7,7 @@
 
 [node name="Mount Moon" type="Node2D"]
 script = ExtResource("1_4t42p")
-LevelName = 29
+LevelName = 38
 top = -64
 bottom = 288
 left = -100
@@ -43,7 +43,7 @@ position = Vector2(80, 96)
 
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_iftf2")]
 position = Vector2(208, 80)
-TargetLevelName = 30
+TargetLevelName = 39
 CurrentLevelTrigger = 1
 
 [node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("3_iftf2")]

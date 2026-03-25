@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bnuhmh2ke4cos"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dk2qg"]
+
+[resource]
+script = ExtResource("1_dk2qg")
+Name = "bounsweet-sweat"
+Id = 1880
+Cost = 80
+Category = "tm-materials"

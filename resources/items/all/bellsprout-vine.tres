@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dokpcqapd7qq4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_35b5g"]
+
+[resource]
+script = ExtResource("1_35b5g")
+Name = "bellsprout-vine"
+Id = 2124
+Cost = 25
+Category = "tm-materials"

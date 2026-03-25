@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cu7gauiy0p7oq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_2a5xh"]
+
+[resource]
+script = ExtResource("1_2a5xh")
+Name = "ground-tera-shard"
+Id = 1686
+Cost = 500
+Category = "tera-shard"

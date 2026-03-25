@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cpvr7ms4scn4x"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_keebl"]
+
+[resource]
+script = ExtResource("1_keebl")
+Name = "fairy-feather"
+Id = 2105
+Cost = 750
+Category = "held-items"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://bg73q4ubeuyj8"]
+[gd_scene load_steps=15 format=4 uid="uid://bg73q4ubeuyj8"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_f6d7f"]
 [ext_resource type="Texture2D" uid="uid://cbfh4naitsmbv" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Maps (Towns, Buildings, Etc.) - Cerulean City.png" id="2_1p4au"]
 [ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="2_b16i1"]
 [ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="4_iuub5"]
 [ext_resource type="Script" uid="uid://dit01rplt30dj" path="res://scripts/gameplay/items/ShopItem.cs" id="4_tiae1"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="6_4gdjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b16i1"]
 texture = ExtResource("2_1p4au")
@@ -3964,7 +3965,6 @@ sources/0 = SubResource("TileSetAtlasSource_b16i1")
 
 [sub_resource type="Resource" id="Resource_4gdjf"]
 script = ExtResource("4_tiae1")
-Stock = 1
 metadata/_custom_type_script = "uid://dit01rplt30dj"
 
 [sub_resource type="Resource" id="Resource_tiae1"]
@@ -3991,16 +3991,19 @@ size = Vector2(8, 176)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_f6d7f")
 LevelName = 30
+bottom = 160
+right = 176
 
 [node name="Tiles" type="Node2D" parent="."]
 y_sort_enabled = true
+texture_filter = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
 tile_map_data = PackedByteArray("AAAAAAAAAAAxABcAAAAAAAEAAAAxABgAAAAAAAIAAAAxABkAAAAAAAMAAAAxABoAAAAAAAQAAAAxABsAAAAAAAUAAAAxABwAAAAAAAYAAAAxAB0AAAAAAAcAAAAxAB4AAAAAAAgAAAAxAB8AAAAAAAkAAAAxACAAAAABAAAAAAAyABcAAAABAAEAAAAyABgAAAABAAIAAAAyABkAAAABAAMAAAAyABoAAAABAAQAAAAyABsAAAABAAUAAAAyABwAAAABAAYAAAAyAB0AAAABAAcAAAAyAB4AAAABAAgAAAAyAB8AAAABAAkAAAAyACAAAAACAAAAAAAzABcAAAACAAEAAAAzABgAAAACAAIAAAAzABkAAAACAAMAAAAzABoAAAACAAQAAAAzABsAAAACAAUAAAAzABwAAAACAAYAAAAzAB0AAAACAAcAAAAzAB4AAAACAAgAAAAzAB8AAAACAAkAAAAzACAAAAADAAAAAAA0ABcAAAADAAEAAAA0ABgAAAADAAIAAAA0ABkAAAADAAMAAAA0ABoAAAADAAQAAAA0ABsAAAADAAUAAAA0ABwAAAADAAYAAAA0AB0AAAADAAcAAAA0AB4AAAADAAgAAAA0AB8AAAADAAkAAAA0ACAAAAAEAAAAAAA1ABcAAAAEAAEAAAA1ABgAAAAEAAIAAAA1ABkAAAAEAAMAAAA1ABoAAAAEAAQAAAA1ABsAAAAEAAUAAAA1ABwAAAAEAAYAAAA1AB0AAAAEAAcAAAA1AB4AAAAEAAgAAAA1AB8AAAAEAAkAAAA1ACAAAAAFAAAAAAA2ABcAAAAFAAEAAAA2ABgAAAAFAAIAAAA2ABkAAAAFAAMAAAA2ABoAAAAFAAQAAAA2ABsAAAAFAAUAAAA2ABwAAAAFAAYAAAA2AB0AAAAFAAcAAAA2AB4AAAAFAAgAAAA2AB8AAAAFAAkAAAA2ACAAAAAGAAAAAAA3ABcAAAAGAAEAAAA3ABgAAAAGAAIAAAA3ABkAAAAGAAMAAAA3ABoAAAAGAAQAAAA3ABsAAAAGAAUAAAA3ABwAAAAGAAYAAAA3AB0AAAAGAAcAAAA3AB4AAAAGAAgAAAA3AB8AAAAGAAkAAAA3ACAAAAAHAAAAAAA4ABcAAAAHAAEAAAA4ABgAAAAHAAIAAAA4ABkAAAAHAAMAAAA4ABoAAAAHAAQAAAA4ABsAAAAHAAUAAAA4ABwAAAAHAAYAAAA4AB0AAAAHAAcAAAA4AB4AAAAHAAgAAAA4AB8AAAAHAAkAAAA4ACAAAAAIAAAAAAA5ABcAAAAIAAEAAAA5ABgAAAAIAAIAAAA5ABkAAAAIAAMAAAA5ABoAAAAIAAQAAAA5ABsAAAAIAAUAAAA5ABwAAAAIAAYAAAA5AB0AAAAIAAcAAAA5AB4AAAAIAAgAAAA5AB8AAAAIAAkAAAA5ACAAAAAJAAAAAAA6ABcAAAAJAAEAAAA6ABgAAAAJAAIAAAA6ABkAAAAJAAMAAAA6ABoAAAAJAAQAAAA6ABsAAAAJAAUAAAA6ABwAAAAJAAYAAAA6AB0AAAAJAAcAAAA6AB4AAAAJAAgAAAA6AB8AAAAJAAkAAAA6ACAAAAAKAAAAAAA7ABcAAAAKAAEAAAA7ABgAAAAKAAIAAAA7ABkAAAAKAAMAAAA7ABoAAAAKAAQAAAA7ABsAAAAKAAUAAAA7ABwAAAAKAAYAAAA7AB0AAAAKAAcAAAA7AB4AAAAKAAgAAAA7AB8AAAAKAAkAAAA7ACAAAAA=")
 tile_set = SubResource("TileSet_iuub5")
 
 [node name="NPC" parent="Tiles" instance=ExtResource("2_b16i1")]
-position = Vector2(40, 64)
+position = Vector2(48, 64)
 NpcAppearance = 29
 InputConfig = SubResource("Resource_tiae1")
 
@@ -4033,3 +4036,11 @@ shape = SubResource("RectangleShape2D_b7ebs")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 1"]
 position = Vector2(-4, 80)
 shape = SubResource("RectangleShape2D_537rj")
+
+[node name="SceneTrigger" type="Node2D" parent="."]
+
+[node name="SceneTrigger" parent="SceneTrigger" instance=ExtResource("6_4gdjf")]
+position = Vector2(73.00001, 131)
+scale = Vector2(1.85, 1.1)
+TargetLevelName = 23
+TargetLevelTrigger = 8

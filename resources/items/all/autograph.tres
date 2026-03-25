@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://d2jw8vfkg5h3c"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_nagsh"]
+
+[resource]
+script = ExtResource("1_nagsh")
+Name = "autograph"
+Id = 1006
+Category = "unused"

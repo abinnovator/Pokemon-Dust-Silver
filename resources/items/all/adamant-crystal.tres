@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://d187e3i65fuc6"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rjo3r"]
+
+[resource]
+script = ExtResource("1_rjo3r")
+Name = "adamant-crystal"
+Id = 1659
+Category = "gameplay"

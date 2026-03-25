@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c0765x7e18ajy"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mbbi8"]
+
+[resource]
+script = ExtResource("1_mbbi8")
+Name = "dynamax-crystal-gem2421"
+Id = 1541
+Cost = 20
+Category = "dynamax-crystals"

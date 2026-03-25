@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dqtx8pi0tmvcv"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_curdd"]
+
+[resource]
+script = ExtResource("1_curdd")
+Name = "sandile-claw"
+Id = 1845
+Cost = 80
+Category = "tm-materials"

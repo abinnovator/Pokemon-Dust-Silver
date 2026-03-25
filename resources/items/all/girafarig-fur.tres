@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bvb2wyh0vsmc7"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_7b405"]
+
+[resource]
+script = ExtResource("1_7b405")
+Name = "girafarig-fur"
+Id = 1788
+Cost = 100
+Category = "tm-materials"

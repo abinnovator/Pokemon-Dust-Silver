@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bp1vlgy1k76nv"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_2sm25"]
+
+[resource]
+script = ExtResource("1_2sm25")
+Name = "kricketot-shell"
+Id = 1824
+Cost = 40
+Category = "tm-materials"

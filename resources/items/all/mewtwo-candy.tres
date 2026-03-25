@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cm8wb3u5kuk4f"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rxnjt"]
+
+[resource]
+script = ExtResource("1_rxnjt")
+Name = "mewtwo-candy"
+Id = 1134
+Cost = 20
+Category = "species-candies"

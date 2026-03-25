@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bpuq45sobdoei"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3bn4o"]
+
+[resource]
+script = ExtResource("1_3bn4o")
+Name = "large-leek"
+Id = 1152
+Cost = 2200
+Category = "curry-ingredients"
+FlingPower = 20

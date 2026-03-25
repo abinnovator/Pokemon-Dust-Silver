@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dej8708gwx113"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_43ckp"]
+
+[resource]
+script = ExtResource("1_43ckp")
+Name = "resist-mochi"
+Id = 2114
+Cost = 125
+Category = "vitamins"

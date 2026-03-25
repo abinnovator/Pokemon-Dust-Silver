@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c7860x2extumo"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dtc3w"]
+
+[resource]
+script = ExtResource("1_dtc3w")
+Name = "academy-bottle"
+Id = 2016
+Category = "picnic"

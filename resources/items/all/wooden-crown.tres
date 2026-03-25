@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://7su6v0d0mpkb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qi3fy"]
+
+[resource]
+script = ExtResource("1_qi3fy")
+Name = "wooden-crown"
+Id = 1649
+Category = "plot-advancement"

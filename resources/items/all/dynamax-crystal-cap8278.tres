@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b64fjw5atfk2q"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_hk06s"]
+
+[resource]
+script = ExtResource("1_hk06s")
+Name = "dynamax-crystal-cap8278"
+Id = 1602
+Cost = 20
+Category = "dynamax-crystals"

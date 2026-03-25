@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cji883nrfg5g"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_xik45"]
+
+[resource]
+script = ExtResource("1_xik45")
+Name = "watercress"
+Id = 1760
+Cost = 270
+Category = "sandwich-ingredients"

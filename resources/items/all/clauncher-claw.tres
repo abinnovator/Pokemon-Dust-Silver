@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://vvu1d11rhxwu"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_m5cvs"]
+
+[resource]
+script = ExtResource("1_m5cvs")
+Name = "clauncher-claw"
+Id = 1865
+Cost = 100
+Category = "tm-materials"

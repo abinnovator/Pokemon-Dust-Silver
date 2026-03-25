@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://lesux7iip31m"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3olm6"]
+
+[resource]
+script = ExtResource("1_3olm6")
+Name = "stantler-hair"
+Id = 1798
+Cost = 120
+Category = "tm-materials"

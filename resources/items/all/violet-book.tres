@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cvqno6p40052y"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vx7s5"]
+
+[resource]
+script = ExtResource("1_vx7s5")
+Name = "violet-book"
+Id = 1671
+Category = "event-items"

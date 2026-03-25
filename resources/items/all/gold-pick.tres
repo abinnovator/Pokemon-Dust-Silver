@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bqb8e6g7ex8hq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_o3s06"]
+
+[resource]
+script = ExtResource("1_o3s06")
+Name = "gold-pick"
+Id = 2036
+Cost = 400
+Category = "picnic"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://crvt4qk1cog8f"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_5pku6"]
+
+[resource]
+script = ExtResource("1_5pku6")
+Name = "charmander-candy"
+Id = 1059
+Cost = 20
+Category = "species-candies"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://csgye15qhvp4j"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qajch"]
+
+[resource]
+script = ExtResource("1_qajch")
+Name = "surskit-syrup"
+Id = 1802
+Cost = 60
+Category = "tm-materials"

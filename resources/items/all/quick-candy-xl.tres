@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ewnieerx45yn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ehtfo"]
+
+[resource]
+script = ExtResource("1_ehtfo")
+Name = "quick-candy-xl"
+Id = 1057
+Cost = 20
+Category = "vitamins"

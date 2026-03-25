@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bkkso7m6dqft4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_e42hw"]
+
+[resource]
+script = ExtResource("1_e42hw")
+Name = "salad-mix"
+Id = 1157
+Cost = 400
+Category = "curry-ingredients"
+FlingPower = 10

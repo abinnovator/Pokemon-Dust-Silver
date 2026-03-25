@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://vsav4jf45k80"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_db4vw"]
+
+[resource]
+script = ExtResource("1_db4vw")
+Name = "mew-candy"
+Id = 1135
+Cost = 20
+Category = "species-candies"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ce0nao8pnee7c"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_r0vow"]
+
+[resource]
+script = ExtResource("1_r0vow")
+Name = "dynamax-crystal-cas542"
+Id = 1442
+Cost = 20
+Category = "dynamax-crystals"

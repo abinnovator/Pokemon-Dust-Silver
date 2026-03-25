@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bski6wwnjaii2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ibvee"]
+
+[resource]
+script = ExtResource("1_ibvee")
+Name = "pink-bottle"
+Id = 2047
+Cost = 2000
+Category = "picnic"

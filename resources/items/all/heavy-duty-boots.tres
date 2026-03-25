@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://36uy8pnejfsb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qx86j"]
+
+[resource]
+script = ExtResource("1_qx86j")
+Name = "heavy-duty-boots"
+Id = 1178
+Cost = 4000
+Category = "held-items"
+FlingPower = 80

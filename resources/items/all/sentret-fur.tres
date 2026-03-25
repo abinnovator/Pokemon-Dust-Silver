@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cgfeaw0o20s2m"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jmjc7"]
+
+[resource]
+script = ExtResource("1_jmjc7")
+Name = "sentret-fur"
+Id = 2128
+Cost = 10
+Category = "tm-materials"

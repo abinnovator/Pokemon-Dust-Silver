@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://6e8hqmhcuwbl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_prt4q"]
+
+[resource]
+script = ExtResource("1_prt4q")
+Name = "rash-mint"
+Id = 1299
+Cost = 20
+Category = "nature-mints"
+FlingPower = 10

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b6kcuub2vkxn0"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_muv5f"]
+
+[resource]
+script = ExtResource("1_muv5f")
+Name = "strawberry-sweet"
+Id = 1167
+Cost = 500
+Category = "evolution"
+FlingPower = 10

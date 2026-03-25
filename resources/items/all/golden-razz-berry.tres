@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dgwdq0rus3g6b"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_nycv5"]
+
+[resource]
+script = ExtResource("1_nycv5")
+Name = "golden-razz-berry"
+Id = 1015
+Cost = 5000
+Category = "catching-bonus"
+FlingPower = 10

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://to70f83f0vd2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_h1wgf"]
+
+[resource]
+script = ExtResource("1_h1wgf")
+Name = "mimikyu-scrap"
+Id = 1885
+Cost = 40
+Category = "tm-materials"

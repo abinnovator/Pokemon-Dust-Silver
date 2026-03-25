@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://deuh5grckwrb0"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mkidg"]
+
+[resource]
+script = ExtResource("1_mkidg")
+Name = "weedle-candy"
+Id = 1062
+Cost = 20
+Category = "species-candies"

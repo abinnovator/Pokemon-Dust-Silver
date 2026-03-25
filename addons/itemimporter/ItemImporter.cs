@@ -48,7 +48,7 @@ public partial class ItemImporter : EditorPlugin
 
 	public override void _EnterTree()
 	{
-		AddToolMenuItem(ImportMenuItemText, Callable.From(ImportPokeballs));
+		AddToolMenuItem(ImportMenuItemText, Callable.From(OnImportPokeballsClicked));
 	}
 
 	public override void _ExitTree()
@@ -56,7 +56,12 @@ public partial class ItemImporter : EditorPlugin
 		RemoveToolMenuItem(ImportMenuItemText);
 	}
 
-	public async void ImportPokeballs()
+	private void OnImportPokeballsClicked()
+	{
+		ImportPokeballs();
+	}
+
+	private async void ImportPokeballs()
 	{
 		Logger.Info("Starting Pokeball import...");
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(FolderPath));

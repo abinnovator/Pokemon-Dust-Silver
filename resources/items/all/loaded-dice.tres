@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://crqu6kxyfadr8"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_5vd0p"]
+
+[resource]
+script = ExtResource("1_5vd0p")
+Name = "loaded-dice"
+Id = 1702
+Cost = 20000
+Category = "held-items"

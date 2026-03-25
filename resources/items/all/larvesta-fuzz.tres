@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://di4cs17lg657g"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dvqur"]
+
+[resource]
+script = ExtResource("1_dvqur")
+Name = "larvesta-fuzz"
+Id = 1858
+Cost = 200
+Category = "tm-materials"

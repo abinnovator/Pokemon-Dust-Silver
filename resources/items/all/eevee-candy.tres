@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cqyl80yt3km2o"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qsrfd"]
+
+[resource]
+script = ExtResource("1_qsrfd")
+Name = "eevee-candy"
+Id = 1124
+Cost = 20
+Category = "species-candies"

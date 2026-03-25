@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://0bqgqnq4klsa"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_1d3dy"]
+
+[resource]
+script = ExtResource("1_1d3dy")
+Name = "cleffa-fur"
+Id = 2121
+Cost = 25
+Category = "tm-materials"

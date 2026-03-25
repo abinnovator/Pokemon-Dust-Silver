@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cbgpjhk6qq6ec"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_f4m00"]
+
+[resource]
+script = ExtResource("1_f4m00")
+Name = "sableye-gem"
+Id = 1807
+Cost = 200
+Category = "tm-materials"

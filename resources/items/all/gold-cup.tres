@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b8lmtjng45gyr"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_sm4ot"]
+
+[resource]
+script = ExtResource("1_sm4ot")
+Name = "gold-cup"
+Id = 2082
+Cost = 15000
+Category = "picnic"

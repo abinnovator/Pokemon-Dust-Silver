@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://br6y7ndgh383d"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_d14yi"]
+
+[resource]
+script = ExtResource("1_d14yi")
+Name = "delibird-parcel"
+Id = 1795
+Cost = 240
+Category = "tm-materials"

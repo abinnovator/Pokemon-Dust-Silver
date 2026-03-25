@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ctvm16nw2p713"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_lmaon"]
+
+[resource]
+script = ExtResource("1_lmaon")
+Name = "geodude-fragment"
+Id = 2125
+Cost = 30
+Category = "tm-materials"

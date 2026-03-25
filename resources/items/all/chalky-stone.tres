@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c8d06qkn3g5t3"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_t7bx4"]
+
+[resource]
+script = ExtResource("1_t7bx4")
+Name = "chalky-stone"
+Id = 1025
+Cost = 60
+Category = "loot"
+FlingPower = 30

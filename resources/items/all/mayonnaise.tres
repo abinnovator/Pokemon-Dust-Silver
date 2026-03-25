@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bst3bxpjx6yud"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_k1322"]
+
+[resource]
+script = ExtResource("1_k1322")
+Name = "mayonnaise"
+Id = 1704
+Cost = 120
+Category = "sandwich-ingredients"

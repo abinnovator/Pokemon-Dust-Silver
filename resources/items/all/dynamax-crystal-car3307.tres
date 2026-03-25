@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://den28fc2jahkc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jgrnv"]
+
+[resource]
+script = ExtResource("1_jgrnv")
+Name = "dynamax-crystal-car3307"
+Id = 1608
+Cost = 20
+Category = "dynamax-crystals"

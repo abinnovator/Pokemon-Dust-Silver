@@ -197,19 +197,35 @@ namespace Game.Core
     }
 
     public class ItemApiResponse
-    {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-        [JsonProperty("name")]
-        public string Name { get; set; }
-        [JsonProperty("cost")]
-        public int Cost { get; set; }
-        [JsonProperty("flavor_text_entries")]
-        public List<FlavorTextEntry> FlavorTextEntries { get; set; }
-        [JsonProperty("sprites")]
-        public ItemSprites Sprites { get; set; }
-        [JsonProperty("attributes")]
-        public List<ApiResource> Attributes { get; set; }
-    }
+{
+    [JsonProperty("id")]
+    public int Id { get; set; }
+
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("cost")]
+    public int Cost { get; set; }
+
+    [JsonProperty("category")]
+    public ApiResource Category { get; set; }
+
+    [JsonProperty("attributes")]
+    public List<ApiResource> Attributes { get; set; }
+
+    [JsonProperty("flavor_text_entries")]
+    public List<FlavorTextEntry> FlavorTextEntries { get; set; }
+
+    [JsonProperty("effect_entries")]
+    public List<EffectEntry> EffectEntries { get; set; }
+
+    [JsonProperty("fling_power")]
+    public int? FlingPower { get; set; }
+
+    [JsonProperty("sprites")]
+    public ItemSprites Sprites { get; set; }
+}
+
+
     #endregion
 }

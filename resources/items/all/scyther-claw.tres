@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dtn7bi7vsohgt"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_75kbj"]
+
+[resource]
+script = ExtResource("1_75kbj")
+Name = "scyther-claw"
+Id = 1775
+Cost = 100
+Category = "tm-materials"

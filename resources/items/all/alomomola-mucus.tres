@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c6tk6751ffvel"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_4yrdl"]
+
+[resource]
+script = ExtResource("1_4yrdl")
+Name = "alomomola-mucus"
+Id = 1850
+Cost = 120
+Category = "tm-materials"

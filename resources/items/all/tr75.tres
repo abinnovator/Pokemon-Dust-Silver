@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dokq5eb681pu4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_leov4"]
+
+[resource]
+script = ExtResource("1_leov4")
+Name = "tr75"
+Id = 1263
+Cost = 16000
+Category = "all-machines"
+FlingPower = 100

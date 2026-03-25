@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://rmm3esfg0tmo"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dfh7s"]
+
+[resource]
+script = ExtResource("1_dfh7s")
+Name = "luvdisc-scales"
+Id = 1821
+Cost = 160
+Category = "tm-materials"

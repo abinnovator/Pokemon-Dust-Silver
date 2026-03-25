@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bl8be1sd2hqn5"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_0war4"]
+
+[resource]
+script = ExtResource("1_0war4")
+Name = "horseradish"
+Id = 1757
+Cost = 410
+Category = "sandwich-ingredients"

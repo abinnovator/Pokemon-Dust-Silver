@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cjswg4rxr6vsp"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_bun88"]
+
+[resource]
+script = ExtResource("1_bun88")
+Name = "naughty-mint"
+Id = 1291
+Cost = 20
+Category = "nature-mints"
+FlingPower = 10

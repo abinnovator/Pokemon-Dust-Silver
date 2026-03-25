@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cob0a28fewwr"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3io2j"]
+
+[resource]
+script = ExtResource("1_3io2j")
+Name = "cucumber"
+Id = 1727
+Cost = 130
+Category = "sandwich-ingredients"

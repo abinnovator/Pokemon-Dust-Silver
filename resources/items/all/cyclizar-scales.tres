@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b8x3w8ggoiv5u"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_pi8bv"]
+
+[resource]
+script = ExtResource("1_pi8bv")
+Name = "cyclizar-scales"
+Id = 1925
+Cost = 120
+Category = "tm-materials"

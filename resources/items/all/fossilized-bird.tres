@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://vxvh88cgqrnb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_d5ems"]
+
+[resource]
+script = ExtResource("1_d5ems")
+Name = "fossilized-bird"
+Id = 1163
+Cost = 5000
+Category = "dex-completion"
+FlingPower = 100

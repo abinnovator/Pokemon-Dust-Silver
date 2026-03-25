@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bjg8x3ua56y2i"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_s33yd"]
+
+[resource]
+script = ExtResource("1_s33yd")
+Name = "fomantis-leaf"
+Id = 1878
+Cost = 80
+Category = "tm-materials"

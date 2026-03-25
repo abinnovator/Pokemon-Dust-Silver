@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://l5v8wdqrg4gl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_k8qu1"]
+
+[resource]
+script = ExtResource("1_k8qu1")
+Name = "blue-sky-flower-pick"
+Id = 2091
+Cost = 1000
+Category = "picnic"

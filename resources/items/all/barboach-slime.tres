@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cit1qpr0gyage"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_g46ue"]
+
+[resource]
+script = ExtResource("1_g46ue")
+Name = "barboach-slime"
+Id = 1817
+Cost = 60
+Category = "tm-materials"

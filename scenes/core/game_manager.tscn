@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://k2c2g7m7kfqt"]
+[gd_scene load_steps=5 format=3 uid="uid://k2c2g7m7kfqt"]
 
 [ext_resource type="Script" uid="uid://bfkvajhrlatg" path="res://scripts/core/GameManager.cs" id="1_lv3y2"]
 [ext_resource type="PackedScene" uid="uid://ffjr21aedmvd" path="res://scenes/ui/message_manager.tscn" id="2_x6flg"]
 [ext_resource type="PackedScene" uid="uid://cw224bxyhue7m" path="res://scenes/core/PartyMenu.tscn" id="3_lv3y2"]
+[ext_resource type="PackedScene" uid="uid://c8y4jk3m5pnqr" path="res://scenes/ui/ShopUI.tscn" id="4_vegsa"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("GameViewPort")]
 script = ExtResource("1_lv3y2")
@@ -35,3 +36,5 @@ render_target_update_mode = 4
 [node name="MessageManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_x6flg")]
 
 [node name="Party" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("3_lv3y2")]
+
+[node name="ShopManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("4_vegsa")]

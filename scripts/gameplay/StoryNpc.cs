@@ -265,7 +265,25 @@ public partial class StoryNpc : CharacterBody2D
 				// Open shop if items are available
 				if (config.ShopItems.Count > 0 && ShopManager.Instance != null)
 				{
-					await ShopManager.Instance.OpenShop(config.ShopItems, greeting);
+					// Convert ItemResource array to ShopItem array
+					var shopItems = new Godot.Collections.Array<ShopItem>();
+					foreach (var itemResource in config.ShopItems)
+					{
+						var shopItem = new ShopItem
+						{
+							ItemName = itemResource.Name,
+							ItemId = itemResource.Id,
+							Description = itemResource.Description,
+							Price = itemResource.Cost,
+							Category = ParseItemCategory(itemResource.Category),
+							Stock = -1, // Infinite stock by default
+							IsKeyItem = itemResource.Category == "key-items",
+							Icon = itemResource.Sprite
+						};
+						shopItems.Add(shopItem);
+					}
+					
+					await ShopManager.Instance.OpenShop(shopItems, greeting);
 				}
 				else
 				{
@@ -366,4 +384,19 @@ public partial class StoryNpc : CharacterBody2D
 
 	public StoryNpcInput NpcInput => _npcInput;
 	public StateMachine NpcStateMachine => _stateMachine;
+
+	private ItemCategory ParseItemCategory(string category)
+	{
+		return category?.ToLower() switch
+		{
+			"pokeball" or "pokeballs" => ItemCategory.Pokeball,
+			"medicine" => ItemCategory.Medicine,
+			"battle-items" or "battleitem" => ItemCategory.BattleItem,
+			"berries" or "berry" => ItemCategory.Berry,
+			"key-items" or "keyitem" => ItemCategory.KeyItem,
+			"machines" or "tm" => ItemCategory.TM,
+			"mail" => ItemCategory.Mail,
+			_ => ItemCategory.General
+		};
+	}
 }

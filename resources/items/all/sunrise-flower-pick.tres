@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://un2t35edqqvs"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_1g8i5"]
+
+[resource]
+script = ExtResource("1_1g8i5")
+Name = "sunrise-flower-pick"
+Id = 2093
+Cost = 1000
+Category = "picnic"

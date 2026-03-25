@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cbmv0lh024fc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rym03"]
+
+[resource]
+script = ExtResource("1_rym03")
+Name = "flower-pattern-cup"
+Id = 2025
+Cost = 800
+Category = "picnic"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cauhfhkarnliq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rqejw"]
+
+[resource]
+script = ExtResource("1_rqejw")
+Name = "carbink-jewel"
+Id = 2152
+Cost = 50
+Category = "tm-materials"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bc5axqmxl34qc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_4cxah"]
+
+[resource]
+script = ExtResource("1_4cxah")
+Name = "instant-noodles"
+Id = 1320
+Cost = 150
+Category = "curry-ingredients"
+FlingPower = 10

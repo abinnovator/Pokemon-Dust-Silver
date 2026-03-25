@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cbnvenaswvj61"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gq50e"]
+
+[resource]
+script = ExtResource("1_gq50e")
+Name = "chingling-fragment"
+Id = 2145
+Cost = 20
+Category = "tm-materials"

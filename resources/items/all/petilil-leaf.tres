@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b27a8d7f7pi2o"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_sm8d8"]
+
+[resource]
+script = ExtResource("1_sm8d8")
+Name = "petilil-leaf"
+Id = 1843
+Cost = 60
+Category = "tm-materials"

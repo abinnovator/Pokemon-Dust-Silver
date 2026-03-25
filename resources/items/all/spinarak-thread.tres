@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c8hncb8xrx4pe"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_x6pue"]
+
+[resource]
+script = ExtResource("1_x6pue")
+Name = "spinarak-thread"
+Id = 2130
+Cost = 10
+Category = "tm-materials"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bhbnxwiytcq8r"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_p7py8"]
+
+[resource]
+script = ExtResource("1_p7py8")
+Name = "rice"
+Id = 1747
+Cost = 280
+Category = "sandwich-ingredients"

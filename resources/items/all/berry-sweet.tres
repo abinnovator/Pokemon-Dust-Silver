@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dlsrpfjihbi5o"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gqwvp"]
+
+[resource]
+script = ExtResource("1_gqwvp")
+Name = "berry-sweet"
+Id = 1169
+Cost = 500
+Category = "evolution"
+FlingPower = 10

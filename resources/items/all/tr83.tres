@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dn85nv4y5mapl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rxi0c"]
+
+[resource]
+script = ExtResource("1_rxi0c")
+Name = "tr83"
+Id = 1271
+Cost = 4000
+Category = "all-machines"
+FlingPower = 10

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://de5ykm3e8raf"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_7osl2"]
+
+[resource]
+script = ExtResource("1_7osl2")
+Name = "flamigo-down"
+Id = 1930
+Cost = 80
+Category = "tm-materials"

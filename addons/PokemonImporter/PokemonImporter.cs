@@ -23,7 +23,7 @@ public partial class PokemonImporter : EditorPlugin
 	public override void _EnterTree()
 	{
 		// Initialization of the plugin goes here.
-		AddToolMenuItem(importMenuItemText, Callable.From(ImportPokemon));
+		AddToolMenuItem(importMenuItemText, Callable.From(OnImportPokemonClicked));
 	}
 
 	public override void _ExitTree()
@@ -31,7 +31,13 @@ public partial class PokemonImporter : EditorPlugin
 		// Clean-up of the plugin goes here.
 		RemoveToolMenuItem(importMenuItemText);
 	}
-	public async void ImportPokemon(){
+
+	private void OnImportPokemonClicked()
+	{
+		ImportPokemon();
+	}
+
+	private async void ImportPokemon(){
 		Logger.Info("Attempting to import pokemon.");
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(folderPath));
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(spriteFolderPath));

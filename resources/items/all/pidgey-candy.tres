@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cc58pjvo8ddvx"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3055y"]
+
+[resource]
+script = ExtResource("1_3055y")
+Name = "pidgey-candy"
+Id = 1063
+Cost = 20
+Category = "species-candies"

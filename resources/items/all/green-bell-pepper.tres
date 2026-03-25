@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bgeq0bfefxb22"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_88bie"]
+
+[resource]
+script = ExtResource("1_88bie")
+Name = "green-bell-pepper"
+Id = 1731
+Cost = 230
+Category = "sandwich-ingredients"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b141qic45q3f6"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_q3m77"]
+
+[resource]
+script = ExtResource("1_q3m77")
+Name = "golden-nanab-berry"
+Id = 1017
+Cost = 5000
+Category = "catching-bonus"
+FlingPower = 10

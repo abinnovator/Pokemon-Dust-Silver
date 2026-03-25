@@ -75,9 +75,9 @@ public partial class StoryNpcInputConfig : Resource
 
 	[ExportGroup("Shop")]
 	[Export] public bool IsShopClerk = false;
-	private Array<ShopItem> _shopItems = new();
+	private Array<ItemResource> _shopItems = new();
 	[Export]
-	public Array<ShopItem> ShopItems
+	public Array<ItemResource> ShopItems
 	{
 		get => _shopItems ??= new();
 		set => _shopItems = value;

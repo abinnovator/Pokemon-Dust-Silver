@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dp3efohb0i2x6"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qc63o"]
+
+[resource]
+script = ExtResource("1_qc63o")
+Name = "kiwi"
+Id = 1754
+Cost = 180
+Category = "sandwich-ingredients"

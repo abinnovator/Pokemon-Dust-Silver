@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c1c02nbgq7n7v"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_0820j"]
+
+[resource]
+script = ExtResource("1_0820j")
+Name = "slowpoke-cup"
+Id = 2062
+Cost = 2000
+Category = "picnic"

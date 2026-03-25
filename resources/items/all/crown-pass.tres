@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bwabylx4ya8ek"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_el3oo"]
+
+[resource]
+script = ExtResource("1_el3oo")
+Name = "crown-pass"
+Id = 1648
+Category = "plot-advancement"

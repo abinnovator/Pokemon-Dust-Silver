@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bwmris1rhvp3y"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_tk4vm"]
+
+[resource]
+script = ExtResource("1_tk4vm")
+Name = "toxel-sparks"
+Id = 1891
+Cost = 80
+Category = "tm-materials"

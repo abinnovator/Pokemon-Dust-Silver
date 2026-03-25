@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://hlc7ej26p3dv"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_7mx25"]
+
+[resource]
+script = ExtResource("1_7mx25")
+Name = "tr67"
+Id = 1255
+Cost = 10000
+Category = "all-machines"
+FlingPower = 90

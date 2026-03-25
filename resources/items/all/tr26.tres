@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://df1jkt8x2o24n"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_p28qi"]
+
+[resource]
+script = ExtResource("1_p28qi")
+Name = "tr26"
+Id = 1214
+Cost = 2000
+Category = "all-machines"
+FlingPower = 10

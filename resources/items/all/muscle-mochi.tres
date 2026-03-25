@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://d2fqim32rtx6q"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_uynhk"]
+
+[resource]
+script = ExtResource("1_uynhk")
+Name = "muscle-mochi"
+Id = 2113
+Cost = 125
+Category = "vitamins"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bxwo84vbgap7d"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jd2av"]
+
+[resource]
+script = ExtResource("1_jd2av")
+Name = "smart-candy-l"
+Id = 1049
+Cost = 20
+Category = "vitamins"

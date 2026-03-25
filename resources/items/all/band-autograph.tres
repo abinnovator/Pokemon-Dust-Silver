@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cjjytonen8jke"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_sx3ap"]
+
+[resource]
+script = ExtResource("1_sx3ap")
+Name = "band-autograph"
+Id = 1327
+Category = "unused"

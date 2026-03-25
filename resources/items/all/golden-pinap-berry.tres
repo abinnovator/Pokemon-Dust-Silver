@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c81w0e0pv1hnk"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_77ljb"]
+
+[resource]
+script = ExtResource("1_77ljb")
+Name = "golden-pinap-berry"
+Id = 1019
+Cost = 5000
+Category = "catching-bonus"
+FlingPower = 10

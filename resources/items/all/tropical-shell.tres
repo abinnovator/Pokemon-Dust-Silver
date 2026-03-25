@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cf3a3dab42wb5"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qv5ib"]
+
+[resource]
+script = ExtResource("1_qv5ib")
+Name = "tropical-shell"
+Id = 1032
+Cost = 2000
+Category = "loot"
+FlingPower = 30

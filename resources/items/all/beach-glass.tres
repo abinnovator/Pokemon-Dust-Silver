@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dk4pywe847msv"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vofvs"]
+
+[resource]
+script = ExtResource("1_vofvs")
+Name = "beach-glass"
+Id = 1028
+Cost = 800
+Category = "loot"
+FlingPower = 30

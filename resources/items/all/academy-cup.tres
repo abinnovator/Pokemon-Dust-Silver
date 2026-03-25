@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b7m744y6h3yv2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_hrl1i"]
+
+[resource]
+script = ExtResource("1_hrl1i")
+Name = "academy-cup"
+Id = 2021
+Category = "picnic"

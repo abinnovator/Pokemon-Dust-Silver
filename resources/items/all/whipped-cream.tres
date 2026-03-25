@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cqtta5s6q54q3"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_g54c0"]
+
+[resource]
+script = ExtResource("1_g54c0")
+Name = "whipped-cream"
+Id = 1713
+Cost = 200
+Category = "sandwich-ingredients"

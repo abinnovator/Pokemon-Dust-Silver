@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cxvvgbps30ooh"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_p43r5"]
+
+[resource]
+script = ExtResource("1_p43r5")
+Name = "magical-heart-pick"
+Id = 2089
+Cost = 600
+Category = "picnic"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c2fd4trr1j3eb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_m3p10"]
+
+[resource]
+script = ExtResource("1_m3p10")
+Name = "cutiefly-powder"
+Id = 2155
+Cost = 25
+Category = "tm-materials"

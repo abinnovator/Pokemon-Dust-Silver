@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bxhlfo0ub0ge2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ej1xe"]
+
+[resource]
+script = ExtResource("1_ej1xe")
+Name = "clever-mochi"
+Id = 2116
+Cost = 125
+Category = "vitamins"

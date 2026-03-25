@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bspmivagvmxir"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_6xjrj"]
+
+[resource]
+script = ExtResource("1_6xjrj")
+Name = "riolu-fur"
+Id = 1837
+Cost = 160
+Category = "tm-materials"

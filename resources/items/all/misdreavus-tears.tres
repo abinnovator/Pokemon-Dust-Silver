@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ccprncd6i3mxd"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ji1oi"]
+
+[resource]
+script = ExtResource("1_ji1oi")
+Name = "misdreavus-tears"
+Id = 1787
+Cost = 80
+Category = "tm-materials"

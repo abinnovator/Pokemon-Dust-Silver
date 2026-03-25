@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dxbw35de18xgq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_buqlk"]
+
+[resource]
+script = ExtResource("1_buqlk")
+Name = "scyther-candy"
+Id = 1116
+Cost = 20
+Category = "species-candies"

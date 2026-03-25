@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bpjajm1q4fgd2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_n1f1w"]
+
+[resource]
+script = ExtResource("1_n1f1w")
+Name = "bergmite-ice"
+Id = 1870
+Cost = 80
+Category = "tm-materials"

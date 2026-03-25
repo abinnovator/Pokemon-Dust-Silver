@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dthikpd58mecn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qhdg5"]
+
+[resource]
+script = ExtResource("1_qhdg5")
+Name = "growlithe-fur"
+Id = 1767
+Cost = 80
+Category = "tm-materials"

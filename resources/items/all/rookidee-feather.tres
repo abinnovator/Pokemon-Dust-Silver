@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dsa7qfefv5mn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qj1l6"]
+
+[resource]
+script = ExtResource("1_qj1l6")
+Name = "rookidee-feather"
+Id = 1890
+Cost = 80
+Category = "tm-materials"

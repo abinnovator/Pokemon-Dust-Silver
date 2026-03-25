@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://6j4667l3550r"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_h2ioi"]
+
+[resource]
+script = ExtResource("1_h2ioi")
+Name = "fancy-apple"
+Id = 1153
+Cost = 2200
+Category = "curry-ingredients"
+FlingPower = 20

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dw2t8uua58wpq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jt3gd"]
+
+[resource]
+script = ExtResource("1_jt3gd")
+Name = "fire-pattern-cup"
+Id = 2056
+Cost = 800
+Category = "picnic"

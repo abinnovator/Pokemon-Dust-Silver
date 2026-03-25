@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bx6neyjf3rwy8"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_se7ak"]
+
+[resource]
+script = ExtResource("1_se7ak")
+Name = "clothing-trunk"
+Id = 1011
+Category = "unused"

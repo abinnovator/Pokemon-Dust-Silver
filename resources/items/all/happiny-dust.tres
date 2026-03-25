@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dw1wfet6off3d"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_bxlnd"]
+
+[resource]
+script = ExtResource("1_bxlnd")
+Name = "happiny-dust"
+Id = 1834
+Cost = 300
+Category = "tm-materials"

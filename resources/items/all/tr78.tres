@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dp0sniubh3o3n"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jofev"]
+
+[resource]
+script = ExtResource("1_jofev")
+Name = "tr78"
+Id = 1266
+Cost = 10000
+Category = "all-machines"
+FlingPower = 95

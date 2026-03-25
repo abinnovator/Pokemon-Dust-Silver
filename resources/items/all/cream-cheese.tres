@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://heorg2p8v8d6"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_c7cr8"]
+
+[resource]
+script = ExtResource("1_c7cr8")
+Name = "cream-cheese"
+Id = 1714
+Cost = 280
+Category = "sandwich-ingredients"

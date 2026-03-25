@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bqe2sxaiikajo"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_47i56"]
+
+[resource]
+script = ExtResource("1_47i56")
+Name = "tart-apple"
+Id = 1175
+Cost = 2200
+Category = "evolution"
+FlingPower = 30

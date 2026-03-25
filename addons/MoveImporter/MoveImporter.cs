@@ -20,7 +20,7 @@ public partial class MoveImporter : EditorPlugin
 	public override void _EnterTree()
 	{
 		// Initialization of the plugin goes here.
-		AddToolMenuItem(importMenuItemText, Callable.From(ImportMoves));
+		AddToolMenuItem(importMenuItemText, Callable.From(OnImportMovesClicked));
 	}
 
 	public override void _ExitTree()
@@ -30,7 +30,12 @@ public partial class MoveImporter : EditorPlugin
 
 	}
 
-	public async void ImportMoves(){
+	private void OnImportMovesClicked()
+	{
+		ImportMoves();
+	}
+
+	private async void ImportMoves(){
 		Logger.Info("Attempting to fetch pokemon moves");
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(folderPath));
 		const int gcInterval = 10;

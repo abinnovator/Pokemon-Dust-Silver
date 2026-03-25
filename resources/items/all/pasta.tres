@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bhs5jbrv51sjd"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_lk2gq"]
+
+[resource]
+script = ExtResource("1_lk2gq")
+Name = "pasta"
+Id = 1149
+Cost = 150
+Category = "curry-ingredients"
+FlingPower = 10

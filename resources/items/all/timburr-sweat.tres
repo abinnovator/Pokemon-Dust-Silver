@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cf88qrmpep5xk"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rxtau"]
+
+[resource]
+script = ExtResource("1_rxtau")
+Name = "timburr-sweat"
+Id = 2146
+Cost = 30
+Category = "tm-materials"

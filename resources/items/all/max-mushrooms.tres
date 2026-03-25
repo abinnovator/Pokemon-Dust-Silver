@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://djo6tc1dw545n"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_caoab"]
+
+[resource]
+script = ExtResource("1_caoab")
+Name = "max-mushrooms"
+Id = 1631
+Cost = 6000
+Category = "stat-boosts"
+FlingPower = 30

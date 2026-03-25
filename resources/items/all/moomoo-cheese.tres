@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ut2uca2atawq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_2bf40"]
+
+[resource]
+script = ExtResource("1_2bf40")
+Name = "moomoo-cheese"
+Id = 1315
+Cost = 2200
+Category = "curry-ingredients"
+FlingPower = 20

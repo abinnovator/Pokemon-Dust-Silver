@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bqos5dabfo2ij"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_4tynq"]
+
+[resource]
+script = ExtResource("1_4tynq")
+Name = "barred-cup"
+Id = 2054
+Cost = 800
+Category = "picnic"

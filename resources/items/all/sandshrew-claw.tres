@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bxtlal8ulbo5e"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_3jwr3"]
+
+[resource]
+script = ExtResource("1_3jwr3")
+Name = "sandshrew-claw"
+Id = 2120
+Cost = 10
+Category = "tm-materials"

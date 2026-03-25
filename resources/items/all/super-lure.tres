@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c2gjlxhgfcuan"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_5fxrm"]
+
+[resource]
+script = ExtResource("1_5fxrm")
+Name = "super-lure"
+Id = 1037
+Cost = 700
+Category = "spelunking"
+FlingPower = 30

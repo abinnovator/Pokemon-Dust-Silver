@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://3pmllp636nxa"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_p3fi7"]
+
+[resource]
+script = ExtResource("1_p3fi7")
+Name = "koffing-gas"
+Id = 2126
+Cost = 25
+Category = "tm-materials"

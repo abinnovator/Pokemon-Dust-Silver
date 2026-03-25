@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dufikme6wh8sq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_w3vkr"]
+
+[resource]
+script = ExtResource("1_w3vkr")
+Name = "salt"
+Id = 1710
+Cost = 90
+Category = "sandwich-ingredients"

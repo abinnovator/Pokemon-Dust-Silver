@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c3ywbi8r87uj1"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_i8lsr"]
+
+[resource]
+script = ExtResource("1_i8lsr")
+Name = "max-lure"
+Id = 1038
+Cost = 900
+Category = "spelunking"
+FlingPower = 30

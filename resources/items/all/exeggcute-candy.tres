@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://da0x6wcl6red2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_chhs6"]
+
+[resource]
+script = ExtResource("1_chhs6")
+Name = "exeggcute-candy"
+Id = 1102
+Cost = 20
+Category = "species-candies"

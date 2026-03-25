@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://4o8gy4ww4hrx"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gcnnt"]
+
+[resource]
+script = ExtResource("1_gcnnt")
+Name = "hamburger"
+Id = 1740
+Cost = 380
+Category = "sandwich-ingredients"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ci4rw70qgbxpm"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vv0uh"]
+
+[resource]
+script = ExtResource("1_vv0uh")
+Name = "exp-candy-s"
+Id = 1183
+Cost = 240
+Category = "vitamins"
+FlingPower = 30

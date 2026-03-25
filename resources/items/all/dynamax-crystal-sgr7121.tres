@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dquv3moctxgvr"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_py3bu"]
+
+[resource]
+script = ExtResource("1_py3bu")
+Name = "dynamax-crystal-sgr7121"
+Id = 1339
+Cost = 20
+Category = "dynamax-crystals"

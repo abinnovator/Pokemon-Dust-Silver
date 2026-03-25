@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c6riwcr3yqodg"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_w7du3"]
+
+[resource]
+script = ExtResource("1_w7du3")
+Name = "lechonk-hair"
+Id = 1906
+Cost = 60
+Category = "tm-materials"

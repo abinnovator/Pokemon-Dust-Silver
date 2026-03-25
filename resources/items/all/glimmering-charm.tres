@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cx7dv5le11dfb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_djag2"]
+
+[resource]
+script = ExtResource("1_djag2")
+Name = "glimmering-charm"
+Id = 2103
+Category = "gameplay"

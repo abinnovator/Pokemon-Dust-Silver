@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dc1da0q5q0muk"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ycrqc"]
+
+[resource]
+script = ExtResource("1_ycrqc")
+Name = "lone-earring"
+Id = 1027
+Cost = 600
+Category = "loot"
+FlingPower = 30

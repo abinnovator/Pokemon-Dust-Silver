@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://djdexc44kl3tl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ibpfw"]
+
+[resource]
+script = ExtResource("1_ibpfw")
+Name = "armorite-ore"
+Id = 1639
+Cost = 20
+Category = "collectibles"
+FlingPower = 30

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ccy7mh42u62n4"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_rl2yb"]
+
+[resource]
+script = ExtResource("1_rl2yb")
+Name = "tr56"
+Id = 1244
+Cost = 6000
+Category = "all-machines"
+FlingPower = 80

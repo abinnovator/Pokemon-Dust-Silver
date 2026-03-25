@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cvnrwm2m43prt"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_7806y"]
+
+[resource]
+script = ExtResource("1_7806y")
+Name = "pickle"
+Id = 1728
+Cost = 90
+Category = "sandwich-ingredients"

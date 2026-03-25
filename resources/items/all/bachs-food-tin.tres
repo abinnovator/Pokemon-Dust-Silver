@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://lgr86rrmi4rg"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_nwxcm"]
+
+[resource]
+script = ExtResource("1_nwxcm")
+Name = "bachs-food-tin"
+Id = 1146
+Cost = 950
+Category = "curry-ingredients"
+FlingPower = 80

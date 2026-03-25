@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cht4n4iry85ms"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_t4joo"]
+
+[resource]
+script = ExtResource("1_t4joo")
+Name = "magikarp-scales"
+Id = 1777
+Cost = 40
+Category = "tm-materials"

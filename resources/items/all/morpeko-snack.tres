@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cb6dwngrq7o6n"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_wol31"]
+
+[resource]
+script = ExtResource("1_wol31")
+Name = "morpeko-snack"
+Id = 2158
+Cost = 15
+Category = "tm-materials"

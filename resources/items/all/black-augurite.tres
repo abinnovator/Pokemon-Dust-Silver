@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cntj0ws4xxnbl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_j424l"]
+
+[resource]
+script = ExtResource("1_j424l")
+Name = "black-augurite"
+Id = 10001
+Category = "evolution"

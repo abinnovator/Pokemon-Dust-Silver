@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b3p6evjsugp5k"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mdunh"]
+
+[resource]
+script = ExtResource("1_mdunh")
+Name = "gible-scales"
+Id = 1836
+Cost = 200
+Category = "tm-materials"

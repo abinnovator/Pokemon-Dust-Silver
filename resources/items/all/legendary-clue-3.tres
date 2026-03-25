@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://de24g321v0h01"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gojho"]
+
+[resource]
+script = ExtResource("1_gojho")
+Name = "legendary-clue-3"
+Id = 1646
+Category = "plot-advancement"

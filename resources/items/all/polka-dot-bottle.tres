@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bg6a6xmq2wmva"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_qjwq8"]
+
+[resource]
+script = ExtResource("1_qjwq8")
+Name = "polka-dot-bottle"
+Id = 2018
+Cost = 1000
+Category = "picnic"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ccnpiwi3y0fjd"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mgewo"]
+
+[resource]
+script = ExtResource("1_mgewo")
+Name = "packaged-curry"
+Id = 1318
+Cost = 950
+Category = "curry-ingredients"
+FlingPower = 10

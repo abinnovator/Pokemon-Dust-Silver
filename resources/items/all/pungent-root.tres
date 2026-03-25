@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://whi3akmc3xwr"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_el05i"]
+
+[resource]
+script = ExtResource("1_el05i")
+Name = "pungent-root"
+Id = 1156
+Cost = 950
+Category = "curry-ingredients"
+FlingPower = 10

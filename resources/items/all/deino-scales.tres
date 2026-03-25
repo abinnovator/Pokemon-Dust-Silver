@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://buuhd8dpt1dlu"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_os2nt"]
+
+[resource]
+script = ExtResource("1_os2nt")
+Name = "deino-scales"
+Id = 1857
+Cost = 200
+Category = "tm-materials"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bk1n0c0wvp7pb"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_tou74"]
+
+[resource]
+script = ExtResource("1_tou74")
+Name = "impish-mint"
+Id = 1294
+Cost = 20
+Category = "nature-mints"
+FlingPower = 10

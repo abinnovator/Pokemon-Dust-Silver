@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cq46jyvwr0uiw"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_abk2r"]
+
+[resource]
+script = ExtResource("1_abk2r")
+Name = "illumise-fluid"
+Id = 2141
+Cost = 10
+Category = "tm-materials"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dxysob2yxqu1t"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_784pe"]
+
+[resource]
+script = ExtResource("1_784pe")
+Name = "courage-candy-l"
+Id = 1050
+Cost = 20
+Category = "vitamins"

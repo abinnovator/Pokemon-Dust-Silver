@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dd2lr677yq6co"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gdvno"]
+
+[resource]
+script = ExtResource("1_gdvno")
+Name = "ekans-fang"
+Id = 2119
+Cost = 15
+Category = "tm-materials"

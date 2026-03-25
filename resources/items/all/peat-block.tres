@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dy0wb565ig1m"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_5j72k"]
+
+[resource]
+script = ExtResource("1_5j72k")
+Name = "peat-block"
+Id = 10002
+Category = "evolution"

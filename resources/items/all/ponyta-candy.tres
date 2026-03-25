@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bi5ujf2ifnxfc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_nlbdt"]
+
+[resource]
+script = ExtResource("1_nlbdt")
+Name = "ponyta-candy"
+Id = 1089
+Cost = 20
+Category = "species-candies"

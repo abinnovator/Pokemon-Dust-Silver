@@ -97,4 +97,5 @@ public partial class PlayerSaveResource : Resource
         if (!Inventory.ContainsKey(key)) return 0;
         return Inventory[key].AsInt32();
     }
+
 }

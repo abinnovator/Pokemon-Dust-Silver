@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bjgojr54rkodc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_i3ara"]
+
+[resource]
+script = ExtResource("1_i3ara")
+Name = "pachirisu-fur"
+Id = 1827
+Cost = 100
+Category = "tm-materials"

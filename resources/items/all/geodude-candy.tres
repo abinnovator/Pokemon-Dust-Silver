@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c8q6iv5ax1uep"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_hbo40"]
+
+[resource]
+script = ExtResource("1_hbo40")
+Name = "geodude-candy"
+Id = 1088
+Cost = 20
+Category = "species-candies"

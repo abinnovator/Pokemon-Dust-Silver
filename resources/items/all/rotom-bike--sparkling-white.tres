@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dxnxva8dma7ji"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_xklc3"]
+
+[resource]
+script = ExtResource("1_xklc3")
+Name = "rotom-bike--sparkling-white"
+Id = 1636
+Category = "unused"

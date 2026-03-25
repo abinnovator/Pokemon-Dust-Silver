@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://doeggry1k6r78"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_np8fk"]
+
+[resource]
+script = ExtResource("1_np8fk")
+Name = "iceroot-carrot"
+Id = 1653
+Category = "plot-advancement"

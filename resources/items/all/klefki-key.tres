@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cj3jqlqic7vpn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_n81sh"]
+
+[resource]
+script = ExtResource("1_n81sh")
+Name = "klefki-key"
+Id = 1869
+Cost = 100
+Category = "tm-materials"

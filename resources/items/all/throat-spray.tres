@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bxb0d0pxq6qdi"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_jiuwv"]
+
+[resource]
+script = ExtResource("1_jiuwv")
+Name = "throat-spray"
+Id = 1176
+Cost = 4000
+Category = "held-items"
+FlingPower = 30

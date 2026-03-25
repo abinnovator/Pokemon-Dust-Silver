@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bfqxrxdrf54xx"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_yid8k"]
+
+[resource]
+script = ExtResource("1_yid8k")
+Name = "tiny-bamboo-shoot"
+Id = 1673
+Cost = 375
+Category = "loot"

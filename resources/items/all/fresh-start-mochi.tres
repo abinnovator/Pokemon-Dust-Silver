@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ctu1pgttqls58"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ghkq7"]
+
+[resource]
+script = ExtResource("1_ghkq7")
+Name = "fresh-start-mochi"
+Id = 2118
+Cost = 75
+Category = "vitamins"

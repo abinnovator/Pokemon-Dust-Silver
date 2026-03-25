@@ -16,6 +16,7 @@ Messages = null
 PatrolPoints = null
 EventTrigger = 4
 InterceptMessages = null
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [sub_resource type="Resource" id="Resource_m64i2"]
@@ -27,6 +28,7 @@ InterceptMessages = null
 HasBattle = true
 PokemonID = 133
 PokemonLevel = 6
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
@@ -75,6 +77,12 @@ position = Vector2(64, 424)
 [node name="SceneTriggers" type="Node2D" parent="."]
 position = Vector2(80, 96)
 
+[node name="SceneTrigger10" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
+position = Vector2(-200, 264)
+scale = Vector2(1, 4)
+TargetLevelName = 25
+CurrentLevelTrigger = 7
+
 [node name="SceneTrigger3" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
 position = Vector2(304, 656)
 scale = Vector2(4, 1)
@@ -111,6 +119,10 @@ position = Vector2(312, 192)
 TargetLevelName = 11
 CurrentLevelTrigger = 5
 
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
+position = Vector2(448, 16)
+TargetLevelName = 11
+
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(168, 336)
 
@@ -122,12 +134,6 @@ position = Vector2(40, 392)
 [node name="Sign2" parent="Signs" instance=ExtResource("5_imgra")]
 position = Vector2(264, 472)
 Messages = ["Hey! Welcome to Virdian city!"]
-
-[node name="SceneTrigger5" parent="." instance=ExtResource("4_eu6s6")]
-position = Vector2(-120, 360)
-scale = Vector2(1, 4)
-TargetLevelName = 25
-CurrentLevelTrigger = 7
 
 [node name="Node2D" type="Node2D" parent="."]
 

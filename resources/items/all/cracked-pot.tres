@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://fk6hwxffopue"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_76q0g"]
+
+[resource]
+script = ExtResource("1_76q0g")
+Name = "cracked-pot"
+Id = 1311
+Cost = 1600
+Category = "evolution"
+FlingPower = 80

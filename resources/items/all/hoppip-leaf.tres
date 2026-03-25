@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bdqvhs3jgsnox"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_p05is"]
+
+[resource]
+script = ExtResource("1_p05is")
+Name = "hoppip-leaf"
+Id = 1784
+Cost = 60
+Category = "tm-materials"

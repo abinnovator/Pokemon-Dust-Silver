@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://f6xjyh1ytsl5"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_fc3ug"]
+
+[resource]
+script = ExtResource("1_fc3ug")
+Name = "porygon-candy"
+Id = 1125
+Cost = 20
+Category = "species-candies"

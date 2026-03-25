@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bqepixh31u1ak"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_llvmo"]
+
+[resource]
+script = ExtResource("1_llvmo")
+Name = "white-dish"
+Id = 2098
+Category = "picnic"

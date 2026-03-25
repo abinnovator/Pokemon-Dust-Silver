@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cuwxjtt8224t"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_hdasg"]
+
+[resource]
+script = ExtResource("1_hdasg")
+Name = "sausages"
+Id = 1144
+Cost = 400
+Category = "curry-ingredients"
+FlingPower = 10

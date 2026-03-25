@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bb04rb0o4sg7p"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mm8f2"]
+
+[resource]
+script = ExtResource("1_mm8f2")
+Name = "tatsugiri-scales"
+Id = 1924
+Cost = 200
+Category = "tm-materials"

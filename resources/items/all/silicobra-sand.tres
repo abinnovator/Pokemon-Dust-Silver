@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b88t0clcf11s5"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_lo3nb"]
+
+[resource]
+script = ExtResource("1_lo3nb")
+Name = "silicobra-sand"
+Id = 1895
+Cost = 80
+Category = "tm-materials"

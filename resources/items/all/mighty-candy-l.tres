@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cq4rj5mif1ble"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_es56f"]
+
+[resource]
+script = ExtResource("1_es56f")
+Name = "mighty-candy-l"
+Id = 1047
+Cost = 20
+Category = "vitamins"

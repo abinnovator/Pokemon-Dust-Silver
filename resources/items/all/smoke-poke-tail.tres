@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dfco65v2hku3e"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_1uqwv"]
+
+[resource]
+script = ExtResource("1_1uqwv")
+Name = "smoke-poke-tail"
+Id = 1151
+Cost = 2200
+Category = "curry-ingredients"
+FlingPower = 10

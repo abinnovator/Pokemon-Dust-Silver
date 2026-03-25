@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cmo3fwc0cebls"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_vssoo"]
+
+[resource]
+script = ExtResource("1_vssoo")
+Name = "tr44"
+Id = 1232
+Cost = 4000
+Category = "all-machines"
+FlingPower = 10

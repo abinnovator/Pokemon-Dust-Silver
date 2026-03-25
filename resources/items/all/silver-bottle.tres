@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://2w3mwp3qsw3u"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_kr3x4"]
+
+[resource]
+script = ExtResource("1_kr3x4")
+Name = "silver-bottle"
+Id = 2053
+Cost = 20000
+Category = "picnic"

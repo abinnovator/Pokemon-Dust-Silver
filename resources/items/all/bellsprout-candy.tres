@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cjflf4kds4ggl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_657li"]
+
+[resource]
+script = ExtResource("1_657li")
+Name = "bellsprout-candy"
+Id = 1086
+Cost = 20
+Category = "species-candies"

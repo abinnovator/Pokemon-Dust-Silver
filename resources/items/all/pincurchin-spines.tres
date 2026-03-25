@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c46a23e7r4dq8"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_iooey"]
+
+[resource]
+script = ExtResource("1_iooey")
+Name = "pincurchin-spines"
+Id = 1897
+Cost = 100
+Category = "tm-materials"

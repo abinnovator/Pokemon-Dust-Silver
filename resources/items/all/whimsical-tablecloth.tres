@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cu57awbms0cha"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dg1wc"]
+
+[resource]
+script = ExtResource("1_dg1wc")
+Name = "whimsical-tablecloth"
+Id = 2028
+Cost = 2000
+Category = "picnic"

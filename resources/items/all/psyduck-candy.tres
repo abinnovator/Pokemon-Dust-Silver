@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dg0u4e7jhd0wq"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_fxugs"]
+
+[resource]
+script = ExtResource("1_fxugs")
+Name = "psyduck-candy"
+Id = 1080
+Cost = 20
+Category = "species-candies"

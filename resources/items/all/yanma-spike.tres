@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c1agwd877awid"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_wtyu7"]
+
+[resource]
+script = ExtResource("1_wtyu7")
+Name = "yanma-spike"
+Id = 2132
+Cost = 35
+Category = "tm-materials"

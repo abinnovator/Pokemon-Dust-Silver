@@ -19,6 +19,7 @@ TriggerZoneSize = Vector2(5, 5)
 InterceptMessages = null
 PokemonID = 10
 PokemonLevel = 10
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
@@ -373,7 +374,7 @@ TargetLevelTrigger = 7
 [node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("3_y0ool")]
 position = Vector2(1256, 0)
 scale = Vector2(2, 1)
-TargetLevelName = 29
+TargetLevelName = 38
 CurrentLevelTrigger = 2
 
 [node name="NPC\'s" type="Node2D" parent="."]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cr6lg12l6qmd2"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_s8d2d"]
+
+[resource]
+script = ExtResource("1_s8d2d")
+Name = "snorlax-candy"
+Id = 1129
+Cost = 20
+Category = "species-candies"

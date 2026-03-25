@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dwbe87uhvhu6c"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_oefyc"]
+
+[resource]
+script = ExtResource("1_oefyc")
+Name = "parasol-pick"
+Id = 2090
+Cost = 800
+Category = "picnic"

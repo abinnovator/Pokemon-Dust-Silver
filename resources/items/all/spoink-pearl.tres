@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dwg0qcs24pmvl"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_36unq"]
+
+[resource]
+script = ExtResource("1_36unq")
+Name = "spoink-pearl"
+Id = 1812
+Cost = 140
+Category = "tm-materials"

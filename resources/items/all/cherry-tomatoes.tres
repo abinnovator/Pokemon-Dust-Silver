@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://ctcxtslcwpxkc"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_n7ypg"]
+
+[resource]
+script = ExtResource("1_n7ypg")
+Name = "cherry-tomatoes"
+Id = 1726
+Cost = 120
+Category = "sandwich-ingredients"

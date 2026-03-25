@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://tyfhi41l0g8g"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_55mag"]
+
+[resource]
+script = ExtResource("1_55mag")
+Name = "makuhita-sweat"
+Id = 1805
+Cost = 80
+Category = "tm-materials"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://c3k5dh7lchj6i"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_w0uch"]
+
+[resource]
+script = ExtResource("1_w0uch")
+Name = "grimer-candy"
+Id = 1095
+Cost = 20
+Category = "species-candies"

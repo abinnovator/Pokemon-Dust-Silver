@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://l0x8apk5a3ig"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_64yed"]
+
+[resource]
+script = ExtResource("1_64yed")
+Name = "blank-plate"
+Id = 1662
+Category = "plates"

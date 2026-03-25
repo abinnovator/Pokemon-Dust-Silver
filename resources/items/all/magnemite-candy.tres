@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b44i6esbawm8u"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_ggo4v"]
+
+[resource]
+script = ExtResource("1_ggo4v")
+Name = "magnemite-candy"
+Id = 1091
+Cost = 20
+Category = "species-candies"

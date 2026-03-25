@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dyv5rs6c5q0u5"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_f0m5a"]
+
+[resource]
+script = ExtResource("1_f0m5a")
+Name = "lettuce"
+Id = 1724
+Cost = 90
+Category = "sandwich-ingredients"

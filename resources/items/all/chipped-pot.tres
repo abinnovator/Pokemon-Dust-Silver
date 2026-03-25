@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://i83kgd1uirri"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_gqb07"]
+
+[resource]
+script = ExtResource("1_gqb07")
+Name = "chipped-pot"
+Id = 1312
+Cost = 38000
+Category = "evolution"
+FlingPower = 80

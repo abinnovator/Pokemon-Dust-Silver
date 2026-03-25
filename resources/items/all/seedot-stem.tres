@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b0qyn2xrlclmi"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_dc8xh"]
+
+[resource]
+script = ExtResource("1_dc8xh")
+Name = "seedot-stem"
+Id = 2138
+Cost = 20
+Category = "tm-materials"

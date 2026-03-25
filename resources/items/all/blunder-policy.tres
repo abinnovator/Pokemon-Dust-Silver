@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cb1n2lpmyuamn"]
+
+[ext_resource type="Script" uid="uid://cfpww3h15iqmb" path="res://scripts/gameplay/items/ItemResource.cs" id="1_mr2hr"]
+
+[resource]
+script = ExtResource("1_mr2hr")
+Name = "blunder-policy"
+Id = 1179
+Cost = 4000
+Category = "held-items"
+FlingPower = 80
