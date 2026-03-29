@@ -212,45 +212,45 @@ SpawnFollower(player, spawnPoint.GlobalPosition);
 			Vector2 spawnPos = targetTrigger.GlobalPosition + (targetTrigger.EntryDirection * Globals.GridSize);
 			GameManager.GetPlayer().GlobalPosition = spawnPos;
 
-// Move the follower to be behind the player
-if (followerInstance != null && IsInstanceValid(followerInstance))
-{
-Vector2 followerPos = spawnPos - (targetTrigger.EntryDirection * Globals.GridSize);
-followerInstance.GlobalPosition = followerPos;
-}
-}
+			// Move the follower to be behind the player
+			if (followerInstance != null && IsInstanceValid(followerInstance))
+			{
+			Vector2 followerPos = spawnPos - (targetTrigger.EntryDirection * Globals.GridSize);
+			followerInstance.GlobalPosition = followerPos;
+			}
+		}
 
-private void SpawnFollower(Player player, Vector2 playerPosition)
-{
-// Remove old follower if it exists
-if (followerInstance != null && IsInstanceValid(followerInstance))
-{
-followerInstance.QueueFree();
-}
+		private void SpawnFollower(Player player, Vector2 playerPosition)
+		{
+		// Remove old follower if it exists
+			if (followerInstance != null && IsInstanceValid(followerInstance))
+			{
+				followerInstance.QueueFree();
+			}
 
-// Create new follower
-var followerScene = GD.Load<PackedScene>("res://scenes/charecters/follower.tscn");
-followerInstance = followerScene.Instantiate<Follower>();
+		// Create new follower
+		var followerScene = GD.Load<PackedScene>("res://scenes/charecters/follower.tscn");
+		followerInstance = followerScene.Instantiate<Follower>();
 
-// Add to the same parent as the player (GameViewPort)
-GameManager.GetGameViewPort().AddChild(followerInstance);
+		// Add to the same parent as the player (GameViewPort)
+		GameManager.GetGameViewPort().AddChild(followerInstance);
 
-// Position follower one tile behind the player (down direction by default)
-followerInstance.GlobalPosition = playerPosition + new Vector2(0, Globals.GridSize);
+		// Position follower one tile behind the player (down direction by default)
+		followerInstance.GlobalPosition = playerPosition + new Vector2(0, Globals.GridSize);
 
-// Set up the follower's input references
-var followerInput = followerInstance.GetNode<FollowerInput>("Input");
-if (followerInput != null)
-{
-followerInput.PlayerNode = player;
-followerInput.FollowerNode = followerInstance;
-}
-}
+		// Set up the follower's input references
+		var followerInput = followerInstance.GetNode<FollowerInput>("Input");
+		if (followerInput != null)
+		{
+			followerInput.PlayerNode = player;
+			followerInput.FollowerNode = followerInstance;
+		}
+		}
 
-public static Follower GetFollower()
-{
-return followerInstance;
-}
+		public static Follower GetFollower()
+		{
+		return followerInstance;
+		}
  
  
 		public async Task FadeOut()
@@ -287,16 +287,16 @@ return followerInstance;
 					}
 				}
 				AllLevels.Clear();
-}
+			}		
 
-// Clean up follower instance
-if (followerInstance != null && IsInstanceValid(followerInstance))
-{
-followerInstance.QueueFree();
-followerInstance = null;
-}
+			// Clean up follower instance
+			if (followerInstance != null && IsInstanceValid(followerInstance))
+			{
+				followerInstance.QueueFree();
+				followerInstance = null;
+			}
 
-isChanging = false;
+			isChanging = false;
 		}
 
 		public static Level GetCurrentLevel()
@@ -306,10 +306,7 @@ isChanging = false;
 
 		public override void _UnhandledInput(InputEvent @event)
 		{
-			if (@event.IsActionPressed("close"))
-			{
-				LeaveGame();
-			}
+			
 		}
 
 		public static void LeaveGame()

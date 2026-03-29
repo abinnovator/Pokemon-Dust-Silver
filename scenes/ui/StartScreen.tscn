@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2tdw1ns11b50"]
+[gd_scene load_steps=3 format=3 uid="uid://2tdw1ns11b50"]
 
 [ext_resource type="Script" uid="uid://dpmt85dbyujve" path="res://scripts/ui/StartScreen.cs" id="1_8qqbg"]
-[ext_resource type="Texture2D" uid="uid://yvejpsyf5uuq" path="res://scenes/kanto_starters_by_crishark_dkmrqpc.jpg" id="2_8qqbg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qqbg"]
-atlas = ExtResource("2_8qqbg")
-region = Rect2(0, 0, 1024, 688)
+[ext_resource type="Texture2D" uid="uid://dh824usrf1drf" path="res://assets/ui/battlebgbeach_by_aveontrainer_ddf9wly.png" id="2_8qqbg"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_8qqbg")
@@ -16,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_8qqbg")
+texture = ExtResource("2_8qqbg")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchors_preset = 15

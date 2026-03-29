@@ -314,10 +314,9 @@ TargetLevelName = 38
 TargetLevelTrigger = 1
 
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("4_m4o5i")]
-position = Vector2(2472, 256)
+position = Vector2(2480, 256)
 scale = Vector2(1, 4)
 TargetLevelName = 23
-TargetLevelTrigger = 1
 CurrentLevelTrigger = 1
 
 [node name="SpawnPoints" type="Node2D" parent="."]

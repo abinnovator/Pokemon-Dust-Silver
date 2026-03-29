@@ -1,22 +1,28 @@
-[gd_scene load_steps=24 format=4 uid="uid://4nra75q1qaa5"]
+[gd_scene load_steps=32 format=4 uid="uid://4nra75q1qaa5"]
 
-[ext_resource type="Script" uid="uid://bbwcheh1kr6gsx" path="res://scripts/gameplay/trainer_battle/TrainerBattleMain.cs" id="1_hs7s6"]
+[ext_resource type="Script" uid="uid://4nm2yrbpdky2" path="res://scripts/gameplay/trainer_battle/TrainerBattleMain.cs" id="1_hs7s6"]
 [ext_resource type="Script" uid="uid://cne2gqj6g5p0l" path="res://scripts/gameplay/trainer_battle/TrainerBattleStateMachine.cs" id="2_yg7sa"]
 [ext_resource type="Script" uid="uid://ciwi20slj5d1h" path="res://scripts/gameplay/trainer_battle/states/TrainerBattleStartState.cs" id="3_wkw35"]
 [ext_resource type="Script" uid="uid://dn1cnd0l837j0" path="res://scripts/gameplay/trainer_battle/states/TrainerPlayerTurnState.cs" id="4_1cpr5"]
 [ext_resource type="Script" uid="uid://b3h0tw7y51upp" path="res://scripts/gameplay/trainer_battle/states/TrainerEnemyTurnState.cs" id="5_nq5v8"]
 [ext_resource type="Script" uid="uid://bya0xgag0l7xr" path="res://scripts/gameplay/trainer_battle/states/TrainerCheckFaintState.cs" id="6_0go8p"]
 [ext_resource type="Script" uid="uid://lmexpsmvwpxx" path="res://scripts/gameplay/trainer_battle/states/TrainerBattleEndState.cs" id="7_kfc08"]
-[ext_resource type="Texture2D" uid="uid://b7whvj6qo10hi" path="res://assets/levels/woodland_wall_background_by_princess_phoenix_ddh7uzp.png" id="8_2qwhk"]
+[ext_resource type="Texture2D" uid="uid://k8ituxmpqacc" path="res://assets/ui/battlebgbamboo_by_aveontrainer_ddq1ff0.png" id="8_0go8p"]
 [ext_resource type="Texture2D" uid="uid://cfo70ijls83xj" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Battle Effects - HP Bars & In-battle Menu (1).png" id="9_x6pfv"]
 [ext_resource type="Texture2D" uid="uid://bpwpobh5ygtp8" path="res://assets/levels/board__brilliant_pearl_diamond_battle_interface_by_eurons_desqgls-fullview.jpg" id="10_utnnl"]
+[ext_resource type="Texture2D" uid="uid://cw364sagrwk1s" path="res://assets/ui/oponent-bg.png" id="11_0go8p"]
+[ext_resource type="Texture2D" uid="uid://bi5livs0l7utn" path="res://assets/ui/fights_button.png" id="11_1cpr5"]
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="11_7oyp7"]
 [ext_resource type="Script" uid="uid://17f2xffcjgxf" path="res://scripts/gameplay/trainer_battle/TrainerPlayerPokemon.cs" id="12_alkv4"]
+[ext_resource type="Texture2D" uid="uid://ph7m7mmwptae" path="res://assets/ui/playerbg.png" id="12_kfc08"]
+[ext_resource type="Texture2D" uid="uid://nrh2q1ikywcu" path="res://assets/ui/run.png" id="12_nq5v8"]
+[ext_resource type="Texture2D" uid="uid://doqci7xylbf6b" path="res://assets/ui/party-button.png" id="13_0go8p"]
 [ext_resource type="Script" uid="uid://d0s1a3ks6i3sp" path="res://scripts/gameplay/trainer_battle/TrainerOppPokemon.cs" id="13_aq78h"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1q6j"]
-atlas = ExtResource("8_2qwhk")
-region = Rect2(0, 0, 256, 192)
+[ext_resource type="Texture2D" uid="uid://cvffnvq71rukn" path="res://assets/ui/SwShBag.png" id="19_7oyp7"]
+[ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="20_alkv4"]
+[ext_resource type="Script" uid="uid://bjqd2mt8rnx3x" path="res://scenes/ui/ExitBackgroundButton.cs" id="21_aq78h"]
+[ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="22_entnt"]
+[ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="23_0m13b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l87i0"]
 texture = ExtResource("9_x6pfv")
@@ -3430,24 +3436,415 @@ margins = Vector2i(5, 0)
 78:33/0 = 0
 79:33/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2qwhk"]
+texture = ExtResource("11_0go8p")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+30:0/0 = 0
+31:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+30:1/0 = 0
+31:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+29:2/0 = 0
+30:2/0 = 0
+31:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+29:3/0 = 0
+30:3/0 = 0
+31:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+27:4/0 = 0
+28:4/0 = 0
+29:4/0 = 0
+30:4/0 = 0
+31:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+29:5/0 = 0
+30:5/0 = 0
+31:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6pfv"]
+texture = ExtResource("12_kfc08")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+30:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+30:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+29:2/0 = 0
+30:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+29:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+27:4/0 = 0
+28:4/0 = 0
+29:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+28:6/0 = 0
+29:6/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_byyt3"]
 sources/0 = SubResource("TileSetAtlasSource_l87i0")
 sources/1 = SubResource("TileSetAtlasSource_iouah")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3022"]
-load_path = "res://.godot/imported/board__brilliant_pearl_diamond_battle_interface_by_eurons_desqgls-fullview.jpg-880af9f3702c34b9868d7082d0538ae3.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0yudy"]
-atlas = SubResource("CompressedTexture2D_e3022")
-region = Rect2(20, 12, 300, 88)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjw4a"]
-atlas = SubResource("CompressedTexture2D_e3022")
-region = Rect2(20, 312, 304, 84)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_il5xb"]
-atlas = ExtResource("10_utnnl")
-region = Rect2(20, 212, 304, 84)
+sources/2 = SubResource("TileSetAtlasSource_2qwhk")
+sources/3 = SubResource("TileSetAtlasSource_x6pfv")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnaf0"]
 atlas = ExtResource("10_utnnl")
@@ -3457,7 +3854,11 @@ region = Rect2(350, 344, 185, 10)
 atlas = ExtResource("10_utnnl")
 region = Rect2(349, 358, 186, 11)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhcfl"]
+atlas = ExtResource("20_alkv4")
+region = Rect2(0, 0, 54, 24)
+
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("1_hs7s6")
@@ -3473,9 +3874,8 @@ Pokeballs = NodePath("Ui/Pokeballs")
 BattleButton = NodePath("Ui/Controls/Battle")
 RunButton = NodePath("Ui/Controls/Run")
 BackButton = NodePath("Ui/MoveMenu/Back")
-PokemonBackButton = NodePath("Ui/PartyMenu/Back")
+PokemonBackButton = NodePath("Ui/Party/TextureButton")
 PokemonMenuButton = NodePath("Ui/Controls/Party")
-BagMenuButton = NodePath("")
 BagBackButton = NodePath("Ui/Bag/Back")
 MoveButtons = [NodePath("Ui/MoveMenu/Move1"), NodePath("Ui/MoveMenu/Move2"), NodePath("Ui/MoveMenu/Move3"), NodePath("Ui/MoveMenu/Move4")]
 PokemonButtons = [NodePath("Ui/PartyMenu/Pokemon1"), NodePath("Ui/PartyMenu/Pokemon2"), NodePath("Ui/PartyMenu/Pokemon3"), NodePath("Ui/PartyMenu/Pokemon4"), NodePath("Ui/PartyMenu/Pokemon5"), NodePath("Ui/PartyMenu/Pokemon6")]
@@ -3486,6 +3886,11 @@ PokeballBackButton = NodePath("Ui/Pokeballs/Back")
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
+NameLabels = [NodePath("Ui/Party/Slot1/name"), NodePath("Ui/Party/Slot2/Name"), NodePath("Ui/Party/Slot3/name"), NodePath("Ui/Party/Slot4/Name"), NodePath("Ui/Party/Slot5/name"), NodePath("Ui/Party/Slot6/Name")]
+LevelLabels = [NodePath("Ui/Party/Slot1/Level"), NodePath("Ui/Party/Slot2/Level"), NodePath("Ui/Party/Slot3/Level"), NodePath("Ui/Party/Slot4/Level"), NodePath("Ui/Party/Slot5/Level"), NodePath("Ui/Party/Slot6/Level")]
+HpBars = [NodePath("Ui/Party/Slot1/TextureProgressBar"), NodePath("Ui/Party/Slot2/TextureProgressBar"), NodePath("Ui/Party/Slot3/TextureProgressBar"), NodePath("Ui/Party/Slot4/TextureProgressBar"), NodePath("Ui/Party/Slot5/TextureProgressBar"), NodePath("Ui/Party/Slot6/TextureProgressBar")]
+Sprites = [NodePath("Ui/Party/Slot1/Pokeicon"), NodePath("Ui/Party/Slot2/Sprite2D"), NodePath("Ui/Party/Slot3/Pokeicon"), NodePath("Ui/Party/Slot4/Sprite2D"), NodePath("Ui/Party/Slot5/Pokeicon"), NodePath("Ui/Party/Slot6/Sprite2D")]
+Party = NodePath("Ui/Party")
 
 [node name="BattleStateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("2_yg7sa")
@@ -3525,11 +3930,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_q1q6j")
+texture = ExtResource("8_0go8p")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Ui"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAB0AAUAAQAVAAQAAAB0AAYAAQAVAAUAAAB0AAcAAQAVAAYAAAB0AAgAAQAVAAcAAAB0AAkAAQAVAAgAAAB0AAoAAQAVAAkAAAB1AAUAAQAWAAQAAAB1AAYAAQAWAAUAAAB1AAcAAQAWAAYAAAB1AAkAAQAVABQAAAB1AAoAAQAWAAkAAAB2AAUAAQAXAAQAAAB2AAYAAQAXAAUAAAB2AAcAAQAXAAYAAAB2AAkAAQAWABQAAAB2AAoAAQAXAAkAAAB3AAUAAQAYAAQAAAB3AAYAAQAYAAUAAAB3AAcAAQAYAAYAAAB3AAkAAQAXABQAAAB3AAoAAQAYAAkAAAB4AAUAAQAZAAQAAAB4AAYAAQAZAAUAAAB4AAcAAQAZAAYAAAB4AAoAAQAZAAkAAAB5AAUAAQAaAAQAAAB5AAYAAQAaAAUAAAB5AAcAAQAaAAYAAAB5AAoAAQAaAAkAAAB6AAUAAQAbAAQAAAB6AAYAAQAbAAUAAAB6AAcAAQAbAAYAAAB6AAoAAQAbAAkAAAB7AAUAAQAcAAQAAAB7AAYAAQAcAAUAAAB7AAcAAQAcAAYAAAB7AAoAAQAcAAkAAAB8AAUAAQAdAAQAAAB8AAYAAQAdAAUAAAB8AAcAAQAdAAYAAAB8AAoAAQAdAAkAAAB9AAUAAQAeAAQAAAB9AAYAAQAeAAUAAAB9AAcAAQAeAAYAAAB9AAoAAQAeAAkAAAB+AAUAAQAfAAQAAAB+AAYAAQAfAAUAAAB+AAcAAQAfAAYAAAB+AAoAAQAfAAkAAAB/AAUAAQAgAAQAAAB/AAYAAQAgAAUAAAB/AAcAAQAgAAYAAAB/AAoAAQAgAAkAAACAAAUAAQAhAAQAAACAAAYAAQAhAAUAAACAAAcAAQAhAAYAAACAAAoAAQAhAAkAAACBAAUAAQAiAAQAAACBAAYAAQAiAAUAAACBAAcAAQAiAAYAAACBAAoAAQAiAAkAAACCAAUAAQAjAAQAAACCAAYAAQAjAAUAAACCAAcAAQAjAAYAAACCAAoAAQAjAAkAAACDAAUAAQAkAAQAAACDAAYAAQAkAAUAAACDAAcAAQAkAAYAAACDAAoAAQAkAAkAAACEAAUAAQAlAAQAAACEAAYAAQAlAAUAAACEAAcAAQAlAAYAAACEAAoAAQAlAAkAAACFAAUAAQAmAAQAAACFAAYAAQAmAAUAAACFAAcAAQAmAAYAAACFAAoAAQAmAAkAAACGAAUAAQAnAAQAAACGAAYAAQAnAAUAAACGAAcAAQAnAAYAAACGAAoAAQAnAAkAAACHAAUAAQAoAAQAAACHAAYAAQAoAAUAAACHAAcAAQAuABQAAACHAAoAAQAoAAkAAACIAAUAAQApAAQAAACIAAYAAQApAAUAAACIAAcAAQAuABQAAACIAAoAAQApAAkAAACJAAUAAQAqAAQAAACJAAYAAQAqAAUAAACJAAcAAQAuABQAAACJAAoAAQAqAAkAAACKAAUAAQArAAQAAACKAAYAAQArAAUAAACKAAcAAQAuABQAAACKAAoAAQArAAkAAACLAAUAAQAsAAQAAACLAAYAAQAsAAUAAACLAAcAAQAuABQAAACLAAoAAQAsAAkAAACMAAUAAQAtAAQAAACMAAYAAQAtAAUAAACMAAcAAQAtAAYAAACMAAoAAQAtAAkAAACNAAUAAQAuAAQAAACNAAYAAQAuAAUAAACNAAcAAQAuAAYAAACNAAoAAQAuAAkAAACOAAUAAQAvAAQAAACOAAYAAQAvAAUAAACOAAcAAQAvAAYAAACOAAgAAQAvAAcAAACOAAkAAQAvAAgAAACOAAoAAQAvAAkAAACPAAUAAQAwAAQAAACPAAYAAQAwAAUAAACPAAcAAQAwAAYAAACPAAgAAQAwAAcAAACPAAkAAQAwAAgAAACPAAoAAQAwAAkAAAAAAEQAAQAVAAsAAAAAAEUAAQAVAAwAAAAAAEYAAQAhAA0AAAAAAEcAAQAuABQAAAAAAEgAAQAWABQAAAAAAEkAAQAVABAAAAAAAEoAAQAVABEAAAABAEQAAQAWAAsAAAABAEUAAQAWAAwAAAABAEYAAQAhAA0AAAABAEcAAQAuABQAAAABAEgAAQAXABQAAAABAEkAAQAWABAAAAABAEoAAQAWABEAAAACAEQAAQAXAAsAAAACAEUAAQAXAAwAAAACAEYAAQAhAA0AAAACAEcAAQAuABQAAAACAEgAAQAuABQAAAACAEkAAQAXABAAAAACAEoAAQAXABEAAAADAEQAAQAYAAsAAAADAEUAAQAYAAwAAAADAEYAAQAhAA0AAAADAEcAAQAuABQAAAADAEgAAQAuABQAAAADAEkAAQAYABAAAAADAEoAAQAYABEAAAAEAEQAAQAZAAsAAAAEAEUAAQAZAAwAAAAEAEYAAQAhAA0AAAAEAEcAAQAuABQAAAAEAEgAAQAuABQAAAAEAEkAAQAZABAAAAAEAEoAAQAZABEAAAAFAEQAAQAaAAsAAAAFAEUAAQAaAAwAAAAFAEYAAQAhAA0AAAAFAEcAAQAuABQAAAAFAEgAAQAuABQAAAAFAEkAAQAaABAAAAAFAEoAAQAaABEAAAAGAEQAAQAbAAsAAAAGAEUAAQAbAAwAAAAGAEYAAQAhAA0AAAAGAEcAAQAuABQAAAAGAEgAAQAuABQAAAAGAEkAAQAbABAAAAAGAEoAAQAbABEAAAAHAEQAAQAcAAsAAAAHAEUAAQAcAAwAAAAHAEYAAQAhAA0AAAAHAEcAAQAuABQAAAAHAEgAAQAuABQAAAAHAEkAAQAcABAAAAAHAEoAAQAcABEAAAAIAEQAAQAdAAsAAAAIAEUAAQAdAAwAAAAIAEYAAQAhAA0AAAAIAEcAAQAuABQAAAAIAEgAAQAuABQAAAAIAEkAAQAdABAAAAAIAEoAAQAdABEAAAAJAEQAAQAeAAsAAAAJAEUAAQAeAAwAAAAJAEYAAQAhAA0AAAAJAEcAAQAuABQAAAAJAEgAAQAuABQAAAAJAEkAAQAeABAAAAAJAEoAAQAeABEAAAAKAEQAAQAfAAsAAAAKAEUAAQAfAAwAAAAKAEYAAQAhAA0AAAAKAEcAAQAuABQAAAAKAEgAAQAuABQAAAAKAEkAAQAfABAAAAAKAEoAAQAfABEAAAALAEQAAQAgAAsAAAALAEUAAQAgAAwAAAALAEYAAQAhAA0AAAALAEcAAQAuABQAAAALAEgAAQAuABQAAAALAEkAAQAgABAAAAALAEoAAQAgABEAAAAMAEQAAQAhAAsAAAAMAEUAAQAhAAwAAAAMAEYAAQAhAA0AAAAMAEcAAQAuABQAAAAMAEgAAQAuABQAAAAMAEkAAQAhABAAAAAMAEoAAQAhABEAAAANAEQAAQAiAAsAAAANAEUAAQAiAAwAAAANAEYAAQAhAA0AAAANAEcAAQAuABQAAAANAEgAAQAuABQAAAANAEkAAQAiABAAAAANAEoAAQAiABEAAAAOAEQAAQAjAAsAAAAOAEUAAQAjAAwAAAAOAEYAAQAhAA0AAAAOAEcAAQAuABQAAAAOAEgAAQAuABQAAAAOAEkAAQAjABAAAAAOAEoAAQAjABEAAAAPAEQAAQAkAAsAAAAPAEUAAQAkAAwAAAAPAEYAAQAhAA0AAAAPAEcAAQAuABQAAAAPAEgAAQAuABQAAAAPAEkAAQAkABAAAAAPAEoAAQAkABEAAAAQAEQAAQAlAAsAAAAQAEUAAQAlAAwAAAAQAEYAAQAhAA0AAAAQAEcAAQAuABQAAAAQAEgAAQAuABQAAAAQAEkAAQAlABAAAAAQAEoAAQAlABEAAAARAEQAAQAmAAsAAAARAEUAAQAmAAwAAAARAEYAAQAhAA0AAAARAEcAAQAuABQAAAARAEgAAQAuABQAAAARAEkAAQAmABAAAAARAEoAAQAmABEAAAASAEQAAQAnAAsAAAASAEUAAQAnAAwAAAASAEYAAQAhAA0AAAASAEcAAQAuABQAAAASAEgAAQAuABQAAAASAEkAAQAnABAAAAASAEoAAQAnABEAAAATAEQAAQAoAAsAAAATAEUAAQAoAAwAAAATAEYAAQAhAA0AAAATAEcAAQAuABQAAAATAEgAAQAuABQAAAATAEkAAQAoABAAAAATAEoAAQAoABEAAAAUAEQAAQApAAsAAAAUAEUAAQApAAwAAAAUAEYAAQAhAA0AAAAUAEcAAQAuABQAAAAUAEgAAQAuABQAAAAUAEkAAQApABAAAAAUAEoAAQApABEAAAAVAEQAAQAqAAsAAAAVAEUAAQAqAAwAAAAVAEYAAQAhAA0AAAAVAEcAAQAuABQAAAAVAEgAAQAuABQAAAAVAEkAAQAqABAAAAAVAEoAAQAqABEAAAAWAEQAAQArAAsAAAAWAEUAAQArAAwAAAAWAEYAAQAhAA0AAAAWAEcAAQAuABQAAAAWAEgAAQAuABQAAAAWAEkAAQArABAAAAAWAEoAAQArABEAAAAXAEQAAQAsAAsAAAAXAEUAAQAsAAwAAAAXAEYAAQAhAA0AAAAXAEcAAQAuABQAAAAXAEgAAQAuABQAAAAXAEkAAQAsABAAAAAXAEoAAQAsABEAAAAYAEQAAQAtAAsAAAAYAEUAAQAtAAwAAAAYAEYAAQAhAA0AAAAYAEcAAQAjAAwAAAAYAEgAAQAjAAwAAAAYAEkAAQAtABAAAAAYAEoAAQAtABEAAAAZAEQAAQAuAAsAAAAZAEUAAQAuAAwAAAAZAEYAAQAuAA0AAAAZAEcAAQAuAA4AAAAZAEgAAQAuAA8AAAAZAEkAAQAuABAAAAAZAEoAAQAuABEAAAAaAEQAAQAvAAsAAAAaAEUAAQAvAAwAAAAaAEYAAQAvAA0AAAAaAEcAAQAvAA4AAAAaAEgAAQAvAA8AAAAaAEkAAQAvABAAAAAaAEoAAQAvABEAAAAbAEQAAQAwAAsAAAAbAEUAAQAwAAwAAAAbAEYAAQAwAA0AAAAbAEcAAQAwAA4AAAAbAEgAAQAwAA8AAAAbAEkAAQAwABAAAAAbAEoAAQAwABEAAAB3AAgAAQAXABMAAAB2AAgAAQAWABMAAAB1AAgAAQAVABMAAAB4AAgAAQAuABQAAAB5AAgAAQAuABQAAAB6AAgAAQAuABQAAAB7AAgAAQAuABQAAAB8AAgAAQAuABQAAAB9AAgAAQAuABQAAAB+AAgAAQAuABQAAAB/AAgAAQAuABQAAACAAAgAAQAuABQAAACBAAgAAQAuABQAAACCAAgAAQAuABQAAACDAAgAAQAuABQAAACEAAgAAQAuABQAAACFAAgAAQAuABQAAACGAAgAAQAuABQAAACHAAgAAQAuABQAAACLAAgAAQAuABQAAACMAAgAAQAuABQAAACNAAgAAQAuABQAAACKAAgAAQAuABQAAACJAAgAAQAuABQAAACIAAgAAQAuABQAAACMAAkAAQAuABQAAACNAAkAAQAuABQAAACLAAkAAQAuABQAAACKAAkAAQAuABQAAACJAAkAAQAuABQAAACIAAkAAQAuABQAAACHAAkAAQAuABQAAACGAAkAAQAuABQAAACFAAkAAQAuABQAAACEAAkAAQAuABQAAACDAAkAAQAuABQAAACCAAkAAQAuABQAAACBAAkAAQAuABQAAACAAAkAAQAuABQAAAB/AAkAAQAuABQAAAB+AAkAAQAuABQAAAB9AAkAAQAuABQAAAB8AAkAAQAuABQAAAB7AAkAAQAuABQAAAB6AAkAAQAuABQAAAB5AAkAAQAuABQAAAB4AAkAAQAuABQAAAA=")
+tile_map_data = PackedByteArray("AAB0AAUAAgAEAAAAAAB0AAYAAgAEAAEAAAB0AAcAAgAEAAIAAAB0AAgAAgAEAAMAAAB0AAkAAgAEAAQAAAB0AAoAAgAEAAUAAAB1AAUAAgAFAAAAAAB1AAYAAgAFAAEAAAB1AAcAAgAFAAIAAAB1AAkAAgAFAAQAAAB1AAoAAgAFAAUAAAB2AAUAAgAGAAAAAAB2AAYAAgAGAAEAAAB2AAcAAgAGAAIAAAB2AAkAAgAGAAQAAAB2AAoAAgAGAAUAAAB3AAUAAgAHAAAAAAB3AAYAAgAHAAEAAAB3AAcAAgAHAAIAAAB3AAkAAgAHAAQAAAB3AAoAAgAHAAUAAAB4AAUAAgAIAAAAAAB4AAYAAgAIAAEAAAB4AAcAAgAIAAIAAAB4AAoAAgAIAAUAAAB5AAUAAgAJAAAAAAB5AAYAAgAJAAEAAAB5AAcAAgAJAAIAAAB5AAoAAgAJAAUAAAB6AAUAAgAKAAAAAAB6AAYAAgAKAAEAAAB6AAcAAgAKAAIAAAB6AAoAAgAKAAUAAAB7AAUAAgALAAAAAAB7AAYAAgALAAEAAAB7AAcAAgALAAIAAAB7AAoAAgALAAUAAAB8AAUAAgAMAAAAAAB8AAYAAgAMAAEAAAB8AAcAAgAMAAIAAAB8AAoAAgAMAAUAAAB9AAUAAgANAAAAAAB9AAYAAgANAAEAAAB9AAcAAgANAAIAAAB9AAoAAgANAAUAAAB+AAUAAgAOAAAAAAB+AAYAAgAOAAEAAAB+AAcAAgAOAAIAAAB+AAoAAgAOAAUAAAB/AAUAAgAPAAAAAAB/AAYAAgAPAAEAAAB/AAcAAgAPAAIAAAB/AAoAAgAPAAUAAACAAAUAAgAQAAAAAACAAAYAAgAQAAEAAACAAAcAAgAQAAIAAACAAAoAAgAQAAUAAACBAAUAAgARAAAAAACBAAYAAgARAAEAAACBAAcAAgARAAIAAACBAAoAAgARAAUAAACCAAUAAgASAAAAAACCAAYAAgASAAEAAACCAAcAAgASAAIAAACCAAoAAgASAAUAAACDAAUAAgATAAAAAACDAAYAAgATAAEAAACDAAcAAgATAAIAAACDAAoAAgATAAUAAACEAAUAAgAUAAAAAACEAAYAAgAUAAEAAACEAAcAAgAUAAIAAACEAAoAAgAUAAUAAACFAAUAAgAVAAAAAACFAAYAAgAVAAEAAACFAAcAAgAVAAIAAACFAAoAAgAVAAUAAACGAAUAAgAWAAAAAACGAAYAAgAWAAEAAACGAAcAAgAWAAIAAACGAAoAAgAWAAUAAACHAAUAAgAXAAAAAACHAAYAAgAXAAEAAACHAAcAAgAXAAIAAACHAAoAAgAXAAUAAACIAAUAAgAYAAAAAACIAAYAAgAYAAEAAACIAAcAAgAYAAIAAACIAAoAAgAYAAUAAACJAAUAAgAZAAAAAACJAAYAAgAZAAEAAACJAAcAAgAZAAIAAACJAAoAAgAZAAUAAACKAAUAAgAaAAAAAACKAAYAAgAaAAEAAACKAAcAAgAaAAIAAACKAAoAAgAaAAUAAACLAAUAAgAbAAAAAACLAAYAAgAbAAEAAACLAAcAAgAbAAIAAACLAAoAAgAbAAUAAACMAAUAAgAcAAAAAACMAAYAAgAcAAEAAACMAAcAAgAcAAIAAACMAAoAAgAcAAUAAACNAAUAAgAdAAAAAACNAAYAAgAdAAEAAACNAAcAAgAdAAIAAACNAAoAAgAdAAUAAACOAAUAAgAeAAAAAACOAAYAAgAeAAEAAACOAAcAAgAeAAIAAACOAAgAAgAeAAMAAACOAAkAAgAeAAQAAACOAAoAAgAeAAUAAACPAAUAAgAfAAAAAACPAAYAAgAfAAEAAACPAAcAAgAfAAIAAACPAAgAAgAfAAMAAACPAAkAAgAfAAQAAACPAAoAAgAfAAUAAAAAAEQAAwAAAAAAAAAAAEUAAwAAAAEAAAAAAEYAAwAAAAIAAAAAAEcAAwAAAAMAAAAAAEgAAwAAAAQAAAAAAEkAAwAAAAUAAAAAAEoAAwAAAAYAAAABAEQAAwABAAAAAAABAEUAAwABAAEAAAABAEYAAwABAAIAAAABAEcAAwABAAMAAAABAEgAAwABAAQAAAABAEkAAwABAAUAAAABAEoAAwABAAYAAAACAEQAAwACAAAAAAACAEUAAwACAAEAAAACAEYAAwACAAIAAAACAEcAAwACAAMAAAACAEgAAwACAAQAAAACAEkAAwACAAUAAAACAEoAAwACAAYAAAADAEQAAwADAAAAAAADAEUAAwADAAEAAAADAEYAAwADAAIAAAADAEcAAwADAAMAAAADAEgAAwADAAQAAAADAEkAAwADAAUAAAADAEoAAwADAAYAAAAEAEQAAwAEAAAAAAAEAEUAAwAEAAEAAAAEAEYAAwAEAAIAAAAEAEcAAwAEAAMAAAAEAEgAAwAEAAQAAAAEAEkAAwAEAAUAAAAEAEoAAwAEAAYAAAAFAEQAAwAFAAAAAAAFAEUAAwAFAAEAAAAFAEYAAwAFAAIAAAAFAEcAAwAFAAMAAAAFAEgAAwAFAAQAAAAFAEkAAwAFAAUAAAAFAEoAAwAFAAYAAAAGAEQAAwAGAAAAAAAGAEUAAwAGAAEAAAAGAEYAAwAGAAIAAAAGAEcAAwAGAAMAAAAGAEgAAwAGAAQAAAAGAEkAAwAGAAUAAAAGAEoAAwAGAAYAAAAHAEQAAwAHAAAAAAAHAEUAAwAHAAEAAAAHAEYAAwAHAAIAAAAHAEcAAwAHAAMAAAAHAEgAAwAHAAQAAAAHAEkAAwAHAAUAAAAHAEoAAwAHAAYAAAAIAEQAAwAIAAAAAAAIAEUAAwAIAAEAAAAIAEYAAwAIAAIAAAAIAEcAAwAIAAMAAAAIAEgAAwAIAAQAAAAIAEkAAwAIAAUAAAAIAEoAAwAIAAYAAAAJAEQAAwAJAAAAAAAJAEUAAwAJAAEAAAAJAEYAAwAJAAIAAAAJAEcAAwAJAAMAAAAJAEgAAwAJAAQAAAAJAEkAAwAJAAUAAAAJAEoAAwAJAAYAAAAKAEQAAwAKAAAAAAAKAEUAAwAKAAEAAAAKAEYAAwAKAAIAAAAKAEcAAwAKAAMAAAAKAEgAAwAKAAQAAAAKAEkAAwAKAAUAAAAKAEoAAwAKAAYAAAALAEQAAwALAAAAAAALAEUAAwALAAEAAAALAEYAAwALAAIAAAALAEcAAwALAAMAAAALAEgAAwALAAQAAAALAEkAAwALAAUAAAALAEoAAwALAAYAAAAMAEQAAwAMAAAAAAAMAEUAAwAMAAEAAAAMAEYAAwAMAAIAAAAMAEcAAwAMAAMAAAAMAEgAAwAMAAQAAAAMAEkAAwAMAAUAAAAMAEoAAwAMAAYAAAANAEQAAwANAAAAAAANAEUAAwANAAEAAAANAEYAAwANAAIAAAANAEcAAwANAAMAAAANAEgAAwANAAQAAAANAEkAAwANAAUAAAANAEoAAwANAAYAAAAOAEQAAwAOAAAAAAAOAEUAAwAOAAEAAAAOAEYAAwAOAAIAAAAOAEcAAwAOAAMAAAAOAEgAAwAOAAQAAAAOAEkAAwAOAAUAAAAOAEoAAwAOAAYAAAAPAEQAAwAPAAAAAAAPAEUAAwAPAAEAAAAPAEYAAwAPAAIAAAAPAEcAAwAPAAMAAAAPAEgAAwAPAAQAAAAPAEkAAwAPAAUAAAAPAEoAAwAPAAYAAAAQAEQAAwAQAAAAAAAQAEUAAwAQAAEAAAAQAEYAAwAQAAIAAAAQAEcAAwAQAAMAAAAQAEgAAwAQAAQAAAAQAEkAAwAQAAUAAAAQAEoAAwAQAAYAAAARAEQAAwARAAAAAAARAEUAAwARAAEAAAARAEYAAwARAAIAAAARAEcAAwARAAMAAAARAEgAAwARAAQAAAARAEkAAwARAAUAAAARAEoAAwARAAYAAAASAEQAAwASAAAAAAASAEUAAwASAAEAAAASAEYAAwASAAIAAAASAEcAAwASAAMAAAASAEgAAwASAAQAAAASAEkAAwASAAUAAAASAEoAAwASAAYAAAATAEQAAwATAAAAAAATAEUAAwATAAEAAAATAEYAAwATAAIAAAATAEcAAwATAAMAAAATAEgAAwATAAQAAAATAEkAAwATAAUAAAATAEoAAwATAAYAAAAUAEQAAwAUAAAAAAAUAEUAAwAUAAEAAAAUAEYAAwAUAAIAAAAUAEcAAwAUAAMAAAAUAEgAAwAUAAQAAAAUAEkAAwAUAAUAAAAUAEoAAwAUAAYAAAAVAEQAAwAVAAAAAAAVAEUAAwAVAAEAAAAVAEYAAwAVAAIAAAAVAEcAAwAVAAMAAAAVAEgAAwAVAAQAAAAVAEkAAwAVAAUAAAAVAEoAAwAVAAYAAAAWAEQAAwAWAAAAAAAWAEUAAwAWAAEAAAAWAEYAAwAWAAIAAAAWAEcAAwAWAAMAAAAWAEgAAwAWAAQAAAAWAEkAAwAWAAUAAAAWAEoAAwAWAAYAAAAXAEQAAwAXAAAAAAAXAEUAAwAXAAEAAAAXAEYAAwAXAAIAAAAXAEcAAwAXAAMAAAAXAEgAAwAXAAQAAAAXAEkAAwAXAAUAAAAXAEoAAwAXAAYAAAAYAEQAAwAYAAAAAAAYAEUAAwAYAAEAAAAYAEYAAwAYAAIAAAAYAEcAAwAYAAMAAAAYAEgAAwAYAAQAAAAYAEkAAwAYAAUAAAAYAEoAAwAYAAYAAAAZAEQAAwAZAAAAAAAZAEUAAwAZAAEAAAAZAEYAAwAZAAIAAAAZAEcAAwAZAAMAAAAZAEgAAwAZAAQAAAAZAEkAAwAZAAUAAAAZAEoAAwAZAAYAAAAaAEQAAwAaAAAAAAAaAEUAAwAaAAEAAAAaAEYAAwAaAAIAAAAaAEcAAwAaAAMAAAAaAEgAAwAaAAQAAAAaAEkAAwAaAAUAAAAaAEoAAwAaAAYAAAAbAEQAAwAbAAAAAAAbAEUAAwAbAAEAAAAbAEYAAwAbAAIAAAAbAEcAAwAbAAMAAAAbAEgAAwAbAAQAAAAbAEkAAwAbAAUAAAAbAEoAAwAbAAYAAAB3AAgAAgAHAAMAAAB2AAgAAgAGAAMAAAB1AAgAAgAFAAMAAAB4AAgAAgAIAAMAAAB5AAgAAgAJAAMAAAB6AAgAAgAKAAMAAAB7AAgAAgALAAMAAAB8AAgAAgAMAAMAAAB9AAgAAgANAAMAAAB+AAgAAgAOAAMAAAB/AAgAAgAPAAMAAACAAAgAAgAQAAMAAACBAAgAAgARAAMAAACCAAgAAgASAAMAAACDAAgAAgATAAMAAACEAAgAAgAUAAMAAACFAAgAAgAVAAMAAACGAAgAAgAWAAMAAACHAAgAAgAXAAMAAACLAAgAAgAbAAMAAACMAAgAAgAcAAMAAACNAAgAAgAdAAMAAACKAAgAAgAaAAMAAACJAAgAAgAZAAMAAACIAAgAAgAYAAMAAACMAAkAAgAcAAQAAACNAAkAAgAdAAQAAACLAAkAAgAbAAQAAACKAAkAAgAaAAQAAACJAAkAAgAZAAQAAACIAAkAAgAYAAQAAACHAAkAAgAXAAQAAACGAAkAAgAWAAQAAACFAAkAAgAVAAQAAACEAAkAAgAUAAQAAACDAAkAAgATAAQAAACCAAkAAgASAAQAAACBAAkAAgARAAQAAACAAAkAAgAQAAQAAAB/AAkAAgAPAAQAAAB+AAkAAgAOAAQAAAB9AAkAAgANAAQAAAB8AAkAAgAMAAQAAAB7AAkAAgALAAQAAAB6AAkAAgAKAAQAAAB5AAkAAgAJAAQAAAB4AAkAAgAIAAQAAAAcAEQAAwAcAAAAAAAcAEUAAwAcAAEAAAAcAEYAAwAcAAIAAAAcAEcAAwAcAAMAAAAcAEgAAwAcAAQAAAAcAEkAAwAcAAUAAAAcAEoAAwAcAAYAAAAdAEQAAwAdAAAAAAAdAEUAAwAdAAEAAAAdAEYAAwAdAAIAAAAdAEcAAwAdAAMAAAAdAEgAAwAdAAQAAAAdAEkAAwAcAAUAAAAdAEoAAwAdAAYAAAAeAEQAAwAeAAAAAAAeAEUAAwAeAAEAAAAeAEYAAwAeAAIAAAAeAEcAAwAdAAMAAAAeAEgAAwAdAAQAAAAeAEoAAwAdAAYAAAAfAEQAAwAeAAAAAAAfAEUAAwAeAAEAAAAfAEYAAwAeAAIAAABwAAkAAgAAAAQAAABwAAoAAgAAAAUAAABxAAcAAgABAAIAAABxAAgAAgABAAMAAABxAAkAAgABAAQAAABxAAoAAgABAAUAAAByAAUAAgACAAAAAAByAAYAAgACAAEAAAByAAcAAgACAAIAAAByAAgAAgACAAMAAAByAAkAAgACAAQAAAByAAoAAgACAAUAAABzAAUAAgADAAAAAABzAAYAAgADAAEAAABzAAcAAgADAAIAAABzAAgAAgADAAMAAABzAAkAAgADAAQAAABzAAoAAgADAAUAAAA=")
 tile_set = SubResource("TileSet_byyt3")
 
 [node name="Controls" type="Control" parent="Ui"]
@@ -3537,36 +3942,50 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 550.0
 offset_top = 200.0
-offset_right = 550.0
-offset_bottom = 200.0
+offset_right = 570.0
+offset_bottom = 220.0
 scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="Battle" type="TextureButton" parent="Ui/Controls"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.6
+anchor_top = 0.8
+anchor_right = 2.05
+anchor_bottom = 1.45
 offset_left = 800.0
 offset_top = 400.0
 offset_right = 1100.0
 offset_bottom = 488.0
-texture_normal = SubResource("AtlasTexture_0yudy")
+texture_normal = ExtResource("11_1cpr5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Run" type="TextureButton" parent="Ui/Controls"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.6
+anchor_right = 2.1
+anchor_bottom = 0.75
 offset_left = 800.0
 offset_top = 640.0
 offset_right = 1104.0
 offset_bottom = 728.0
-texture_normal = SubResource("AtlasTexture_wjw4a")
+texture_normal = ExtResource("12_nq5v8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Party" type="TextureButton" parent="Ui/Controls"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.6
+anchor_top = -1.6
+anchor_right = 1.95
+anchor_bottom = -0.8
 offset_left = 800.0
 offset_top = 560.0
 offset_right = 1104.0
 offset_bottom = 648.0
-texture_normal = SubResource("AtlasTexture_il5xb")
+texture_normal = ExtResource("13_0go8p")
 metadata/_edit_use_anchors_ = true
 
 [node name="MoveMenu" type="Control" parent="Ui"]
@@ -3638,9 +4057,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PokemonName" type="RichTextLabel" parent="Ui/Control"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 24.0
 offset_top = 552.0
-offset_right = 152.0
+offset_right = 168.0
 offset_bottom = 576.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_7oyp7")
@@ -3650,9 +4069,9 @@ text = "Bulbasaur"
 
 [node name="OppPokemonName" type="RichTextLabel" parent="Ui/Control"]
 layout_mode = 0
-offset_left = 944.0
+offset_left = 968.0
 offset_top = 48.0
-offset_right = 1062.0
+offset_right = 1086.0
 offset_bottom = 68.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_7oyp7")
@@ -3875,3 +4294,238 @@ scale = Vector2(2.864584, 2.7142856)
 [node name="Sprite2D2" type="Sprite2D" parent="Ui"]
 position = Vector2(203.00012, 426)
 scale = Vector2(2.864584, 2.7142856)
+
+[node name="Party" type="Node2D" parent="Ui"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Party"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("19_7oyp7")
+
+[node name="TextureButton" type="TextureButton" parent="Ui/Party"]
+offset_left = 880.0
+offset_top = 528.0
+offset_right = 1144.0
+offset_bottom = 632.0
+texture_normal = SubResource("AtlasTexture_yhcfl")
+stretch_mode = 0
+script = ExtResource("21_aq78h")
+
+[node name="Slot1" type="Node2D" parent="Ui/Party"]
+
+[node name="Pokeicon" type="Sprite2D" parent="Ui/Party/Slot1"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot1"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot1"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot1"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot2" type="Node2D" parent="Ui/Party"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot2"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot2"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot2"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="RichTextLabel" parent="Ui/Party/Slot2"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot3" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 187)
+
+[node name="Pokeicon" type="Sprite2D" parent="Ui/Party/Slot3"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot3"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot3"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot3"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot4" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 187)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot4"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot4"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot4"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="RichTextLabel" parent="Ui/Party/Slot4"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot5" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 380)
+
+[node name="Pokeicon" type="Sprite2D" parent="Ui/Party/Slot5"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot5"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot5"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Ui/Party/Slot5"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="Node2D" parent="Ui/Party"]
+position = Vector2(0, 380)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/Party/Slot6"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Ui/Party/Slot6"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 22
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Ui/Party/Slot6"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("22_entnt")
+
+[node name="Name" type="RichTextLabel" parent="Ui/Party/Slot6"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("23_0m13b")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "
+"

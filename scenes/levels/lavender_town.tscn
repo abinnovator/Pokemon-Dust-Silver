@@ -40,7 +40,7 @@ position = Vector2(80, 96)
 [node name="UsersHouse" parent="SceneTriggers" instance=ExtResource("3_2gs1o")]
 position = Vector2(104, -48)
 scale = Vector2(5, 1)
-TargetLevelName = 33
+TargetLevelName = 42
 TargetLevelTrigger = 5
 
 [node name="UsersHouse2" parent="SceneTriggers" instance=ExtResource("3_2gs1o")]

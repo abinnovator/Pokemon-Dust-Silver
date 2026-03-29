@@ -105,6 +105,7 @@ namespace Game.Core
         lavender_town,
         rock_tunnel,
         route8,
+        saffroncity
     }
     public enum LevelGroups
     {
@@ -212,7 +213,8 @@ namespace Game.Core
         Champion,
         Delia,
         lass,
-        bird_keeper
+        bird_keeper,
+        bike_seller
     }
     public enum GymLeaderAppearanceType
     {

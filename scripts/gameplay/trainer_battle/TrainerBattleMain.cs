@@ -65,6 +65,12 @@ namespace Game.Gameplay
 		private int _oppPokemonLevel;
 		private int _playerPokemonLevel;
 		private int _currentEnemyPartyIndex = 0;
+		[ExportGroup("Slot UI Elements")]
+		[Export] public RichTextLabel[] NameLabels;
+		[Export] public RichTextLabel[] LevelLabels;
+		[Export] public TextureProgressBar[] HpBars;
+		[Export] public Sprite2D[] Sprites;
+		[Export] public Node2D Party;
 		public override void _Ready()
 		{
 			Logger.Info("BattleMain initializing...");
@@ -256,6 +262,58 @@ namespace Game.Gameplay
 			{
 				Logger.Warning("SaveManager.Instance or CurrentSave is NULL in _Ready");
 			}
+
+			// Initialize party slot UI elements
+			if (partyData == null) 
+			{
+				Game.Core.Logger.Error("Party Data is null!");
+				return;
+			}
+
+			for (int i = 0; i < partyData.Count; i++)
+			{
+				if (i >= NameLabels.Length) break;
+
+				// 1. Get the dictionary for this specific Pokemon
+				var pokemonDict = partyData[i].AsGodotDictionary();
+				Game.Core.Logger.Info(pokemonDict);
+
+				// 2. Get the Resource based on the ID stored in the dictionary
+				// Using "Id" or "ID" - make sure this matches your SaveManager casing!
+				var idKey = pokemonDict.ContainsKey("ID") ? "ID" : "Id";
+				// Convert to int first, then to the Enum
+				var pokemonID = (PokemonID)(int)pokemonDict[idKey];
+				var pokemonResource = PokeBase.LoadPokemon(pokemonID);
+
+				if (pokemonResource == null)
+				{
+					GD.PrintErr($"Could not load resource for ID: {pokemonID}");
+					continue;
+				}
+
+				// 3. Assign the Species Name from the Resource
+				if (NameLabels[i] != null)
+					// Wrap the name in a [url] tag so it becomes "clickable" metadata
+					NameLabels[i].Text = $"[url]{pokemonResource.Name}[/url]";
+
+					// Use the lambda fix from before to connect the signal correctly
+					NameLabels[i].MetaClicked += (meta) => switchPokemon(pokemonResource);
+
+				// 4. Assign the Level from the Save Data
+				if (LevelLabels[i] != null && pokemonDict.ContainsKey("Level"))
+					LevelLabels[i].Text =  pokemonDict["Level"].ToString();
+
+				// 5. Assign HP from the Save Data
+				if (HpBars[i] != null && pokemonDict.ContainsKey("CurrentHP"))
+				{
+					HpBars[i].MaxValue = pokemonResource.BaseHp;
+					HpBars[i].Value = pokemonDict["CurrentHP"].AsInt32();
+				}
+				
+				// 6. Assign Sprite from the Resource
+				if (Sprites[i] != null)
+					Sprites[i].Texture = pokemonResource.FrontSprite; 
+			}
 		}
 		private void OnPokemonBackButtonPressed()
 		{
@@ -264,6 +322,7 @@ namespace Game.Gameplay
 			if (PartyMenu != null) PartyMenu.Visible = false;
 			if (BackButton != null) BackButton.Visible = false;
 			if (PokemonBackButton != null) PokemonBackButton.Visible = false;
+			Party.Visible = false;
 		}
 		private void OnBagBackButtonPressed()
 		{
@@ -279,10 +338,7 @@ namespace Game.Gameplay
 			Logger.Info($"BATTLE LOG: {message}");
 		}
 
-		/// <summary>
-		/// Iterates through the VictoryMessages defined on the opponent's GymNpcInputConfig
-		/// and plays each line sequentially via MessageManager.
-		/// </summary>
+
 		public async Task PlayVictoryDialogueAsync()
 		{
 			var messages = (OpponentTrainerSprite?.InputConfig as GymNpcInputConfig)?.VictoryMessages;
@@ -418,10 +474,6 @@ namespace Game.Gameplay
 			}
 		}
 
-		/// <summary>
-		/// If the current enemy Pokémon has fainted (HP == 0), sends out the next available
-		/// Pokémon in EnemyParty. Returns true if a new Pokémon was sent out, false if none remain.
-		/// </summary>
 		public async Task<bool> TrySendNextEnemyPokemon()
 		{
 			if (_oppPokemonHp > 0) return false;
@@ -512,11 +564,12 @@ namespace Game.Gameplay
 			Logger.Info("onPokemonButtonPressed called");
 			if (PartyMenu != null)
 			{
-				PartyMenu.Visible = true;
-				if (CommandMenu != null) CommandMenu.Visible = false;
-				if (MoveMenu != null) MoveMenu.Visible = false;
-				if (BackButton != null) BackButton.Visible = false;
-				if (PokemonBackButton != null) PokemonBackButton.Visible = true;
+				PartyMenu.Visible = false;
+				CommandMenu.Visible = false;
+				MoveMenu.Visible = false;
+				BackButton.Visible = false;
+				PokemonBackButton.Visible = true;
+				Party.Visible = true;
 				
 				Logger.Info($"PartyMenu Visibility: {PartyMenu.Visible}, Children: {PartyMenu.GetChildCount()}");
 				var partyDetails = SaveManager.Instance.CurrentSave?.PartyDetails;
@@ -548,6 +601,7 @@ namespace Game.Gameplay
 						{
 							btn.Text = "---";
 							btn.Disabled = true;
+							// Optionally hide empty slots if that's preferred, but let's keep them visible for now to see if they show up
 							btn.Visible = true; 
 						}
 						buttonIdx++;
@@ -565,6 +619,8 @@ namespace Game.Gameplay
 			PlayerSprite.Texture = pokemon.BackSprite;
 			if (PlayerHPBar != null) { PlayerHPBar.MaxValue = pokemon.BaseHp; PlayerHPBar.Value = _playerPokemonHp; }
 			if (PlayerNameLabel != null) PlayerNameLabel.Text = $"{pokemon.Name} Lv.{_playerPokemonLevel}";
+			Party.Visible = false;
+			CommandMenu.Visible = true;
 		}
 
 		private void OnPartyButtonPressed(int index)

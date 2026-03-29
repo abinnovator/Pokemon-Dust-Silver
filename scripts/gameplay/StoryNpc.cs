@@ -46,7 +46,9 @@ public partial class StoryNpc : CharacterBody2D
 		{StoryNpcAppearance.Jackson, GD.Load<SpriteFrames>("res://resources/spriteframes/Jackson.tres")},
 		{StoryNpcAppearance.BugCatcher, GD.Load<SpriteFrames>("res://resources/spriteframes/bug_catcher.tres")},
 		{StoryNpcAppearance.lass, GD.Load<SpriteFrames>("res://resources/spriteframes/lass.tres")},
-		{StoryNpcAppearance.bird_keeper, GD.Load<SpriteFrames>("res://resources/spriteframes/bird_keeper.tres")}
+		{StoryNpcAppearance.bird_keeper, GD.Load<SpriteFrames>("res://resources/spriteframes/bird_keeper.tres")},
+		{StoryNpcAppearance.bike_seller, GD.Load<SpriteFrames>("res://resources/spriteframes/bike_seller.tres")}
+
 	};
 
 	public override void _Ready()

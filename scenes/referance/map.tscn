@@ -53,7 +53,7 @@ position = Vector2(1416, -4240)
 position = Vector2(7752, -3344)
 
 [node name="Level10" parent="." instance=ExtResource("10_cjvgp")]
-position = Vector2(4152, -3248)
+position = Vector2(4152, -3344)
 
 [node name="Level5" parent="." instance=ExtResource("7_mmh18")]
 position = Vector2(-48, -4624)

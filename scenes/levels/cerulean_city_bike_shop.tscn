@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://bg73q4ubeuyj8"]
+[gd_scene load_steps=14 format=4 uid="uid://bg73q4ubeuyj8"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_f6d7f"]
 [ext_resource type="Texture2D" uid="uid://cbfh4naitsmbv" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Maps (Towns, Buildings, Etc.) - Cerulean City.png" id="2_1p4au"]
 [ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="2_b16i1"]
+[ext_resource type="Resource" uid="uid://cbh35b3568jdi" path="res://resources/items/all/bike--green.tres" id="4_4gdjf"]
 [ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="4_iuub5"]
-[ext_resource type="Script" uid="uid://dit01rplt30dj" path="res://scripts/gameplay/items/ShopItem.cs" id="4_tiae1"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="6_4gdjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b16i1"]
@@ -3963,17 +3963,13 @@ margins = Vector2i(0, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b16i1")
 
-[sub_resource type="Resource" id="Resource_4gdjf"]
-script = ExtResource("4_tiae1")
-metadata/_custom_type_script = "uid://dit01rplt30dj"
-
 [sub_resource type="Resource" id="Resource_tiae1"]
 script = ExtResource("4_iuub5")
 Messages = null
 PatrolPoints = null
 InterceptMessages = null
 IsShopClerk = true
-ShopItems = Array[Object]([SubResource("Resource_4gdjf")])
+ShopItems = Array[Object]([ExtResource("4_4gdjf")])
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tiae1"]
@@ -4003,8 +3999,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAxABcAAAAAAAEAAAAxABgAAAAAAAIAAAAxABk
 tile_set = SubResource("TileSet_iuub5")
 
 [node name="NPC" parent="Tiles" instance=ExtResource("2_b16i1")]
-position = Vector2(48, 64)
-NpcAppearance = 29
+position = Vector2(144, 40)
+NpcAppearance = 32
 InputConfig = SubResource("Resource_tiae1")
 
 [node name="Boundaries" type="Node2D" parent="."]

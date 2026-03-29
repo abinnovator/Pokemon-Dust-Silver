@@ -1,0 +1,243 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvag4tffqf627"]
+
+[ext_resource type="Script" uid="uid://cqkit5b7ilats" path="res://scripts/ui/BagMenu.cs" id="1_bfi0f"]
+[ext_resource type="Texture2D" uid="uid://cvffnvq71rukn" path="res://assets/ui/SwShBag.png" id="2_4pd0a"]
+[ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="4_5ljg5"]
+[ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="6_ihdx0"]
+
+[node name="Bag" type="Node2D" node_paths=PackedStringArray("NameLabels", "LevelLabels", "HpBars", "Sprites", "Money")]
+texture_filter = 1
+script = ExtResource("1_bfi0f")
+NameLabels = [NodePath("Slot1/name"), NodePath("Slot2/Name"), NodePath("Slot3/name"), NodePath("Slot4/Name"), NodePath("Slot5/name"), NodePath("Slot6/Name")]
+LevelLabels = [NodePath("Slot1/Level"), NodePath("Slot2/Level"), NodePath("Slot3/Level"), NodePath("Slot4/Level"), NodePath("Slot5/Level"), NodePath("Slot6/Level")]
+HpBars = [NodePath("Slot1/TextureProgressBar"), NodePath("Slot2/TextureProgressBar"), NodePath("Slot3/TextureProgressBar"), NodePath("Slot4/TextureProgressBar"), NodePath("Slot5/TextureProgressBar"), NodePath("Slot6/TextureProgressBar")]
+Sprites = [NodePath("Slot1/Pokeicon"), NodePath("Slot2/Sprite2D"), NodePath("Slot3/Pokeicon"), NodePath("Slot4/Sprite2D"), NodePath("Slot5/Pokeicon"), NodePath("Slot6/Sprite2D")]
+Money = NodePath("Money")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1160.0
+offset_bottom = 688.0
+texture = ExtResource("2_4pd0a")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Slot1" type="Node2D" parent="."]
+
+[node name="Pokeicon" type="Sprite2D" parent="Slot1"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot1"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Slot1"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Slot1"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot2" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot2"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Slot2"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot2"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+
+[node name="Name" type="RichTextLabel" parent="Slot2"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="Slot3" type="Node2D" parent="."]
+position = Vector2(0, 187)
+
+[node name="Pokeicon" type="Sprite2D" parent="Slot3"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot3"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Slot3"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Slot3"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot4" type="Node2D" parent="."]
+position = Vector2(0, 187)
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot4"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Slot4"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot4"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+
+[node name="Name" type="RichTextLabel" parent="Slot4"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="Slot5" type="Node2D" parent="."]
+position = Vector2(0, 380)
+
+[node name="Pokeicon" type="Sprite2D" parent="Slot5"]
+position = Vector2(104, 152)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot5"]
+offset_left = 152.00002
+offset_top = 152.00002
+offset_right = 200.00002
+offset_bottom = 155.00002
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="RichTextLabel" parent="Slot5"]
+offset_left = 152.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="RichTextLabel" parent="Slot5"]
+offset_left = 152.0
+offset_top = 112.0
+offset_right = 368.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="Node2D" parent="."]
+position = Vector2(0, 380)
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot6"]
+position = Vector2(104.00001, 248)
+scale = Vector2(1.0357144, 1.0535713)
+
+[node name="Level" type="RichTextLabel" parent="Slot6"]
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 248.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 22
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Slot6"]
+offset_left = 152.00002
+offset_top = 248.0
+offset_right = 200.00002
+offset_bottom = 251.0
+scale = Vector2(4.755, 4.1)
+texture_progress = ExtResource("4_5ljg5")
+
+[node name="Name" type="RichTextLabel" parent="Slot6"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 368.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+theme_override_font_sizes/normal_font_size = 30
+text = "
+"
+
+[node name="ItemsContainer" type="Node2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemsContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Money" type="RichTextLabel" parent="."]
+offset_left = 1000.0
+offset_top = 14.0
+offset_right = 1080.0
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ihdx0")

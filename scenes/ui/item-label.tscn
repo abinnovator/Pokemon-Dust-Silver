@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvdwp6kf066v8"]
+
+[ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="1_ppnjb"]
+[ext_resource type="Texture2D" uid="uid://c1cm21ltqwmc1" path="res://assets/ui/ui_arrow_b-x..png" id="1_smjeq"]
+[ext_resource type="Script" uid="uid://cpmtsxhhs5kl8" path="res://scripts/ui/ItemLabel.cs" id="1_w65q6"]
+[ext_resource type="Texture2D" uid="uid://b3gydobginsq1" path="res://assets/items/all/ability-capsule.png" id="2_smjeq"]
+[ext_resource type="Texture2D" uid="uid://bm3jssy3iiwev" path="res://assets/ui/croess_sword_shield.png" id="5_685qu"]
+
+[node name="Item-label" type="Node2D" node_paths=PackedStringArray("Selected_bg", "ItemName", "ItemIcon", "ItemQuantity")]
+script = ExtResource("1_w65q6")
+Selected_bg = NodePath("UiArrowBX_")
+ItemName = NodePath("Node2D/RichTextLabel")
+ItemIcon = NodePath("Node2D/Sprite2D")
+ItemQuantity = NodePath("RichTextLabel")
+
+[node name="UiArrowBX_" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(278, 28)
+texture = ExtResource("1_smjeq")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = 104.5
+offset_top = 6.0
+offset_right = 319.5
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_ppnjb")
+theme_override_font_sizes/normal_font_size = 30
+text = " Potion"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(80.5, 25)
+scale = Vector2(1.4333333, 1.4)
+texture = ExtResource("2_smjeq")
+
+[node name="CroessSwordShield" type="Sprite2D" parent="."]
+position = Vector2(409, 26)
+texture = ExtResource("5_685qu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 442.0
+offset_top = 3.0
+offset_right = 485.0
+offset_bottom = 45.0
+theme_override_font_sizes/normal_font_size = 30
+text = "2"

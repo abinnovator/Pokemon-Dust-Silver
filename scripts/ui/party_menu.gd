@@ -3,8 +3,9 @@ extends CanvasLayer
 @onready var select_arrow = $Control/NinePatchRect/TextureRect
 @onready var menu = $Control
 var party_screen: Node = null
+var bag: Node=null
 
-enum ScreenLoaded {NOTHING, JUST_MENU, PARTY_SCREEN}
+enum ScreenLoaded {NOTHING, JUST_MENU, PARTY_SCREEN, BAG}
 var screen_loaded = ScreenLoaded.NOTHING
 
 var selected_option: int = 0
@@ -47,6 +48,12 @@ func _unhandled_input(event):
 						add_child(party_screen)
 					screen_loaded = ScreenLoaded.PARTY_SCREEN
 					get_viewport().set_input_as_handled()
+				elif selected_option == 1:
+					if bag == null:
+						bag = load("res://scenes/ui/bag.tscn").instantiate()
+						add_child(bag)
+					screen_loaded = ScreenLoaded.BAG
+					get_viewport().set_input_as_handled()
 				elif selected_option == 2:
 					SaveManager.QuitGame();
 
@@ -55,5 +62,8 @@ func _unhandled_input(event):
 				if party_screen != null:
 					party_screen.queue_free()
 					party_screen = null
+				elif bag != null:
+					bag.queue_free()
+					bag = null
 				screen_loaded = ScreenLoaded.JUST_MENU
 				get_viewport().set_input_as_handled()

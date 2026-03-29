@@ -115,7 +115,8 @@ TargetLevelName = 8
 CurrentLevelTrigger = 4
 
 [node name="SceneTrigger8" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
-position = Vector2(312, 192)
+position = Vector2(304, 176)
+scale = Vector2(2, 2)
 TargetLevelName = 11
 CurrentLevelTrigger = 5
 

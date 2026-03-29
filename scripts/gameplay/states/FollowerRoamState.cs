@@ -38,7 +38,7 @@ namespace Game.Gameplay.States
 		private bool HasStarter()
 		{
 			return SaveManager.Instance?.CurrentSave?.ChosenStarter != null && 
-       SaveManager.Instance.CurrentSave.ChosenStarter != StarterChoice.NONE;
+       		SaveManager.Instance.CurrentSave.ChosenStarter != StarterChoice.NONE;
 		}
 
 		private void TryFollowPlayer()
