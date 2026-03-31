@@ -14,7 +14,7 @@ size = Vector2(8, 160)
 size = Vector2(8, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wggpw"]
-size = Vector2(7.999996, 204)
+size = Vector2(16, 206)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78r8n"]
 size = Vector2(12, 168)
@@ -27,6 +27,7 @@ EventTrigger = 2
 IsBlocker = true
 HasForcedInterception = true
 InterceptMessages = Array[String](["hey ash come quick you have to go to the lab to meet  Proffeser oak!"])
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
@@ -64,7 +65,7 @@ shape = SubResource("RectangleShape2D_7at4i")
 position = Vector2(0, -96)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Wall 4"]
-position = Vector2(62, 43.999996)
+position = Vector2(65, 55.999996)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_wggpw")
 

@@ -71,6 +71,8 @@ extinct, in rare
 cases, it can begenetically
 resurrected from
 fossils."
+TypeOne = 13
+TypeTwo = 3
 Height = 4
 Weight = 75
 BaseExperience = 71
@@ -104,6 +106,9 @@ LevelUpMoves = Dictionary[String, int]({
 "water-gun": 1,
 "withdraw": 1
 })
+CanEvolve = true
+EvolvesInto = 139
+EvolutionLevel = 40
 FrontSprite = SubResource("ImageTexture_38isi")
 ShinyFrontSprite = SubResource("ImageTexture_k666n")
 BackSprite = SubResource("ImageTexture_yg5d3")

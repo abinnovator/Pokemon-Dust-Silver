@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://hju4ycddiq82"]
+[gd_scene load_steps=11 format=4 uid="uid://hju4ycddiq82"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_qwg2j"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_nbhf3"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_17k8n"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_nnnga"]
 [ext_resource type="PackedScene" uid="uid://bknu1qrgrqmna" path="res://scenes/charecters/NurseJoy.tscn" id="5_j7oqo"]
+[ext_resource type="PackedScene" uid="uid://chk2h26dcuva" path="res://scenes/levels/pc.tscn" id="6_qq8m3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnnga"]
 size = Vector2(12, 144)
@@ -78,3 +79,6 @@ position = Vector2(56, 32)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_nnnga")]
 position = Vector2(-24, 48)
+
+[node name="PC" parent="." instance=ExtResource("6_qq8m3")]
+position = Vector2(96, -32)

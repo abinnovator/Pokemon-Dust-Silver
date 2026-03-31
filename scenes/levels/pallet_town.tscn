@@ -14,6 +14,7 @@ script = ExtResource("7_bp3sc")
 Messages = Array[String](["Technology is incredible! You can now store and recall items and Pokémon as data via PC"])
 PatrolPoints = null
 InterceptMessages = null
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Pallet Town" type="Node2D"]

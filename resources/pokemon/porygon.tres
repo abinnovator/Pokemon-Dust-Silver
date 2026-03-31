@@ -71,6 +71,7 @@ consists entirely
 of programmingcode. Capable of
 moving freely in
 cyberspace."
+TypeOne = 1
 Height = 8
 Weight = 365
 BaseExperience = 79
@@ -105,6 +106,7 @@ LevelUpMoves = Dictionary[String, int]({
 "tri-attack": 42,
 "zap-cannon": 44
 })
+CanEvolve = true
 FrontSprite = SubResource("ImageTexture_wbnnm")
 ShinyFrontSprite = SubResource("ImageTexture_ia7aq")
 BackSprite = SubResource("ImageTexture_bu3y8")

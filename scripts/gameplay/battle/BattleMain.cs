@@ -754,8 +754,9 @@ namespace Game.Gameplay
 					if (PlayerNameLabel != null)
 						PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";
 					await MessageManager.PlayText($"{PlayerID} grew to Lv.{currentLevel}!");
+					await CheckEvolution(PlayerID, currentLevel, i);
 				}
-
+				
 				entry["Level"] = currentLevel;
 				entry["Exp"] = currentExp;
 				party[i] = entry;
@@ -763,5 +764,35 @@ namespace Game.Gameplay
 				break;
 			}
 		}
+		private async Task CheckEvolution(PokemonID currentID, int newLevel, int partyIndex){
+			if (
+				!_playerPokemon.CanEvolve
+			)
+			{
+				return;
+			}
+			var evolutionTarget = _playerPokemon.EvolvesInto;
+			for (int i = 0; i < 6; i++)
+			{
+				PlayerSprite.Visible = false;
+				await Task.Delay(200);
+				PlayerSprite.Visible = true;
+				await Task.Delay(200);
+			}
+			var party = SaveManager.Instance?.CurrentSave?.PartyDetails;
+			if (party != null)
+			{
+				var entry = party[partyIndex].AsGodotDictionary();
+				entry["ID"] = (int)evolutionTarget;
+				party[partyIndex] = entry;
+				SaveManager.Instance.SaveToDisk();
+			}
+			PlayerID = evolutionTarget;
+			_playerPokemon = PokeBase.LoadPokemon(evolutionTarget);
+			if (PlayerSprite != null) PlayerSprite.Setup(evolutionTarget);
+			if (PlayerNameLabel != null) 
+				PlayerNameLabel.Text = $"{evolutionTarget} Lv.{newLevel}";
+		} 
+		
 	}
 }

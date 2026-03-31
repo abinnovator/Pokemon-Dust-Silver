@@ -71,6 +71,8 @@ POKéMON that died
 out when itsheavy shell made
 it impossible to
 catch prey."
+TypeOne = 13
+TypeTwo = 3
 Height = 10
 Weight = 350
 BaseExperience = 173

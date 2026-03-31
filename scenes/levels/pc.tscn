@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chk2h26dcuva"]
+
+[ext_resource type="Script" uid="uid://cvgxxycex80d4" path="res://scripts/gameplay/levels/pc.cs" id="1_f88qg"]
+[ext_resource type="Texture2D" uid="uid://mfdtrpgp35rp" path="res://assets/PC.png" id="2_f88qg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orw45"]
+size = Vector2(17.777779, 35.555557)
+
+[node name="PC" type="StaticBody2D"]
+script = ExtResource("1_f88qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 16)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_orw45")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 16)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_f88qg")

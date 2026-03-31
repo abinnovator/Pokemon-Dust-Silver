@@ -71,6 +71,8 @@ POKéMON that is
 said to appearfrom clouds while
 dropping enormous
 lightning bolts."
+TypeOne = 4
+TypeTwo = 10
 Height = 16
 Weight = 526
 BaseExperience = 261
@@ -80,7 +82,7 @@ BaseDefense = 85
 BaseSpecialAttack = 125
 BaseSpecialDefense = 90
 BaseSpeed = 100
-LearnableMoves = Array[String](["razor-wind", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "hyper-beam", "peck", "drill-peck", "thunder-shock", "thunderbolt", "thunder-wave", "thunder", "toxic", "agility", "rage", "mimic", "double-team", "light-screen", "reflect", "bide", "swift", "sky-attack", "flash", "rest", "substitute", "snore", "curse", "protect", "mud-slap", "zap-cannon", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "return", "frustration", "baton-pass", "hidden-power", "twister", "rain-dance", "sunny-day", "ancient-power", "rock-smash", "heat-wave", "hail", "facade", "charge", "helping-hand", "secret-power", "weather-ball", "air-cutter", "metal-sound", "signal-beam", "aerial-ace", "shock-wave", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "brave-bird", "giga-impact", "defog", "discharge", "charge-beam", "ominous-wind", "electro-ball", "round", "sky-drop", "acrobatics", "volt-switch", "wild-charge", "hurricane", "confide", "eerie-impulse", "magnetic-flux", "electric-terrain", "laser-focus", "rising-voltage", "dual-wingbeat", "tera-blast", "supercell-slam"])
+LearnableMoves = Array[String](["razor-wind", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "hyper-beam", "peck", "drill-peck", "thunder-shock", "thunderbolt", "thunder-wave", "thunder", "toxic", "agility", "rage", "mimic", "double-team", "light-screen", "reflect", "bide", "swift", "sky-attack", "flash", "rest", "substitute", "snore", "curse", "protect", "mud-slap", "zap-cannon", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "return", "frustration", "baton-pass", "hidden-power", "twister", "rain-dance", "sunny-day", "ancient-power", "rock-smash", "heat-wave", "hail", "facade", "charge", "helping-hand", "secret-power", "weather-ball", "air-cutter", "metal-sound", "signal-beam", "extrasensory", "aerial-ace", "shock-wave", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "brave-bird", "giga-impact", "defog", "discharge", "charge-beam", "ominous-wind", "electro-ball", "round", "sky-drop", "acrobatics", "volt-switch", "wild-charge", "hurricane", "confide", "eerie-impulse", "magnetic-flux", "electric-terrain", "laser-focus", "rising-voltage", "dual-wingbeat", "tera-blast", "supercell-slam"])
 LevelUpMoves = Dictionary[String, int]({
 "agility": 55,
 "ancient-power": 29,

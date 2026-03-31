@@ -119,6 +119,7 @@ namespace Game.Core
         [JsonProperty("url")]
         public string Url { get; set; }
     }
+
     public class VersionGroupDetail
     {
         [JsonProperty("level_learned_at")]
@@ -136,6 +137,7 @@ namespace Game.Core
         [JsonProperty("version_group_details")]
         public List<VersionGroupDetail> VersionGroupDetails { get; set; }
     }
+
     public class PokemonSprites
     {
         [JsonProperty("front_default")]
@@ -182,10 +184,40 @@ namespace Game.Core
         public ApiResource Version { get; set; }
     }
 
+    public class EvolutionChainRef
+    {
+        [JsonProperty("url")]
+        public string Url { get; set; }
+    }
+
+    public class EvolutionDetail
+    {
+        [JsonProperty("min_level")]
+        public int? MinLevel { get; set; }
+    }
+
+    public class ChainLink
+    {
+        [JsonProperty("species")]
+        public ApiResource Species { get; set; }
+        [JsonProperty("evolves_to")]
+        public List<ChainLink> EvolvesTo { get; set; }
+        [JsonProperty("evolution_details")]
+        public List<EvolutionDetail> EvolutionDetails { get; set; }
+    }
+
+    public class EvolutionChainResponse
+    {
+        [JsonProperty("chain")]
+        public ChainLink Chain { get; set; }
+    }
+
     public class PokemonSpeciesResponse
     {
         [JsonProperty("flavor_text_entries")]
         public List<FlavorTextEntry> FlavorTextEntries { get; set; }
+        [JsonProperty("evolution_chain")]
+        public EvolutionChainRef EvolutionChain { get; set; }
     }
     #endregion
 
@@ -197,35 +229,25 @@ namespace Game.Core
     }
 
     public class ItemApiResponse
-{
-    [JsonProperty("id")]
-    public int Id { get; set; }
-
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    [JsonProperty("cost")]
-    public int Cost { get; set; }
-
-    [JsonProperty("category")]
-    public ApiResource Category { get; set; }
-
-    [JsonProperty("attributes")]
-    public List<ApiResource> Attributes { get; set; }
-
-    [JsonProperty("flavor_text_entries")]
-    public List<FlavorTextEntry> FlavorTextEntries { get; set; }
-
-    [JsonProperty("effect_entries")]
-    public List<EffectEntry> EffectEntries { get; set; }
-
-    [JsonProperty("fling_power")]
-    public int? FlingPower { get; set; }
-
-    [JsonProperty("sprites")]
-    public ItemSprites Sprites { get; set; }
-}
-
-
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("cost")]
+        public int Cost { get; set; }
+        [JsonProperty("category")]
+        public ApiResource Category { get; set; }
+        [JsonProperty("attributes")]
+        public List<ApiResource> Attributes { get; set; }
+        [JsonProperty("flavor_text_entries")]
+        public List<FlavorTextEntry> FlavorTextEntries { get; set; }
+        [JsonProperty("effect_entries")]
+        public List<EffectEntry> EffectEntries { get; set; }
+        [JsonProperty("fling_power")]
+        public int? FlingPower { get; set; }
+        [JsonProperty("sprites")]
+        public ItemSprites Sprites { get; set; }
+    }
     #endregion
 }

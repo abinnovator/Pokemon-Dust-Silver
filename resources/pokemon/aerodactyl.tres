@@ -69,6 +69,8 @@ Id = 142
 Description = "A Pokémon that roamed the skies
 in the dinosaur era. Its teeth are
 like saw blades."
+TypeOne = 13
+TypeTwo = 10
 Height = 18
 Weight = 590
 BaseExperience = 180

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://r343skedc5gq"]
+[gd_scene load_steps=10 format=4 uid="uid://r343skedc5gq"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_3bvqj"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_35ld8"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_7r4e2"]
+[ext_resource type="PackedScene" uid="uid://chk2h26dcuva" path="res://scenes/levels/pc.tscn" id="4_35ld8"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_vk3rx"]
 [ext_resource type="PackedScene" uid="uid://bknu1qrgrqmna" path="res://scenes/charecters/NurseJoy.tscn" id="5_ibtaj"]
 
@@ -39,6 +40,9 @@ position = Vector2(80, 96)
 position = Vector2(-48, -16)
 TargetLevelName = 23
 TargetLevelTrigger = 13
+
+[node name="PC" parent="SceneTriggers/SceneTrigger" instance=ExtResource("4_35ld8")]
+position = Vector2(64, -112)
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(56, 32)

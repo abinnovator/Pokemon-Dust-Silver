@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dyplxgdtdv778"]
+[gd_scene load_steps=10 format=4 uid="uid://dyplxgdtdv778"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_hwq51"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_te6uv"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_fdnsu"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_nqhko"]
 [ext_resource type="PackedScene" uid="uid://bknu1qrgrqmna" path="res://scenes/charecters/NurseJoy.tscn" id="5_te6uv"]
+[ext_resource type="PackedScene" uid="uid://chk2h26dcuva" path="res://scenes/levels/pc.tscn" id="6_fdnsu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_te6uv"]
 size = Vector2(8, 144)
@@ -69,3 +70,6 @@ shape = SubResource("RectangleShape2D_nqhko")
 position = Vector2(-122, -52)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_nqhko")
+
+[node name="PC" parent="." instance=ExtResource("6_fdnsu")]
+position = Vector2(96, -32)

@@ -57,24 +57,20 @@ public partial class TallGrass : Area2D
 				await ToSignal(tween, "finished");
 			}
 
-			// 2. Determine the Wild Pokemon
 			string[] possibleMons = currentLevel.wildPokemonList; 
 			int index = Globals.GetRandomNumberGenerator().RandiRange(0, possibleMons.Length - 1);
 			string encounteredMonName = possibleMons[index];
 
-			// 3. Convert string to PokemonID Enum
 			if (Enum.TryParse(encounteredMonName, true, out PokemonID id))
 			{
 				await MessageManager.PlayText($"A wild {encounteredMonName.ToUpper()} appeared!");
 
-				// Use BattleManager to handle the wild battle transition and player ID retrieval
 				global::Game.Core.BattleManager.Instance.StartWildBattle(id, global::Game.Core.PokemonID.none);
 			}
 			else
 			{
 				GD.PrintErr($"Could not find PokemonID for: {encounteredMonName}");
 				
-				// Emergency fade out if the pokemon load fails
 				if (fade != null)
 				{
 					Tween tweenOut = CreateTween();

@@ -20,13 +20,14 @@ public partial class PokemonResource : Resource
     public PokemonType TypeOne = PokemonType.None;
     [Export]
     public PokemonType TypeTwo = PokemonType.None;
+
     [ExportCategory("Stats")]
     [Export]
     public int Height;
     [Export]
-    public int Weight;  
+    public int Weight;
     [Export]
-    public int BaseExperience; 
+    public int BaseExperience;
     [Export]
     public int BaseHp;
     [Export]
@@ -39,11 +40,21 @@ public partial class PokemonResource : Resource
     public int BaseSpecialDefense;
     [Export]
     public int BaseSpeed;
+
     [ExportCategory("Moves")]
     [Export]
     public Array<string> LearnableMoves;
     [Export]
-    public Godot.Collections.Dictionary<string,int> LevelUpMoves;
+    public Godot.Collections.Dictionary<string, int> LevelUpMoves;
+
+    [ExportCategory("Evolution")]
+    [Export]
+    public bool CanEvolve = false;
+    [Export]
+    public PokemonID EvolvesInto = PokemonID.none;
+    [Export]
+    public int EvolutionLevel = 0;
+
     [ExportCategory("Sprites")]
     [Export]
     public Texture2D FrontSprite;
@@ -55,6 +66,4 @@ public partial class PokemonResource : Resource
     public Texture2D ShinyBackSprite;
     [Export]
     public Texture2D MenuIconSprite;
-    
-
 }

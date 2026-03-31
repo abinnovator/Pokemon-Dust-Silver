@@ -71,6 +71,8 @@ perfect for swim­
 ming. It slashesprey with its
 claws and drains
 the body fluids."
+TypeOne = 13
+TypeTwo = 3
 Height = 13
 Weight = 405
 BaseExperience = 173

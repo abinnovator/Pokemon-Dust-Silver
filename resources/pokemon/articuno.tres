@@ -71,6 +71,8 @@ POKéMON that is
 said to appear todoomed people who
 are lost in icy
 mountains."
+TypeOne = 6
+TypeTwo = 10
 Height = 17
 Weight = 554
 BaseExperience = 261
@@ -80,7 +82,7 @@ BaseDefense = 100
 BaseSpecialAttack = 95
 BaseSpecialDefense = 125
 BaseSpeed = 85
-LearnableMoves = Array[String](["razor-wind", "gust", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "mist", "water-gun", "ice-beam", "blizzard", "bubble-beam", "hyper-beam", "peck", "toxic", "agility", "rage", "mimic", "double-team", "light-screen", "haze", "reflect", "bide", "swift", "sky-attack", "rest", "substitute", "mind-reader", "snore", "curse", "powder-snow", "protect", "mud-slap", "icy-wind", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "return", "frustration", "hidden-power", "twister", "rain-dance", "sunny-day", "mirror-coat", "ancient-power", "rock-smash", "hail", "facade", "helping-hand", "secret-power", "feather-dance", "weather-ball", "air-cutter", "signal-beam", "sheer-cold", "aerial-ace", "icicle-spear", "water-pulse", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "air-slash", "brave-bird", "giga-impact", "avalanche", "ice-shard", "defog", "ominous-wind", "round", "sky-drop", "frost-breath", "hurricane", "freeze-dry", "confide", "laser-focus", "aurora-veil", "triple-axel", "dual-wingbeat", "tera-blast", "ice-spinner", "snowscape"])
+LearnableMoves = Array[String](["razor-wind", "gust", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "mist", "water-gun", "ice-beam", "blizzard", "bubble-beam", "hyper-beam", "peck", "toxic", "agility", "rage", "mimic", "double-team", "light-screen", "haze", "reflect", "bide", "swift", "sky-attack", "rest", "substitute", "mind-reader", "snore", "curse", "powder-snow", "protect", "mud-slap", "icy-wind", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "heal-bell", "return", "frustration", "hidden-power", "twister", "rain-dance", "sunny-day", "mirror-coat", "ancient-power", "rock-smash", "hail", "facade", "helping-hand", "secret-power", "feather-dance", "weather-ball", "air-cutter", "signal-beam", "extrasensory", "sheer-cold", "aerial-ace", "icicle-spear", "water-pulse", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "air-slash", "brave-bird", "giga-impact", "avalanche", "ice-shard", "defog", "ominous-wind", "round", "sky-drop", "frost-breath", "hurricane", "freeze-dry", "confide", "laser-focus", "aurora-veil", "triple-axel", "dual-wingbeat", "tera-blast", "ice-spinner", "snowscape"])
 LevelUpMoves = Dictionary[String, int]({
 "agility": 55,
 "ancient-power": 29,

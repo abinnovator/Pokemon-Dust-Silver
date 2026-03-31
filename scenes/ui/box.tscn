@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5wn0tvksmtms"]
+
+[ext_resource type="Texture2D" uid="uid://byycmlweyxm84" path="res://assets/Pokmon-Sword-and-Shield06132020-034811-86877.png" id="1_vpywi"]
+
+[node name="Box" type="Node2D"]
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
+
+[node name="PokmonSwordAndShield0613202003481186877" type="Sprite2D" parent="Tiles"]
+position = Vector2(576, 323.99997)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_vpywi")

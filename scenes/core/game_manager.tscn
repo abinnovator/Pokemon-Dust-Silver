@@ -33,8 +33,8 @@ size_2d_override = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="MessageManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_x6flg")]
-
 [node name="Party" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("3_lv3y2")]
 
 [node name="ShopManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("4_vegsa")]
+
+[node name="MessageManager" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("2_x6flg")]

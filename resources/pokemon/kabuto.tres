@@ -71,6 +71,8 @@ was resurrected
 from a fossilfound in what was
 once the ocean
 floor eons ago."
+TypeOne = 13
+TypeTwo = 3
 Height = 5
 Weight = 115
 BaseExperience = 71
@@ -104,6 +106,9 @@ LevelUpMoves = Dictionary[String, int]({
 "stone-edge": 60,
 "wring-out": 51
 })
+CanEvolve = true
+EvolvesInto = 141
+EvolutionLevel = 40
 FrontSprite = SubResource("ImageTexture_k53t0")
 ShinyFrontSprite = SubResource("ImageTexture_tlmfv")
 BackSprite = SubResource("ImageTexture_2hd5p")
