@@ -341,7 +341,19 @@ namespace Game.Gameplay
 
 		public async Task PlayVictoryDialogueAsync()
 		{
-			var messages = (OpponentTrainerSprite?.InputConfig as GymNpcInputConfig)?.VictoryMessages;
+			if ((OpponentTrainerSprite?.InputConfig as GymNpcInputConfig).IsGymLeader){
+				var badges = SaveManager.Instance.CurrentSave.Badges;
+				var Badge = (OpponentTrainerSprite?.InputConfig as GymNpcInputConfig).Badge;
+				for (int i =1; i <= badges.Count; i++){
+					if (badges[i] == Badge){
+						return;
+					}
+				}
+				badges[badges.Count] = Badge;
+
+			}
+            
+            var messages = (OpponentTrainerSprite?.InputConfig as GymNpcInputConfig)?.VictoryMessages;
 			if (messages == null || messages.Count == 0) return;
 
 			foreach (var line in messages)

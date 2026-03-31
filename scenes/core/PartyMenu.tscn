@@ -66,7 +66,7 @@ theme_override_colors/default_color = Color(0.0056611504, 0.0056611514, 0.005661
 theme_override_fonts/normal_font = ExtResource("2_ett6y")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "OPTION"
+text = "Card"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
