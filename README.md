@@ -1,25 +1,20 @@
 ![alt text](image.png)
-# 🎮 Pokemon DustGrey - 100 Hour Alpha V1.5 Edition
+# 🎮 Pokemon DustGrey - 150 Hour Alpha V1.5 Edition
 
-A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.3+ and C# (.NET 8)**. This project represents a **200-hour development sprint**, moving from a blank engine to a functional "Vertical Slice" of the Kanto region.
+A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.5+ and C# (.NET 8)**. This project was origanally built in flavortown and I spent 150 hours on it!
 
-## ✨ Major Milestone: The 100-Hour Ship
-This version marks the completion of the initial engine and the implementation of the first story arc.
-- **Time Logged:** 100 Hours exactly.
-- **Status:** Alpha v1.0 - Shipped
-
-## Whats goimg on after the 100 hours?
-Now that I have a base engine to wok on I can just work on expanding the maps an placing npc' while the new features have become easier to add because fo the data based structureill call it ig?
+## Whats going on after the 100 hours?
+Now that I have a base engine to wok on I can just work on expanding the maps an placing npc' while the new features have become easier to add because of the data based structureill call it ig?
 
 
-## 🚀 Features & New Content
+##  Features & New Content
 
 - **Modular Battle System:** A C# driven combat engine featuring level-scaling and move logic.
 - **Reactive Story NPCs:** Advanced NPC logic using an Event-State Machine for path-blocking and forced interceptions (e.g., Prof. Oak and Giovanni).
 - **Custom Pixel Art:** Includes hand-drawn sprites for Gym Leaders like Brock.
 - **Save/Load Persistence:** Integrated system to track badges and player progress.
 
-## 🗺️ World Map Progress
+##  World Map Progress
 
 - **Pallet Town:** Home base featuring Delia (Healer) and Prof. Oak (Starter/Blocker).
 - **Viridian City:** Featuring the high-stakes early encounter with Giovanni.
@@ -28,24 +23,24 @@ Now that I have a base engine to wok on I can just work on expanding the maps an
 - **Route Connectivity:** 4 fully playable routes with active NPC interaction.
 - **Visual Revamp** I started doing a visual revamp of the whole map! Im moving to heart gold assets cause they look more mordern!
 
-## 🛠️ Updated Roadmap
+##  Updated Roadmap
 
-### **Phase 1: Core Engine 🟢 (COMPLETE)**
+### **Phase 1: Core Engine (COMPLETE)**
 - [x] Custom C# Logger
 - [x] Grid-Based Movement & Snapping
 - [x] Signal-Based Animation System
 
-### **Phase 2: World & Interaction 🟢 (COMPLETE)**
+### **Phase 2: World & Interaction (COMPLETE)**
 - [x] Dialogue System & Save Manager
 - [x] Story-State NPC Logic (Path Blocking)
 - [x] Gym Leader Boss AI
 
-### **Phase 3: Expansion 🟡 (NEXT STEPS)**
+### **Phase 3: Expansion (NEXT STEPS)**
 - [ ] Full Lavender Town scripts.
 - [ ] Inventory and Item usage.
 - [ ] Finish kanto and visual revamp(Help appreciated)
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 scripts/
