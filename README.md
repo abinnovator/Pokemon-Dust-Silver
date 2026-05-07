@@ -64,7 +64,7 @@ assets/
 Steps to Play
  - Go to the first floor of the house and talk to mom.
  - navigate to0 the pokemon lab and meet proffeser oak to get your first pokemon.
-- then you ccanj go exploring. Nore depth and lore will come in later updates. This release is meant to establish the base structure of the running game. The expansions will include an option to play the game in 3d and IOk will also be adding all of the regions one by one. Hope you like it !!
+- then you can go exploring. More depth and lore will come in later updates. This release is meant to establish the base structure of the running game. The expansions will include an option to play the game in 3d and I will also be adding all of the regions one by one. Hope you like it !!
 - After this head to route 1. Here youll find some battelable npcs! Then you can also go to viridian city!
 - Demo video - [(https://drive.google.com/file/d/1_hluYmmO07SBG4c6u8KExGsz6OPXV322/view?usp=sharing)]
 ## Acknowledgements
