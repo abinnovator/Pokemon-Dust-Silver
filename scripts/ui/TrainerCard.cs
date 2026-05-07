@@ -1,17 +1,37 @@
 using System;
 using Godot;
+using Game.Core;
 
 public partial class TrainerCard : Node2D
 {
 	[Export] public RichTextLabel Money;
-	// Called when the node enters the scene tree for the first time.
+	[Export] public Sprite2D Boulder_badge;
+	[Export] public Sprite2D Cascade_badge;
+	[Export] public Sprite2D Thunder_badge;
+	[Export] public Sprite2D Rainbow_badge;
+	[Export] public Sprite2D Soul_badge;
+	[Export] public Sprite2D Marsh_badge;
+	[Export] public Sprite2D Volcano_badge;
+	[Export] public Sprite2D Earth_badge;
+
 	public override void _Ready()
 	{
-		Money.Text = SaveManager.Instance.CurrentSave.Money.ToString();
+		var save = SaveManager.Instance.CurrentSave;
+		Money.Text = save.Money.ToString();
+		UpdateBadges(save);
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void UpdateBadges(PlayerSaveResource save)
 	{
+		var badges = save.Badges;
+
+		Boulder_badge.Visible = badges.Contains(Badge.BOULDER);
+		Cascade_badge.Visible = badges.Contains(Badge.CASCADE);
+		Thunder_badge.Visible = badges.Contains(Badge.THUNDER);
+		Rainbow_badge.Visible = badges.Contains(Badge.RAINBOW);
+		Soul_badge.Visible = badges.Contains(Badge.SOUL);
+		Marsh_badge.Visible = badges.Contains(Badge.MARSH);
+		Volcano_badge.Visible = badges.Contains(Badge.VOLCANO);
+		Earth_badge.Visible = badges.Contains(Badge.EARTH);
 	}
 }

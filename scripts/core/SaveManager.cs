@@ -39,31 +39,24 @@ public partial class SaveManager : Node
     {
         if (FileAccess.FileExists(SavePath))
         {
-            // 1. Load the Resource into memory
             CurrentSave = ResourceLoader.Load<PlayerSaveResource>(SavePath);
             GD.Print("Save Data Loaded from Disk!");
 
-            // 2. Tell the SceneManager to jump to the saved level at the saved position
             SceneManager.ChangeLevel(CurrentSave.CurrentLevel, 0, true, CurrentSave.GlobalPosition);
             Game.Core.Logger.Info(CurrentSave.PartyDetails);
 
-            // 3. Deferred Positioning & Direction
             GetTree().Connect("node_added", Callable.From((Node node) => {
                 if (node is Player player)
                 {
-                    // Ensure the player is exactly where they were
                     player.GlobalPosition = CurrentSave.GlobalPosition;
                     
-                    // Set the facing direction
                     var playerInput = player.GetNodeOrNull<PlayerInput>("PlayerInput");
                     if (playerInput != null)
                     {
                         playerInput.Direction = CurrentSave.FacingDirection;
-                        // Set TargetPosition to current pos to prevent it from moving immediately
                         playerInput.TargetPosition = Vector2.Zero; 
                     }
                     
-                    // Reset camera to prevent glitch after teleporting player
                     var camera = player.GetNodeOrNull<Camera2D>("Camera2D");
                     camera?.ResetSmoothing();
                     
@@ -77,13 +70,11 @@ public partial class SaveManager : Node
     {
         if (CurrentSave == null) return;
 
-        // 1. Save current overworld state
         var player = GameManager.GetPlayer();
         if (player != null)
         {
             CurrentSave.GlobalPosition = player.GlobalPosition;
             
-            // Capture facing direction from PlayerInput
             var playerInput = player.GetNodeOrNull<PlayerInput>("PlayerInput");
             if (playerInput != null)
             {
@@ -99,22 +90,18 @@ public partial class SaveManager : Node
         SaveToDisk();
         GD.Print($"Game saved at {CurrentSave.GlobalPosition} facing {CurrentSave.FacingDirection}");
 
-        // 2. Visual Transition & Cleanup
         if (SceneManager.Instance != null)
         {
             await SceneManager.Instance.FadeOut();
             
-            // Centralized cleanup in SceneManager
             SceneManager.Instance.ResetSession();
 
-            // Remove player
             var playerNode = GameManager.GetPlayer();
             if (playerNode != null)
             {
                 playerNode.QueueFree();
             }
 
-            // 3. Return to Start Screen
             var startScreen = GD.Load<PackedScene>("res://scenes/ui/StartScreen.tscn").Instantiate();
             GameManager.Instance.AddChild(startScreen);
 

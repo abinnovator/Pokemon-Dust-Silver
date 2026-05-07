@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bal5bh5xxckfk"]
+[gd_scene load_steps=14 format=3 uid="uid://bal5bh5xxckfk"]
 
 [ext_resource type="Texture2D" uid="uid://wgwgrns3wcyd" path="res://assets/Player_Card.png" id="1_56882"]
 [ext_resource type="Script" uid="uid://bjovjs8undv4a" path="res://scripts/ui/TrainerCard.cs" id="1_jq8eo"]
 [ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="2_jq8eo"]
+[ext_resource type="Texture2D" uid="uid://biwn3vjsra7r3" path="res://assets/boulder_badge.png" id="4_mmkbv"]
+[ext_resource type="Texture2D" uid="uid://chxotjrfw8es5" path="res://assets/cascade_badge.png" id="5_wx2bk"]
+[ext_resource type="Texture2D" uid="uid://oeufy1igc0p0" path="res://assets/thunder_badge.png" id="6_k63nh"]
+[ext_resource type="Texture2D" uid="uid://ci5sowdc7rodk" path="res://assets/rainbow_badge.png" id="7_pym0y"]
+[ext_resource type="Texture2D" uid="uid://c8r6wcw21jvb7" path="res://assets/soul_badge.png" id="8_qt1yy"]
+[ext_resource type="Texture2D" uid="uid://c7cij6q6r1vbn" path="res://assets/volcano_badge.png" id="9_vjn6j"]
+[ext_resource type="Texture2D" uid="uid://dlv81n45silad" path="res://assets/Earth_badge.png" id="10_af5bl"]
+[ext_resource type="Texture2D" uid="uid://u6j4k2opocrh" path="res://assets/marsh_badge.png" id="11_s6o1n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qrotj"]
 texture = ExtResource("1_56882")
@@ -170,9 +178,18 @@ texture = ExtResource("1_56882")
 [sub_resource type="TileSet" id="TileSet_6n4fh"]
 sources/0 = SubResource("TileSetAtlasSource_qrotj")
 
-[node name="TrainerCard" type="Node2D"]
+[node name="TrainerCard" type="Node2D" node_paths=PackedStringArray("Money", "Boulder_badge", "Cascade_badge", "Thunder_badge", "Rainbow_badge", "Soul_badge", "Marsh_badge", "Volcano_badge", "Earth_badge")]
 texture_filter = 1
 script = ExtResource("1_jq8eo")
+Money = NodePath("Money")
+Boulder_badge = NodePath("Badges/Boulder")
+Cascade_badge = NodePath("Badges/CascadeBadge")
+Thunder_badge = NodePath("Badges/ThunderBadge")
+Rainbow_badge = NodePath("Badges/RainbowBadge")
+Soul_badge = NodePath("Badges/SoulBadge")
+Marsh_badge = NodePath("Badges/MarshBadge")
+Volcano_badge = NodePath("Badges/VolcanoBadge")
+Earth_badge = NodePath("Badges/EarthBadge")
 
 [node name="Card" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_6n4fh")
@@ -198,3 +215,45 @@ offset_right = 648.0
 offset_bottom = 341.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_jq8eo")
+
+[node name="Badges" type="Node2D" parent="."]
+
+[node name="Boulder" type="Sprite2D" parent="Badges"]
+position = Vector2(464.00003, 464.00003)
+scale = Vector2(2.285712, 2.285712)
+texture = ExtResource("4_mmkbv")
+
+[node name="CascadeBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(507, 465.3125)
+scale = Vector2(2.125, 1.9553561)
+texture = ExtResource("5_wx2bk")
+
+[node name="ThunderBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(547.5, 464)
+scale = Vector2(2.2777777, 2)
+texture = ExtResource("6_k63nh")
+
+[node name="RainbowBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(592, 464)
+scale = Vector2(2, 2)
+texture = ExtResource("7_pym0y")
+
+[node name="SoulBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(636.0625, 464.125)
+scale = Vector2(2.658336, 2.2678587)
+texture = ExtResource("8_qt1yy")
+
+[node name="MarshBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(680.5, 464.5)
+scale = Vector2(2.2142856, 2.2142856)
+texture = ExtResource("11_s6o1n")
+
+[node name="VolcanoBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(725, 464)
+scale = Vector2(2.403846, 2.1)
+texture = ExtResource("9_vjn6j")
+
+[node name="EarthBadge" type="Sprite2D" parent="Badges"]
+position = Vector2(768, 465)
+scale = Vector2(2, 2)
+texture = ExtResource("10_af5bl")

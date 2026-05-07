@@ -5,20 +5,14 @@ using Game.Gameplay;
 
 namespace Game.Core
 {
-    /// <summary>
-    /// Singleton Autoload responsible for scene transitions and overworld state saving.
-    /// It does NOT handle battle logic; that is handled by BattleMain and the BattleStateMachine.
-    /// </summary>
     public partial class BattleManager : Node
     {
         public static BattleManager Instance { get; private set; }
 
-        // --- Overworld State Savings ---
         public LevelName SavedLevelName;
         public Vector2 SavedPlayerPosition;
         public StoryNpcInputConfig CurrentBattleConfig;
 
-        // --- Battle Config (Passed to the local battle scene) ---
         public PokemonID opponentPokemonId;
         public PokemonID playerPokemonId;
         public GymNpcInputConfig CurrentGymConfig { get; private set; }
@@ -44,7 +38,6 @@ namespace Game.Core
             SaveOverworldState();
             CurrentGymConfig = config;
 
-            // Use the first Pokémon in the team as the initial opponent ID
             opponentPokemonId = PokemonID.none;
             foreach (var entry in config.TrainerTeam)
             {
@@ -65,14 +58,12 @@ namespace Game.Core
             SaveOverworldState();
             CurrentBattleConfig = config;
 
-            // Prepare IDs for trainer battle
             if (Enum.TryParse(config.PokemonID.ToString(), true, out PokemonID id))
             {
                 opponentPokemonId = id;
             }
             playerPokemonId = GetSavedPlayerPokemon();
 
-            // Use the same trainer battle UI as gym battles
             var battleScene = GD.Load<PackedScene>("res://scenes/core/trainer_battle_ui.tscn").Instantiate();
             GetTree().Root.AddChild(battleScene);
         }
@@ -86,7 +77,6 @@ namespace Game.Core
             
             opponentPokemonId = wildId;
             
-            // If playerId is none, try to fetch it from save
             if (playerId == PokemonID.none)
             {
                 playerPokemonId = GetSavedPlayerPokemon();
@@ -96,7 +86,6 @@ namespace Game.Core
                 playerPokemonId = playerId;
             }
 
-            // Instantiate battle UI directly as a overlay/overlay scene
             var battleScene = GD.Load<PackedScene>("res://scenes/core/battle_ui.tscn").Instantiate();
             GetTree().Root.AddChild(battleScene);
         }
@@ -135,14 +124,12 @@ namespace Game.Core
 
         public PokemonID GetSavedPlayerPokemon()
         {
-            // 1. Try SaveManager.Instance (In-memory current session)
             if (SaveManager.Instance != null && SaveManager.Instance.CurrentSave != null)
             {
                 var id = MapStarterToPokemonID(SaveManager.Instance.CurrentSave.ChosenStarter);
                 if (id != PokemonID.none) return id;
             }
 
-            // 2. Try loading from disk directly as fallback
             try
             {
                 if (FileAccess.FileExists("user://savegame.tres"))
@@ -160,7 +147,6 @@ namespace Game.Core
                 Logger.Error($"Error loading player pokemon from save: {e.Message}");
             }
 
-            // 3. Absolute fallback: If nothing is found, we MUST have a visible pokemon
             Logger.Warning("No player pokemon found in save. Falling back to Bulbasaur.");
             return PokemonID.bulbasaur;
         }

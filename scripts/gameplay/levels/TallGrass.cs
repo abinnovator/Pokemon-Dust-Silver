@@ -11,7 +11,6 @@ public partial class TallGrass : Area2D
 	private const string SavePath = "user://savegame.tres";
 	[Export]
 	public AnimatedSprite2D AnimatedSprite;
-	// Called when the node enters the scene tree for the first time.
 	private AudioStreamPlayer _audioStreamPlayer;
 	public override void _Ready()
 	{
@@ -34,7 +33,6 @@ public partial class TallGrass : Area2D
 		AnimatedSprite.Play("up");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 
 	public async void CalculateEncounterChance()
@@ -45,13 +43,11 @@ public partial class TallGrass : Area2D
 
 		if (chance <= rate)
 		{
-			// 1. Find the FadeOverlay in your scene
-			// Note: Make sure you have a ColorRect named "FadeOverlay" in a CanvasLayer
+
 			var fade = GetTree().Root.FindChild("FadeOverlay", true, false) as ColorRect;
 
 			if (fade != null)
 			{
-				// Fade to Black over 0.5 seconds
 				Tween tween = CreateTween();
 				tween.TweenProperty(fade, "color:a", 1.0f, 0.5f);
 				await ToSignal(tween, "finished");

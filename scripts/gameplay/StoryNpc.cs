@@ -47,7 +47,8 @@ public partial class StoryNpc : CharacterBody2D
 		{StoryNpcAppearance.BugCatcher, GD.Load<SpriteFrames>("res://resources/spriteframes/bug_catcher.tres")},
 		{StoryNpcAppearance.lass, GD.Load<SpriteFrames>("res://resources/spriteframes/lass.tres")},
 		{StoryNpcAppearance.bird_keeper, GD.Load<SpriteFrames>("res://resources/spriteframes/bird_keeper.tres")},
-		{StoryNpcAppearance.bike_seller, GD.Load<SpriteFrames>("res://resources/spriteframes/bike_seller.tres")}
+		{StoryNpcAppearance.bike_seller, GD.Load<SpriteFrames>("res://resources/spriteframes/bike_seller.tres")},
+		{StoryNpcAppearance.Clerk, GD.Load<SpriteFrames>("res://resources/spriteframes/clerk.tres")},
 
 	};
 
@@ -325,19 +326,15 @@ public partial class StoryNpc : CharacterBody2D
 				return;
 			}
 
-			// Show regular messages
 			if (config.Messages.Count > 0)
 			{
 				await MessageManager.PlayText([.. config.Messages]);
 			}
 
-			// Check if this NPC has a battle
 			if (config.HasBattle && config.PokemonID != PokemonID.none)
 			{
-				// Add a small delay to let messages fully close and player prepare
 				await Task.Delay(500);
 				
-				// Initiate trainer battle
 				_stateMachine.ChangeState("Roam");
 				BattleManager.Instance.StartBattle(config);
 				return;
@@ -358,23 +355,18 @@ public partial class StoryNpc : CharacterBody2D
 
 	private bool CheckStoryRequirement(StoryNpcInputConfig config)
 	{
-		// If no specific event trigger is set, allow interaction
 		if (config.EventTrigger == PlayerStoryState.NEW_GAME)
 		{
 			return true;
 		}
 
-		// Check if player has reached the required story state
 		if (SaveManager.Instance?.CurrentSave != null)
 		{
 			var playerProgress = SaveManager.Instance.CurrentSave.StoryProgress;
 			
-			// Check if the player's story progress is >= the required trigger
-			// This allows interactions once the requirement is met
 			return playerProgress >= config.EventTrigger;
 		}
 
-		// If no save exists, default to allowing interaction
 		return true;
 	}
 

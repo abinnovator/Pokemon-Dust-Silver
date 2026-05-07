@@ -12,9 +12,8 @@ namespace Game.Gameplay
         public void Setup(PokemonID id)
         {
             string pokemonName = id.ToString().ToLower();
-            string path = $"{spriteFolderPath}{pokemonName}_back.png"; // or _back.png
+            string path = $"{spriteFolderPath}{pokemonName}_back.png";
             
-            // REMOVE FileAccess.FileExists(path). It doesn't play nice with .pck files.
             try 
             {
                 var tex = GD.Load<Texture2D>(path);

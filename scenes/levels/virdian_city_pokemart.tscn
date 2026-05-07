@@ -1,11 +1,25 @@
-[gd_scene load_steps=5 format=4 uid="uid://oamcmuy6jqyf"]
+[gd_scene load_steps=10 format=4 uid="uid://oamcmuy6jqyf"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_533lx"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_57bmv"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_byup7"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_57bmv"]
+[ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="5_lw56j"]
+[ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="6_nol28"]
+[ext_resource type="Resource" uid="uid://cdu7yuvlhrkrc" path="res://resources/items/all/ruby.tres" id="6_sxrtf"]
+[ext_resource type="Resource" uid="uid://p3ahhttdaoiq" path="res://resources/items/all/tm75.tres" id="7_yd3jj"]
+
+[sub_resource type="Resource" id="Resource_sxrtf"]
+script = ExtResource("6_nol28")
+Messages = null
+PatrolPoints = null
+InterceptMessages = null
+IsShopClerk = true
+ShopItems = Array[Object]([ExtResource("6_sxrtf"), ExtResource("7_yd3jj")])
+metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
 [node name="Level" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_533lx")
 LevelName = 10
 bottom = 144
@@ -23,9 +37,17 @@ tile_set = ExtResource("2_57bmv")
 position = Vector2(56.00001, 112)
 scale = Vector2(1.85, 1)
 TargetLevelName = 6
+TargetLevelTrigger = 3
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_57bmv")]
 position = Vector2(-64, -30)
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="NPC" parent="NPCs" instance=ExtResource("5_lw56j")]
+position = Vector2(80, 40)
+NpcAppearance = 29
+InputConfig = SubResource("Resource_sxrtf")

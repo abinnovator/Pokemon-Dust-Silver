@@ -191,7 +191,7 @@ namespace Game.Gameplay
 				{
 					Progress = 0f;
 					StartPosition = Character.Position;
-					TargetPosition = Character.Position + CharacterInput.TargetPosition * (Globals.GridSize * 2);
+					TargetPosition = Character.Position + (CharacterInput.TargetPosition * 2);
 					IsJumping = true;
 				}
 				else {

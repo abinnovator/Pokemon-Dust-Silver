@@ -21,7 +21,7 @@ size = Vector2(12, 160)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qwg2j")
-LevelName = 18
+LevelName = 10
 top = -48
 bottom = 320
 left = -80
@@ -73,6 +73,7 @@ position = Vector2(80, 96)
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_17k8n")]
 position = Vector2(-48, -16)
 TargetLevelName = 6
+TargetLevelTrigger = 1
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(56, 32)

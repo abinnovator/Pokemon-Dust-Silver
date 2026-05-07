@@ -1,8 +1,8 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 using Game.Core;
 using Game.Gameplay;
+using Logger = Game.Core.Logger;
 
 public partial class BagMenu : Node2D
 {
@@ -15,16 +15,19 @@ public partial class BagMenu : Node2D
 	[Export] public RichTextLabel Money;
 	[Export] public VBoxContainer ItemsVBox;
 
+	private Dictionary<string, ItemResource> _itemCache = new();
+
 	public override void _Ready()
 	{
+		BuildItemCache();
+
 		var partyData = SaveManager.Instance?.CurrentSave?.PartyDetails;
-		var items = SaveManager.Instance?.CurrentSave?.Inventory;
 
 		Money.Text = "¥" + SaveManager.Instance?.CurrentSave?.Money.ToString();
 
 		if (partyData == null)
 		{
-			Game.Core.Logger.Error("Party Data is null!");
+			Logger.Error("Party Data is null!");
 		}
 		else
 		{
@@ -33,7 +36,7 @@ public partial class BagMenu : Node2D
 				if (i >= NameLabels.Length) break;
 
 				var pokemonDict = partyData[i].AsGodotDictionary();
-				Game.Core.Logger.Info(pokemonDict);
+				Logger.Info(pokemonDict);
 
 				var idKey = pokemonDict.ContainsKey("ID") ? "ID" : "Id";
 				var pokemonID = (PokemonID)(int)pokemonDict[idKey];
@@ -62,40 +65,71 @@ public partial class BagMenu : Node2D
 			}
 		}
 
-		if (items == null || ItemsVBox == null) return;
+		RefreshItems();
+	}
+
+	private void BuildItemCache()
+	{
+		using var dir = DirAccess.Open("res://resources/items/all/");
+		if (dir == null) return;
+
+		dir.ListDirBegin();
+		string fileName = dir.GetNext();
+		while (fileName != "")
+		{
+			if (fileName.EndsWith(".tres"))
+			{
+				var res = ResourceLoader.Load<ItemResource>($"res://resources/items/all/{fileName}");
+				if (res != null)
+					_itemCache[res.Id.ToString()] = res;
+			}
+			fileName = dir.GetNext();
+		}
+	}
+
+	public void RefreshItems()
+	{
+		if (ItemsVBox == null) return;
+
+		foreach (Node child in ItemsVBox.GetChildren())
+			child.QueueFree();
+
+		var items = SaveManager.Instance?.CurrentSave?.Inventory;
+		if (items == null || items.Count == 0)
+		{
+			var empty = new RichTextLabel();
+			empty.FitContent = true;
+			empty.Text = "Your bag is empty.";
+			ItemsVBox.AddChild(empty);
+			return;
+		}
 
 		foreach (var entry in items)
 		{
 			string itemId = entry.Key.AsString();
 			int quantity = entry.Value.AsInt32();
 
-			ItemResource itemResource = null;
-			using var dir = DirAccess.Open("res://resources/items/all/");
-			if (dir != null)
-			{
-				dir.ListDirBegin();
-				string fileName = dir.GetNext();
-				while (fileName != "")
-				{
-					if (fileName.EndsWith(".tres"))
-					{
-						var res = ResourceLoader.Load<ItemResource>($"res://resources/items/all/{fileName}");
-						if (res != null && res.Id.ToString() == itemId)
-						{
-							itemResource = res;
-							break;
-						}
-					}
-					fileName = dir.GetNext();
-				}
-			}
+			_itemCache.TryGetValue(itemId, out ItemResource itemResource);
+
+			var hbox = new HBoxContainer();
+			hbox.CustomMinimumSize = new Vector2(0, 48);
+
+			var icon = new TextureRect();
+			icon.CustomMinimumSize = new Vector2(48, 48);
+			icon.StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered;
+			if (itemResource?.Sprite != null)
+				icon.Texture = itemResource.Sprite;
+			hbox.AddChild(icon);
 
 			var label = new RichTextLabel();
 			label.FitContent = true;
-			label.CustomMinimumSize = new Vector2(0, 64);
-			label.Text = itemResource != null ? $"{itemResource.Name} x{quantity}" : $"Item #{itemId} x{quantity}";
+			label.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+			label.Text = itemResource != null
+				? $"[b]{itemResource.Name}[/b]  x{quantity}"
+				: $"[b]Item #{itemId}[/b]  x{quantity}";
+			hbox.AddChild(label);
 
-			ItemsVBox.AddChild(label);
+			ItemsVBox.AddChild(hbox);
 		}
 	}
 }

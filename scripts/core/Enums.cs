@@ -175,7 +175,6 @@ namespace Game.Core
     }
     public enum StoryNpcAppearance
     {
-        // --- Townsfolk (Non-Battlers) ---
         OldMan,
         OldWoman,
         MiddleAgedMan,
@@ -185,7 +184,6 @@ namespace Game.Core
         Preschooler,
         FatMan,       // Classic "Technology is incredible!" guy
 
-        // --- Professionals ---
         Nurse,        // Joy-style
         Clerk,        // Shop/Mart worker
         Scientist,    // Lab coats
@@ -239,7 +237,8 @@ namespace Game.Core
         SOUL,
         MARSH,
         VOLCANO,
-        EARTH
+        EARTH,
+        Cascade
     }
     #endregion
     #region SaveGame

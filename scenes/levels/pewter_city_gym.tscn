@@ -3588,7 +3588,7 @@ metadata/_custom_type_script = "uid://ci5cx1pdojpbr"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7b6md")
-LevelName = 10
+LevelName = 19
 bottom = 256
 right = 240
 
@@ -3604,7 +3604,7 @@ tile_set = SubResource("TileSet_08prj")
 [node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("3_08prj")]
 position = Vector2(88.00001, 224)
 scale = Vector2(1.85, 1)
-TargetLevelName = 6
+TargetLevelName = 16
 TargetLevelTrigger = 4
 
 [node name="SpawnPoints" type="Node2D" parent="."]

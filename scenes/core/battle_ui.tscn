@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cgnawqrs4gkc7"]
+[gd_scene load_steps=35 format=4 uid="uid://cgnawqrs4gkc7"]
 
 [ext_resource type="Texture2D" uid="uid://cfo70ijls83xj" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Battle Effects - HP Bars & In-battle Menu (1).png" id="2_ve8l1"]
 [ext_resource type="Texture2D" uid="uid://bpwpobh5ygtp8" path="res://assets/levels/board__brilliant_pearl_diamond_battle_interface_by_eurons_desqgls-fullview.jpg" id="3_qhckv"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="14_u74jg"]
 [ext_resource type="Script" uid="uid://bjqd2mt8rnx3x" path="res://scenes/ui/ExitBackgroundButton.cs" id="15_podox"]
 [ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="18_p1lmr"]
+[ext_resource type="Texture2D" uid="uid://ba4s3an2kmhmo" path="res://assets/levels/enemy_hp_bar.png" id="19_kwg3k"]
+[ext_resource type="Texture2D" uid="uid://do4et0s3xejua" path="res://assets/levels/Player_hp_bar.png" id="20_p1lmr"]
 [ext_resource type="Texture2D" uid="uid://cvffnvq71rukn" path="res://assets/ui/SwShBag.png" id="21_jol7o"]
 [ext_resource type="Script" uid="uid://c7271a6o6k6hn" path="res://scripts/gameplay/battle/states/BattleEndState.cs" id="Script_BattleEnd"]
 [ext_resource type="Script" uid="uid://bbwcheh1kr6gs" path="res://scripts/gameplay/battle/BattleMain.cs" id="Script_BattleMain"]
@@ -3848,12 +3850,8 @@ sources/2 = SubResource("TileSetAtlasSource_yflxa")
 sources/3 = SubResource("TileSetAtlasSource_un5go")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnaf0"]
-atlas = ExtResource("3_qhckv")
-region = Rect2(350, 344, 185, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vw67s"]
-atlas = ExtResource("3_qhckv")
-region = Rect2(349, 358, 186, 11)
+atlas = ExtResource("19_kwg3k")
+region = Rect2(0, 0, 186, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5dh5"]
 atlas = ExtResource("14_u74jg")
@@ -3886,7 +3884,7 @@ BagButtons = [NodePath("Ui/Bag/Pokeballs"), NodePath("Ui/Bag/Exp")]
 PokeballButtons = [NodePath("Ui/Pokeballs/Normal"), NodePath("Ui/Pokeballs/Heavy"), NodePath("Ui/Pokeballs/Ultra"), NodePath("Ui/Pokeballs/Master")]
 ItemButtons = []
 PokeballBackButton = NodePath("Ui/Pokeballs/Back")
-PokeButtons = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+PokeButtons = [null, null, null, null, null, null]
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
@@ -4113,7 +4111,7 @@ offset_top = 574.0
 offset_right = 205.0
 offset_bottom = 585.0
 value = 100.0
-texture_progress = SubResource("AtlasTexture_vw67s")
+texture_progress = ExtResource("20_p1lmr")
 
 [node name="PartyMenu" type="Control" parent="Ui"]
 visible = false

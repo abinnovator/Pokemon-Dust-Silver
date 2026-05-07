@@ -24,19 +24,15 @@ namespace Game.Core
 		private int _purchaseQuantity = 1;
 		private bool _isShopOpen = false;
 		private bool _isConfirmingPurchase = false;
-		private int _confirmSelection = 0; // 0 = Yes, 1 = No
+		private int _confirmSelection = 0;
 
 		public override void _Ready()
 		{
 			Instance = this;
 			if (ShopContainer != null)
-			{
 				ShopContainer.Visible = false;
-			}
 			if (ConfirmPanel != null)
-			{
 				ConfirmPanel.Visible = false;
-			}
 		}
 
 		public override void _Process(double delta)
@@ -44,13 +40,9 @@ namespace Game.Core
 			if (!_isShopOpen) return;
 
 			if (_isConfirmingPurchase)
-			{
 				HandleConfirmInput();
-			}
 			else
-			{
 				HandleShopInput();
-			}
 		}
 
 		private void HandleShopInput()
@@ -99,10 +91,8 @@ namespace Game.Core
 			}
 			else if (Input.IsActionJustPressed("use") || Input.IsActionJustPressed("ui_accept"))
 			{
-				if (_confirmSelection == 0) // Yes
-				{
+				if (_confirmSelection == 0)
 					PurchaseItem();
-				}
 				HideConfirmDialog();
 			}
 			else if (Input.IsActionJustPressed("ui_cancel") || Input.IsActionJustPressed("back"))
@@ -119,14 +109,10 @@ namespace Game.Core
 			_isShopOpen = true;
 
 			if (ShopContainer != null)
-			{
 				ShopContainer.Visible = true;
-			}
 
 			if (GreetingLabel != null)
-			{
 				GreetingLabel.Text = greeting;
-			}
 
 			PopulateItemList();
 			UpdateItemSelection();
@@ -135,11 +121,8 @@ namespace Game.Core
 			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, true);
 			GameManager.IsPlayerMovementLocked = true;
 
-			// Wait until shop is closed
 			while (_isShopOpen)
-			{
 				await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-			}
 		}
 
 		private void PopulateItemList()
@@ -148,10 +131,7 @@ namespace Game.Core
 
 			ItemListControl.Clear();
 			foreach (var item in _currentShopItems)
-			{
-				string itemText = $"{item.ItemName} - ${item.Price}";
-				ItemListControl.AddItem(itemText);
-			}
+				ItemListControl.AddItem($"{item.ItemName} - ${item.Price}");
 		}
 
 		private void UpdateItemSelection()
@@ -164,9 +144,7 @@ namespace Game.Core
 			{
 				var selectedItem = _currentShopItems[_selectedItemIndex];
 				if (ItemDescriptionLabel != null)
-				{
 					ItemDescriptionLabel.Text = selectedItem.Description;
-				}
 			}
 
 			UpdateQuantityDisplay();
@@ -190,9 +168,7 @@ namespace Game.Core
 		private void UpdatePlayerMoney()
 		{
 			if (PlayerMoneyLabel != null && SaveManager.Instance?.CurrentSave != null)
-			{
 				PlayerMoneyLabel.Text = $"Money: ${SaveManager.Instance.CurrentSave.Money}";
-			}
 		}
 
 		private void ShowConfirmDialog()
@@ -203,14 +179,7 @@ namespace Game.Core
 			int totalCost = selectedItem.Price * _purchaseQuantity;
 
 			if (ConfirmPanel != null)
-			{
 				ConfirmPanel.Visible = true;
-			}
-
-			if (ConfirmLabel != null)
-			{
-				ConfirmLabel.Text = $"Buy {_purchaseQuantity}x {selectedItem.ItemName} for ${totalCost}?";
-			}
 
 			_confirmSelection = 0;
 			_isConfirmingPurchase = true;
@@ -220,9 +189,7 @@ namespace Game.Core
 		private void HideConfirmDialog()
 		{
 			if (ConfirmPanel != null)
-			{
 				ConfirmPanel.Visible = false;
-			}
 			_isConfirmingPurchase = false;
 		}
 
@@ -248,17 +215,14 @@ namespace Game.Core
 			int totalCost = selectedItem.Price * _purchaseQuantity;
 			var save = SaveManager.Instance.CurrentSave;
 
-			// Check if player has enough money
 			if (save.Money < totalCost)
 			{
 				await ShowMessage("You don't have enough money!");
 				return;
 			}
 
-			// Deduct money
 			save.Money -= totalCost;
 
-			// Add items to inventory
 			string itemKey = selectedItem.ItemId.ToString();
 			if (save.Inventory.ContainsKey(itemKey))
 			{
@@ -270,43 +234,34 @@ namespace Game.Core
 				save.Inventory[itemKey] = _purchaseQuantity;
 			}
 
-			// Save the game
 			SaveManager.Instance.SaveToDisk();
-
-			// Update UI
 			UpdatePlayerMoney();
+
+			var bag = GetTree().Root.FindChild("BagMenu", true, false) as BagMenu;
+			bag?.RefreshItems();
 
 			await ShowMessage($"Purchased {_purchaseQuantity}x {selectedItem.ItemName}!");
 
-			// Reset quantity
 			_purchaseQuantity = 1;
 			UpdateQuantityDisplay();
 		}
 
 		private async Task ShowMessage(string message)
 		{
-			// Temporarily hide shop UI
 			if (ShopContainer != null)
-			{
 				ShopContainer.Visible = false;
-			}
 
 			await MessageManager.PlayText(message);
 
-			// Show shop UI again
 			if (ShopContainer != null)
-			{
 				ShopContainer.Visible = true;
-			}
 		}
 
 		private void CloseShop()
 		{
 			_isShopOpen = false;
 			if (ShopContainer != null)
-			{
 				ShopContainer.Visible = false;
-			}
 
 			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, false);
 			GameManager.IsPlayerMovementLocked = false;

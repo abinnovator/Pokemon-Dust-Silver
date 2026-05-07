@@ -1,0 +1,677 @@
+[gd_scene load_steps=7 format=4 uid="uid://bmw5y8xadhrfg"]
+
+[ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_rn1xb"]
+[ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_tnk0n"]
+[ext_resource type="Texture2D" uid="uid://c70pxobgnjrfb" path="res://assets/levels/Kanto_Route_6_HGSS.png" id="3_bcinl"]
+[ext_resource type="PackedScene" uid="uid://5jgdqs64hd23" path="res://scenes/levels/tall_grass.tscn" id="4_p7wvq"]
+[ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="5_5xnq8"]
+[ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="6_tnk0n"]
+
+[node name="Route 6" type="Node2D"]
+script = ExtResource("1_rn1xb")
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAAAAAAABQBgAAAAAAAAAAEABQBhAAEAAAAAAAIABQBhAAEAAAAAAAMABQBhAAAAAAAAAAQABQBgAAIAAAAAAAUABQBhAAEAAAAAAAYABQBgAAIAAAAAAAcABQBgAAAAAAAAAAgABQBgAAIAAAAAAAkABQBhAAAAAAAAAAoABQBgAAAAAAAAAAsABQBgAAAAAAAAAAwABQBgAAEAAAAAAA0ABQBhAAEAAAAAAA4ABQBhAAAAAAAAAA8ABQBhAAEAAAAAABAABQBhAAEAAAAAABEABQBgAAEAAAAAABIABQBgAAIAAAAAABMABQBhAAAAAAAAABQABQBgAAEAAAAAABUABQBhAAAAAAAAABYABQBgAAIAAAAAABcABQBhAAEAAAAAABgABQBgAAAAAAAAABkABQBhAAAAAAAAABoABQBgAAIAAAAAABsABQBhAAAAAAAAABwABQBgAAAAAAAAAB0ABQBgAAIAAAAAAB4ABQBgAAEAAAAAAB8ABQBgAAEAAAABAAAABQBhAAEAAAABAAEABQBhAAAAAAABAAIABQBgAAEAAAABAAMABQBgAAEAAAABAAQABQBgAAAAAAABAAUABQBhAAEAAAABAAYABQBhAAEAAAABAAcABQBhAAAAAAABAAgABQBhAAAAAAABAAkABQBgAAEAAAABAAoABQBgAAAAAAABAAsABQBhAAAAAAABAAwABQBgAAAAAAABAA0ABQBgAAIAAAABAA4ABQBhAAEAAAABAA8ABQBgAAAAAAABABAABQBgAAIAAAABABEABQBgAAEAAAABABIABQBgAAEAAAABABMABQBgAAIAAAABABQABQBgAAAAAAABABUABQBhAAEAAAABABYABQBhAAAAAAABABcABQBgAAEAAAABABgABQBhAAEAAAABABkABQBgAAEAAAABABoABQBhAAEAAAABABsABQBgAAIAAAABABwABQBgAAEAAAABAB0ABQBgAAAAAAABAB4ABQBhAAAAAAABAB8ABQBgAAIAAAACAAAABQBhAAAAAAACAAEABQBhAAEAAAACAAIABQBgAAEAAAACAAMABQBgAAAAAAACAAQABQBgAAEAAAACAAUABQBgAAIAAAACAAYABQBhAAEAAAACAAcABQBgAAEAAAACAAgABQBgAAIAAAACAAkABQBgAAAAAAACAAoABQBhAAAAAAACAAsABQBgAAIAAAACAAwABQBhAAEAAAACAA0ABQBgAAEAAAACAA4ABQBgAAEAAAACAA8ABQBhAAAAAAACABAABQBhAAAAAAACABEABQBgAAEAAAACABIABQBhAAAAAAACABMABQBgAAIAAAACABQABQBhAAEAAAACABUABQBgAAIAAAACABYABQBhAAAAAAACABcABQBhAAEAAAACABgABQBgAAEAAAACABkABQBgAAEAAAACABoABQBgAAEAAAACABsABQBgAAEAAAACABwABQBgAAIAAAACAB0ABQBgAAIAAAACAB4ABQBhAAEAAAACAB8ABQBhAAAAAAADAAAABQBgAAIAAAADAAEABQBgAAEAAAADAAIABQBgAAAAAAADAAMABQBgAAIAAAADAAQABQBgAAIAAAADAAUABQBgAAEAAAADAAYABQBgAAAAAAADAAcABQBgAAIAAAADAAgABQBgAAEAAAADAAkABQBhAAAAAAADAAoABQBgAAIAAAADAAsABQBgAAAAAAADAAwABQBgAAIAAAADAA0ABQBhAAAAAAADAA4ABQBgAAEAAAADAA8ABQBgAAAAAAADABAABQBgAAEAAAADABEABQBhAAEAAAADABIABQBgAAEAAAADABMABQBgAAAAAAADABQABQBhAAEAAAADABUABQBgAAIAAAADABYABQBgAAEAAAADABcABQBhAAAAAAADABgABQBhAAEAAAADABkABQBgAAEAAAADABoABQBhAAAAAAADABsABQBhAAAAAAADABwABQBhAAAAAAADAB0ABQBgAAEAAAADAB4ABQBgAAIAAAADAB8ABQBhAAEAAAAEAAAABQBgAAIAAAAEAAEABQBhAAAAAAAEAAIABQBhAAEAAAAEAAMABQBgAAIAAAAEAAQABQBgAAAAAAAEAAUABQBgAAAAAAAEAAYABQBgAAIAAAAEAAcABQBhAAAAAAAEAAgABQBgAAIAAAAEAAkABQBgAAAAAAAEAAoABQBgAAAAAAAEAAsABQBhAAEAAAAEAAwABQBhAAAAAAAEAA0ABQBhAAEAAAAEAA4ABQBgAAAAAAAEAA8ABQBgAAAAAAAEABAABQBgAAEAAAAEABEABQBhAAEAAAAEABIABQBgAAAAAAAEABMABQBgAAIAAAAEABQABQBhAAEAAAAEABUABQBgAAAAAAAEABYABQBgAAIAAAAEABcABQBhAAEAAAAEABgABQBhAAAAAAAEABkABQBhAAEAAAAEABoABQBhAAAAAAAEABsABQBgAAIAAAAEABwABQBgAAAAAAAEAB0ABQBgAAEAAAAEAB4ABQBgAAEAAAAEAB8ABQBgAAEAAAAFAAAABQBgAAIAAAAFAAEABQBgAAAAAAAFAAIABQBhAAEAAAAFAAMABQBgAAAAAAAFAAQABQBhAAEAAAAFAAUABQBgAAEAAAAFAAYABQBgAAEAAAAFAAcABQBhAAAAAAAFAAgABQBhAAEAAAAFAAkABQBhAAAAAAAFAAoABQBgAAAAAAAFAAsABQBhAAEAAAAFAAwABQBgAAEAAAAFAA0ABQBgAAIAAAAFAA4ABQBgAAAAAAAFAA8ABQBgAAEAAAAFABAABQBhAAEAAAAFABEABQBgAAEAAAAFABIABQBhAAEAAAAFABMABQBgAAIAAAAFABQABQBgAAIAAAAFABUABQBgAAIAAAAFABYABQBhAAAAAAAFABcABQBgAAEAAAAFABgABQBgAAAAAAAFABkABQBgAAIAAAAFABoABQBgAAIAAAAFABsABQBhAAAAAAAFABwABQBgAAIAAAAFAB0ABQBhAAAAAAAFAB4ABQBgAAAAAAAFAB8ABQBhAAAAAAAGAAAABQBgAAEAAAAGAAEABQBhAAAAAAAGAAIABQBgAAAAAAAGAAMABQBhAAAAAAAGAAQABQBgAAIAAAAGAAUABQBgAAIAAAAGAAYABQBhAAEAAAAGAAcABQBgAAAAAAAGAAgABQBgAAEAAAAGAAkABQBhAAEAAAAGAAoABQBhAAEAAAAGAAsABQBgAAEAAAAGAAwABQBhAAAAAAAGAA0ABQBgAAIAAAAGAA4ABQBhAAAAAAAGAA8ABQBhAAEAAAAGABAABQBgAAAAAAAGABEABQBhAAEAAAAGABIABQBgAAEAAAAGABMABQBgAAEAAAAGABQABQBgAAIAAAAGABUABQBgAAEAAAAGABYABQBhAAAAAAAGABcABQBgAAEAAAAGABgABQBhAAAAAAAGABkABQBgAAAAAAAGABoABQBhAAAAAAAGABsABQBgAAIAAAAGABwABQBgAAEAAAAGAB0ABQBhAAEAAAAGAB4ABQBgAAAAAAAGAB8ABQBgAAEAAAAHAAAABQBgAAIAAAAHAAEABQBgAAAAAAAHAAIABQBgAAEAAAAHAAMABQBgAAAAAAAHAAQABQBgAAIAAAAHAAUABQBgAAAAAAAHAAYABQBgAAEAAAAHAAcABQBgAAAAAAAHAAgABQBgAAAAAAAHAAkABQBhAAAAAAAHAAoABQBhAAAAAAAHAAsABQBgAAIAAAAHAAwABQBgAAIAAAAHAA0ABQBhAAAAAAAHAA4ABQBhAAEAAAAHAA8ABQBgAAIAAAAHABAABQBhAAAAAAAHABEABQBgAAIAAAAHABIABQBgAAAAAAAHABMABQBgAAIAAAAHABQABQBhAAEAAAAHABUABQBhAAAAAAAHABYABQBgAAEAAAAHABcABQBgAAIAAAAHABgABQBgAAEAAAAHABkABQBgAAAAAAAHABoABQBgAAIAAAAHABsABQBhAAEAAAAHABwABQBgAAAAAAAHAB0ABQBgAAEAAAAHAB4ABQBhAAAAAAAHAB8ABQBgAAIAAAAIAAAABQBgAAIAAAAIAAEABQBgAAEAAAAIAAIABQBhAAEAAAAIAAMABQBhAAAAAAAIAAQABQBgAAIAAAAIAAUABQBhAAEAAAAIAAYABQBgAAAAAAAIAAcABQBgAAAAAAAIAAgABQBgAAIAAAAIAAkABQBgAAIAAAAIAAoABQBgAAEAAAAIAAsABQBgAAAAAAAIAAwABQBgAAEAAAAIAA0ABQBgAAIAAAAIAA4ABQBgAAAAAAAIAA8ABQBgAAEAAAAIABAABQBgAAEAAAAIABEABQBhAAEAAAAIABIABQBgAAEAAAAIABMABQBhAAEAAAAIABQABQBgAAEAAAAIABUABQBgAAIAAAAIABYABQBhAAEAAAAIABcABQBgAAIAAAAIABgABQBhAAAAAAAIABkABQBhAAEAAAAIABoABQBgAAEAAAAIABsABQBhAAEAAAAIABwABQBhAAAAAAAIAB0ABQBgAAAAAAAIAB4ABQBgAAIAAAAIAB8ABQBgAAEAAAAJAAAABQBhAAEAAAAJAAEABQBhAAAAAAAJAAIABQBgAAEAAAAJAAMABQBhAAEAAAAJAAQABQBgAAIAAAAJAAUABQBhAAAAAAAJAAYABQBhAAEAAAAJAAcABQBgAAIAAAAJAAgABQBgAAAAAAAJAAkABQBhAAAAAAAJAAoABQBgAAEAAAAJAAsABQBgAAEAAAAJAAwABQBgAAIAAAAJAA0ABQBhAAEAAAAJAA4ABQBhAAAAAAAJAA8ABQBgAAIAAAAJABAABQBhAAAAAAAJABEABQBgAAEAAAAJABIABQBgAAIAAAAJABMABQBhAAEAAAAJABQABQBhAAEAAAAJABUABQBhAAAAAAAJABYABQBgAAEAAAAJABcABQBhAAAAAAAJABgABQBgAAEAAAAJABkABQBgAAEAAAAJABoABQBgAAAAAAAJABsABQBhAAEAAAAJABwABQBgAAAAAAAJAB0ABQBhAAAAAAAJAB4ABQBhAAEAAAAJAB8ABQBgAAAAAAAKAAAABQBgAAAAAAAKAAEABQBhAAEAAAAKAAIABQBgAAIAAAAKAAMABQBgAAEAAAAKAAQABQBgAAAAAAAKAAUABQBhAAEAAAAKAAYABQBgAAIAAAAKAAcABQBhAAEAAAAKAAgABQBgAAEAAAAKAAkABQBgAAIAAAAKAAoABQBhAAAAAAAKAAsABQBgAAAAAAAKAAwABQBhAAAAAAAKAA0ABQBgAAAAAAAKAA4ABQBhAAEAAAAKAA8ABQBgAAEAAAAKABAABQBgAAAAAAAKABEABQBgAAAAAAAKABIABQBhAAAAAAAKABMABQBgAAIAAAAKABQABQBhAAAAAAAKABUABQBgAAEAAAAKABYABQBhAAAAAAAKABcABQBhAAEAAAAKABgABQBgAAIAAAAKABkABQBhAAEAAAAKABoABQBgAAEAAAAKABsABQBgAAAAAAAKABwABQBhAAAAAAAKAB0ABQBhAAAAAAAKAB4ABQBgAAIAAAAKAB8ABQBhAAAAAAALAAAABQBgAAIAAAALAAEABQBgAAAAAAALAAIABQBgAAIAAAALAAMABQBgAAEAAAALAAQABQBhAAEAAAALAAUABQBhAAEAAAALAAYABQBgAAIAAAALAAcABQBhAAEAAAALAAgABQBhAAEAAAALAAkABQBgAAAAAAALAAoABQBhAAAAAAALAAsABQBgAAEAAAALAAwABQBhAAAAAAALAA0ABQBgAAIAAAALAA4ABQBgAAEAAAALAA8ABQBgAAEAAAALABAABQBgAAEAAAALABEABQBhAAAAAAALABIABQBhAAEAAAALABMABQBhAAEAAAALABQABQBgAAEAAAALABUABQBgAAEAAAALABYABQBgAAIAAAALABcABQBhAAEAAAALABgABQBgAAIAAAALABkABQBgAAEAAAALABoABQBhAAEAAAALABsABQBgAAEAAAALABwABQBhAAEAAAALAB0ABQBhAAAAAAALAB4ABQBgAAAAAAALAB8ABQBgAAAAAAAMAAAABQBgAAEAAAAMAAEABQBhAAAAAAAMAAIABQBgAAAAAAAMAAMABQBgAAAAAAAMAAQABQBhAAEAAAAMAAUABQBhAAEAAAAMAAYABQBgAAIAAAAMAAcABQBhAAAAAAAMAAgABQBgAAAAAAAMAAkABQBhAAEAAAAMAAoABQBhAAAAAAAMAAsABQBhAAAAAAAMAAwABQBhAAEAAAAMAA0ABQBgAAEAAAAMAA4ABQBgAAIAAAAMAA8ABQBhAAAAAAAMABAABQBhAAAAAAAMABEABQBgAAEAAAAMABIABQBhAAEAAAAMABMABQBgAAIAAAAMABQABQBgAAAAAAAMABUABQBgAAEAAAAMABYABQBhAAAAAAAMABcABQBgAAEAAAAMABgABQBhAAAAAAAMABkABQBhAAEAAAAMABoABQBgAAAAAAAMABsABQBhAAEAAAAMABwABQBgAAEAAAAMAB0ABQBgAAEAAAAMAB4ABQBhAAAAAAAMAB8ABQBhAAEAAAANAAAABQBgAAEAAAANAAEABQBgAAIAAAANAAIABQBgAAEAAAANAAMABQBhAAEAAAANAAQABQBhAAEAAAANAAUABQBgAAIAAAANAAYABQBhAAEAAAANAAcABQBgAAEAAAANAAgABQBgAAIAAAANAAkABQBgAAIAAAANAAoABQBhAAEAAAANAAsABQBhAAEAAAANAAwABQBgAAEAAAANAA0ABQBgAAIAAAANAA4ABQBhAAAAAAANAA8ABQBgAAEAAAANABAABQBhAAEAAAANABEABQBgAAEAAAANABIABQBgAAEAAAANABMABQBgAAIAAAANABQABQBgAAIAAAANABUABQBgAAEAAAANABYABQBgAAIAAAANABcABQBgAAEAAAANABgABQBgAAEAAAANABkABQBgAAEAAAANABoABQBhAAEAAAANABsABQBgAAAAAAANABwABQBhAAAAAAANAB0ABQBgAAEAAAANAB4ABQBhAAEAAAANAB8ABQBhAAAAAAAOAAAABQBhAAAAAAAOAAEABQBgAAEAAAAOAAIABQBhAAEAAAAOAAMABQBgAAEAAAAOAAQABQBgAAAAAAAOAAUABQBhAAAAAAAOAAYABQBgAAIAAAAOAAcABQBhAAAAAAAOAAgABQBgAAEAAAAOAAkABQBhAAEAAAAOAAoABQBhAAEAAAAOAAsABQBgAAEAAAAOAAwABQBhAAEAAAAOAA0ABQBgAAIAAAAOAA4ABQBgAAIAAAAOAA8ABQBhAAAAAAAOABAABQBgAAIAAAAOABEABQBgAAEAAAAOABIABQBhAAAAAAAOABMABQBgAAIAAAAOABQABQBgAAIAAAAOABUABQBgAAEAAAAOABYABQBgAAEAAAAOABcABQBgAAAAAAAOABgABQBgAAAAAAAOABkABQBgAAIAAAAOABoABQBgAAIAAAAOABsABQBhAAEAAAAOABwABQBgAAEAAAAOAB0ABQBhAAEAAAAOAB4ABQBhAAEAAAAOAB8ABQBhAAEAAAAPAAAABQBhAAAAAAAPAAEABQBgAAIAAAAPAAIABQBgAAIAAAAPAAMABQBgAAAAAAAPAAQABQBgAAAAAAAPAAUABQBhAAAAAAAPAAYABQBgAAIAAAAPAAcABQBhAAAAAAAPAAgABQBgAAIAAAAPAAkABQBgAAEAAAAPAAoABQBgAAAAAAAPAAsABQBgAAIAAAAPAAwABQBgAAAAAAAPAA0ABQBhAAAAAAAPAA4ABQBhAAAAAAAPAA8ABQBhAAEAAAAPABAABQBgAAEAAAAPABEABQBhAAEAAAAPABIABQBhAAAAAAAPABMABQBhAAEAAAAPABQABQBgAAIAAAAPABUABQBgAAIAAAAPABYABQBgAAIAAAAPABcABQBhAAAAAAAPABgABQBgAAEAAAAPABkABQBgAAEAAAAPABoABQBhAAEAAAAPABsABQBgAAEAAAAPABwABQBgAAEAAAAPAB0ABQBgAAIAAAAPAB4ABQBhAAAAAAAPAB8ABQBgAAAAAAAQAAAABQBgAAEAAAAQAAEABQBgAAAAAAAQAAIABQBhAAAAAAAQAAMABQBhAAAAAAAQAAQABQBgAAEAAAAQAAUABQBhAAAAAAAQAAYABQBgAAIAAAAQAAcABQBgAAIAAAAQAAgABQBhAAAAAAAQAAkABQBgAAIAAAAQAAoABQBhAAAAAAAQAAsABQBhAAEAAAAQAAwABQBgAAAAAAAQAA0ABQBgAAEAAAAQAA4ABQBgAAEAAAAQAA8ABQBhAAAAAAAQABAABQBgAAEAAAAQABEABQBhAAAAAAAQABIABQBhAAAAAAAQABMABQBgAAAAAAAQABQABQBgAAIAAAAQABUABQBhAAEAAAAQABYABQBhAAEAAAAQABcABQBgAAEAAAAQABgABQBgAAEAAAAQABkABQBhAAAAAAAQABoABQBgAAIAAAAQABsABQBhAAEAAAAQABwABQBgAAIAAAAQAB0ABQBgAAAAAAAQAB4ABQBhAAAAAAAQAB8ABQBhAAEAAAARAAAABQBgAAIAAAARAAEABQBhAAEAAAARAAIABQBhAAEAAAARAAMABQBgAAAAAAARAAQABQBgAAAAAAARAAUABQBhAAAAAAARAAYABQBhAAEAAAARAAcABQBgAAEAAAARAAgABQBhAAAAAAARAAkABQBhAAEAAAARAAoABQBgAAEAAAARAAsABQBgAAAAAAARAAwABQBgAAIAAAARAA0ABQBgAAAAAAARAA4ABQBgAAAAAAARAA8ABQBgAAEAAAARABAABQBgAAAAAAARABEABQBgAAEAAAARABIABQBgAAAAAAARABMABQBhAAEAAAARABQABQBhAAAAAAARABUABQBgAAEAAAARABYABQBhAAAAAAARABcABQBhAAAAAAARABgABQBhAAAAAAARABkABQBhAAEAAAARABoABQBgAAEAAAARABsABQBhAAAAAAARABwABQBgAAIAAAARAB0ABQBhAAAAAAARAB4ABQBgAAEAAAARAB8ABQBhAAAAAAASAAAABQBgAAIAAAASAAEABQBgAAEAAAASAAIABQBhAAEAAAASAAMABQBgAAIAAAASAAQABQBhAAEAAAASAAUABQBgAAIAAAASAAYABQBgAAAAAAASAAcABQBhAAEAAAASAAgABQBgAAEAAAASAAkABQBgAAEAAAASAAoABQBgAAEAAAASAAsABQBgAAIAAAASAAwABQBgAAIAAAASAA0ABQBhAAEAAAASAA4ABQBgAAIAAAASAA8ABQBgAAAAAAASABAABQBhAAEAAAASABEABQBgAAEAAAASABIABQBgAAAAAAASABMABQBgAAIAAAASABQABQBhAAAAAAASABUABQBgAAEAAAASABYABQBgAAIAAAASABcABQBgAAAAAAASABgABQBgAAAAAAASABkABQBhAAAAAAASABoABQBhAAEAAAASABsABQBhAAAAAAASABwABQBgAAEAAAASAB0ABQBhAAEAAAASAB4ABQBgAAIAAAASAB8ABQBhAAAAAAATAAAABQBgAAAAAAATAAEABQBgAAEAAAATAAIABQBgAAIAAAATAAMABQBgAAAAAAATAAQABQBgAAAAAAATAAUABQBgAAAAAAATAAYABQBgAAIAAAATAAcABQBhAAEAAAATAAgABQBgAAEAAAATAAkABQBgAAIAAAATAAoABQBhAAAAAAATAAsABQBgAAIAAAATAAwABQBhAAEAAAATAA0ABQBgAAAAAAATAA4ABQBgAAEAAAATAA8ABQBgAAEAAAATABAABQBhAAEAAAATABEABQBhAAEAAAATABIABQBgAAIAAAATABMABQBgAAIAAAATABQABQBgAAEAAAATABUABQBgAAEAAAATABYABQBgAAAAAAATABcABQBgAAAAAAATABgABQBhAAEAAAATABkABQBgAAIAAAATABoABQBhAAAAAAATABsABQBhAAAAAAATABwABQBgAAAAAAATAB0ABQBhAAAAAAATAB4ABQBhAAEAAAATAB8ABQBgAAEAAAAUAAAABQBhAAEAAAAUAAEABQBgAAEAAAAUAAIABQBhAAEAAAAUAAMABQBhAAEAAAAUAAQABQBgAAAAAAAUAAUABQBgAAAAAAAUAAYABQBhAAAAAAAUAAcABQBhAAAAAAAUAAgABQBhAAAAAAAUAAkABQBhAAAAAAAUAAoABQBhAAEAAAAUAAsABQBgAAEAAAAUAAwABQBhAAAAAAAUAA0ABQBhAAEAAAAUAA4ABQBhAAEAAAAUAA8ABQBgAAIAAAAUABAABQBgAAIAAAAUABEABQBgAAIAAAAUABIABQBhAAAAAAAUABMABQBgAAAAAAAUABQABQBgAAEAAAAUABUABQBgAAEAAAAUABYABQBhAAEAAAAUABcABQBgAAAAAAAUABgABQBgAAEAAAAUABkABQBhAAAAAAAUABoABQBgAAEAAAAUABsABQBgAAAAAAAUABwABQBhAAAAAAAUAB0ABQBgAAEAAAAUAB4ABQBhAAEAAAAUAB8ABQBhAAEAAAAVAAAABQBgAAIAAAAVAAEABQBhAAEAAAAVAAIABQBgAAAAAAAVAAMABQBhAAAAAAAVAAQABQBgAAIAAAAVAAUABQBhAAEAAAAVAAYABQBhAAEAAAAVAAcABQBgAAIAAAAVAAgABQBgAAIAAAAVAAkABQBgAAEAAAAVAAoABQBgAAAAAAAVAAsABQBhAAEAAAAVAAwABQBgAAAAAAAVAA0ABQBhAAAAAAAVAA4ABQBgAAEAAAAVAA8ABQBgAAEAAAAVABAABQBgAAEAAAAVABEABQBgAAEAAAAVABIABQBhAAAAAAAVABMABQBgAAAAAAAVABQABQBgAAEAAAAVABUABQBgAAIAAAAVABYABQBgAAEAAAAVABcABQBhAAAAAAAVABgABQBgAAAAAAAVABkABQBhAAAAAAAVABoABQBgAAEAAAAVABsABQBgAAEAAAAVABwABQBgAAIAAAAVAB0ABQBgAAIAAAAVAB4ABQBgAAIAAAAVAB8ABQBgAAIAAAAWAAAABQBhAAEAAAAWAAEABQBgAAAAAAAWAAIABQBhAAEAAAAWAAMABQBhAAAAAAAWAAQABQBgAAIAAAAWAAUABQBhAAAAAAAWAAYABQBgAAAAAAAWAAcABQBhAAAAAAAWAAgABQBhAAEAAAAWAAkABQBhAAEAAAAWAAoABQBgAAIAAAAWAAsABQBhAAAAAAAWAAwABQBgAAAAAAAWAA0ABQBgAAEAAAAWAA4ABQBgAAAAAAAWAA8ABQBgAAAAAAAWABAABQBgAAEAAAAWABEABQBgAAEAAAAWABIABQBhAAEAAAAWABMABQBhAAEAAAAWABQABQBgAAEAAAAWABUABQBhAAAAAAAWABYABQBhAAEAAAAWABcABQBhAAAAAAAWABgABQBhAAAAAAAWABkABQBhAAEAAAAWABoABQBgAAEAAAAWABsABQBhAAEAAAAWABwABQBhAAEAAAAWAB0ABQBgAAEAAAAWAB4ABQBgAAEAAAAWAB8ABQBgAAIAAAAXAAAABQBgAAEAAAAXAAEABQBgAAEAAAAXAAIABQBhAAEAAAAXAAMABQBhAAAAAAAXAAQABQBhAAEAAAAXAAUABQBgAAAAAAAXAAYABQBgAAIAAAAXAAcABQBgAAEAAAAXAAgABQBgAAAAAAAXAAkABQBgAAEAAAAXAAoABQBhAAAAAAAXAAsABQBgAAIAAAAXAAwABQBhAAAAAAAXAA0ABQBhAAAAAAAXAA4ABQBhAAEAAAAXAA8ABQBhAAEAAAAXABAABQBgAAIAAAAXABEABQBhAAAAAAAXABIABQBgAAIAAAAXABMABQBhAAEAAAAXABQABQBgAAIAAAAXABUABQBgAAEAAAAXABYABQBgAAEAAAAXABcABQBgAAEAAAAXABgABQBhAAEAAAAXABkABQBgAAEAAAAXABoABQBhAAEAAAAXABsABQBgAAEAAAAXABwABQBhAAEAAAAXAB0ABQBgAAAAAAAXAB4ABQBhAAAAAAAXAB8ABQBgAAEAAAAYAAAABQBgAAIAAAAYAAEABQBhAAEAAAAYAAIABQBhAAEAAAAYAAMABQBgAAAAAAAYAAQABQBhAAAAAAAYAAUABQBgAAAAAAAYAAYABQBhAAAAAAAYAAcABQBgAAIAAAAYAAgABQBgAAEAAAAYAAkABQBgAAEAAAAYAAoABQBgAAIAAAAYAAsABQBgAAEAAAAYAAwABQBhAAAAAAAYAA0ABQBgAAIAAAAYAA4ABQBgAAAAAAAYAA8ABQBgAAAAAAAYABAABQBgAAIAAAAYABEABQBgAAEAAAAYABIABQBgAAIAAAAYABMABQBhAAAAAAAYABQABQBgAAIAAAAYABUABQBhAAAAAAAYABYABQBhAAAAAAAYABcABQBhAAAAAAAYABgABQBhAAEAAAAYABkABQBgAAIAAAAYABoABQBhAAAAAAAYABsABQBgAAAAAAAYABwABQBgAAIAAAAYAB0ABQBgAAIAAAAYAB4ABQBhAAEAAAAYAB8ABQBgAAAAAAAZAAAABQBhAAAAAAAZAAEABQBhAAEAAAAZAAIABQBgAAAAAAAZAAMABQBgAAAAAAAZAAQABQBhAAEAAAAZAAUABQBgAAAAAAAZAAYABQBhAAEAAAAZAAcABQBhAAAAAAAZAAgABQBgAAEAAAAZAAkABQBhAAAAAAAZAAoABQBhAAEAAAAZAAsABQBgAAIAAAAZAAwABQBgAAAAAAAZAA0ABQBgAAAAAAAZAA4ABQBhAAAAAAAZAA8ABQBhAAEAAAAZABAABQBgAAAAAAAZABEABQBhAAAAAAAZABIABQBgAAAAAAAZABMABQBhAAAAAAAZABQABQBhAAEAAAAZABUABQBgAAIAAAAZABYABQBgAAEAAAAZABcABQBgAAAAAAAZABgABQBhAAAAAAAZABkABQBgAAIAAAAZABoABQBhAAAAAAAZABsABQBgAAEAAAAZABwABQBhAAAAAAAZAB0ABQBhAAEAAAAZAB4ABQBgAAAAAAAZAB8ABQBgAAIAAAAaAAAABQBhAAAAAAAaAAEABQBhAAAAAAAaAAIABQBgAAIAAAAaAAMABQBgAAIAAAAaAAQABQBhAAEAAAAaAAUABQBgAAAAAAAaAAYABQBgAAIAAAAaAAcABQBhAAAAAAAaAAgABQBgAAEAAAAaAAkABQBgAAAAAAAaAAoABQBgAAIAAAAaAAsABQBhAAAAAAAaAAwABQBhAAEAAAAaAA0ABQBhAAAAAAAaAA4ABQBgAAAAAAAaAA8ABQBhAAEAAAAaABAABQBgAAIAAAAaABEABQBgAAAAAAAaABIABQBgAAIAAAAaABMABQBhAAEAAAAaABQABQBgAAAAAAAaABUABQBgAAIAAAAaABYABQBhAAEAAAAaABcABQBhAAEAAAAaABgABQBgAAAAAAAaABkABQBhAAAAAAAaABoABQBgAAEAAAAaABsABQBgAAEAAAAaABwABQBgAAEAAAAaAB0ABQBgAAIAAAAaAB4ABQBgAAAAAAAaAB8ABQBgAAAAAAAbAAAABQBgAAIAAAAbAAEABQBhAAEAAAAbAAIABQBgAAIAAAAbAAMABQBgAAIAAAAbAAQABQBgAAAAAAAbAAUABQBhAAAAAAAbAAYABQBgAAEAAAAbAAcABQBgAAEAAAAbAAgABQBhAAEAAAAbAAkABQBhAAEAAAAbAAoABQBhAAAAAAAbAAsABQBgAAAAAAAbAAwABQBgAAAAAAAbAA0ABQBgAAIAAAAbAA4ABQBgAAEAAAAbAA8ABQBgAAIAAAAbABAABQBhAAAAAAAbABEABQBgAAAAAAAbABIABQBgAAIAAAAbABMABQBhAAAAAAAbABQABQBgAAEAAAAbABUABQBgAAAAAAAbABYABQBgAAAAAAAbABcABQBgAAAAAAAbABgABQBgAAAAAAAbABkABQBgAAIAAAAbABoABQBhAAEAAAAbABsABQBgAAIAAAAbABwABQBhAAAAAAAbAB0ABQBgAAAAAAAbAB4ABQBgAAIAAAAbAB8ABQBhAAEAAAAcAAAABQBhAAAAAAAcAAEABQBgAAAAAAAcAAIABQBgAAIAAAAcAAMABQBgAAIAAAAcAAQABQBgAAAAAAAcAAUABQBgAAAAAAAcAAYABQBhAAAAAAAcAAcABQBgAAIAAAAcAAgABQBgAAAAAAAcAAkABQBgAAAAAAAcAAoABQBgAAEAAAAcAAsABQBgAAIAAAAcAAwABQBgAAIAAAAcAA0ABQBgAAIAAAAcAA4ABQBgAAAAAAAcAA8ABQBhAAAAAAAcABAABQBgAAIAAAAcABEABQBgAAAAAAAcABIABQBgAAEAAAAcABMABQBgAAIAAAAcABQABQBhAAEAAAAcABUABQBhAAAAAAAcABYABQBgAAEAAAAcABcABQBgAAIAAAAcABgABQBhAAEAAAAcABkABQBhAAAAAAAcABoABQBhAAAAAAAcABsABQBgAAAAAAAcABwABQBgAAAAAAAcAB0ABQBhAAAAAAAcAB4ABQBhAAAAAAAcAB8ABQBgAAIAAAAdAAAABQBgAAIAAAAdAAEABQBgAAIAAAAdAAIABQBgAAIAAAAdAAMABQBgAAEAAAAdAAQABQBhAAEAAAAdAAUABQBhAAAAAAAdAAYABQBhAAEAAAAdAAcABQBhAAAAAAAdAAgABQBhAAAAAAAdAAkABQBgAAIAAAAdAAoABQBhAAEAAAAdAAsABQBhAAEAAAAdAAwABQBhAAEAAAAdAA0ABQBgAAIAAAAdAA4ABQBgAAEAAAAdAA8ABQBhAAAAAAAdABAABQBhAAAAAAAdABEABQBhAAEAAAAdABIABQBgAAEAAAAdABMABQBgAAIAAAAdABQABQBgAAIAAAAdABUABQBgAAAAAAAdABYABQBhAAAAAAAdABcABQBgAAEAAAAdABgABQBgAAIAAAAdABkABQBgAAIAAAAdABoABQBhAAEAAAAdABsABQBgAAIAAAAdABwABQBhAAEAAAAdAB0ABQBgAAIAAAAdAB4ABQBgAAIAAAAdAB8ABQBhAAEAAAAeAAAABQBhAAEAAAAeAAEABQBhAAAAAAAeAAIABQBhAAEAAAAeAAMABQBhAAAAAAAeAAQABQBhAAEAAAAeAAUABQBhAAAAAAAeAAYABQBgAAIAAAAeAAcABQBhAAAAAAAeAAgABQBhAAAAAAAeAAkABQBhAAEAAAAeAAoABQBgAAEAAAAeAAsABQBgAAIAAAAeAAwABQBhAAEAAAAeAA0ABQBhAAEAAAAeAA4ABQBgAAIAAAAeAA8ABQBgAAAAAAAeABAABQBgAAIAAAAeABEABQBhAAEAAAAeABIABQBhAAEAAAAeABMABQBgAAEAAAAeABQABQBgAAEAAAAeABUABQBgAAIAAAAeABYABQBgAAAAAAAeABcABQBhAAEAAAAeABgABQBgAAIAAAAeABkABQBhAAAAAAAeABoABQBgAAIAAAAeABsABQBgAAAAAAAeABwABQBgAAIAAAAeAB0ABQBgAAAAAAAeAB4ABQBgAAAAAAAeAB8ABQBgAAAAAAA=")
+tile_set = ExtResource("2_tnk0n")
+
+[node name="KantoRoute6Hgss" type="Sprite2D" parent="Tiles"]
+visible = false
+position = Vector2(240, 256)
+texture = ExtResource("3_bcinl")
+
+[node name="Grass" type="Node2D" parent="Tiles"]
+
+[node name="Tall_grass" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 448)
+
+[node name="Tall_grass2" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(112, 448)
+
+[node name="Tall_grass3" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(128, 448)
+
+[node name="Tall_grass4" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(144, 448)
+
+[node name="Tall_grass5" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 448)
+
+[node name="Tall_grass6" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 448)
+
+[node name="Tall_grass7" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 448)
+
+[node name="Tall_grass8" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 448)
+
+[node name="Tall_grass9" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 448)
+
+[node name="Tall_grass10" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 448)
+
+[node name="Tall_grass11" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 448)
+
+[node name="Tall_grass12" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 448)
+
+[node name="Tall_grass13" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 448)
+
+[node name="Tall_grass14" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 448)
+
+[node name="Tall_grass15" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 448)
+
+[node name="Tall_grass46" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 400)
+
+[node name="Tall_grass47" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 400)
+
+[node name="Tall_grass48" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 400)
+
+[node name="Tall_grass49" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 400)
+
+[node name="Tall_grass50" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 400)
+
+[node name="Tall_grass51" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 400)
+
+[node name="Tall_grass52" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 400)
+
+[node name="Tall_grass53" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 400)
+
+[node name="Tall_grass54" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 400)
+
+[node name="Tall_grass55" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 400)
+
+[node name="Tall_grass63" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 304)
+
+[node name="Tall_grass64" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 304)
+
+[node name="Tall_grass65" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 304)
+
+[node name="Tall_grass73" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 208)
+
+[node name="Tall_grass74" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 208)
+
+[node name="Tall_grass75" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 208)
+
+[node name="Tall_grass76" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 224)
+
+[node name="Tall_grass77" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 224)
+
+[node name="Tall_grass78" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 224)
+
+[node name="Tall_grass79" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 240)
+
+[node name="Tall_grass80" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 240)
+
+[node name="Tall_grass81" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 240)
+
+[node name="Tall_grass109" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 208)
+
+[node name="Tall_grass110" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 208)
+
+[node name="Tall_grass111" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 208)
+
+[node name="Tall_grass112" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 224)
+
+[node name="Tall_grass113" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 224)
+
+[node name="Tall_grass114" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 224)
+
+[node name="Tall_grass115" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 240)
+
+[node name="Tall_grass116" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 240)
+
+[node name="Tall_grass117" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 240)
+
+[node name="Tall_grass118" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 208)
+
+[node name="Tall_grass119" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 208)
+
+[node name="Tall_grass120" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 208)
+
+[node name="Tall_grass121" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 224)
+
+[node name="Tall_grass122" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 224)
+
+[node name="Tall_grass123" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 224)
+
+[node name="Tall_grass124" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 240)
+
+[node name="Tall_grass125" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 240)
+
+[node name="Tall_grass126" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 240)
+
+[node name="Tall_grass127" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 208)
+
+[node name="Tall_grass128" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 208)
+
+[node name="Tall_grass129" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 208)
+
+[node name="Tall_grass130" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 224)
+
+[node name="Tall_grass131" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 224)
+
+[node name="Tall_grass132" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 224)
+
+[node name="Tall_grass133" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 240)
+
+[node name="Tall_grass134" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 240)
+
+[node name="Tall_grass135" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 240)
+
+[node name="Tall_grass136" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 208)
+
+[node name="Tall_grass137" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 208)
+
+[node name="Tall_grass138" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(336, 208)
+
+[node name="Tall_grass139" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 224)
+
+[node name="Tall_grass140" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 224)
+
+[node name="Tall_grass141" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(336, 224)
+
+[node name="Tall_grass142" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 240)
+
+[node name="Tall_grass143" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 240)
+
+[node name="Tall_grass144" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(336, 240)
+
+[node name="Tall_grass145" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(352, 208)
+
+[node name="Tall_grass146" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(368, 208)
+
+[node name="Tall_grass147" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 208)
+
+[node name="Tall_grass148" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(352, 224)
+
+[node name="Tall_grass149" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(368, 224)
+
+[node name="Tall_grass150" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 224)
+
+[node name="Tall_grass151" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(352, 240)
+
+[node name="Tall_grass152" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(368, 240)
+
+[node name="Tall_grass153" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 240)
+
+[node name="Tall_grass154" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 208)
+
+[node name="Tall_grass155" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 208)
+
+[node name="Tall_grass156" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 208)
+
+[node name="Tall_grass157" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 224)
+
+[node name="Tall_grass158" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 224)
+
+[node name="Tall_grass159" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 224)
+
+[node name="Tall_grass160" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 240)
+
+[node name="Tall_grass161" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 240)
+
+[node name="Tall_grass162" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 240)
+
+[node name="Tall_grass163" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 256)
+
+[node name="Tall_grass164" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 272)
+
+[node name="Tall_grass165" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 288)
+
+[node name="Tall_grass166" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 256)
+
+[node name="Tall_grass167" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 256)
+
+[node name="Tall_grass168" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 256)
+
+[node name="Tall_grass169" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 272)
+
+[node name="Tall_grass170" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 272)
+
+[node name="Tall_grass171" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 272)
+
+[node name="Tall_grass172" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 288)
+
+[node name="Tall_grass173" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 288)
+
+[node name="Tall_grass174" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 288)
+
+[node name="Tall_grass175" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 304)
+
+[node name="Tall_grass176" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 320)
+
+[node name="Tall_grass177" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 336)
+
+[node name="Tall_grass178" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 304)
+
+[node name="Tall_grass179" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 304)
+
+[node name="Tall_grass180" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 304)
+
+[node name="Tall_grass181" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 320)
+
+[node name="Tall_grass182" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 320)
+
+[node name="Tall_grass183" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 320)
+
+[node name="Tall_grass184" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 336)
+
+[node name="Tall_grass185" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 336)
+
+[node name="Tall_grass186" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 336)
+
+[node name="Tall_grass187" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 352)
+
+[node name="Tall_grass188" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 368)
+
+[node name="Tall_grass189" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 384)
+
+[node name="Tall_grass190" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 352)
+
+[node name="Tall_grass191" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 352)
+
+[node name="Tall_grass192" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 352)
+
+[node name="Tall_grass193" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 368)
+
+[node name="Tall_grass194" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 368)
+
+[node name="Tall_grass195" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 368)
+
+[node name="Tall_grass196" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 384)
+
+[node name="Tall_grass197" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 384)
+
+[node name="Tall_grass198" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 384)
+
+[node name="Tall_grass199" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 400)
+
+[node name="Tall_grass200" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 416)
+
+[node name="Tall_grass201" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(384, 432)
+
+[node name="Tall_grass202" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 400)
+
+[node name="Tall_grass203" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 400)
+
+[node name="Tall_grass204" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 400)
+
+[node name="Tall_grass205" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 416)
+
+[node name="Tall_grass206" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 416)
+
+[node name="Tall_grass207" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 416)
+
+[node name="Tall_grass208" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(400, 432)
+
+[node name="Tall_grass209" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(416, 432)
+
+[node name="Tall_grass210" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(432, 432)
+
+[node name="Tall_grass82" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 256)
+
+[node name="Tall_grass83" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 256)
+
+[node name="Tall_grass84" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 256)
+
+[node name="Tall_grass85" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 272)
+
+[node name="Tall_grass86" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 272)
+
+[node name="Tall_grass87" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 272)
+
+[node name="Tall_grass88" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 288)
+
+[node name="Tall_grass89" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 288)
+
+[node name="Tall_grass90" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 288)
+
+[node name="Tall_grass91" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 304)
+
+[node name="Tall_grass92" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 304)
+
+[node name="Tall_grass93" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 304)
+
+[node name="Tall_grass94" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 320)
+
+[node name="Tall_grass95" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 320)
+
+[node name="Tall_grass96" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 320)
+
+[node name="Tall_grass97" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 336)
+
+[node name="Tall_grass98" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 336)
+
+[node name="Tall_grass99" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 336)
+
+[node name="Tall_grass100" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 352)
+
+[node name="Tall_grass101" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 352)
+
+[node name="Tall_grass102" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 352)
+
+[node name="Tall_grass103" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 368)
+
+[node name="Tall_grass104" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 368)
+
+[node name="Tall_grass105" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 368)
+
+[node name="Tall_grass106" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(64, 384)
+
+[node name="Tall_grass107" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(80, 384)
+
+[node name="Tall_grass108" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 384)
+
+[node name="Tall_grass66" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 304)
+
+[node name="Tall_grass67" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 304)
+
+[node name="Tall_grass68" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 304)
+
+[node name="Tall_grass69" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 304)
+
+[node name="Tall_grass70" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 304)
+
+[node name="Tall_grass71" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 304)
+
+[node name="Tall_grass72" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 304)
+
+[node name="Tall_grass56" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 400)
+
+[node name="Tall_grass57" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 384)
+
+[node name="Tall_grass58" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 368)
+
+[node name="Tall_grass59" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 352)
+
+[node name="Tall_grass60" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 336)
+
+[node name="Tall_grass61" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 320)
+
+[node name="Tall_grass62" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 304)
+
+[node name="Tall_grass16" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 464)
+
+[node name="Tall_grass17" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(112, 464)
+
+[node name="Tall_grass18" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(128, 464)
+
+[node name="Tall_grass19" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(144, 464)
+
+[node name="Tall_grass20" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 464)
+
+[node name="Tall_grass21" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 464)
+
+[node name="Tall_grass22" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 464)
+
+[node name="Tall_grass23" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 464)
+
+[node name="Tall_grass24" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 464)
+
+[node name="Tall_grass25" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 464)
+
+[node name="Tall_grass26" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 464)
+
+[node name="Tall_grass27" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 464)
+
+[node name="Tall_grass28" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 464)
+
+[node name="Tall_grass29" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 464)
+
+[node name="Tall_grass30" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 464)
+
+[node name="Tall_grass31" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(96, 480)
+
+[node name="Tall_grass32" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(112, 480)
+
+[node name="Tall_grass33" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(128, 480)
+
+[node name="Tall_grass34" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(144, 480)
+
+[node name="Tall_grass35" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(160, 480)
+
+[node name="Tall_grass36" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(176, 480)
+
+[node name="Tall_grass37" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(192, 480)
+
+[node name="Tall_grass38" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(208, 480)
+
+[node name="Tall_grass39" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(224, 480)
+
+[node name="Tall_grass40" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(240, 480)
+
+[node name="Tall_grass41" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(256, 480)
+
+[node name="Tall_grass42" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(272, 480)
+
+[node name="Tall_grass43" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(288, 480)
+
+[node name="Tall_grass44" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(304, 480)
+
+[node name="Tall_grass45" parent="Tiles/Grass" instance=ExtResource("4_p7wvq")]
+position = Vector2(320, 480)
+
+[node name="Trees" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAABAAMACAAAAAAAAAADAAMACAAAAAAAAAAFAAMACAAAAAAAAAAHAAMACAAAAAAAAAAJAAMACAAAAAAAAAALAAMACAAAAAAAAAANAAMACAAAAAAAAAANAAEACAAAAAAAAAALAAEACAAAAAAAAAAJAAEACAAAAAAAAAAHAAEACAAAAAAAAAAFAAEACAAAAAAAAAADAAEACAAAAAAAAAABAAEACAAAAAAAAAAWAAEACAAAAAAAAAAWAAMACAAAAAAAAAAYAAEACAAAAAAAAAAYAAMACAAAAAAAAAAaAAEACAAAAAAAAAAaAAMACAAAAAAAAAAcAAEACAAAAAAAAAAcAAMACAAAAAAAAAAeAAEACAAAAAAAAAAeAAMACAAAAAAAAAAgAAEACAAAAAAAAAAgAAMACAAAAAAAAAAiAAEACAAAAAAAAAAiAAMACAAAAAAAAAAeAAUACAAAAAAAAAAeAAcACAAAAAAAAAAeAAkACAAAAAAAAAAeAAsACAAAAAAAAAAeAA0ACAAAAAAAAAAeAA8ACAAAAAAAAAAeABEACAAAAAAAAAAeABMACAAAAAAAAAAeABUACAAAAAAAAAAeABcACAAAAAAAAAAeABkACAAAAAAAAAAeABsACAAAAAAAAAAcAB0ACAAAAAAAAAAcAB8ACAAAAAAAAAAeAB0ACAAAAAAAAAAeAB8ACAAAAAAAAAAaAB0ACAAAAAAAAAAaAB8ACAAAAAAAAAABAB0ACAAAAAAAAAABAB8ACAAAAAAAAAADAB0ACAAAAAAAAAADAB8ACAAAAAAAAAAFAB0ACAAAAAAAAAAFAB8ACAAAAAAAAAABABkACAAAAAAAAAABABsACAAAAAAAAAADABkACAAAAAAAAAADABsACAAAAAAAAAABABYACAAAAAAAAAABABgACAAAAAAAAAADABYACAAAAAAAAAADABgACAAAAAAAAAABABMACAAAAAAAAAABABUACAAAAAAAAAADABMACAAAAAAAAAADABUACAAAAAAAAAABAA8ACAAAAAAAAAABABEACAAAAAAAAAADAA8ACAAAAAAAAAADABEACAAAAAAAAAABAAUACAAAAAAAAAABAAcACAAAAAAAAAABAAkACAAAAAAAAAABAAsACAAAAAAAAAABAA0ACAAAAAAAAAA=")
+tile_set = ExtResource("2_tnk0n")
+
+[node name="Path" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAAbAAwABABlAAIAAAAbAAsABABlAAEAAAAbAAoABABlAAAAAAAaAAwABABkAAIAAAAaAAsABABkAAEAAAAaAAoABABkAAAAAAAZAAwABABkAAIAAAAZAAsABABkAAEAAAAZAAoABABkAAAAAAAYAAwABABkAAIAAAAYAAsABABkAAEAAAAYAAoABABkAAAAAAAXAAwABABkAAIAAAAXAAsABABkAAEAAAAXAAoABABkAAAAAAAWAAwABABkAAIAAAAWAAsABABkAAEAAAAWAAoABABkAAAAAAAVAAwABABkAAIAAAAVAAsABABkAAEAAAAVAAoABABkAAAAAAAUAAwABABkAAIAAAAUAAsABABkAAEAAAAUAAoABABkAAAAAAATAAwABABkAAIAAAATAAsABABkAAEAAAATAAoABABkAAAAAAASAAwABABkAAIAAAASAAsABABkAAEAAAASAAoABABkAAAAAAARAAwABABkAAIAAAARAAsABABkAAEAAAARAAoABABkAAAAAAAQAAwABABkAAIAAAAQAAsABABkAAEAAAAQAAoABABkAAAAAAAPAAwABABkAAIAAAAPAAsABABkAAEAAAAPAAoABABkAAAAAAAOAAwABABkAAIAAAAOAAsABABkAAEAAAAOAAoABABkAAAAAAANAAwABABkAAIAAAANAAsABABkAAEAAAANAAoABABkAAAAAAAMAAwABABkAAIAAAAMAAsABABkAAEAAAAMAAoABABkAAAAAAALAAwABABkAAIAAAALAAsABABkAAEAAAALAAoABABkAAAAAAAKAAwABABkAAIAAAAKAAsABABkAAEAAAAKAAoABABkAAAAAAAJAAwABABkAAEAAAAJAAsABABkAAEAAAAJAAoABABkAAAAAAAIAAwABABkAAEAAAAIAAsABABkAAEAAAAIAAoABABkAAAAAAAHAAwABABkAAEAAAAHAAsABABkAAEAAAAHAAoABABkAAAAAAAGAAwABABkAAIAAAAGAAsABABkAAEAAAAGAAoABABkAAAAAAAFAAwABABkAAIAAAAFAAsABABkAAEAAAAFAAoABABkAAAAAAAEAAwABABkAAIAAAAEAAsABABkAAEAAAAEAAoABABkAAAAAAADAAwABABkAAIAAAADAAsABABkAAEAAAADAAoABABkAAAAAAACAAwABABjAAIAAAACAAsABABjAAEAAAACAAoABABjAAAAAAAJABIABABkAAIAAAAJABEABABkAAEAAAAJABAABABkAAEAAAAJAA8ABABlAAEAAAAJAA4ABABlAAEAAAAJAA0ABABlAAEAAAAIABIABABkAAIAAAAIABEABABkAAEAAAAIABAABABkAAEAAAAIAA8ABABkAAEAAAAIAA4ABABkAAEAAAAIAA0ABABkAAEAAAAHABIABABjAAIAAAAHABEABABjAAEAAAAHABAABABjAAEAAAAHAA8ABABjAAEAAAAHAA4ABABjAAEAAAAHAA0ABABjAAEAAAAXABIABABlAAEAAAAXABEABABlAAEAAAAXABAABABlAAAAAAAWABIABABkAAEAAAAWABEABABkAAEAAAAWABAABABkAAAAAAAVABIABABkAAEAAAAVABEABABkAAEAAAAVABAABABkAAAAAAAUABIABABkAAIAAAAUABEABABkAAEAAAAUABAABABkAAAAAAATABIABABkAAIAAAATABEABABkAAEAAAATABAABABkAAAAAAASABIABABkAAIAAAASABEABABkAAEAAAASABAABABkAAAAAAARABIABABkAAIAAAARABEABABkAAEAAAARABAABABkAAAAAAAQABIABABkAAIAAAAQABEABABkAAEAAAAQABAABABkAAAAAAAPABIABABkAAIAAAAPABEABABkAAEAAAAPABAABABkAAAAAAAOABIABABkAAIAAAAOABEABABkAAEAAAAOABAABABkAAAAAAANABIABABkAAIAAAANABEABABkAAEAAAANABAABABkAAAAAAAMABIABABkAAIAAAAMABEABABkAAEAAAAMABAABABkAAAAAAALABIABABkAAIAAAALABEABABkAAEAAAALABAABABkAAAAAAAKABIABABkAAIAAAAKABEABABkAAEAAAAKABAABABkAAAAAAAXAB8ABABlAAIAAAAXAB4ABABlAAEAAAAXAB0ABABlAAEAAAAXABwABABlAAEAAAAXABsABABlAAEAAAAXABoABABlAAEAAAAXABkABABlAAEAAAAXABgABABlAAEAAAAXABcABABlAAEAAAAXABYABABlAAEAAAAXABUABABlAAEAAAAXABQABABlAAEAAAAXABMABABlAAEAAAAWAB8ABABkAAIAAAAWAB4ABABkAAEAAAAWAB0ABABkAAEAAAAWABwABABkAAEAAAAWABsABABkAAEAAAAWABoABABkAAEAAAAWABkABABkAAEAAAAWABgABABkAAEAAAAWABcABABkAAEAAAAWABYABABkAAEAAAAWABUABABkAAEAAAAWABQABABkAAEAAAAWABMABABkAAEAAAAVAB8ABABjAAIAAAAVAB4ABABjAAEAAAAVAB0ABABjAAEAAAAVABwABABjAAEAAAAVABsABABkAAEAAAAVABoABABkAAEAAAAVABkABABjAAEAAAAVABgABABjAAEAAAAVABcABABjAAEAAAAVABYABABjAAEAAAAVABUABABjAAEAAAAVABQABABjAAEAAAAVABMABABjAAEAAAAUABsABABkAAIAAAAUABoABABkAAAAAAATABsABABkAAIAAAATABoABABkAAAAAAASABsABABkAAIAAAASABoABABkAAAAAAARABsABABkAAIAAAARABoABABkAAAAAAAQABsABABkAAIAAAAQABoABABkAAAAAAAPABsABABkAAIAAAAPABoABABkAAAAAAAOABsABABkAAIAAAAOABoABABkAAAAAAANABsABABkAAIAAAANABoABABkAAAAAAAMABsABABkAAIAAAAMABoABABkAAAAAAALABsABABkAAIAAAALABoABABkAAAAAAAKABsABABjAAIAAAAKABoABABjAAAAAAA=")
+tile_set = ExtResource("2_tnk0n")
+
+[node name="Objexts" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAACAAkAAAAPABwAAAADAAkAAAAPABwAAAAEAAkAAAAPABwAAAAFAAkAAAAPABwAAAAGAAkAAAAPABwAAAAHAAkAAAAPABwAAAAIAAkAAAAPABwAAAAJAAkAAAAPABwAAAAKAAkAAAAPABwAAAALAAkAAAAPABwAAAAMAAkAAAAPABwAAAANAAkAAAAPABwAAAAOAAkAAAAPABwAAAAPAAkAAAAQAB4AAAAXAAkAAAAQAB4AAAAIAAYAAAAQAB4AAAASAAkAAAAPAB4AAAATAAkAAAAPABwAAAAUAAkAAAAPABwAAAAVAAkAAAAPABwAAAAWAAkAAAAPABwAAAACAAYAAAAPABwAAAADAAYAAAAPABwAAAAEAAYAAAAPABwAAAAFAAYAAAAPABwAAAAGAAYAAAAPABwAAAAHAAYAAAAPABwAAAA=")
+tile_set = ExtResource("5_5xnq8")
+
+[node name="Water" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAATABcABAAiAAIAAAATABYABAAiAAEAAAATABUABAAiAAEAAAATABQABAAiAAAAAAASABcABAAhAAIAAAASABYABAAhAAEAAAASABUABAAhAAEAAAASABQABAAhAAAAAAARABcABAAhAAIAAAARABYABAAhAAEAAAARABUABAAhAAEAAAARABQABAAhAAAAAAAQABcABAAhAAIAAAAQABYABAAhAAEAAAAQABUABAAhAAEAAAAQABQABAAhAAAAAAAPABcABAAhAAIAAAAPABYABAAhAAEAAAAPABUABAAhAAEAAAAPABQABAAhAAAAAAAOABcABAAhAAIAAAAOABYABAAhAAEAAAAOABUABAAhAAEAAAAOABQABAAhAAAAAAANABcABAAhAAIAAAANABYABAAhAAEAAAANABUABAAhAAEAAAANABQABAAhAAAAAAAMABcABAAhAAIAAAAMABYABAAhAAEAAAAMABUABAAhAAEAAAAMABQABAAhAAAAAAALABcABAAhAAIAAAALABYABAAhAAEAAAALABUABAAhAAEAAAALABQABAAhAAAAAAAKABcABAAhAAIAAAAKABYABAAhAAEAAAAKABUABAAhAAEAAAAKABQABAAhAAAAAAAJABcABAAhAAIAAAAJABYABAAhAAEAAAAJABUABAAhAAEAAAAJABQABAAhAAAAAAAIABcABAAhAAIAAAAIABYABAAhAAEAAAAIABUABAAhAAEAAAAIABQABAAhAAAAAAAHABcABAAgAAIAAAAHABYABAAgAAEAAAAHABUABAAgAAEAAAAHABQABAAgAAAAAAA=")
+tile_set = ExtResource("2_tnk0n")
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("6_tnk0n")]
+position = Vector2(224, 0)
+scale = Vector2(6, 1)
+TargetLevelName = 47

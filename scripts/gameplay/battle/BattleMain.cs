@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Gameplay
 {
-	/// <summary>
-	/// The root controller for the Battle Scene.
-	/// Owns the StateMachine and references to UI components.
-	/// </summary>
+
 	public partial class BattleMain : CanvasLayer
 	{
 		[ExportCategory("UI References")]
@@ -65,26 +62,24 @@ namespace Game.Gameplay
 		[Export] public TextureProgressBar[] HpBars;
 		[Export] public Sprite2D[] Sprites;
 		[Export] public Node2D Party;
+		private bool _isProcessingTurn = false;
 		public override void _Ready()
 		{
 			 _audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 			Logger.Info("BattleMain initializing...");
 			
-			// Get data from Autoload
 			if (BattleManager.Instance != null)
 			{
 				PlayerID = BattleManager.Instance.playerPokemonId;
 				OpponentID = BattleManager.Instance.opponentPokemonId;
 			}
 
-			// Emergency Fallback: If player ID is none, fetch it again or default to bulbasaur
 			if (PlayerID == PokemonID.none)
 			{
 				Logger.Warning("PlayerID was 'none' at runtime. Recovering...");
 				PlayerID = BattleManager.Instance?.GetSavedPlayerPokemon() ?? PokemonID.bulbasaur;
 			}
 
-			// Basic UI Setup (player name label updated after level loads below)
 			if (OpponentNameLabel != null) OpponentNameLabel.Text = OpponentID != PokemonID.none ? OpponentID.ToString() : "Opponent";
 
 			if (PlayerSprite != null) PlayerSprite.Setup(PlayerID);
@@ -92,7 +87,6 @@ namespace Game.Gameplay
 
 			Logger.Info($"BattleMain _Ready. PartyMenu: {PartyMenu?.Name ?? "NULL"}, PokemonButtons Count: {PokemonButtons?.Length ?? 0}");
 			
-			// Connect Signals
 			if (BattleButton != null) BattleButton.Pressed += () => OnBattleButtonPressed();
 			if (RunButton != null) RunButton.Pressed += () => RunAway();
 			if (BackButton != null) BackButton.Pressed += () => OnBackButtonPressed();
@@ -118,7 +112,6 @@ namespace Game.Gameplay
 			_playerPokemon = PokeBase.LoadPokemon(PlayerID);
 			_oppPokemon = PokeBase.LoadPokemon(OpponentID);
 
-			// Load the active player pokemon's level from save data
 			var partyData = SaveManager.Instance?.CurrentSave?.PartyDetails;
 			if (partyData != null)
 			{
@@ -138,10 +131,8 @@ namespace Game.Gameplay
 			if (_playerPokemonLevel <= 0) _playerPokemonLevel = 5;
 			_oppPokemonLevel = 5;
 
-			// Update name label now that level is known
 			if (PlayerNameLabel != null) PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";
 
-			// Use persisted HP if loaded above; otherwise start at full HP
 			if (_playerPokemonHp <= 0) _playerPokemonHp = _playerPokemon.BaseHp;
 			_oppPokemonHp = _oppPokemon.BaseHp;
 			PlayerHPBar.MaxValue = _playerPokemon.BaseHp;
@@ -185,13 +176,11 @@ namespace Game.Gameplay
 
 			}
 
-			// Start the state machine
 			if (StateMachine != null)
 			{
 				StateMachine.StartBattle();
 			}
 
-			// Safety check: Ensure PartyDetails has the player's current pokemon if it's empty
 			if (SaveManager.Instance?.CurrentSave != null)
 			{
 				Logger.Info($"Current PartyDetails count: {SaveManager.Instance.CurrentSave.PartyDetails.Count}");
@@ -222,14 +211,11 @@ namespace Game.Gameplay
 			{
 				if (i >= NameLabels.Length) break;
 
-				// 1. Get the dictionary for this specific Pokemon
 				var pokemonDict = partyData[i].AsGodotDictionary();
 				Game.Core.Logger.Info(pokemonDict);
 
-				// 2. Get the Resource based on the ID stored in the dictionary
-				// Using "Id" or "ID" - make sure this matches your SaveManager casing!
+
 				var idKey = pokemonDict.ContainsKey("ID") ? "ID" : "Id";
-				// Convert to int first, then to the Enum
 				var pokemonID = (PokemonID)(int)pokemonDict[idKey];
 				var pokemonResource = PokeBase.LoadPokemon(pokemonID);
 
@@ -239,26 +225,20 @@ namespace Game.Gameplay
 					continue;
 				}
 
-				// 3. Assign the Species Name from the Resource
 				if (NameLabels[i] != null)
-					// Wrap the name in a [url] tag so it becomes "clickable" metadata
 					NameLabels[i].Text = $"[url]{pokemonResource.Name}[/url]";
 
-					// Use the lambda fix from before to connect the signal correctly
 					NameLabels[i].MetaClicked += (meta) => switchPokemon(pokemonResource);
 
-				// 4. Assign the Level from the Save Data
 				if (LevelLabels[i] != null && pokemonDict.ContainsKey("Level"))
 					LevelLabels[i].Text =  pokemonDict["Level"].ToString();
 
-				// 5. Assign HP from the Save Data
 				if (HpBars[i] != null && pokemonDict.ContainsKey("CurrentHP"))
 				{
 					HpBars[i].MaxValue = pokemonResource.BaseHp;
 					HpBars[i].Value = pokemonDict["CurrentHP"].AsInt32();
 				}
 				
-				// 6. Assign Sprite from the Resource
 				if (Sprites[i] != null)
 					Sprites[i].Texture = pokemonResource.FrontSprite; 
 			}
@@ -349,17 +329,13 @@ namespace Game.Gameplay
 
 		public int CalculateDamage(PokemonResource attacker, PokemonResource defender, int movePower, int attackerLevel)
 		{
-			// 1. Calculate the core power based on level
 			float levelPart = ((2.0f * attackerLevel) / 5.0f) + 2.0f;
 			
-			// 2. Get the Attack/Defense ratio
-			// (In a full game, you'd check if the move is Physical or Special)
+
 			float adRatio = (float)attacker.BaseAttack / defender.BaseDefense;
 			
-			// 3. Combine parts
 			float baseDamage = ((levelPart * movePower * adRatio) / 50.0f) + 2.0f;
 
-			// 4. Add a bit of randomness (usually between 0.85 and 1.0)
 			float randomModifier = (float)GD.RandRange(0.85, 1.0);
 			
 			return Mathf.FloorToInt(baseDamage * randomModifier);
@@ -367,13 +343,28 @@ namespace Game.Gameplay
 
 		private async Task OnMoveSelectedAsync(string moveName)
 		{
+			if (_isProcessingTurn) return;
+			_isProcessingTurn = true;
+
+			SetMoveButtonsDisabled(true);
+
 			await ExecuteMoveAsync(_playerPokemon, _oppPokemon, moveName, true);
-			
+
 			if (StateMachine != null)
-			{
 				StateMachine.ChangeState("CheckFaintState");
-			}
+
+			SetMoveButtonsDisabled(false);
+			_isProcessingTurn = false;
 		}
+
+		private void SetMoveButtonsDisabled(bool disabled)
+		{
+		    if (MoveButtons == null) return;
+		    foreach (var btn in MoveButtons)
+		        if (btn != null) btn.Disabled = disabled;
+		}
+				
+				
 
 		public async Task ExecuteMoveAsync(PokemonResource attacker, PokemonResource defender, string moveName, bool isPlayerAttacking)
 		{
@@ -391,6 +382,7 @@ namespace Game.Gameplay
 				EnemyHPBar.Value = _oppPokemonHp;
 				if (OpponentSprite != null) await PlayFlickerAsync(OpponentSprite);
 				Logger.Info($"Enemy HP down to: {_oppPokemonHp}");
+
 			}
 			else
 			{
@@ -416,11 +408,15 @@ namespace Game.Gameplay
 
 		public async Task ExecuteEnemyTurnAsync()
 		{
+			_isProcessingTurn = true;
+			SetMoveButtonsDisabled(true);
+			if (MoveMenu != null) MoveMenu.Visible = false;
+			if (CommandMenu != null) CommandMenu.Visible = false;
+
 			if (_oppPokemon == null) return;
 			UpdateLog($"Enemy {_oppPokemon.Name} is thinking...");
 			await Task.Delay(1500);
 
-			// Simple AI: Pick move with highest power
 			string bestMove = _oppPokemon.LearnableMoves.Count > 0 ? _oppPokemon.LearnableMoves[0] : "Tackle";
 			int maxPower = -1;
 
@@ -435,14 +431,37 @@ namespace Game.Gameplay
 			}
 
 			await ExecuteMoveAsync(_oppPokemon, _playerPokemon, bestMove, false);
-			if (_playerPokemonHp<=0){
-				BattleLost();
-			}
-			
-			if (StateMachine != null)
+
+			if (_playerPokemonHp <= 0)
 			{
-				StateMachine.ChangeState("CheckFaintState");
+				int healthyCount = 0;
+				foreach (var entry in SaveManager.Instance?.CurrentSave?.PartyDetails)
+				{
+					var dict = entry.Value.AsGodotDictionary();
+					if (dict.ContainsKey("CurrentHP") && dict["CurrentHP"].AsInt32() > 0)
+						healthyCount++;
+				}
+
+				if (healthyCount == 0)
+				{
+					BattleLost();
+					return;
+				}
+				else
+				{
+					await MessageManager.PlayText($"{PlayerID} fainted! Choose your next Pokemon!");
+					OnPokemonMenuButtonPressed();
+					_isProcessingTurn = false;
+					return;
+				}
 			}
+
+			if (StateMachine != null)
+				StateMachine.ChangeState("CheckFaintState");
+
+			if (CommandMenu != null) CommandMenu.Visible = true;
+			SetMoveButtonsDisabled(false);
+			_isProcessingTurn = false;
 		}
 		private void OnBagMenuButtonPressed()
 		{
@@ -697,16 +716,14 @@ namespace Game.Gameplay
 					{ "CurrentHP", _oppPokemonHp } 
 				};
 				party[party.Count] = newPokeData;
-				SaveManager.Instance.SaveToDisk(); // Use your new X-key save logic!
+				SaveManager.Instance.SaveToDisk();
 			}
 		}
 		private async Task OnSelectPokeballButtonPressedAsync(Game.Core.Pokeball ball){
 			await PokeballthrownAsync(ball);
 		}
 
-		/// <summary>
-		/// Persists the active player Pokemon's current HP to the save data.
-		/// </summary>
+
 		private void SaveActivePokemonHp()
 		{
 			var party = SaveManager.Instance?.CurrentSave?.PartyDetails;
@@ -725,10 +742,7 @@ namespace Game.Gameplay
 			}
 		}
 
-		/// <summary>
-		/// Awards EXP to the active player Pokemon after defeating an opponent.
-		/// Levels up the Pokemon if enough EXP has been accumulated (level * 10 per level).
-		/// </summary>
+	
 		private async void AwardExpToActivePokemon(int baseExp)
 		{
 			var party = SaveManager.Instance?.CurrentSave?.PartyDetails;

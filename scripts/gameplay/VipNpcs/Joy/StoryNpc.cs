@@ -109,40 +109,42 @@ public partial class JoyNpc : CharacterBody2D
 	}
 
 	public async System.Threading.Tasks.Task PlayMessage(Vector2 playerDirection)
+{
+	if (Engine.IsEditorHint()) return;
+	if (_characterMovement.IsMoving()) return;
+
+	if (_npcInput.Direction != playerDirection * -1)
 	{
-		if (Engine.IsEditorHint()) return;
-		if (_characterMovement.IsMoving()) return;
-
-		if (_npcInput.Direction != playerDirection * -1)
-		{
-			_npcInput.Direction = playerDirection * -1;
-			_npcInput.EmitSignal(CharecterInput.SignalName.Turn);
-		}
-		GD.Print("NPC: Attempting to play message...");
-		
-		_stateMachine.ChangeState("Message");
-
-		// Cast check before playing messages
-		if (InputConfig is StoryNpcInputConfig config)
-		{
-			await MessageManager.PlayText(["Hey! My name is Nurse Joy.", "I heal your pokemon for you."]);	
-			await Task.Delay(100);
-            foreach (var item in SaveManager.Instance.CurrentSave.PartyDetails)
-            {
-                var entry = item.Value.AsGodotDictionary();
-                if (entry == null || !entry.ContainsKey("ID")) continue;
-                var pokemon = PokeBase.LoadPokemon((PokemonID)(int)entry["ID"]);
-                if (pokemon != null)
-                    entry["CurrentHP"] = pokemon.BaseHp;
-            }
-            ;
-			await MessageManager.PlayText(["Your pokemon have been restored to full health."]);
-			await Task.Delay(100);
-			await MessageManager.PlayText(["Please take care of your pokemon."]);
-		}
-		
-		_stateMachine.ChangeState("Roam");
+		_npcInput.Direction = playerDirection * -1;
+		_npcInput.EmitSignal(CharecterInput.SignalName.Turn);
 	}
+
+	GD.Print("NPC: Attempting to play message...");
+	_stateMachine.ChangeState("Message");
+
+	await MessageManager.PlayText(["Hey! My name is Nurse Joy.", "I heal your pokemon for you."]);
+	await Task.Delay(100);
+
+	var party = SaveManager.Instance.CurrentSave.PartyDetails;
+	foreach (var key in party.Keys)
+	{
+		var entry = party[key].AsGodotDictionary();
+		if (entry == null || !entry.ContainsKey("ID")) continue;
+		var pokemon = PokeBase.LoadPokemon((PokemonID)(int)entry["ID"]);
+		if (pokemon != null)
+		{
+			entry["CurrentHP"] = pokemon.BaseHp;
+			party[key] = entry;
+		}
+	}
+	SaveManager.Instance.SaveToDisk();
+
+	await MessageManager.PlayText(["Your pokemon have been restored to full health."]);
+	await Task.Delay(100);
+	await MessageManager.PlayText(["Please take care of your pokemon."]);
+
+	_stateMachine.ChangeState("Roam");
+}
 
 	public async System.Threading.Tasks.Task MoveToPosition(Vector2 targetWorldPosition)
 	{

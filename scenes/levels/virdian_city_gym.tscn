@@ -36,8 +36,8 @@ metadata/_custom_type_script = "uid://ci5cx1pdojpbr"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0riol")
-LevelName = 10
-bottom = 364
+LevelName = 11
+bottom = 368
 right = 320
 
 [node name="Tiles" type="Node2D" parent="."]
