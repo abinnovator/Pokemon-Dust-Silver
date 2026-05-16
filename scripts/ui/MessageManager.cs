@@ -20,7 +20,6 @@ namespace Game.Core
 		public override void _Ready()
 		{
 			Instance = this;
-			// Ensure box is hidden at start
 			if (Box != null) Box.Visible = false;
 		}
 
@@ -31,13 +30,11 @@ namespace Game.Core
 			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, true);
 			Instance.Messages = [..payload];
 			
-			// 1. Loop through all dialogue pages
 			while (Instance.Messages.Count > 0)
 			{
 				await ScrollText(); 
 				
-				// Wait for player to press 'use' to continue
-				// We add a tiny frame delay to ensure the press is fresh
+				await Instance.ToSignal(Instance.GetTree(), SceneTree.SignalName.ProcessFrame);
 				await Instance.ToSignal(Instance.GetTree(), SceneTree.SignalName.ProcessFrame);
 				
 				while (!Input.IsActionJustPressed("use")) 
@@ -48,10 +45,8 @@ namespace Game.Core
 
 			bool result = true;
 			
-			// 3. THE FIX: Visual cleanup first, but delay the state change
 			Instance.Box.Visible = false;
 			
-			// Wait to clear inputs to prevent re-triggering in the same frame
 			await Task.Delay(200); 
 			
 			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, false);
@@ -75,7 +70,6 @@ namespace Game.Core
 			Instance.isScrolling = true;
 			Instance.TextLabel.Text = "";
 
-			// Typewriter effect
 			foreach(char letter in Instance.Messages[0])
 			{
 				Instance.TextLabel.Text += letter;

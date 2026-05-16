@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dns25fov61xe2"]
+
+[ext_resource type="Script" uid="uid://dvncfhbawm1hs" path="res://scripts/gameplay/PlayerSaveResource.cs" id="1_pj5af"]
+
+[resource]
+script = ExtResource("1_pj5af")
+StoryProgress = 2
+GlobalPosition = Vector2(608, -784)
+ChosenStarter = 1
+PartyDetails = {
+0: {
+"CurrentHP": 45,
+"ID": 1,
+"Level": 5
+}
+}
+CurrentLevel = 12
+CompletedStoryProgress = Array[int]([2])
+Pokeballs = Array[int]([0, 0, 0, 0, 0])

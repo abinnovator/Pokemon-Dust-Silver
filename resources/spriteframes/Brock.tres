@@ -1,12 +1,16 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://ii4g8jda4y6c"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://ii4g8jda4y6c"]
 
-[ext_resource type="Texture2D" uid="uid://du6tfcsy5nopa" path="res://assets/characters/New Piskel (1).png" id="1_kq82b"]
+[ext_resource type="Texture2D" uid="uid://bf4r67i5jeuod" path="res://assets/characters/brok.png" id="1_kq82b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u4br"]
+atlas = ExtResource("1_kq82b")
+region = Rect2(0, 8, 20, 20)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kq82b")
+"texture": SubResource("AtlasTexture_1u4br")
 }],
 "loop": true,
 "name": &"default",

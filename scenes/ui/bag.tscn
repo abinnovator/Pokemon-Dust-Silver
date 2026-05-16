@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="4_5ljg5"]
 [ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="6_ihdx0"]
 
-[node name="Bag" type="Node2D" node_paths=PackedStringArray("NameLabels", "LevelLabels", "HpBars", "Sprites", "Money")]
+[node name="Bag" type="Node2D" node_paths=PackedStringArray("NameLabels", "LevelLabels", "HpBars", "Sprites", "Money", "ItemsVBox", "ItemList")]
 texture_filter = 1
 script = ExtResource("1_bfi0f")
 NameLabels = [NodePath("Slot1/name"), NodePath("Slot2/Name"), NodePath("Slot3/name"), NodePath("Slot4/Name"), NodePath("Slot5/name"), NodePath("Slot6/Name")]
@@ -13,6 +13,8 @@ LevelLabels = [NodePath("Slot1/Level"), NodePath("Slot2/Level"), NodePath("Slot3
 HpBars = [NodePath("Slot1/TextureProgressBar"), NodePath("Slot2/TextureProgressBar"), NodePath("Slot3/TextureProgressBar"), NodePath("Slot4/TextureProgressBar"), NodePath("Slot5/TextureProgressBar"), NodePath("Slot6/TextureProgressBar")]
 Sprites = [NodePath("Slot1/Pokeicon"), NodePath("Slot2/Sprite2D"), NodePath("Slot3/Pokeicon"), NodePath("Slot4/Sprite2D"), NodePath("Slot5/Pokeicon"), NodePath("Slot6/Sprite2D")]
 Money = NodePath("Money")
+ItemsVBox = NodePath("ItemsContainer/VBoxContainer")
+ItemList = NodePath("ItemList")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -241,3 +243,16 @@ offset_right = 1080.0
 offset_bottom = 46.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_ihdx0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 576.0

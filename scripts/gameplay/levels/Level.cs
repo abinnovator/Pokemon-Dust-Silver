@@ -26,16 +26,29 @@ namespace Game.Gameplay
 		public int left;
 		[Export]
 		public int right;
+		[ExportCategory("Miscellaneous")]
+		[Export] public LevelName PokemonCenter;
+		[Export] public AudioStream BackgroundMusic;
+		[Export] public AudioStreamPlayer MusicPlayer;
 
 		public readonly HashSet<Vector2> reservedTiles = [];
 		public AStarGrid2D Grid;
 		public Vector2 TargetPosition = Vector2.Zero;
 		public Array<Vector2> CurrentControlPoints = [];
 
-		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
 			Logger.Info($"Level {LevelName} loaded");
+			if (BackgroundMusic != null && MusicPlayer != null)
+			{
+				Logger.Info($"Playing music: {BackgroundMusic.ResourcePath}");
+				MusicPlayer.Stream = BackgroundMusic;
+				MusicPlayer.Play();
+			}
+			else
+			{
+				Logger.Info($"Music null: BackgroundMusic={BackgroundMusic == null}, MusicPlayer={MusicPlayer == null}");
+			}
 		}
 		public override void _Process(double delta)
 		{

@@ -14,7 +14,7 @@ namespace Game.Utilities
 		{
 			foreach (Node child in GetChildren())
 			{
-				if (child is State s) // Renamed to 's' to avoid confusion
+				if (child is State s)
 				{
 					s.StateOwner = Customer;
 					s.SetProcess(false);
@@ -26,21 +26,21 @@ namespace Game.Utilities
 			return CurrentState?.Name.ToString() ?? "Null";
 		}
 
-		public void ChangeState(State newState) { // Changed parameter name to newState
+		public void ChangeState(State newState) { 
 			CurrentState?.ExitState();
 			CurrentState = newState;
 			CurrentState?.EnterState();
 
 			foreach (Node child in GetChildren())
 			{
-				if (child is State childState) // Fixed: Variable name is now unique
+				if (child is State childState) 
 				{
 					childState.SetProcess(childState == CurrentState);
 				}
 			}
 			
 		}
-		public void ChangeState(string newState) { // Changed parameter name to newState
+		public void ChangeState(string newState) { 
 			var _stats = GetNode<State>(newState);
 			CurrentState?.ExitState();
 			CurrentState = _stats;
@@ -48,7 +48,7 @@ namespace Game.Utilities
 
 			foreach (Node child in GetChildren())
 			{
-				if (child is State childState) // Fixed: Variable name is now unique
+				if (child is State childState) 
 				{
 					childState.SetProcess(childState == CurrentState);
 				}

@@ -39,6 +39,7 @@ top = -784
 bottom = 800
 left = 268
 right = 808
+PokemonCenter = 18
 
 [node name="Tiles" type="Node2D" parent="."]
 z_as_relative = false
@@ -185,12 +186,6 @@ position = Vector2(400, -720)
 [node name="Tall_grass42" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(400, -736)
 
-[node name="Tall_grass43" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -720)
-
-[node name="Tall_grass44" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -736)
-
 [node name="Tall_grass45" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(416, -720)
 
@@ -225,12 +220,6 @@ position = Vector2(480, -736)
 position = Vector2(496, -720)
 
 [node name="Tall_grass56" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -736)
-
-[node name="Tall_grass57" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -720)
-
-[node name="Tall_grass58" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(496, -736)
 
 [node name="Tall_grass59" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
@@ -269,12 +258,6 @@ position = Vector2(400, -752)
 [node name="Tall_grass70" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(400, -768)
 
-[node name="Tall_grass71" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -752)
-
-[node name="Tall_grass72" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -768)
-
 [node name="Tall_grass73" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(320, -784)
 
@@ -309,12 +292,6 @@ position = Vector2(384, -800)
 position = Vector2(400, -784)
 
 [node name="Tall_grass84" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -800)
-
-[node name="Tall_grass85" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(400, -784)
-
-[node name="Tall_grass86" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(400, -800)
 
 [node name="Tall_grass87" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
@@ -353,12 +330,6 @@ position = Vector2(496, -784)
 [node name="Tall_grass98" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(496, -800)
 
-[node name="Tall_grass99" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -784)
-
-[node name="Tall_grass100" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -800)
-
 [node name="Tall_grass101" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(416, -752)
 
@@ -393,12 +364,6 @@ position = Vector2(480, -768)
 position = Vector2(496, -752)
 
 [node name="Tall_grass112" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -768)
-
-[node name="Tall_grass113" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
-position = Vector2(496, -752)
-
-[node name="Tall_grass114" parent="Tiles/Grass" instance=ExtResource("3_0decv")]
 position = Vector2(496, -768)
 
 [node name="Tall_grass115" parent="Tiles/Grass" instance=ExtResource("3_0decv")]

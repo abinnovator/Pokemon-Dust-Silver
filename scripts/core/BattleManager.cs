@@ -94,7 +94,10 @@ namespace Game.Core
         {
             Logger.Info("EndBattle called, returning to overworld");
             CurrentGymConfig = null;
+            CurrentBattleConfig = null;
+            opponentPokemonId = PokemonID.none;
             ReturnToOverworld();
+        
         }
 
         private void SaveOverworldState()
@@ -110,7 +113,6 @@ namespace Game.Core
                 await SceneManager.Instance.FadeOut();
                 await SceneManager.Instance.GetLevel(SavedLevelName);
                 
-                
                 var player = GameManager.GetPlayer();
                 if (player != null)
                 {
@@ -118,6 +120,9 @@ namespace Game.Core
                 }
 
                 await SceneManager.Instance.FadeIn();
+                
+                GameManager.IsPlayerMovementLocked = false;
+                
                 Logger.Info($"Returned to {SavedLevelName} at {SavedPlayerPosition}");
             }
         }

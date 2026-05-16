@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_f6d7f"]
 [ext_resource type="Texture2D" uid="uid://cbfh4naitsmbv" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Maps (Towns, Buildings, Etc.) - Cerulean City.png" id="2_1p4au"]
 [ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="2_b16i1"]
-[ext_resource type="Resource" uid="uid://cbh35b3568jdi" path="res://resources/items/all/bike--green.tres" id="4_4gdjf"]
+[ext_resource type="Resource" uid="uid://cndk1t6ytl8e4" path="res://resources/items/all/bicycle.tres" id="4_4gdjf"]
 [ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="4_iuub5"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="6_4gdjf"]
 
@@ -3999,7 +3999,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAxABcAAAAAAAEAAAAxABgAAAAAAAIAAAAxABk
 tile_set = SubResource("TileSet_iuub5")
 
 [node name="NPC" parent="Tiles" instance=ExtResource("2_b16i1")]
-position = Vector2(144, 40)
+position = Vector2(112, 40)
 NpcAppearance = 32
 InputConfig = SubResource("Resource_tiae1")
 

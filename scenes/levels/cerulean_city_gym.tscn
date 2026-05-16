@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=4 uid="uid://4133ux77dugs"]
+[gd_scene load_steps=19 format=4 uid="uid://4133ux77dugs"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_ofnfu"]
+[ext_resource type="AudioStream" uid="uid://cdv7qwdy626j8" path="res://assets/audio/Pokémon Gym.mp3" id="2_elfi0"]
 [ext_resource type="Texture2D" uid="uid://b4coxsrfftmq8" path="res://assets/levels/Cerulean_City_HGSS.png" id="2_j2xpc"]
 [ext_resource type="Texture2D" uid="uid://cbfh4naitsmbv" path="res://assets/levels/Game Boy Advance - Pokemon FireRed _ LeafGreen - Maps (Towns, Buildings, Etc.) - Cerulean City.png" id="3_elfi0"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_w70b0"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="5_mm0ji"]
 [ext_resource type="PackedScene" uid="uid://dvx4lavhljw1r" path="res://scenes/charecters/GymLeader.tscn" id="6_1e6oy"]
 [ext_resource type="Script" uid="uid://ci5cx1pdojpbr" path="res://scripts/gameplay/VipNpcs/trainers/GymNpcInputConfig.cs" id="7_dt68h"]
+[ext_resource type="Texture2D" uid="uid://d1e7yr2v6fy84" path="res://assets/characters/Misty.png" id="7_j2xpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bb7uc"]
 texture = ExtResource("2_j2xpc")
@@ -4139,6 +4141,9 @@ size = Vector2(8.000001, 272)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c63xy"]
 size = Vector2(12, 320)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_elfi0"]
+atlas = ExtResource("7_j2xpc")
+
 [sub_resource type="Resource" id="Resource_7qix1"]
 script = ExtResource("7_dt68h")
 Messages = null
@@ -4151,13 +4156,17 @@ TrainerTeam = Dictionary[int, int]({
 120: 18,
 121: 21
 })
+TrainerAtlas = SubResource("AtlasTexture_elfi0")
+LastPokemonCenter = 25
 metadata/_custom_type_script = "uid://ci5cx1pdojpbr"
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 script = ExtResource("1_ofnfu")
 LevelName = 10
 bottom = 256
 right = 240
+BackgroundMusic = ExtResource("2_elfi0")
+MusicPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Tiles" type="Node2D" parent="."]
 texture_filter = 1
@@ -4214,3 +4223,5 @@ shape = SubResource("RectangleShape2D_c63xy")
 position = Vector2(128, 48)
 GymLeaderAppearenceType = 1
 InputConfig = SubResource("Resource_7qix1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]

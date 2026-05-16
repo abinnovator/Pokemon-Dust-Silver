@@ -28,8 +28,8 @@ script = ExtResource("2_p560x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(8, 0)
-scale = Vector2(0.5, 0.5)
+position = Vector2(8, 7.999999)
+scale = Vector2(0.8, 0.8)
 sprite_frames = ExtResource("4_jvmqx")
 script = ExtResource("4_vifok")
 

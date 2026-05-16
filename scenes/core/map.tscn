@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3d4jtes3xd7r" path="res://scripts/ui/party_menu.gd" id="1_6psm2"]
 [ext_resource type="Texture2D" uid="uid://evglhpbtswrh" path="res://assets/ui/hgss_kanto_map_no_labels_by_cow41087_d6o70z4.jpg" id="2_4plgi"]
 [ext_resource type="Script" uid="uid://dwmbg1i7sik0m" path="res://scripts/ui/Map.cs" id="2_8uyid"]
-[ext_resource type="Script" uid="uid://ddw11db4eig6a" path="res://scripts/ui/map/PalletTownButton.cs" id="4_6psm2"]
+[ext_resource type="Script" uid="uid://hr3464i6lewh" path="res://scripts/ui/map/TeleportButton.cs" id="4_6psm2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uyid"]
 
@@ -35,6 +35,7 @@ offset_top = 71.0
 offset_right = 1056.0
 offset_bottom = 80.0
 script = ExtResource("4_6psm2")
+levelId = 4
 
 [node name="virdian city" type="Button" parent="Control"]
 layout_mode = 0
@@ -42,6 +43,9 @@ offset_left = 1048.0
 offset_top = 46.0
 offset_right = 1056.0
 offset_bottom = 59.0
+script = ExtResource("4_6psm2")
+levelName = 6
+levelId = 14
 
 [node name="pewter city" type="Button" parent="Control"]
 layout_mode = 0
@@ -49,6 +53,9 @@ offset_left = 1040.0
 offset_top = 24.0
 offset_right = 1056.0
 offset_bottom = 40.0
+script = ExtResource("4_6psm2")
+levelName = 16
+levelId = 30
 
 [node name="Cerulean city" type="Button" parent="Control"]
 layout_mode = 0
@@ -56,6 +63,9 @@ offset_left = 1080.0
 offset_top = 32.0
 offset_right = 1096.0
 offset_bottom = 40.0
+script = ExtResource("4_6psm2")
+levelName = 23
+levelId = 30
 
 [node name="Lavender city" type="Button" parent="Control"]
 layout_mode = 0
@@ -63,6 +73,8 @@ offset_left = 1113.0
 offset_top = 42.0
 offset_right = 1122.0
 offset_bottom = 56.0
+script = ExtResource("4_6psm2")
+levelName = 44
 
 [node name="SaffronCity" type="Button" parent="Control"]
 layout_mode = 0
@@ -71,6 +83,8 @@ offset_top = 40.0
 offset_right = 1096.0
 offset_bottom = 56.0
 icon = SubResource("AtlasTexture_8uyid")
+script = ExtResource("4_6psm2")
+levelName = 47
 
 [node name="Button7" type="Button" parent="Control"]
 layout_mode = 0

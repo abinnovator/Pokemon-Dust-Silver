@@ -95,10 +95,8 @@ See `resources/items/shop_items/example_pokemart_clerk_config.tres` for a comple
 Shop clerks work seamlessly with the existing story system:
 
 ```cs
-// Shop clerks can have story triggers
 EventTrigger = PlayerStoryState.GOT_FIRST_BADGE
 
-// Custom message when requirement not met
 StoryNotMetMessage = "Sorry, we only sell to licensed trainers!"
 ```
 

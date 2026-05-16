@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="2_84ee0"]
 
 [node name="MessageManager" type="CanvasLayer" node_paths=PackedStringArray("Box", "TextLabel")]
+layer = 10
 script = ExtResource("1_yl3ye")
 Box = NodePath("Control/NinePatchRect")
 TextLabel = NodePath("Control/NinePatchRect/RichTextLabel")

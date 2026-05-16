@@ -13,13 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://cw364sagrwk1s" path="res://assets/ui/oponent-bg.png" id="12_p1lmr"]
 [ext_resource type="Texture2D" uid="uid://nrh2q1ikywcu" path="res://assets/ui/run.png" id="13_6xem5"]
 [ext_resource type="Texture2D" uid="uid://doqci7xylbf6b" path="res://assets/ui/party-button.png" id="13_jol7o"]
-[ext_resource type="AudioStream" uid="uid://bn5qypjhovx4n" path="res://assets/audio/firered_00A7.wav" id="14_3ouso"]
 [ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="14_u74jg"]
 [ext_resource type="Script" uid="uid://bjqd2mt8rnx3x" path="res://scenes/ui/ExitBackgroundButton.cs" id="15_podox"]
 [ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="18_p1lmr"]
 [ext_resource type="Texture2D" uid="uid://ba4s3an2kmhmo" path="res://assets/levels/enemy_hp_bar.png" id="19_kwg3k"]
 [ext_resource type="Texture2D" uid="uid://do4et0s3xejua" path="res://assets/levels/Player_hp_bar.png" id="20_p1lmr"]
 [ext_resource type="Texture2D" uid="uid://cvffnvq71rukn" path="res://assets/ui/SwShBag.png" id="21_jol7o"]
+[ext_resource type="AudioStream" uid="uid://d1cdab8q2lyuk" path="res://assets/audio/Wild Pokémon Battle!.mp3" id="27_kwg3k"]
 [ext_resource type="Script" uid="uid://c7271a6o6k6hn" path="res://scripts/gameplay/battle/states/BattleEndState.cs" id="Script_BattleEnd"]
 [ext_resource type="Script" uid="uid://bbwcheh1kr6gs" path="res://scripts/gameplay/battle/BattleMain.cs" id="Script_BattleMain"]
 [ext_resource type="Script" uid="uid://d26urwlvh3tl0" path="res://scripts/gameplay/battle/BattleStateMachine.cs" id="Script_BattleSM"]
@@ -3857,7 +3857,7 @@ region = Rect2(0, 0, 186, 10)
 atlas = ExtResource("14_u74jg")
 region = Rect2(0, 0, 54, 24)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "PokeBackButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "PokeButtons", "StateMachine", "PlayerSprite", "OpponentSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party")]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "PokeBackButton", "BagMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "PokeButtons", "StateMachine", "PlayerSprite", "OpponentSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party", "MusicPlayer")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("Script_BattleMain")
@@ -3893,6 +3893,8 @@ LevelLabels = [NodePath("Ui/Party/Slot1/Level"), NodePath("Ui/Party/Slot2/Level"
 HpBars = [NodePath("Ui/Party/Slot1/TextureProgressBar"), NodePath("Ui/Party/Slot2/TextureProgressBar"), NodePath("Ui/Party/Slot3/TextureProgressBar"), NodePath("Ui/Party/Slot4/TextureProgressBar"), NodePath("Ui/Party/Slot5/TextureProgressBar"), NodePath("Ui/Party/Slot6/TextureProgressBar")]
 Sprites = [NodePath("Ui/Party/Slot1/Pokeicon"), NodePath("Ui/Party/Slot2/Sprite2D"), NodePath("Ui/Party/Slot3/Pokeicon"), NodePath("Ui/Party/Slot4/Sprite2D"), NodePath("Ui/Party/Slot5/Pokeicon"), NodePath("Ui/Party/Slot6/Sprite2D")]
 Party = NodePath("Ui/Party")
+BackgroundMusic = ExtResource("27_kwg3k")
+MusicPlayer = NodePath("AudioStreamPlayer")
 
 [node name="BattleStateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("Script_BattleSM")
@@ -4534,4 +4536,3 @@ text = "
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_3ouso")

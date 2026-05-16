@@ -44,7 +44,6 @@ public partial class BreakableTree : Area2D
 		tree.Visible = false;
 		collisionshape.Disabled = true;
 
-		// Disable the tilemap's own physics collision
 		tree.CollisionEnabled = false;
 
 		MessageManager.PlayText("Your pokemon destroyed the tree for you!");

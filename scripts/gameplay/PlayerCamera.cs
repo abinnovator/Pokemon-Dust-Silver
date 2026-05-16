@@ -24,10 +24,16 @@ namespace Game.Gameplay
 			if (CurrentLevel != SceneManager.Instance.CurrentLevel)
 			{
 				CurrentLevel = SceneManager.Instance.CurrentLevel;
-				UpdateCameraLimits();
-				ResetSmoothing();
+				CallDeferred(nameof(DeferredUpdate));
 			}
 		}
+
+		private void DeferredUpdate()
+		{
+			UpdateCameraLimits();
+			CallDeferred(Camera2D.MethodName.ResetSmoothing);
+		}
+
 		public void UpdateCameraLimits()
 		{
 			// Level class uses lowercase fields for limits

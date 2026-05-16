@@ -11,9 +11,10 @@ public partial class BagMenu : Node2D
 	[Export] public RichTextLabel[] LevelLabels;
 	[Export] public TextureProgressBar[] HpBars;
 	[Export] public Sprite2D[] Sprites;
-	[Export] public ScrollContainer ItemsContainer;
 	[Export] public RichTextLabel Money;
 	[Export] public VBoxContainer ItemsVBox;
+	[Export] public VBoxContainer itemsContainer;
+	[Export] public ItemList ItemList;
 
 	private Dictionary<string, ItemResource> _itemCache = new();
 
@@ -24,6 +25,7 @@ public partial class BagMenu : Node2D
 		var partyData = SaveManager.Instance?.CurrentSave?.PartyDetails;
 
 		Money.Text = "¥" + SaveManager.Instance?.CurrentSave?.Money.ToString();
+		
 
 		if (partyData == null)
 		{
@@ -89,20 +91,10 @@ public partial class BagMenu : Node2D
 
 	public void RefreshItems()
 	{
-		if (ItemsVBox == null) return;
-
-		foreach (Node child in ItemsVBox.GetChildren())
-			child.QueueFree();
+		ItemList.Clear();
 
 		var items = SaveManager.Instance?.CurrentSave?.Inventory;
-		if (items == null || items.Count == 0)
-		{
-			var empty = new RichTextLabel();
-			empty.FitContent = true;
-			empty.Text = "Your bag is empty.";
-			ItemsVBox.AddChild(empty);
-			return;
-		}
+		if (items == null || items.Count == 0) return;
 
 		foreach (var entry in items)
 		{
@@ -111,25 +103,12 @@ public partial class BagMenu : Node2D
 
 			_itemCache.TryGetValue(itemId, out ItemResource itemResource);
 
-			var hbox = new HBoxContainer();
-			hbox.CustomMinimumSize = new Vector2(0, 48);
-
-			var icon = new TextureRect();
-			icon.CustomMinimumSize = new Vector2(48, 48);
-			icon.StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered;
+			string itemName = itemResource != null ? itemResource.Name : $"Item #{itemId}";
+			
+			int idx = ItemList.AddItem($"{itemName}  x{quantity}");
+			
 			if (itemResource?.Sprite != null)
-				icon.Texture = itemResource.Sprite;
-			hbox.AddChild(icon);
-
-			var label = new RichTextLabel();
-			label.FitContent = true;
-			label.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
-			label.Text = itemResource != null
-				? $"[b]{itemResource.Name}[/b]  x{quantity}"
-				: $"[b]Item #{itemId}[/b]  x{quantity}";
-			hbox.AddChild(label);
-
-			ItemsVBox.AddChild(hbox);
+				ItemList.SetItemIcon(idx, itemResource.Sprite);
 		}
 	}
 }

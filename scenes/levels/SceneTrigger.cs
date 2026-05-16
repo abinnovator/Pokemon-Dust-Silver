@@ -18,7 +18,9 @@ namespace Game.Gameplay{
 		public Vector2 EntryDirection;
 		[Export]
 		public bool Locked = false;
-		// Called when the node enters the scene tree for the first time.
+		[Export]
+		public bool MapPoint = false;
+		[Export] public PlayerStoryState RequiredStoryState;
 		public override void _Ready()
 		{
 			BodyEntered += OnBodyEntered;
@@ -37,7 +39,20 @@ namespace Game.Gameplay{
 			Game.Core.Logger.Info($"Scene Trigger Entered by: {body.Name} (Type: {body.GetType().Name})");
 			if (Locked)
 			{
-				Game.Core.Logger.Info("Scene Trigger is Locked");
+				if (SaveManager.Instance.CurrentSave.CompletedStoryProgress.Contains(RequiredStoryState))
+				{
+					Game.Core.Logger.Info("Scene Trigger is Unlocked");
+					Locked = false;
+				}
+				else
+				{
+					Game.Core.Logger.Info("Scene Trigger is Locked");
+					return;
+				}
+			}
+			if (MapPoint)
+			{
+				Game.Core.Logger.Info("Scene Trigger is Map Point");
 				return;
 			}
 			Game.Core.Logger.Info($"Changing Level to: {TargetLevelName}, Trigger: {TargetLevelTrigger}");

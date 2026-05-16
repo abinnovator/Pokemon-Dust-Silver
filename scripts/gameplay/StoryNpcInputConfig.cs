@@ -83,4 +83,8 @@ public partial class StoryNpcInputConfig : Resource
 		set => _shopItems = value;
 	}
 	[Export] public string ShopGreeting = "Welcome to my shop! Take a look at my wares.";
+	[ExportCategory("Healer")]
+	[Export] public bool IsHealer = false;
+	[Export] public string HealFirstMessage = "Welcome to the Pokémon Center!";
+	[Export] public string HealMessage = "Your Pokemon have been healed!";
 }

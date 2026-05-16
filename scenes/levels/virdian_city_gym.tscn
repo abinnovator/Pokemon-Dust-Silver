@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://cp4utii8j8umk"]
+[gd_scene load_steps=15 format=4 uid="uid://cp4utii8j8umk"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_0riol"]
+[ext_resource type="AudioStream" uid="uid://cdv7qwdy626j8" path="res://assets/audio/Pokémon Gym.mp3" id="2_rnwqf"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_s8204"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_rnwqf"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="4_v3pdd"]
 [ext_resource type="PackedScene" uid="uid://dvx4lavhljw1r" path="res://scenes/charecters/GymLeader.tscn" id="5_kywq7"]
+[ext_resource type="Texture2D" uid="uid://csf51mmdphp11" path="res://assets/characters/Giovanni.png" id="6_s8204"]
 [ext_resource type="Script" uid="uid://ci5cx1pdojpbr" path="res://scripts/gameplay/VipNpcs/trainers/GymNpcInputConfig.cs" id="6_xbvyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oaxai"]
@@ -19,6 +21,9 @@ size = Vector2(8, 344)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c63xy"]
 size = Vector2(8, 384)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnwqf"]
+atlas = ExtResource("6_s8204")
+
 [sub_resource type="Resource" id="Resource_0riol"]
 script = ExtResource("6_xbvyx")
 Messages = null
@@ -32,13 +37,18 @@ TrainerTeam = Dictionary[int, int]({
 111: 45,
 112: 50
 })
+TrainerAtlas = SubResource("AtlasTexture_rnwqf")
+LastPokemonCenter = 10
 metadata/_custom_type_script = "uid://ci5cx1pdojpbr"
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 script = ExtResource("1_0riol")
 LevelName = 11
 bottom = 368
 right = 320
+PokemonCenter = 10
+BackgroundMusic = ExtResource("2_rnwqf")
+MusicPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Tiles" type="Node2D" parent="."]
 texture_filter = 1
@@ -91,7 +101,9 @@ shape = SubResource("RectangleShape2D_8f4an")
 position = Vector2(-4, 192)
 shape = SubResource("RectangleShape2D_c63xy")
 
-[node name="Trainer" parent="." instance=ExtResource("5_kywq7")]
+[node name="Giovanni" parent="." instance=ExtResource("5_kywq7")]
 position = Vector2(32, 32)
 GymLeaderAppearenceType = 7
 InputConfig = SubResource("Resource_0riol")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]

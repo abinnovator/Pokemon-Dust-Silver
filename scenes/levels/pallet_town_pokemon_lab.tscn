@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://pvyq3gdweho"]
+[gd_scene load_steps=16 format=4 uid="uid://pvyq3gdweho"]
 
 [ext_resource type="Script" uid="uid://ckh1dxunmc7y3" path="res://scripts/gameplay/levels/PokemonLabLevel.cs" id="1_68rbe"]
+[ext_resource type="AudioStream" uid="uid://c2bmf3uj55y0j" path="res://assets/audio/Professor Oak's Laboratory.mp3" id="2_il7k2"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_jpmhg"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="3_ogny3"]
 [ext_resource type="PackedScene" uid="uid://bft0l053eiv7l" path="res://scenes/core/pokeball.tscn" id="4_prj1g"]
@@ -26,9 +27,10 @@ Messages = null
 PatrolPoints = null
 HasForcedInterception = true
 InterceptMessages = Array[String](["Hey Ash! Happy Birthday! Lets get you your starter Pokemon! Just approach one of the pokeballs and press space"])
+ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("OakNode")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("OakNode", "MusicPlayer")]
 script = ExtResource("1_68rbe")
 OakNode = NodePath("NPC")
 LevelName = 4
@@ -36,6 +38,8 @@ top = -48
 bottom = 176
 left = -16
 right = 192
+BackgroundMusic = ExtResource("2_il7k2")
+MusicPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -89,7 +93,6 @@ rotation = 1.5707964
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_4wgwr")
-disabled = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
@@ -97,14 +100,12 @@ disabled = true
 position = Vector2(88, -48)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_4wgwr")
-disabled = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(-20, 64)
 shape = SubResource("RectangleShape2D_r5k76")
-disabled = true
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(56, 32)
@@ -123,3 +124,5 @@ position = Vector2(112, 48)
 NpcAppearance = 24
 InputConfig = ExtResource("8_oakconfig")
 _animatedSprite2D = NodePath("AnimatedSprite2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

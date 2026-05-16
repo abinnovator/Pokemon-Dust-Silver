@@ -63,10 +63,26 @@ namespace Game.Gameplay
 		[Export] public Sprite2D[] Sprites;
 		[Export] public Node2D Party;
 		private bool _isProcessingTurn = false;
+		[ExportCategory("Music")]
+		[Export] public AudioStream BackgroundMusic;
+		[Export] public AudioStreamPlayer MusicPlayer;
 		public override void _Ready()
 		{
-			 _audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+			if (BackgroundMusic != null && MusicPlayer != null)
+			{
+				Logger.Info($"Playing music: {BackgroundMusic.ResourcePath}");
+				MusicPlayer.Stream = BackgroundMusic;
+				MusicPlayer.Play();
+			}
+			else
+			{
+				Logger.Info($"Music null: BackgroundMusic={BackgroundMusic == null}, MusicPlayer={MusicPlayer == null}");
+			}
 			Logger.Info("BattleMain initializing...");
+			var msg = MessageManager.Instance;
+			msg.GetParent()?.RemoveChild(msg);
+			AddChild(msg);
+			msg.Layer = 10;
 			
 			if (BattleManager.Instance != null)
 			{
@@ -280,6 +296,11 @@ namespace Game.Gameplay
 					break;
 			}
 			SaveActivePokemonHp();
+			
+			var msg = MessageManager.Instance;
+			msg.GetParent()?.RemoveChild(msg);
+			GetTree().Root.AddChild(msg);
+			
 			if (BattleManager.Instance != null)
 			{
 				BattleManager.Instance.EndBattle();
@@ -288,6 +309,11 @@ namespace Game.Gameplay
 		}
 		public async void RunAway ()
 		{
+			var msg = MessageManager.Instance;
+			msg.GetParent()?.RemoveChild(msg);
+			GetTree().Root.AddChild(msg);
+
+
 			await MessageManager.PlayText("You ran away!");
 			SaveActivePokemonHp();
 			if (BattleManager.Instance != null)
@@ -311,14 +337,19 @@ namespace Game.Gameplay
 			button4.Text = _playerPokemon.LearnableMoves[3];
 			}
 		}
-		private async void BattleLost (){
-			await MessageManager.PlayText("Your Pokemon has fainted! You lost!");
-			SaveActivePokemonHp(); // saves HP as 0 so it's clearly fainted
+		private async void BattleLost()
+		{
+			await MessageManager.PlayText("Your Pokemon has fainted! You blacked out!");
+			SaveActivePokemonHp();
+
 			if (BattleManager.Instance != null)
-			{
 				BattleManager.Instance.EndBattle();
-				QueueFree();
-			}
+
+			var currentLevel = SceneManager.GetCurrentLevel();
+			if (currentLevel != null)
+				SceneManager.ChangeLevel(levelName: currentLevel.PokemonCenter, trigger: 0);
+
+			QueueFree();
 		}
 		private void OnBackButtonPressed()
 		{
@@ -327,18 +358,15 @@ namespace Game.Gameplay
 			if (PartyMenu != null) PartyMenu.Visible = false;
 		}
 
-		public int CalculateDamage(PokemonResource attacker, PokemonResource defender, int movePower, int attackerLevel)
+		public (int damage, float multiplier) CalculateDamage(PokemonResource attacker, PokemonResource defender, MoveResource move, int attackerLevel)
 		{
 			float levelPart = ((2.0f * attackerLevel) / 5.0f) + 2.0f;
-			
-
 			float adRatio = (float)attacker.BaseAttack / defender.BaseDefense;
-			
-			float baseDamage = ((levelPart * movePower * adRatio) / 50.0f) + 2.0f;
-
+			float baseDamage = ((levelPart * move.Power * adRatio) / 50.0f) + 2.0f;
 			float randomModifier = (float)GD.RandRange(0.85, 1.0);
+			float multiplier = TypeChart.GetMultiplier(move.PokemonType, defender.TypeOne);
 			
-			return Mathf.FloorToInt(baseDamage * randomModifier);
+			return (Mathf.FloorToInt(baseDamage * randomModifier * multiplier), multiplier);
 		}
 
 		private async Task OnMoveSelectedAsync(string moveName)
@@ -368,13 +396,18 @@ namespace Game.Gameplay
 
 		public async Task ExecuteMoveAsync(PokemonResource attacker, PokemonResource defender, string moveName, bool isPlayerAttacking)
 		{
+			
+
 			LastTurnWasPlayer = isPlayerAttacking;
 			UpdateLog($"{(isPlayerAttacking ? "Player" : "Enemy")} used {moveName}!");
+			await MessageManager.PlayText($"{(isPlayerAttacking ? _playerPokemon.Name : _oppPokemon.Name)} used {moveName}!");
 			var move = PokeBase.LoadMove(moveName);
 			if (move == null) return;
+			
 
 			int attackerLevel = isPlayerAttacking ? _playerPokemonLevel : _oppPokemonLevel;
-			int damage = CalculateDamage(attacker, defender, move.Power, attackerLevel);
+			var (damage, multiplier) = CalculateDamage(attacker, defender, move, attackerLevel);
+			string effectMessage = TypeChart.GetEffectivenessMessage(multiplier);
 			
 			if (isPlayerAttacking)
 			{
@@ -393,6 +426,9 @@ namespace Game.Gameplay
 			}
 
 			await Task.Delay(500);
+
+			if (!string.IsNullOrEmpty(effectMessage))
+    			await MessageManager.PlayText(effectMessage);
 		}
 
 		private async Task PlayFlickerAsync(CanvasItem sprite)
@@ -807,6 +843,20 @@ namespace Game.Gameplay
 			if (PlayerNameLabel != null) 
 				PlayerNameLabel.Text = $"{evolutionTarget} Lv.{newLevel}";
 		} 
-		
+		public (string action, int amount, string stat) ParseEffect(string ShortEffect){
+			if (string.IsNullOrEmpty(ShortEffect)) return ("", 0, "");
+
+			var parts = ShortEffect.TrimEnd('.').Split(' ');
+			
+			string action = parts.Length > 0 ? parts[0] : "";
+			string stat = parts.Length > 2 ? parts[^1] : "";
+			int amount = 0;
+			
+			foreach (var part in parts)
+				if (int.TryParse(part, out int val))
+				{ amount = val; break; }
+
+			return (action, amount, stat);
+		}
 	}
 }

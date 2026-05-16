@@ -34,13 +34,13 @@ namespace Game.Gameplay
 		public float Progress = 0f;
 		[Export]
 		public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
+		[Export]public int SpeedMultiplier = 4;
 
 
 		public override void _Ready()
 		{
-			// Connect to signals using the C# event syntax or method names
 			CharacterInput.Walk += StartMoving;
-			CharacterInput.Turn += Turn; // Fixed to match method name below
+			CharacterInput.Turn += Turn;
 
 
 			Logger.Info("CharacterMovement ready");
@@ -175,7 +175,6 @@ namespace Game.Gameplay
 			{
 				return;
 			}
-			// Fix: Update TargetPosition from input
 			if (CharacterInput.TargetPosition != Vector2.Zero)
 			{
 				TargetPosition = Character.Position + CharacterInput.TargetPosition;
@@ -204,7 +203,7 @@ namespace Game.Gameplay
 		{
 			if (IsWalking)
 			{
-				float moveSpeed = (float)delta * Globals.GridSize * 4;
+				float moveSpeed = (float)delta * Globals.GridSize * SpeedMultiplier;
 				Character.Position = Character.Position.MoveToward(TargetPosition, moveSpeed);
 
 				if (Character.Position.DistanceTo(TargetPosition) < 0.1f)
@@ -224,7 +223,7 @@ namespace Game.Gameplay
 			{
 				Progress += LerpSpeed * (float)delta;
 				Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
-				float parabolicOffset = JumpHeight * 4 * Progress * (1 - Progress);
+				float parabolicOffset = JumpHeight * SpeedMultiplier * Progress * (1 - Progress);
 				position.Y -= parabolicOffset;
 				Character.Position = position;
 

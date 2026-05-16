@@ -5,7 +5,6 @@ using Game.Core;
 
 namespace Game.Gameplay
 {
-	// Ensure this enum is defined correctly to match your logic
 	public enum ECharacterAnimationState { 
 		idle_up, idle_down, idle_left, idle_right, 
 		walk_up, walk_down, walk_left, walk_right,
@@ -20,9 +19,15 @@ namespace Game.Gameplay
 
 		[ExportCategory("Animation vars")]
 		[Export] public ECharacterAnimationState CurrentAnimationState = ECharacterAnimationState.idle_down;
+		[ExportCategory("Bike")]
+		[Export] public SpriteFrames NormalFrames;
+		[Export] public SpriteFrames BikeFrames;
+		
+
 		
 		public override void _Ready()
 		{
+			
 			CharacterMovement.Animation += PlayAnimation;
 
 			Logger.Info("CharacterAnimation ready");
@@ -39,7 +44,7 @@ namespace Game.Gameplay
 
 			switch (animationType)
 			{
-				case "walk": // Fixed: Single quotes to Double quotes
+				case "walk":
 					if (CharacterInput.Direction == Vector2.Up)
 					{
 						CurrentAnimationState = ECharacterAnimationState.walk_up;

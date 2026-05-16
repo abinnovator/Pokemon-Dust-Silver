@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://djso2c744570x"]
+[gd_scene load_steps=11 format=4 uid="uid://djso2c744570x"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_tned5"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="1_v1hmd"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_bp3sc"]
+[ext_resource type="AudioStream" uid="uid://binox34s1kek7" path="res://assets/audio/Pallet Town.mp3" id="2_cjphh"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="2_tned5"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="3_vfwnu"]
 [ext_resource type="PackedScene" uid="uid://eem12pqtyb2s" path="res://scenes/levels/sign.tscn" id="4_uiigf"]
@@ -17,12 +18,14 @@ InterceptMessages = null
 ShopItems = null
 metadata/_custom_type_script = "uid://kah8oayhjg5f"
 
-[node name="Pallet Town" type="Node2D"]
+[node name="Pallet Town" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 script = ExtResource("1_tned5")
 top = -128
 bottom = 384
 left = -160
 right = 448
+BackgroundMusic = ExtResource("2_cjphh")
+MusicPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -81,6 +84,15 @@ scale = Vector2(3, 1)
 TargetLevelName = 5
 TargetLevelTrigger = 1
 CurrentLevelTrigger = 3
+Locked = true
+RequiredStoryState = 2
+
+[node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("2_tned5")]
+position = Vector2(40, 144)
+scale = Vector2(3, 1)
+TargetLevelTrigger = 1
+CurrentLevelTrigger = 4
+MapPoint = true
 
 [node name="PokemonLab" parent="SceneTriggers" instance=ExtResource("2_tned5")]
 position = Vector2(160, 112)
@@ -116,3 +128,5 @@ y_sort_enabled = true
 position = Vector2(44, 209)
 NpcAppearance = 7
 InputConfig = SubResource("Resource_2jxbb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]

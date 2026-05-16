@@ -70,13 +70,23 @@ public partial class GymLeader : CharacterBody2D
 		}
 	}
 
-	public void StartBattle()
+	public async void StartBattle()
 	{
 		if (InputConfig is not GymNpcInputConfig config)
 		{
 			Game.Core.Logger.Warning("GymLeader has no valid InputConfig assigned!");
 			return;
 		}
+
+		if (SaveManager.Instance.CurrentSave.DefeatedTrainers.Contains(config.LeaderName))
+		{
+			if (config.DefeatMessages.Count > 0)
+				await MessageManager.PlayText(config.DefeatMessages[0]);
+			else
+				await MessageManager.PlayText("...");
+			return;
+		}
+
 		Game.Core.BattleManager.Instance.StartGymBattle(config);
 	}
 

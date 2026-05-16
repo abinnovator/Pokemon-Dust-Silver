@@ -10,6 +10,7 @@ namespace Game.Gameplay.States
 		[ExportCategory("State vars")]
 		[Export] public PlayerInput PlayerInput;
 		[Export] public CharacterMovement CharacterMovement;
+		public bool hasBike = false;
 		public override void _Ready ()
 		{
 			Signals.Instance.MessageBoxOpen += (value) => {
@@ -24,6 +25,13 @@ namespace Game.Gameplay.States
 			GetInputDirection();
 			GetInput(delta);
 			GetUseInput();
+			if (Input.IsActionJustPressed("bike"))
+			{
+				bool isOnBike = SaveManager.Instance.ToggleBike();
+				CharacterMovement.SpeedMultiplier = isOnBike ? 8: 4;
+				
+
+			}
 		 }
 		public void GetInputDirection() 
 		{

@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://ef45hbtodin8"]
+[gd_scene load_steps=14 format=4 uid="uid://ef45hbtodin8"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_dwogr"]
+[ext_resource type="AudioStream" uid="uid://bcgbgg7qkb8du" path="res://assets/audio/Route 1.mp3" id="2_omyrh"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_prmku"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_tl55b"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_dln6w"]
@@ -30,7 +31,7 @@ WanderRadius = 2.0
 PatrolPoints = Array[Vector2]([])
 metadata/_custom_type_script = "uid://disixwvddvaya"
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 position = Vector2(10, 0)
 script = ExtResource("1_dwogr")
 LevelName = 5
@@ -39,6 +40,9 @@ top = -320
 bottom = 672
 left = -16
 right = 512
+PokemonCenter = 10
+BackgroundMusic = ExtResource("2_omyrh")
+MusicPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Tiles" type="Node2D" parent="."]
 texture_filter = 1
@@ -870,3 +874,5 @@ InputConfig = SubResource("Resource_jxllf")
 position = Vector2(288, 456)
 NpcAppearance = 2
 NpcInputConfig = SubResource("Resource_lpm11")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

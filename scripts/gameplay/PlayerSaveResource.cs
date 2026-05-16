@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Game.Core;
 using Game.Gameplay;
 using Godot;
@@ -5,12 +6,10 @@ using Godot.Collections;
 
 public partial class PlayerSaveResource : Resource
 {
-    // Story & World State
     [Export] public PlayerStoryState StoryProgress;
     [Export] public Vector2 GlobalPosition;
     [Export] public string MapName;
 
-    // Pokemon Specific Data
     [Export] public StarterChoice ChosenStarter;
     [Export] public Vector2 FacingDirection;
 
@@ -34,7 +33,6 @@ public partial class PlayerSaveResource : Resource
     
     [Export] public Array<string> DefeatedTrainers = new Array<string>();
 
-    // Money and Inventory System
     [Export] public int Money = 3000; 
     
     [Export] public Dictionary Inventory = new Dictionary();
@@ -88,5 +86,7 @@ public partial class PlayerSaveResource : Resource
         if (!Inventory.ContainsKey(key)) return 0;
         return Inventory[key].AsInt32();
     }
+
+  
 
 }

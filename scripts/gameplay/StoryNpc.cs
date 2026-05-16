@@ -49,6 +49,7 @@ public partial class StoryNpc : CharacterBody2D
 		{StoryNpcAppearance.bird_keeper, GD.Load<SpriteFrames>("res://resources/spriteframes/bird_keeper.tres")},
 		{StoryNpcAppearance.bike_seller, GD.Load<SpriteFrames>("res://resources/spriteframes/bike_seller.tres")},
 		{StoryNpcAppearance.Clerk, GD.Load<SpriteFrames>("res://resources/spriteframes/clerk.tres")},
+		{StoryNpcAppearance.Nurse, GD.Load<SpriteFrames>("res://resources/spriteframes/NurseJoy.tres")},
 
 	};
 
@@ -255,20 +256,16 @@ public partial class StoryNpc : CharacterBody2D
 
 		if (InputConfig is StoryNpcInputConfig config)
 		{
-			// Check if this is a shop clerk
 			if (config.IsShopClerk)
 			{
-				// Show shop greeting
 				string greeting = !string.IsNullOrEmpty(config.ShopGreeting) 
 					? config.ShopGreeting 
 					: "Welcome to my shop! Take a look at my wares.";
 				
 				await MessageManager.PlayText(greeting);
 				
-				// Open shop if items are available
 				if (config.ShopItems.Count > 0 && ShopManager.Instance != null)
 				{
-					// Convert ItemResource array to ShopItem array
 					var shopItems = new Godot.Collections.Array<ShopItem>();
 					foreach (var itemResource in config.ShopItems)
 					{
@@ -297,12 +294,10 @@ public partial class StoryNpc : CharacterBody2D
 				return;
 			}
 
-			// Check if this trainer was already defeated
 			if (config.HasBattle && !string.IsNullOrEmpty(config.TrainerID))
 			{
 				if (IsTrainerDefeated(config.TrainerID))
 				{
-					// Show after-battle message
 					string message = !string.IsNullOrEmpty(config.AfterBattleMessage) 
 						? config.AfterBattleMessage 
 						: "You're pretty strong!";
@@ -312,12 +307,10 @@ public partial class StoryNpc : CharacterBody2D
 				}
 			}
 
-			// Check if story trigger requirement is met
 			bool storyRequirementMet = CheckStoryRequirement(config);
 
 			if (!storyRequirementMet)
 			{
-				// Show alternate message if story trigger not reached
 				string message = !string.IsNullOrEmpty(config.StoryNotMetMessage) 
 					? config.StoryNotMetMessage 
 					: "I'm not ready to talk to you yet. Come back later!";
@@ -337,6 +330,36 @@ public partial class StoryNpc : CharacterBody2D
 				
 				_stateMachine.ChangeState("Roam");
 				BattleManager.Instance.StartBattle(config);
+				return;
+			}
+
+			if (config.IsHealer)
+			{
+				var party = SaveManager.Instance.CurrentSave.PartyDetails;
+
+				if (party.Count == 0)
+				{
+					await MessageManager.PlayText(config.HealFirstMessage);
+					_stateMachine.ChangeState("Roam");
+					return;
+				}
+
+				for (int i = 0; i < party.Count; i++)
+				{
+					var entry = party[i].AsGodotDictionary();
+					var idKey = entry.ContainsKey("ID") ? "ID" : "Id";
+					var pokemonID = (PokemonID)(int)entry[idKey];
+					var pokemonResource = PokeBase.LoadPokemon(pokemonID);
+					
+					if (pokemonResource != null)
+						entry["CurrentHP"] = pokemonResource.BaseHp;
+					
+					party[i] = entry;
+				}
+				
+				SaveManager.Instance.SaveToDisk();
+				await MessageManager.PlayText(config.HealMessage);
+				_stateMachine.ChangeState("Roam");
 				return;
 			}
 		}

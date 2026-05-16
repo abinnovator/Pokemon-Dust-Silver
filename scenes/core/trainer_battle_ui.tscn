@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://4nra75q1qaa5"]
+[gd_scene load_steps=35 format=4 uid="uid://4nra75q1qaa5"]
 
 [ext_resource type="Script" uid="uid://4nm2yrbpdky2" path="res://scripts/gameplay/trainer_battle/TrainerBattleMain.cs" id="1_hs7s6"]
 [ext_resource type="Script" uid="uid://cne2gqj6g5p0l" path="res://scripts/gameplay/trainer_battle/TrainerBattleStateMachine.cs" id="2_yg7sa"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cvffnvq71rukn" path="res://assets/ui/SwShBag.png" id="19_7oyp7"]
 [ext_resource type="Texture2D" uid="uid://dsyy2gaexamsl" path="res://assets/ui/Pokemon Party/exit_background_button.png" id="20_alkv4"]
 [ext_resource type="Script" uid="uid://bjqd2mt8rnx3x" path="res://scenes/ui/ExitBackgroundButton.cs" id="21_aq78h"]
+[ext_resource type="Texture2D" uid="uid://caoq772kx4n34" path="res://assets/characters/Ash.png" id="21_entnt"]
 [ext_resource type="Texture2D" uid="uid://bqrk2qnbm1liy" path="res://assets/ui/Pokemon Party/healthbar.png" id="22_entnt"]
 [ext_resource type="FontFile" uid="uid://c7h6p6hcpdjlb" path="res://assets/ui/Montserrat-Regular.ttf" id="23_0m13b"]
 
@@ -3852,11 +3853,15 @@ sources/3 = SubResource("TileSetAtlasSource_x6pfv")
 atlas = ExtResource("17_alkv4")
 region = Rect2(0, 0, 186, 10)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m13b"]
+atlas = ExtResource("21_entnt")
+region = Rect2(81, 12, 94, 236)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhcfl"]
 atlas = ExtResource("20_alkv4")
 region = Rect2(0, 0, 54, 24)
 
-[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party")]
+[node name="BattleBase" type="CanvasLayer" node_paths=PackedStringArray("PlayerNameLabel", "OpponentNameLabel", "PlayerHPBar", "EnemyHPBar", "CommandMenu", "MoveMenu", "PartyMenu", "Bag", "Pokeballs", "BattleButton", "RunButton", "BackButton", "PokemonBackButton", "PokemonMenuButton", "BagBackButton", "MoveButtons", "PokemonButtons", "BagButtons", "PokeballButtons", "ItemButtons", "PokeballBackButton", "StateMachine", "PlayerSprite", "OpponentSprite", "OpponentTrainerSprite", "NameLabels", "LevelLabels", "HpBars", "Sprites", "Party")]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("1_hs7s6")
@@ -3884,6 +3889,7 @@ PokeballBackButton = NodePath("Ui/Pokeballs/Back")
 StateMachine = NodePath("BattleStateMachine")
 PlayerSprite = NodePath("Ui/PlayerPokemon")
 OpponentSprite = NodePath("Ui/OppPokemon")
+OpponentTrainerSprite = NodePath("Ui/OppTrainer")
 NameLabels = [NodePath("Ui/Party/Slot1/name"), NodePath("Ui/Party/Slot2/Name"), NodePath("Ui/Party/Slot3/name"), NodePath("Ui/Party/Slot4/Name"), NodePath("Ui/Party/Slot5/name"), NodePath("Ui/Party/Slot6/Name")]
 LevelLabels = [NodePath("Ui/Party/Slot1/Level"), NodePath("Ui/Party/Slot2/Level"), NodePath("Ui/Party/Slot3/Level"), NodePath("Ui/Party/Slot4/Level"), NodePath("Ui/Party/Slot5/Level"), NodePath("Ui/Party/Slot6/Level")]
 HpBars = [NodePath("Ui/Party/Slot1/TextureProgressBar"), NodePath("Ui/Party/Slot2/TextureProgressBar"), NodePath("Ui/Party/Slot3/TextureProgressBar"), NodePath("Ui/Party/Slot4/TextureProgressBar"), NodePath("Ui/Party/Slot5/TextureProgressBar"), NodePath("Ui/Party/Slot6/TextureProgressBar")]
@@ -4185,6 +4191,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 
+[node name="ItemList" type="ItemList" parent="Ui/Bag"]
+layout_mode = 0
+offset_left = 1328.0
+offset_top = 176.0
+offset_right = 1752.0
+offset_bottom = 584.0
+
 [node name="Pokeballs" type="Button" parent="Ui/Bag"]
 visible = false
 layout_mode = 0
@@ -4285,20 +4298,21 @@ position = Vector2(832, 289)
 scale = Vector2(3, 3)
 script = ExtResource("13_aq78h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ui"]
+[node name="OppTrainer" type="Sprite2D" parent="Ui"]
 position = Vector2(935.75, 186.00002)
 scale = Vector2(2.864584, 2.7142856)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Ui"]
-position = Vector2(203.00012, 426)
-scale = Vector2(2.864584, 2.7142856)
+[node name="PlayerTrainer" type="Sprite2D" parent="Ui"]
+position = Vector2(104.00001, 399.99997)
+scale = Vector2(1.0918665, 1.1876513)
+texture = SubResource("AtlasTexture_0m13b")
 
 [node name="Party" type="Node2D" parent="Ui"]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Ui/Party"]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -16.0
+offset_right = 1264.0
+offset_bottom = 720.0
 texture = ExtResource("19_7oyp7")
 
 [node name="TextureButton" type="TextureButton" parent="Ui/Party"]
@@ -4527,3 +4541,5 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

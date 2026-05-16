@@ -214,6 +214,7 @@ namespace Game.Core
 			var selectedItem = _currentShopItems[_selectedItemIndex];
 			int totalCost = selectedItem.Price * _purchaseQuantity;
 			var save = SaveManager.Instance.CurrentSave;
+			Logger.Info($"Purchasing item ID: {selectedItem.ItemId}, Name: {selectedItem.ItemName}");
 
 			if (save.Money < totalCost)
 			{

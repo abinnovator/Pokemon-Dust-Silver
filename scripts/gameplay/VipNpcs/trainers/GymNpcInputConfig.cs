@@ -39,7 +39,6 @@ public partial class GymNpcInputConfig : Resource
     [Export] public double LookAroundInterval = 2f;
     [Export] public double LookAroundMoveInterval = 2f;
 
-    // --- NEW GYM LEADER SECTION ---
     [ExportGroup("Gym Leader Logic")]
     [Export] public string LeaderName = "Brock";
     
@@ -50,9 +49,11 @@ public partial class GymNpcInputConfig : Resource
     [Export] public Badge Badge = Badge.BOULDER;
 
     [ExportSubgroup("Battle Data")]
-    // You can use a Resource list for the Pokemon team you've defined
     [Export] public Dictionary<PokemonID, int> TrainerTeam = new(); 
     
     [ExportSubgroup("Triggers")]
     [Export] public PlayerStoryState EventTrigger;
+    [ExportSubgroup("Visual")]
+    [Export] public AtlasTexture TrainerAtlas;
+    [Export] public LevelName LastPokemonCenter;
 }

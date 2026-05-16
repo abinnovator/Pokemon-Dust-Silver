@@ -6,7 +6,6 @@ public partial class SaveManager : Node
 {
     public static SaveManager Instance { get; private set; }
     
-    // This holds the current progress in memory
     public PlayerSaveResource CurrentSave;
 
     private const string SavePath = "user://savegame.tres";
@@ -15,11 +14,29 @@ public partial class SaveManager : Node
     {
         Instance = this;
     }
+    public bool IsOnBike { get; private set; } = false;
+
+    public bool HasBike()
+    {
+        if (CurrentSave == null) return false;
+        return SaveManager.Instance.CurrentSave.HasItem(427);
+    }
+
+    public bool ToggleBike()
+    {
+        if (!HasBike()) {
+            Game.Core.Logger.Info("Player does not have bike");
+            return false;
+        };
+        IsOnBike = !IsOnBike;
+        return IsOnBike;
+    }
+
+    
 
     public void CreateNewGame()
     {
         CurrentSave = new PlayerSaveResource();
-        // Initialize defaults
         CurrentSave.StoryProgress = PlayerStoryState.NEW_GAME;
         CurrentSave.MapName = "res://Scenes/Maps/OakLab.tscn";
         CurrentSave.GlobalPosition = new Vector2(100, 200);
@@ -65,7 +82,7 @@ public partial class SaveManager : Node
             }), (uint)ConnectFlags.OneShot);
         }
     }
-
+    
     public async void QuitGame()
     {
         if (CurrentSave == null) return;

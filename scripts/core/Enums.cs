@@ -105,7 +105,9 @@ namespace Game.Core
         lavender_town,
         rock_tunnel,
         route8,
-        saffroncity
+        saffroncity,
+        route3_pokecenter,
+        route7
     }
     public enum LevelGroups
     {

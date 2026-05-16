@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://lj4nhkfk7vg7"]
+[gd_scene load_steps=6 format=4 uid="uid://lj4nhkfk7vg7"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_yboir"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_nmbvj"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_s4yif"]
+[ext_resource type="AudioStream" uid="uid://l57whv71own5" path="res://assets/audio/Pewter City.mp3" id="2_yboir"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_xiw23"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 texture_filter = 1
 script = ExtResource("1_yboir")
 LevelName = 16
@@ -13,6 +14,8 @@ top = -48
 bottom = 704
 left = -64
 right = 896
+BackgroundMusic = ExtResource("2_yboir")
+MusicPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -58,6 +61,13 @@ scale = Vector2(1, 4)
 TargetLevelName = 22
 CurrentLevelTrigger = 10
 
+[node name="SceneTrigger9" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
+position = Vector2(728, 432)
+scale = Vector2(1, 4)
+TargetLevelName = 16
+CurrentLevelTrigger = 30
+MapPoint = true
+
 [node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("4_xiw23")]
 position = Vector2(512, 368)
 TargetLevelName = 17
@@ -77,3 +87,5 @@ CurrentLevelTrigger = 4
 position = Vector2(336, 96)
 TargetLevelName = 20
 CurrentLevelTrigger = 12
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
