@@ -1,4 +1,4 @@
-# Contributing to PERDICAN V1
+# Contributing to Pokemon Dustgrey
 
 Thanks for your interest in contributing! This is a software project so contributions can include optimizations, addition of art and styling, adding more music, improving mechanics.
 
