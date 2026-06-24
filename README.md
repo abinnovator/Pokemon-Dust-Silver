@@ -1,7 +1,7 @@
 ![alt text](image.png)
-# 🎮 Pokemon DustGrey - 170 Hour Alpha V0.9 Edition
+#  Pokemon DustGrey - 190 Hour Alpha V0.10 Edition
 
-A grid-based RPG engine inspired by the classic Pokémon series, built with **Godot 4.5+ and C# (.NET 8)**. This project was origanally built in flavortown and I spent 150 hours on it!
+A recreation of the classic pokemon games built ground up with GODOT 4.5 and c# wituh heartgold visuals.
 
 ## Whats going on after the 100 hours?
 
@@ -35,15 +35,15 @@ A grid-based RPG engine inspired by the classic Pokémon series, built with **Go
 - [x] Gym Leader Boss AI
 
 ### **Phase 3: Expansion (NEXT STEPS)**
-- [ ] Full Lavender Town scripts.
-- [ ] Inventory and Item usage.
-- [ ] Finish kanto and visual revamp(Help appreciated)
+- [x] Full Level Script.
+- [x] Inventory
+- [ ] Item usage
 
 ##  Project Structure
 
 ```
 addons/
-├── MoveImporter/           # The tool to import a specific amount of pokemon moves
+|── MoveImporter/           # The tool to import a specific amount of pokemon moves
 ├── pokemon_importer/       # Imports all the pokemon and their sprites
 ├── item_importer/          #  Pokeball Importer!
 ├── item_importer/          # Normal Items Importer
