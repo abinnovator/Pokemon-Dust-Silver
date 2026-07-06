@@ -52,7 +52,6 @@ public partial class item_importer : EditorPlugin
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(FolderPath));
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(SpriteFolderPath));
 
-		// Fetch the full item list from PokeAPI
 		var listData = await Modules.FetchDataFromPokeApi<ItemListResponse>($"{ApiPath}?limit=9999");
 		if (listData == null)
 		{
@@ -84,7 +83,7 @@ public partial class item_importer : EditorPlugin
 
 			await CreateItemResource(item.Name, data);
 			success++;
-			await Task.Delay(150); // be polite to the API
+			await Task.Delay(150); 
 		}
 
 		Logger.Info($"Item import complete! {success} succeeded, {failed} failed.");
@@ -101,12 +100,10 @@ public partial class item_importer : EditorPlugin
 			Attributes = data.Attributes?.Select(a => a.Name).ToArray() ?? Array.Empty<string>(),
 		};
 
-		// English description
 		var englishFlavor = data.FlavorTextEntries?.FirstOrDefault(e => e.Language?.Name == "en");
 		if (englishFlavor != null)
 			resource.Description = englishFlavor.FlavorText?.Replace("\n", " ").Replace("\f", " ") ?? "";
 
-		// English effect
 		var englishEffect = data.EffectEntries?.FirstOrDefault(e => e.Language?.Name == "en");
 		if (englishEffect != null)
 		{
@@ -114,10 +111,8 @@ public partial class item_importer : EditorPlugin
 			resource.Effect = englishEffect.Effect?.Replace("\n", " ").Replace("\f", " ") ?? "";
 		}
 
-		// Fling power
 		resource.FlingPower = data.FlingPower ?? 0;
 
-		// Sprite
 		if (data.Sprites?.Default != null)
 		{
 			string fileName = $"{slug}.png";
@@ -154,7 +149,6 @@ public partial class item_importer : EditorPlugin
 		}
 	}
 
-	// ---- API response models ----
 
 	private class ItemListResponse
 	{

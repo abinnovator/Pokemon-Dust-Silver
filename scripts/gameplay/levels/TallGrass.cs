@@ -59,7 +59,7 @@ public partial class TallGrass : Area2D
 
 			if (Enum.TryParse(encounteredMonName, true, out PokemonID id))
 			{
-				await MessageManager.PlayText($"A wild {encounteredMonName.ToUpper()} appeared!");
+				await MessageManager.PlayText(null, new string[] { $"A wild {encounteredMonName.ToUpper()} appeared!" });
 
 				global::Game.Core.BattleManager.Instance.StartWildBattle(id, global::Game.Core.PokemonID.none);
 			}

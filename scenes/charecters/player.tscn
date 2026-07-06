@@ -304,6 +304,7 @@ CharacterMovement = NodePath("../Movement")
 CharacterInput = NodePath("../Input")
 NormalFrames = SubResource("SpriteFrames_u2s01")
 BikeFrames = ExtResource("6_yktmo")
+IsPlayer = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, 8)
@@ -333,5 +334,7 @@ script = ExtResource("9_bypac")
 StateOwner = NodePath("../..")
 StateMachine = NodePath("..")
 
-[node name="Menu" type="Node" parent="StateMachine"]
+[node name="Menu" type="Node" parent="StateMachine" node_paths=PackedStringArray("StateOwner", "StateMachine")]
 script = ExtResource("11_bjy73")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")

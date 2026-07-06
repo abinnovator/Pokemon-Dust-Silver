@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://dgecuvvdumsxf" path="res://scripts/ui/MessageManager.cs" id="1_yl3ye"]
 [ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="2_84ee0"]
 
-[node name="MessageManager" type="CanvasLayer" node_paths=PackedStringArray("Box", "TextLabel")]
+[node name="MessageManager" type="CanvasLayer" node_paths=PackedStringArray("Box", "TextLabel", "pictureSprite")]
 layer = 10
 script = ExtResource("1_yl3ye")
 Box = NodePath("Control/NinePatchRect")
 TextLabel = NodePath("Control/NinePatchRect/RichTextLabel")
+pictureSprite = NodePath("Control/NinePatchRect/Sprite2D")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -20,6 +21,7 @@ offset_top = 312.0
 offset_right = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 visible = false
@@ -54,3 +56,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Placeholder
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/NinePatchRect"]
+position = Vector2(632, 64.296295)

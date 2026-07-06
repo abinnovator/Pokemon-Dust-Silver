@@ -33,7 +33,6 @@ public partial class Pokeball : StaticBody2D
 
 	public async Task OnInteractAsync()
 	{
-		// 2. Immediate Check: If we are already in the middle of this logic, STOP
 		if (_isProcessing) return;
 		
 		_isProcessing = true; // Lock the door
@@ -45,11 +44,11 @@ public partial class Pokeball : StaticBody2D
 		AudioPlayer?.Play();
 		if (SuccessParticles != null) SuccessParticles.Emitting = true;
 		if (SaveManager.Instance.CurrentSave.StoryProgress != PlayerStoryState.HAS_STARTER){
-			bool wantsToTake = await MessageManager.PlayText(
-				$"It's a {PokemonName}!", 
+			bool wantsToTake = await MessageManager.PlayText(null, new string[] {
+				$"It's a {PokemonName}!",
 				$"This {Type} type Pokemon looks energetic.",
 				$"Do you want to choose {PokemonName}?"
-			);
+			});
 			if (wantsToTake)
 			{
 				if (SaveManager.Instance.CurrentSave != null)
@@ -94,28 +93,24 @@ public partial class Pokeball : StaticBody2D
 						SaveManager.Instance.CurrentSave.Pokeballs.Add(Game.Core.Pokeball.Normal);
 					}
 
-					// Finalize the save to disk
 					SaveManager.Instance.SaveToDisk();
 					Game.Core.Logger.Info($"{PokemonName} has been saved to your trainer file.");
 				}
 				
-				// Show success message and wait for it to close
-				await MessageManager.PlayText($"You received {PokemonName}!", "Professor Oak gave you 5 Poke Balls!");
+				await MessageManager.PlayText(null, new string[] { $"You received {PokemonName}!", "Professor Oak gave you 5 Poke Balls!" });
 				BallSprite.Texture = _textures[PokeballType.Closed];
 
 			}
 			else
 			{
-				// Reset the ball if the player cancels
 				Game.Core.Logger.Info($"Player declined {PokemonName}.");
 				BallSprite.Texture = _textures[PokeballType.Closed];
 			}
 
-			// 6. Cleanup: Wait a fraction of a second so the input isn't detected again
 			await Task.Delay(200); 
 			_isProcessing = false; // Unlock the door
 		}else {
-			await MessageManager.PlayText("You already have a starter Pokemon!");
+			await MessageManager.PlayText(null, new string[] { "You already have a starter Pokemon!" });
 			_isProcessing = false; // Unlock the door
 		}
     }

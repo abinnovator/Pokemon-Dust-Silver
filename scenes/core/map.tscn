@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://80gxlm77swgr"]
 
-[ext_resource type="Script" uid="uid://d3d4jtes3xd7r" path="res://scripts/ui/party_menu.gd" id="1_6psm2"]
+[ext_resource type="Script" uid="uid://c4w5sxckb7dhb" path="res://scripts/ui/BIkeMap.cs" id="1_6psm2"]
 [ext_resource type="Texture2D" uid="uid://evglhpbtswrh" path="res://assets/ui/hgss_kanto_map_no_labels_by_cow41087_d6o70z4.jpg" id="2_4plgi"]
 [ext_resource type="Script" uid="uid://dwmbg1i7sik0m" path="res://scripts/ui/Map.cs" id="2_8uyid"]
 [ext_resource type="Script" uid="uid://hr3464i6lewh" path="res://scripts/ui/map/TeleportButton.cs" id="4_6psm2"]
@@ -10,14 +10,17 @@
 [node name="Map" type="CanvasLayer"]
 script = ExtResource("1_6psm2")
 
-[node name="Control" type="Control" parent="."]
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("Container")]
+script = ExtResource("2_8uyid")
+Container = NodePath("Control")
+
+[node name="Control" type="Control" parent="Node2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_8uyid")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1000.0
 offset_right = 1152.0
@@ -28,7 +31,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Pallet town" type="Button" parent="Control"]
+[node name="Pallet town" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1048.0
 offset_top = 71.0
@@ -37,7 +40,7 @@ offset_bottom = 80.0
 script = ExtResource("4_6psm2")
 levelId = 4
 
-[node name="virdian city" type="Button" parent="Control"]
+[node name="virdian city" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1048.0
 offset_top = 46.0
@@ -47,7 +50,7 @@ script = ExtResource("4_6psm2")
 levelName = 6
 levelId = 14
 
-[node name="pewter city" type="Button" parent="Control"]
+[node name="pewter city" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1040.0
 offset_top = 24.0
@@ -57,17 +60,17 @@ script = ExtResource("4_6psm2")
 levelName = 16
 levelId = 30
 
-[node name="Cerulean city" type="Button" parent="Control"]
+[node name="Cerulean city" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1080.0
-offset_top = 32.0
+offset_top = 31.0
 offset_right = 1096.0
-offset_bottom = 40.0
+offset_bottom = 39.0
 script = ExtResource("4_6psm2")
 levelName = 23
 levelId = 30
 
-[node name="Lavender city" type="Button" parent="Control"]
+[node name="Lavender city" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1113.0
 offset_top = 42.0
@@ -76,52 +79,53 @@ offset_bottom = 56.0
 script = ExtResource("4_6psm2")
 levelName = 44
 
-[node name="SaffronCity" type="Button" parent="Control"]
+[node name="SaffronCity" type="Button" parent="Node2D/Control"]
 layout_mode = 0
-offset_left = 1080.0
-offset_top = 40.0
-offset_right = 1096.0
-offset_bottom = 56.0
+offset_left = 1081.0
+offset_top = 41.0
+offset_right = 1097.0
+offset_bottom = 57.0
 icon = SubResource("AtlasTexture_8uyid")
 script = ExtResource("4_6psm2")
 levelName = 47
+levelId = 30
 
-[node name="Button7" type="Button" parent="Control"]
+[node name="Button7" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1064.0
 offset_top = 47.0
 offset_right = 1080.0
 offset_bottom = 55.0
 
-[node name="Button4" type="Button" parent="Control"]
+[node name="Button4" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1094.0
 offset_top = 19.0
 offset_right = 1103.0
 offset_bottom = 28.0
 
-[node name="Button11" type="Button" parent="Control"]
+[node name="Button11" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1025.0
 offset_top = 19.0
 offset_right = 1034.0
 offset_bottom = 28.0
 
-[node name="Button12" type="Button" parent="Control"]
+[node name="Button12" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1012.0
 offset_top = 46.0
 offset_right = 1021.0
 offset_bottom = 55.0
 
-[node name="Button9" type="Button" parent="Control"]
+[node name="Button9" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1082.0
 offset_top = 58.0
 offset_right = 1096.0
 offset_bottom = 66.0
 
-[node name="Button10" type="Button" parent="Control"]
+[node name="Button10" type="Button" parent="Node2D/Control"]
 layout_mode = 0
 offset_left = 1082.0
 offset_top = 77.0

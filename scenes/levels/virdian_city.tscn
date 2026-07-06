@@ -69,7 +69,7 @@ tile_map_data = PackedByteArray("AAASABcABwAfAAAAAAASABgABwAfAAEAAAASABkABwAfAAI
 tile_set = ExtResource("2_eu6s6")
 
 [node name="Water" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AAANAB0ABAAiAAIAAAANABwABAAiAAEAAAANABsABAAiAAAAAAAMAB0ABAAhAAIAAAAMABwABAAhAAEAAAAMABsABAAhAAAAAAALAB0ABAAhAAIAAAALABwABAAhAAEAAAALABsABAAhAAAAAAAKAB0ABAAhAAIAAAAKABwABAAhAAEAAAAKABsABAAhAAAAAAAJAB0ABAAhAAIAAAAJABwABAAhAAEAAAAJABsABAAhAAAAAAAIAB0ABAAhAAIAAAAIABwABAAhAAEAAAAIABsABAAgAAAAAAAHAB0ABAAhAAIAAAAHABwABAAhAAAAAAAGAB0ABAAhAAIAAAAGABwABAAhAAAAAAAFAB0ABAAgAAIAAAAFABwABAAgAAAAAAA=")
+tile_map_data = PackedByteArray("AAANAB0ABAAiAAIAAAANABwABAAiAAEAAAANABsABAAiAAAAAAAMAB0ABAAhAAIAAAAMABwABAAhAAEAAAAMABsABAAhAAAAAAALAB0ABAAhAAIAAAALABwABAAhAAEAAAALABsABAAhAAAAAAAKAB0ABAAhAAIAAAAKABwABAAhAAEAAAAKABsABAAhAAAAAAAJAB0ABAAhAAIAAAAJABwABAAhAAEAAAAJABsABAAhAAAAAAAIAB0ABAAhAAIAAAAIABsABAAgAAAAAAAHAB0ABAAhAAIAAAAHABwABAAhAAAAAAAGAB0ABAAhAAIAAAAGABwABAAhAAAAAAAFAB0ABAAgAAIAAAAFABwABAAgAAAAAAAIABwABAAhAAQAAAA=")
 tile_set = ExtResource("2_eu6s6")
 
 [node name="BreakableTree" parent="Tiles" instance=ExtResource("4_6mak2")]
@@ -88,7 +88,7 @@ CurrentLevelTrigger = 7
 position = Vector2(304, 656)
 scale = Vector2(4, 1)
 TargetLevelName = 5
-TargetLevelTrigger = 1
+TargetLevelTrigger = 2
 
 [node name="SceneTrigger11" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
 position = Vector2(304, 448)
@@ -118,15 +118,10 @@ position = Vector2(416, 192)
 TargetLevelName = 9
 CurrentLevelTrigger = 3
 
-[node name="SceneTrigger7" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
-position = Vector2(344, -176)
-TargetLevelName = 8
-CurrentLevelTrigger = 4
-
 [node name="SceneTrigger8" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]
 position = Vector2(304, 176)
 scale = Vector2(2, 2)
-TargetLevelName = 11
+TargetLevelName = 51
 CurrentLevelTrigger = 5
 
 [node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("4_eu6s6")]

@@ -20,12 +20,11 @@ namespace Game.Gameplay
 			{
 				lastPlayerPosition = PlayerNode.GlobalPosition;
 			}
-			Game.Core.Logger.Info($"FollowerInput ready. PlayerNode: {PlayerNode?.Name ?? "null"}, FollowerNode: {FollowerNode?.Name ?? "null"}");
+			// Game.Core.Logger.Info($"FollowerInput ready. PlayerNode: {PlayerNode?.Name ?? "null"}, FollowerNode: {FollowerNode?.Name ?? "null"}");
 		}
 
 		public override void _Process(double delta)
 		{
-			// Only process if the player has a starter Pokémon
 			if (!HasStarter()) return;
 			if (PlayerNode == null || FollowerNode == null) return;
 			

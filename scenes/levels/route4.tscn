@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://dp7fnvryq8fhi"]
+[gd_scene load_steps=11 format=4 uid="uid://dp7fnvryq8fhi"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_ujx6r"]
+[ext_resource type="Texture2D" uid="uid://blru5gnmacqhw" path="res://resources/spriteframes/battlebgroute_by_aveontrainer_ddpvmlj.png" id="2_0jpxt"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_rrxnf"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="3_rrxnf"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_m4o5i"]
@@ -25,6 +26,7 @@ LevelName = 39
 encounterRate = 2
 bottom = 560
 right = 1504
+battleBackgroundTexture = ExtResource("2_0jpxt")
 
 [node name="Tiles" type="Node2D" parent="."]
 texture_filter = 1

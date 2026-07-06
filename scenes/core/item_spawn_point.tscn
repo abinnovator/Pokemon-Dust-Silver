@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckppx1jqt4c84"]
+
+[ext_resource type="Script" uid="uid://cuq520sjfcu78" path="res://scripts/gameplay/levels/ItemSpawnPoint.cs" id="1_2t347"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t347"]
+size = Vector2(16, 16)
+
+[node name="ItemSpawnPoint" type="Area2D"]
+script = ExtResource("1_2t347")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_2t347")

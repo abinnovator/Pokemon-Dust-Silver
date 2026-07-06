@@ -5,6 +5,7 @@ using Godot.Collections;
 using System.Collections.Generic;
 using System;
 using Logger = Game.Core.Logger;
+using System.Linq;
 
 
 namespace Game.Gameplay;
@@ -95,6 +96,6 @@ public partial class Npc : CharacterBody2D
 			npcInput.EmitSignal(CharecterInput.SignalName.Turn);
 		}
 		stateMachine.ChangeState("Message");
-		await MessageManager.PlayText([..NpcInputConfig.Messages]);
+		await MessageManager.PlayText(null, NpcInputConfig.Messages.ToArray());
 	}
 }

@@ -3,6 +3,7 @@ using System;
 using Game.Core;
 using Logger = Game.Core.Logger;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Game.Gameplay
 {
@@ -19,6 +20,8 @@ namespace Game.Gameplay
 		[Export] public Control Bag;
 		[Export] public Control Pokeballs;
 		[Export] public Control Items;
+		[Export] public Texture2D BattleBG;
+		[Export] public TextureRect BattleBackground;
 
 		[ExportCategory("Buttons")]
 		[Export] public BaseButton BattleButton;
@@ -72,10 +75,13 @@ namespace Game.Gameplay
 		[Export] public AudioStream BackgroundMusic;
 		[Export] public AudioStreamPlayer MusicPlayer;
 		[Export] public ItemList ItemList;
+		private Dictionary<string, ItemResource> _itemCache = new();
+
 
 
 		public override void _Ready()
 		{
+			BuildItemCache(new HashSet<string> { "medicine", "battle-items", "pp-recovery", "revival", "status-cures" });
 			if (BackgroundMusic != null && MusicPlayer != null)
 			{
 				Logger.Info($"Playing music: {BackgroundMusic.ResourcePath}");
@@ -87,6 +93,11 @@ namespace Game.Gameplay
 				Logger.Info($"Music null: BackgroundMusic={BackgroundMusic == null}, MusicPlayer={MusicPlayer == null}");
 			}
 			Logger.Info("TrainerBattleMain initializing...");
+
+			var currentLevel = SceneManager.GetCurrentLevel();
+			if (BattleBackground != null && currentLevel?.battleBackgroundTexture != null)
+				BattleBackground.Texture = currentLevel.battleBackgroundTexture;
+
 			var messageManager = MessageManager.Instance;
 			messageManager.GetParent().RemoveChild(messageManager);
 			AddChild(messageManager);
@@ -279,6 +290,11 @@ namespace Game.Gameplay
 				Logger.Info($"TrainerAtlas: {gymConfig.TrainerAtlas}");
 				OpponentTrainerSprite.Texture = gymConfig.TrainerAtlas;
 			}
+			ItemList.ItemSelected += (index) =>
+			{
+				var metadata = ItemList.GetItemMetadata((int)index);
+				Logger.Info($"Selected item: {metadata}");
+			};
 		}
 
 		private void OnPokemonBackButtonPressed()
@@ -328,7 +344,7 @@ namespace Game.Gameplay
 				SaveManager.Instance.SaveToDisk();
 
 				foreach (var line in messages)
-					await MessageManager.PlayText(line);
+					await MessageManager.PlayText(null, new string[] { line });
 			}
 			else
 			{
@@ -344,7 +360,7 @@ namespace Game.Gameplay
 
 					var message = trainerConfig.AfterBattleMessage;
 					if (!string.IsNullOrEmpty(message))
-						await MessageManager.PlayText(message);
+						await MessageManager.PlayText(null, new string[] { message });
 				}
 			}
 		}
@@ -354,7 +370,7 @@ namespace Game.Gameplay
 			switch (type)
 			{
 				case 1:
-					await MessageManager.PlayText("The Opponent Pokemon has fainted! You won!");
+					await MessageManager.PlayText(null, new string[] { "The Opponent Pokemon has fainted! You won!" });
 					AwardExpToActivePokemon(_oppPokemon.BaseExperience);
 					await PlayVictoryDialogueAsync();
 					break;
@@ -374,7 +390,7 @@ namespace Game.Gameplay
 
 		public async void RunAway()
 		{
-			await MessageManager.PlayText("You ran away!");
+			await MessageManager.PlayText(null, new string[] { "You ran away!" });
 			SaveActivePokemonHp();
 			if (BattleManager.Instance != null)
 			{
@@ -389,20 +405,39 @@ namespace Game.Gameplay
 			if (MoveMenu != null)
 			{
 				MoveMenu.Visible = true;
-				var button1 = MoveMenu.GetChild(0) as Button;
-				button1.Text = _playerPokemon.LearnableMoves[0];
-				var button2 = MoveMenu.GetChild(1) as Button;
-				button2.Text = _playerPokemon.LearnableMoves[1];
-				var button3 = MoveMenu.GetChild(2) as Button;
-				button3.Text = _playerPokemon.LearnableMoves[2];
-				var button4 = MoveMenu.GetChild(3) as Button;
-				button4.Text = _playerPokemon.LearnableMoves[3];
+
+				for (int i = 0; i < 4; i++)
+				{
+					if (i >= _playerPokemon.LearnableMoves.Count) break;
+
+					var btn = MoveMenu.GetChild(i) as Button;
+					if (btn == null) continue;
+
+					string moveName = _playerPokemon.LearnableMoves[i];
+					btn.Text = moveName;
+
+					var move = PokeBase.LoadMove(moveName);
+					if (move != null)
+					{
+						string typeName = move.PokemonType.ToString().ToLower();
+						var texture = ResourceLoader.Load<Texture2D>($"res://assets/ui/move_buttons/{typeName}_button.png");
+						if (texture != null)
+						{
+							var style = new StyleBoxTexture();
+							style.Texture = texture;
+							btn.AddThemeStyleboxOverride("normal", style);
+							btn.AddThemeStyleboxOverride("hover", style);
+							btn.AddThemeStyleboxOverride("pressed", style);
+							btn.AddThemeColorOverride("font_color", new Color(1, 1, 1)); // white text
+						}
+					}
+				}
 			}
 		}
 
 		private async void BattleLost()
 		{
-			await MessageManager.PlayText("Your Pokemon has fainted! You lost!");
+			await MessageManager.PlayText(null, new string[] { "Your Pokemon has fainted! You lost!" });
 			SaveActivePokemonHp();
 
 			var gymConfig = BattleManager.Instance?.CurrentGymConfig;
@@ -413,7 +448,7 @@ namespace Game.Gameplay
 				if (messages != null && messages.Count > 0)
 				{
 					foreach (var line in messages)
-						await MessageManager.PlayText(line);
+						await MessageManager.PlayText(null, new string[] { line });
 				}
 			}
 
@@ -476,7 +511,7 @@ namespace Game.Gameplay
 			UpdateLog($"{(isPlayerAttacking ? "Player" : "Enemy")} used {moveName}!");
 			var move = PokeBase.LoadMove(moveName);
 			if (move == null) return;
-			await MessageManager.PlayText($"{(isPlayerAttacking ? _playerPokemon.Name : _oppPokemon.Name)} used {moveName}!");
+			await MessageManager.PlayText(null, new string[] { $"{(isPlayerAttacking ? _playerPokemon.Name : _oppPokemon.Name)} used {moveName}!" });
 
 			int attackerLevel = isPlayerAttacking ? _playerPokemonLevel : _oppPokemonLevel;
 			var (damage, multiplier) = CalculateDamage(attacker, defender, move, attackerLevel);
@@ -498,7 +533,7 @@ namespace Game.Gameplay
 				Logger.Info($"Player HP down to: {_playerPokemonHp}");
 			}
 			if (!string.IsNullOrEmpty(effectMessage))
-				await MessageManager.PlayText(effectMessage);
+				await MessageManager.PlayText(null, new string[] { effectMessage });
 
 			await Task.Delay(500);
 		}
@@ -533,7 +568,7 @@ namespace Game.Gameplay
 					if (OpponentNameLabel != null) OpponentNameLabel.Text = next.Name;
 					if (OpponentSprite != null) OpponentSprite.Setup((PokemonID)next.Id);
 
-					await MessageManager.PlayText($"Opponent sent out {next.Name}!");
+					await MessageManager.PlayText(null, new string[] { $"Opponent sent out {next.Name}!" });
 					return true;
 				}
 			}
@@ -587,7 +622,7 @@ namespace Game.Gameplay
 				}
 				else
 				{
-					await MessageManager.PlayText($"{PlayerID} fainted! Choose your next Pokemon!");
+					await MessageManager.PlayText(null, new string[] { $"{PlayerID} fainted! Choose your next Pokemon!" });
 					OnPokemonMenuButtonPressed();
 					_isProcessingTurn = false;
 					return;
@@ -655,8 +690,9 @@ namespace Game.Gameplay
 								int idInt = (int)pokemonData["ID"];
 								PokemonID id = (PokemonID)idInt;
 								int lvl = pokemonData.ContainsKey("Level") ? (int)pokemonData["Level"] : 5;
-								btn.Text = $"{id} (Lv.{lvl})";
-								btn.Disabled = false;
+								bool fainted = pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0;
+								btn.Text = fainted ? $"{id} (Lv.{lvl}) - Fainted" : $"{id} (Lv.{lvl})";
+								btn.Disabled = fainted;
 								btn.Visible = true;
 							}
 						}
@@ -693,6 +729,12 @@ namespace Game.Gameplay
 
 			var pokemonData = partyDetails[index].AsGodotDictionary();
 			if (pokemonData == null || !pokemonData.ContainsKey("ID")) return;
+
+			if (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+			{
+				Logger.Info("Cannot select a fainted Pokemon.");
+				return;
+			}
 
 			int idInt = (int)pokemonData["ID"];
 			PokemonID id = (PokemonID)idInt;
@@ -833,7 +875,7 @@ namespace Game.Gameplay
 					_playerPokemonLevel = currentLevel;
 					if (PlayerNameLabel != null)
 						PlayerNameLabel.Text = $"{PlayerID} Lv.{_playerPokemonLevel}";
-					await MessageManager.PlayText($"{PlayerID} grew to Lv.{currentLevel}!");
+					await MessageManager.PlayText(null, new string[] { $"{PlayerID} grew to Lv.{currentLevel}!" });
 				}
 
 				entry["Level"] = currentLevel;
@@ -843,6 +885,50 @@ namespace Game.Gameplay
 				break;
 			}
 		}
-	
+		private void BuildItemCache(HashSet<string> categoryFilter = null)
+		{
+			_itemCache.Clear();
+			using var dir = DirAccess.Open("res://resources/items/all/");
+			if (dir == null) return;
+
+			dir.ListDirBegin();
+			string fileName = dir.GetNext();
+			while (fileName != "")
+			{
+				if (fileName.EndsWith(".tres"))
+				{
+					var res = ResourceLoader.Load<ItemResource>($"res://resources/items/all/{fileName}");
+					if (res != null)
+						{
+							if (categoryFilter?.Contains(res.Category?.ToLower()) != false)
+								_itemCache[res.Id.ToString()] = res;
+						}
+				}
+				fileName = dir.GetNext();
+			}
+		}
+
+	public void RefreshItems()
+	{
+		ItemList.Clear();
+
+		var items = SaveManager.Instance?.CurrentSave?.Inventory;
+		if (items == null || items.Count == 0) return;
+
+		foreach (var entry in items)
+		{
+			string itemId = entry.Key.AsString();
+			int quantity = entry.Value.AsInt32();
+
+			_itemCache.TryGetValue(itemId, out ItemResource itemResource);
+
+			string itemName = itemResource != null ? itemResource.Name : $"Item #{itemId}";
+			
+			int idx = ItemList.AddItem($"{itemName}  x{quantity}");
+			
+			if (itemResource?.Sprite != null)
+				ItemList.SetItemIcon(idx, itemResource.Sprite);
+		}
+	}
 	}
 }

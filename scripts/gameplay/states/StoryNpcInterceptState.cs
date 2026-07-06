@@ -1,6 +1,7 @@
 using Game.Core;
 using Game.Utilities;
 using Godot;
+using System.Linq;
 
 namespace Game.Gameplay;
 
@@ -38,7 +39,7 @@ public partial class StoryNpcInterceptState : State
 		// Play forced dialogue
 		if (config.InterceptMessages.Count > 0)
 		{
-			await MessageManager.PlayText([.. config.InterceptMessages]);
+			await MessageManager.PlayText(null, config.InterceptMessages.ToArray());
 		}
 
 		// Unlock player movement

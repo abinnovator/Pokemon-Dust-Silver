@@ -81,9 +81,9 @@ public partial class GymLeader : CharacterBody2D
 		if (SaveManager.Instance.CurrentSave.DefeatedTrainers.Contains(config.LeaderName))
 		{
 			if (config.DefeatMessages.Count > 0)
-				await MessageManager.PlayText(config.DefeatMessages[0]);
+				await MessageManager.PlayText(null, new string[] { config.DefeatMessages[0] });
 			else
-				await MessageManager.PlayText("...");
+				await MessageManager.PlayText(null, new string[] { "..." });
 			return;
 		}
 

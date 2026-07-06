@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://d24gfnnx2mduc"]
+[gd_scene load_steps=10 format=4 uid="uid://d24gfnnx2mduc"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_aqq7y"]
+[ext_resource type="Texture2D" uid="uid://blru5gnmacqhw" path="res://resources/spriteframes/battlebgroute_by_aveontrainer_ddpvmlj.png" id="2_8v2b3"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_bqrd1"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_e53f3"]
 [ext_resource type="Texture2D" uid="uid://cup7rlofn7lh7" path="res://assets/levels/Kanto_Route_8_HGSS.png" id="3_t3ns0"]
@@ -16,6 +17,7 @@ LevelName = 37
 encounterRate = 2
 bottom = 752
 right = 432
+battleBackgroundTexture = ExtResource("2_8v2b3")
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -161,6 +163,13 @@ scale = Vector2(1, 3)
 TargetLevelName = 44
 TargetLevelTrigger = 9
 CurrentLevelTrigger = 2
+
+[node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("6_t3ns0")]
+position = Vector2(968, 8)
+scale = Vector2(1, 3)
+TargetLevelName = 59
+TargetLevelTrigger = 1
+CurrentLevelTrigger = 3
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)

@@ -22,6 +22,14 @@ namespace Game.Gameplay
 		[ExportCategory("Bike")]
 		[Export] public SpriteFrames NormalFrames;
 		[Export] public SpriteFrames BikeFrames;
+		[Export] public bool IsPlayer = false;
+		// Enable bike mode for player. I made it like this cause the script is used by multiple npc's.
+		public void SetBikeMode(bool onBike)
+		{
+			if (!IsPlayer) return;
+			SpriteFrames = onBike ? BikeFrames : NormalFrames;
+			Play(CurrentAnimationState.ToString());
+		}
 		
 
 		

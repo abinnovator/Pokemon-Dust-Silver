@@ -4,6 +4,7 @@ using Game.Core;
 using Logger = Game.Core.Logger;
 using System.Collections.Generic;
 using Godot.Collections;
+using System.Threading.Tasks;
 
 namespace Game.Gameplay
 {
@@ -15,6 +16,7 @@ namespace Game.Gameplay
 
 		[Export(PropertyHint.Range, "0,100")]
 		public int encounterRate;
+
 		[Export]
 		public string[] wildPokemonList = { "Pidgey", "Rattata" };
 		[ExportCategory("Camera Limits")]
@@ -30,6 +32,9 @@ namespace Game.Gameplay
 		[Export] public LevelName PokemonCenter;
 		[Export] public AudioStream BackgroundMusic;
 		[Export] public AudioStreamPlayer MusicPlayer;
+		[Export] public ItemResource[] itemsOnGround = [];
+		[Export(PropertyHint.Range, "0,100")] public float itemEncounterRate;
+		[Export] public Texture2D battleBackgroundTexture;
 
 		public readonly HashSet<Vector2> reservedTiles = [];
 		public AStarGrid2D Grid;
@@ -145,6 +150,22 @@ namespace Game.Gameplay
 		{
 			reservedTiles.Remove(position);
 		}
+		public async Task CalculateItemEncounterChance()
+		{
+			if (itemsOnGround == null || itemsOnGround.Length == 0) return;
+
+			int chance = Globals.GetRandomNumberGenerator().RandiRange(0, 100);
+			if (chance > itemEncounterRate) return;
+
+			int index = Globals.GetRandomNumberGenerator().RandiRange(0, itemsOnGround.Length - 1);
+			var item = itemsOnGround[index];
+			if (item == null) return;
+
+			SaveManager.Instance.CurrentSave.AddItem(item.Id, 1);
+			SaveManager.Instance.SaveToDisk();
+			await MessageManager.PlayText(item.Sprite, new string[] { $"You found a {item.Name}!" });
+		}
 	}
+	
 
 }

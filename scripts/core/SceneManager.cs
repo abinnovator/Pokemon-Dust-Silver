@@ -34,11 +34,10 @@ namespace Game.Core
 				AllLevels = new Array<Level>();
 			}
 
-			// Fix: Create FadeRect programmatically if null (because autoload is a script, not a scene)
 			if (FadeRect == null)
 			{
 				var canvasLayer = new CanvasLayer();
-				canvasLayer.Layer = 100; // Ensure it's on top
+				canvasLayer.Layer = 100; 
 				AddChild(canvasLayer);
 				
 				FadeRect = new ColorRect();
@@ -141,14 +140,14 @@ namespace Game.Core
 				}
 
 				try
-{
-CurrentLevel = sceneResource.Instantiate<Level>();
-}
-catch (System.InvalidCastException ex)
-{
-Game.Core.Logger.Error($"Failed to cast scene at {scenePath} to Level type. The scene root node must inherit from Level (Node2D). Error: {ex.Message}");
-return;
-}
+					{
+					CurrentLevel = sceneResource.Instantiate<Level>();
+					}
+					catch (System.InvalidCastException ex)
+					{
+					Game.Core.Logger.Error($"Failed to cast scene at {scenePath} to Level type. The scene root node must inherit from Level (Node2D). Error: {ex.Message}");
+					return;
+					}
 				if (CurrentLevel == null)
 				{
 					Game.Core.Logger.Error($"Failed to instantiate level from scene: {scenePath}");
@@ -176,7 +175,6 @@ return;
 				throw new Exception("No spawn points found in level"); 
 				
 			}
-			// Fix 2 & 3: Cast to Node2D (or SpawnPoint if that class exists) to access .Position
 			var spawnPoint = (Node2D)spawnPoints[0];
 			var player = GD.Load<PackedScene>("res://scenes/charecters/player.tscn").Instantiate<Player>();
  
@@ -187,7 +185,6 @@ SpawnFollower(player, spawnPoint.GlobalPosition);
  
 		public void Switch(int triggerId)
 		{
-			// 1. Get all triggers in the new scene
 			var sceneTriggers = CurrentLevel.GetTree().GetNodesInGroup(LevelGroups.SCENETRIGGERS.ToString());
 			
 			if (sceneTriggers.Count <= 0)
@@ -195,7 +192,6 @@ SpawnFollower(player, spawnPoint.GlobalPosition);
 				throw new Exception("No scene triggers found in level"); 
 			}
 
-			// 2. Find the trigger where the ID matches AND it belongs to this level's logic
 			var targetTrigger = sceneTriggers
 				.Cast<SceneTrigger>()
 				.FirstOrDefault(st => st.CurrentLevelTrigger == triggerId);
@@ -222,23 +218,18 @@ SpawnFollower(player, spawnPoint.GlobalPosition);
 
 		private void SpawnFollower(Player player, Vector2 playerPosition)
 		{
-		// Remove old follower if it exists
 			if (followerInstance != null && IsInstanceValid(followerInstance))
 			{
 				followerInstance.QueueFree();
 			}
 
-		// Create new follower
 		var followerScene = GD.Load<PackedScene>("res://scenes/charecters/follower.tscn");
 		followerInstance = followerScene.Instantiate<Follower>();
 
-		// Add to the same parent as the player (GameViewPort)
 		GameManager.GetGameViewPort().AddChild(followerInstance);
 
-		// Position follower one tile behind the player (down direction by default)
 		followerInstance.GlobalPosition = playerPosition + new Vector2(0, Globals.GridSize);
 
-		// Set up the follower's input references
 		var followerInput = followerInstance.GetNode<FollowerInput>("Input");
 		if (followerInput != null)
 		{
@@ -289,7 +280,6 @@ SpawnFollower(player, spawnPoint.GlobalPosition);
 				AllLevels.Clear();
 			}		
 
-			// Clean up follower instance
 			if (followerInstance != null && IsInstanceValid(followerInstance))
 			{
 				followerInstance.QueueFree();

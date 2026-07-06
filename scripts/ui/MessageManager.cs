@@ -16,6 +16,8 @@ namespace Game.Core
 		[Export] public bool isScrolling = false;
 		[Export] public int Delay = 15;
 		[Export] public Array<string> Messages;
+		[Export] public AtlasTexture picture;
+		[Export] public Sprite2D pictureSprite;
 
 		public override void _Ready()
 		{
@@ -23,12 +25,15 @@ namespace Game.Core
 			if (Box != null) Box.Visible = false;
 		}
 
-		public static async Task<bool> PlayText(params string[] payload)
+		public static async Task<bool> PlayText(Texture2D picture, string[] payload)
 		{
 			if (IsReading()) return false;
 			
 			Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, true);
 			Instance.Messages = [..payload];
+			Instance.pictureSprite.Texture = picture;
+			Instance.pictureSprite.Visible = picture != null;
+
 			
 			while (Instance.Messages.Count > 0)
 			{
@@ -46,6 +51,7 @@ namespace Game.Core
 			bool result = true;
 			
 			Instance.Box.Visible = false;
+			Instance.pictureSprite.Visible = false;
 			
 			await Task.Delay(200); 
 			

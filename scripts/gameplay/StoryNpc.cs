@@ -4,6 +4,7 @@ using Game.Core;
 using Game.Utilities;
 using Godot;
 using Logger = Game.Core.Logger;
+using System.Linq;
 
 namespace Game.Gameplay;
 
@@ -50,6 +51,9 @@ public partial class StoryNpc : CharacterBody2D
 		{StoryNpcAppearance.bike_seller, GD.Load<SpriteFrames>("res://resources/spriteframes/bike_seller.tres")},
 		{StoryNpcAppearance.Clerk, GD.Load<SpriteFrames>("res://resources/spriteframes/clerk.tres")},
 		{StoryNpcAppearance.Nurse, GD.Load<SpriteFrames>("res://resources/spriteframes/NurseJoy.tres")},
+		{StoryNpcAppearance.master_trainer_chel, GD.Load<SpriteFrames>("res://resources/spriteframes/Chel.tres")},
+		{StoryNpcAppearance.master_trainer_garret, GD.Load<SpriteFrames>("res://resources/spriteframes/ace_trainer_garret.tres")},
+		{StoryNpcAppearance.master_trainer_raymond, GD.Load<SpriteFrames>("res://resources/spriteframes/ace_trainer_raymond.tres")},
 
 	};
 
@@ -262,7 +266,7 @@ public partial class StoryNpc : CharacterBody2D
 					? config.ShopGreeting 
 					: "Welcome to my shop! Take a look at my wares.";
 				
-				await MessageManager.PlayText(greeting);
+				await MessageManager.PlayText(null, new string[] { greeting });
 				
 				if (config.ShopItems.Count > 0 && ShopManager.Instance != null)
 				{
@@ -287,7 +291,7 @@ public partial class StoryNpc : CharacterBody2D
 				}
 				else
 				{
-					await MessageManager.PlayText("Sorry, I'm out of stock right now.");
+					await MessageManager.PlayText(null, new string[] { "Sorry, I'm out of stock right now." });
 				}
 				
 				_stateMachine.ChangeState("Roam");
@@ -301,7 +305,7 @@ public partial class StoryNpc : CharacterBody2D
 					string message = !string.IsNullOrEmpty(config.AfterBattleMessage) 
 						? config.AfterBattleMessage 
 						: "You're pretty strong!";
-					await MessageManager.PlayText(new[] { message });
+					await MessageManager.PlayText(null, new string[] { message });
 					_stateMachine.ChangeState("Roam");
 					return;
 				}
@@ -314,14 +318,14 @@ public partial class StoryNpc : CharacterBody2D
 				string message = !string.IsNullOrEmpty(config.StoryNotMetMessage) 
 					? config.StoryNotMetMessage 
 					: "I'm not ready to talk to you yet. Come back later!";
-				await MessageManager.PlayText(new[] { message });
+				await MessageManager.PlayText(null, new string[] { message });
 				_stateMachine.ChangeState("Roam");
 				return;
 			}
 
 			if (config.Messages.Count > 0)
 			{
-				await MessageManager.PlayText([.. config.Messages]);
+				await MessageManager.PlayText(null, config.Messages.ToArray());
 			}
 
 			if (config.HasBattle && config.PokemonID != PokemonID.none)
@@ -339,7 +343,7 @@ public partial class StoryNpc : CharacterBody2D
 
 				if (party.Count == 0)
 				{
-					await MessageManager.PlayText(config.HealFirstMessage);
+					await MessageManager.PlayText(null, new string[] { config.HealFirstMessage });
 					_stateMachine.ChangeState("Roam");
 					return;
 				}
@@ -358,7 +362,7 @@ public partial class StoryNpc : CharacterBody2D
 				}
 				
 				SaveManager.Instance.SaveToDisk();
-				await MessageManager.PlayText(config.HealMessage);
+				await MessageManager.PlayText(null, new string[] { config.HealMessage });
 				_stateMachine.ChangeState("Roam");
 				return;
 			}

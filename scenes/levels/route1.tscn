@@ -1,16 +1,22 @@
-[gd_scene load_steps=14 format=4 uid="uid://ef45hbtodin8"]
+[gd_scene load_steps=20 format=4 uid="uid://ef45hbtodin8"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_dwogr"]
 [ext_resource type="AudioStream" uid="uid://bcgbgg7qkb8du" path="res://assets/audio/Route 1.mp3" id="2_omyrh"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="2_prmku"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_tl55b"]
+[ext_resource type="Resource" uid="uid://o8jmca2f7dx5" path="res://resources/items/all/tm17.tres" id="3_bmda0"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="4_dln6w"]
+[ext_resource type="Resource" uid="uid://bntouo6lqvaig" path="res://resources/items/all/hyper-potion.tres" id="4_jxllf"]
 [ext_resource type="PackedScene" uid="uid://5jgdqs64hd23" path="res://scenes/levels/tall_grass.tscn" id="5_6otbw"]
 [ext_resource type="PackedScene" uid="uid://dtw68t7qjnff6" path="res://scenes/levels/spawn_point.tscn" id="5_756p4"]
+[ext_resource type="Texture2D" uid="uid://blru5gnmacqhw" path="res://resources/spriteframes/battlebgroute_by_aveontrainer_ddpvmlj.png" id="5_nvnq0"]
 [ext_resource type="PackedScene" uid="uid://bka1yd3j2lqam" path="res://scenes/charecters/StoryNpc.tscn" id="8_prmku"]
 [ext_resource type="Script" uid="uid://kah8oayhjg5f" path="res://scripts/gameplay/StoryNpcInputConfig.cs" id="9_8rch6"]
 [ext_resource type="PackedScene" uid="uid://cu8sc0th7d20l" path="res://scenes/charecters/npc.tscn" id="9_omyrh"]
 [ext_resource type="Script" uid="uid://disixwvddvaya" path="res://scripts/gameplay/NpcInputConfig.cs" id="10_8rch6"]
+[ext_resource type="PackedScene" uid="uid://ckppx1jqt4c84" path="res://scenes/core/item_spawn_point.tscn" id="14_jxllf"]
+[ext_resource type="Resource" uid="uid://cihs4x6io7277" path="res://resources/items/all/tm21.tres" id="15_h0u6c"]
+[ext_resource type="Resource" uid="uid://dd7a55j688sft" path="res://resources/items/all/max-potion.tres" id="16_juq2h"]
 
 [sub_resource type="Resource" id="Resource_jxllf"]
 script = ExtResource("9_8rch6")
@@ -43,6 +49,9 @@ right = 512
 PokemonCenter = 10
 BackgroundMusic = ExtResource("2_omyrh")
 MusicPlayer = NodePath("AudioStreamPlayer")
+itemsOnGround = [ExtResource("3_bmda0"), ExtResource("4_jxllf")]
+itemEncounterRate = 1.0
+battleBackgroundTexture = ExtResource("5_nvnq0")
 
 [node name="Tiles" type="Node2D" parent="."]
 texture_filter = 1
@@ -62,7 +71,7 @@ physics_quadrant_size = 8
 
 [node name="Ledge" type="TileMapLayer" parent="Tiles"]
 position = Vector2(-2, 0)
-tile_map_data = PackedByteArray("AAAhAA4AAAAPABwAAAAgAA4AAAAPABwAAAAfAA4AAAAPABwAAAAeAA4AAAAPABwAAAAdAA4AAAAPABwAAAAcAA4AAAAPABwAAAAbAA4AAAAPABwAAAAaAA4AAAAPABwAAAAZAA4AAAAPABwAAAAYAA4AAAAPABwAAAAXAA4AAAAPABwAAAAWAA4AAAAPABwAAAAVAA4AAAAPABwAAAAUAA4AAAAPABwAAAATAA4AAAAPABwAAAASAA4AAAAPABwAAAARAA4AAAAPABwAAAAQAA4AAAAPABwAAAAPAA4AAAAPABwAAAAOAA4AAAAPABwAAAANAA4AAAAPABwAAAAMAA4AAAAPABwAAAALAA4AAAAPABwAAAAKAA4AAAAPABwAAAAJAA4AAAAPABwAAAAIAA4AAAAPABwAAAAHAA4AAAAPABwAAAAGAA4AAAAPABwAAAAFAA4AAAAPABwAAAAEAA4AAAAPABwAAAADAA4AAAAwAAAAAAACAA4AAAAvAAAAAAABAA4AAAAuAAAAAAAAAA4AAAAPABwAAAD//w4AAAAPABwAAAABAA8AAAAuAAEAAAABABAAAAAuAAIAAAACAA8AAAAvAAEAAAACABAAAAAvAAIAAAADAA8AAAAwAAEAAAADABAAAAAwAAIAAAAXAP7/AAAPABwAAAAiAP7/AAAPABwAAAAhAP7/AAAPABwAAAAgAP7/AAAPABwAAAAfAP7/AAAPABwAAAAeAP7/AAAPABwAAAAdAP7/AAAPABwAAAAcAP7/AAAPABwAAAAbAP7/AAAPABwAAAAaAP7/AAAPABwAAAAZAP7/AAAPABwAAAAYAP7/AAAPABwAAAAWAP7/AAAPABwAAAATAP7/AAAPABwAAAASAP7/AAAPABwAAAARAP7/AAAPABwAAAAQAP7/AAAPABwAAAAPAP7/AAAPABwAAAAOAP7/AAAPABwAAAANAP7/AAAPABwAAAAMAP7/AAAPABwAAAALAP7/AAAPABwAAAAKAP7/AAAPABwAAAAJAP7/AAAPABwAAAAIAP7/AAAPABwAAAAHAP7/AAAPABwAAAAGAP7/AAAPABwAAAAFAP7/AAAPABwAAAAEAP7/AAAPABwAAAADAP7/AAAPABwAAAACAP7/AAAwAAEAAAALAAEAAAAPABwAAAAMAAEAAAAPABwAAAANAAEAAAAPABwAAAAOAAEAAAAPABwAAAAPAAEAAAAPABwAAAAQAAEAAAAPABwAAAARAAEAAAAPABwAAAAUAP3/AAAuAAAAAAAUAP7/AAAuAAEAAAAUAP//AAAuAAIAAAAVAP3/AAAwAAAAAAAVAP7/AAAwAAEAAAAVAP//AAAwAAIAAAABAP3/AAAuAAAAAAABAP7/AAAuAAEAAAABAP//AAAuAAIAAAACAP3/AAAwAAAAAAACAP//AAAwAAIAAAATAPj/AAAPABwAAAASAPj/AAAPABwAAAARAPj/AAAPABwAAAAQAPj/AAAPABwAAAAPAPj/AAAPABwAAAAOAPj/AAAPABwAAAANAPj/AAAPABwAAAAMAPj/AAAPABwAAAALAPj/AAAPABwAAAAKAPj/AAAPABwAAAAJAPj/AAAPABwAAAAIAPj/AAAPABwAAAAHAPj/AAAPABwAAAAGAPj/AAAPABwAAAAFAPj/AAAPABwAAAAEAPj/AAAPABwAAAADAPj/AAAPABwAAAACAPj/AAAPABwAAAABAPj/AAAPABwAAAA=")
+tile_map_data = PackedByteArray("AAAhAA4AAAAPABwAAAAgAA4AAAAPABwAAAAfAA4AAAAPABwAAAAeAA4AAAAPABwAAAAdAA4AAAAPABwAAAAcAA4AAAAPABwAAAAbAA4AAAAPABwAAAAaAA4AAAAPABwAAAAZAA4AAAAPABwAAAAYAA4AAAAPABwAAAAXAA4AAAAPABwAAAAWAA4AAAAPABwAAAAVAA4AAAAPABwAAAAUAA4AAAAPABwAAAATAA4AAAAPABwAAAASAA4AAAAPABwAAAARAA4AAAAPABwAAAAQAA4AAAAPABwAAAAPAA4AAAAPABwAAAAOAA4AAAAPABwAAAANAA4AAAAPABwAAAAMAA4AAAAPABwAAAALAA4AAAAPABwAAAAKAA4AAAAPABwAAAAJAA4AAAAPABwAAAAIAA4AAAAPABwAAAAHAA4AAAAPABwAAAAGAA4AAAAPABwAAAAFAA4AAAAPABwAAAAEAA4AAAAPABwAAAADAA4AAAAwAAAAAAACAA4AAAAvAAAAAAABAA4AAAAuAAAAAAAAAA4AAAAPABwAAAD//w4AAAAPABwAAAABAA8AAAAuAAEAAAABABAAAAAuAAIAAAACAA8AAAAvAAEAAAACABAAAAAvAAIAAAADAA8AAAAwAAEAAAADABAAAAAwAAIAAAAXAP7/AAAPABwAAAAiAP7/AAAPABwAAAAhAP7/AAAPABwAAAAgAP7/AAAPABwAAAAfAP7/AAAPABwAAAAeAP7/AAAPABwAAAAdAP7/AAAPABwAAAAcAP7/AAAPABwAAAAbAP7/AAAPABwAAAAaAP7/AAAPABwAAAAZAP7/AAAPABwAAAAYAP7/AAAPABwAAAAWAP7/AAAPABwAAAATAP7/AAAPABwAAAASAP7/AAAPABwAAAARAP7/AAAPABwAAAAQAP7/AAAPABwAAAAPAP7/AAAPABwAAAAOAP7/AAAPABwAAAANAP7/AAAPABwAAAAMAP7/AAAPABwAAAALAP7/AAAPABwAAAAKAP7/AAAPABwAAAAJAP7/AAAPABwAAAAIAP7/AAAPABwAAAAHAP7/AAAPABwAAAAGAP7/AAAPABwAAAAFAP7/AAAPABwAAAAEAP7/AAAPABwAAAALAAEAAAAPABwAAAAMAAEAAAAPABwAAAANAAEAAAAPABwAAAAOAAEAAAAPABwAAAAPAAEAAAAPABwAAAAQAAEAAAAPABwAAAARAAEAAAAPABwAAAAUAP3/AAAuAAAAAAAUAP7/AAAuAAEAAAAUAP//AAAuAAIAAAAVAP3/AAAwAAAAAAAVAP7/AAAwAAEAAAAVAP//AAAwAAIAAAATAPj/AAAPABwAAAASAPj/AAAPABwAAAARAPj/AAAPABwAAAAQAPj/AAAPABwAAAAPAPj/AAAPABwAAAAOAPj/AAAPABwAAAANAPj/AAAPABwAAAAMAPj/AAAPABwAAAALAPj/AAAPABwAAAAKAPj/AAAPABwAAAAJAPj/AAAPABwAAAAIAPj/AAAPABwAAAAHAPj/AAAPABwAAAAGAPj/AAAPABwAAAAFAPj/AAAPABwAAAAEAPj/AAAPABwAAAADAPj/AAAPABwAAAACAPj/AAAPABwAAAABAPj/AAAPABwAAAACAP7/AAAuAAEAAAACAP//AAAuAAIAAAADAP7/AAAwAAEAAAADAP//AAAwAAIAAAADAP3/AAAwAAAAAAACAP3/AAAuAAAAAAA=")
 tile_set = ExtResource("2_tl55b")
 physics_quadrant_size = 8
 
@@ -846,8 +855,8 @@ physics_quadrant_size = 8
 position = Vector2(80, 96)
 
 [node name="SceneTrigger3" parent="SceneTriggers" instance=ExtResource("4_dln6w")]
-position = Vector2(112, 560)
-scale = Vector2(2, 1)
+position = Vector2(86, 496)
+scale = Vector2(5, 1)
 TargetLevelTrigger = 3
 CurrentLevelTrigger = 1
 
@@ -855,7 +864,7 @@ CurrentLevelTrigger = 1
 position = Vector2(24, -376)
 scale = Vector2(5, 1)
 TargetLevelName = 6
-CurrentLevelTrigger = 1
+CurrentLevelTrigger = 2
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 position = Vector2(136, 134)
@@ -876,3 +885,18 @@ NpcAppearance = 2
 NpcInputConfig = SubResource("Resource_lpm11")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ItemSpawnPoints" type="Node2D" parent="."]
+
+[node name="ItemSpawnPoint3" parent="ItemSpawnPoints" instance=ExtResource("14_jxllf")]
+position = Vector2(118, -104)
+scale = Vector2(16, 4)
+Item = ExtResource("16_juq2h")
+
+[node name="ItemSpawnPoint" parent="ItemSpawnPoints" instance=ExtResource("14_jxllf")]
+position = Vector2(54, 0)
+Item = ExtResource("15_h0u6c")
+
+[node name="ItemSpawnPoint2" parent="ItemSpawnPoints" instance=ExtResource("14_jxllf")]
+position = Vector2(70, 48)
+Item = ExtResource("15_h0u6c")

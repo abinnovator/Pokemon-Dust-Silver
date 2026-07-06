@@ -15,6 +15,7 @@ namespace Game.Core
 
         public PokemonID opponentPokemonId;
         public PokemonID playerPokemonId;
+        public int opponentPokemonLevel;
         public GymNpcInputConfig CurrentGymConfig { get; private set; }
 
         public override void _Ready()
@@ -68,15 +69,16 @@ namespace Game.Core
             GetTree().Root.AddChild(battleScene);
         }
 
-        public void StartWildBattle(PokemonID wildId, PokemonID playerId)
+        public void StartWildBattle(PokemonID wildId, PokemonID playerId, int minLevel = 2, int maxLevel = 10)
         {
             if (SceneManager.isChanging) return;
 
-            Logger.Info($"StartWildBattle called for {wildId}");
+            opponentPokemonLevel = GD.RandRange(minLevel, maxLevel);
+            Logger.Info($"StartWildBattle called for {wildId} at Lv.{opponentPokemonLevel}");
             SaveOverworldState();
-            
+
             opponentPokemonId = wildId;
-            
+
             if (playerId == PokemonID.none)
             {
                 playerPokemonId = GetSavedPlayerPokemon();

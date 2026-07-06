@@ -23,6 +23,7 @@
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(8, 0)
 
 [node name="Pallet Town" parent="." instance=ExtResource("1_qu2ul")]
 
@@ -72,7 +73,7 @@ position = Vector2(4736, -5408)
 position = Vector2(4128, -2176)
 
 [node name="Level13" parent="." instance=ExtResource("14_fdi7v")]
-position = Vector2(4192, -3912)
+position = Vector2(4192, -3896)
 
 [node name="Level11" parent="." instance=ExtResource("13_mmh18")]
 position = Vector2(6288, -4296)

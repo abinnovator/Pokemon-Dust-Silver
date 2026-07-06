@@ -14,11 +14,9 @@ namespace Game.Gameplay
 		{
 			CurrentLevel = SceneManager.Instance.CurrentLevel;
 			UpdateCameraLimits();
-			// Defer so the camera snaps after the player's position is fully set
 			CallDeferred(Camera2D.MethodName.ResetSmoothing);
 		}
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _Process(double delta)
 		{
 			if (CurrentLevel != SceneManager.Instance.CurrentLevel)
@@ -32,11 +30,16 @@ namespace Game.Gameplay
 		{
 			UpdateCameraLimits();
 			CallDeferred(Camera2D.MethodName.ResetSmoothing);
+			CallDeferred(nameof(SecondReset));
 		}
+
+		private void SecondReset()
+		{
+			CallDeferred(Camera2D.MethodName.ResetSmoothing);
+}
 
 		public void UpdateCameraLimits()
 		{
-			// Level class uses lowercase fields for limits
 			LimitTop = CurrentLevel.top;
 			LimitBottom = CurrentLevel.bottom;
 			LimitLeft = CurrentLevel.left;

@@ -8,7 +8,6 @@ namespace Game.Gameplay
 {
 	public partial class CharacterMovement : Node
 	{
-		// Signal definition - The "EventHandler" suffix is removed by Godot for the SignalName
 		[Signal] public delegate void AnimationEventHandler(string animationType);
 
 		[ExportCategory("Nodes")]
@@ -24,25 +23,18 @@ namespace Game.Gameplay
 		public Vector2 StartPosition;
 
 		[Export] public bool CollisionDetected = false;
-		[Export]
-		public bool IsJumping = false;
-		[Export]
-		public float JumpHeight = 10f;
-		[Export]
-		public float LerpSpeed = 1.2f;
-		[Export]
-		public float Progress = 0f;
-		[Export]
-		public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
-		[Export]public int SpeedMultiplier = 4;
-
+		[Export] public bool IsJumping = false;
+		[Export] public float JumpHeight = 10f;
+		[Export] public float LerpSpeed = 1.2f;
+		[Export] public float Progress = 0f;
+		[Export] public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
+		[Export] public int SpeedMultiplier = 4;
+		[Export] public bool IsPlayer = false;
 
 		public override void _Ready()
 		{
 			CharacterInput.Walk += StartMoving;
 			CharacterInput.Turn += Turn;
-
-
 			Logger.Info("CharacterMovement ready");
 		}
 
@@ -51,28 +43,19 @@ namespace Game.Gameplay
 			Walk(delta);
 			Jump(delta);
 
-			if(!IsMoving())
+			if (!IsMoving())
 			{
 				if (GetParent().Name == "Player")
 				{
 					if (Modules.IsActionJustPressed())
-					{
 						return;
-					}
 				}
-				
 				EmitSignal(SignalName.Animation, "idle");
 			}
 		}
 
-		public bool IsMoving() 
-		{
-			return IsWalking || IsJumping;
-		}
-		public bool IsColliding() 
-		{
-			return CollisionDetected;
-		}
+		public bool IsMoving() => IsWalking || IsJumping;
+		public bool IsColliding() => CollisionDetected;
 
 		public (Vector2, Array<Dictionary>) GetTargetColliders(Vector2 targetPosition)
 		{
@@ -91,100 +74,88 @@ namespace Game.Gameplay
 			return (adjustedTargetPosition, spaceState.IntersectPoint(query));
 		}
 
-
 		private bool isTargetOccupied(Vector2 targetPosition)
 		{
-			var (adjustedTargetPosition, result) = GetTargetColliders(targetPosition);
+			var (adjustedTargetPosition, results) = GetTargetColliders(targetPosition);
 
-			if (result.Count ==0){
-				return false;
-			}else if (result.Count ==1){
+			if (results.Count == 0) return false;
 
-					var collider = (Node)(GodotObject)result[0]["collider"];
-					var colliderType = collider.GetType().Name;
-					Logger.Info($"Checking collision at {adjustedTargetPosition}. Hit: {collider.Name}, Type: {colliderType}");
-					
-					return colliderType switch
-					{
-						"Sign" => true,
-						"TallGrass" => false,
-						"TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider,adjustedTargetPosition),
-						"SceneTrigger"=> false,
-						"BreakableTree" => true,
-						_ => true,
-					};
-				
-			}
-			else
+			foreach (var result in results)
 			{
-				return true;
+				var collider = (Node)(GodotObject)result["collider"];
+				var colliderType = collider.GetType().Name;
+
+				bool blocked = colliderType switch
+				{
+					"Sign" => true,
+					"TallGrass" => false,
+					"TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
+					"SceneTrigger" => false,
+					"BreakableTree" => true,
+					"ItemSpawnPoint" => false,
+					_ => true,
+				};
+
+				if (blocked) return true;
 			}
+
+			return false;
 		}
-		public bool GetTileMapLayerCollision(TileMapLayer tileMapLayer,Vector2 adjustedTargetPosition)
+
+		public bool GetTileMapLayerCollision(TileMapLayer tileMapLayer, Vector2 adjustedTargetPosition)
 		{
-			Vector2I tileCordinates =tileMapLayer.LocalToMap(adjustedTargetPosition);
+			Vector2I tileCordinates = tileMapLayer.LocalToMap(adjustedTargetPosition);
 			TileData tileData = tileMapLayer.GetCellTileData(tileCordinates);
 
-			if (tileData == null)
-			{
-				return true;
-			}
+			if (tileData == null) return true;
+
 			var ledgeDirection = (string)tileData.GetCustomData("LEDGE");
-			if (ledgeDirection == null)
-			{
-				return true;
-			}
-			Logger.Info($"Ledge direction: {ledgeDirection}");
+			if (ledgeDirection == null) return true;
+
 			switch (ledgeDirection)
 			{
 				case "DOWN":
-				if (CharacterInput.Direction == Vector2.Down)
-				{
-					ECharacterMovement = ECharacterMovement.JUMPING;
-					return false;
-				}
-				break;
+					if (CharacterInput.Direction == Vector2.Down)
+					{
+						ECharacterMovement = ECharacterMovement.JUMPING;
+						return false;
+					}
+					break;
 				case "UP":
-				if (CharacterInput.Direction == Vector2.Up)
-				{
-					ECharacterMovement = ECharacterMovement.JUMPING;
-					return false;
-				}
-				break;
+					if (CharacterInput.Direction == Vector2.Up)
+					{
+						ECharacterMovement = ECharacterMovement.JUMPING;
+						return false;
+					}
+					break;
 				case "RIGHT":
-				if (CharacterInput.Direction == Vector2.Right)
-				{
-					ECharacterMovement = ECharacterMovement.JUMPING;
-					return false;
-				}
-				break;
+					if (CharacterInput.Direction == Vector2.Right)
+					{
+						ECharacterMovement = ECharacterMovement.JUMPING;
+						return false;
+					}
+					break;
 				case "LEFT":
-				if (CharacterInput.Direction == Vector2.Left)
-				{
-					ECharacterMovement = ECharacterMovement.JUMPING;
-					return false;
-				}
-				break;
-				
+					if (CharacterInput.Direction == Vector2.Left)
+					{
+						ECharacterMovement = ECharacterMovement.JUMPING;
+						return false;
+					}
+					break;
 			}
 			return true;
 		}
+
 		public void StartMoving()
 		{
-			if (SceneManager.isChanging)
-			{
-				return;
-			}
+			if (SceneManager.isChanging) return;
+
 			if (CharacterInput.TargetPosition != Vector2.Zero)
-			{
 				TargetPosition = Character.Position + CharacterInput.TargetPosition;
-			}
 			
 			if (!IsMoving() && !isTargetOccupied(TargetPosition) && SceneManager.GetCurrentLevel().ReservedTile(TargetPosition))
 			{
 				EmitSignal(SignalName.Animation, "walk");
-				Logger.Info($"Moving from {Character.Position} to {TargetPosition}");
-				
 
 				if (ECharacterMovement == ECharacterMovement.JUMPING)
 				{
@@ -193,7 +164,8 @@ namespace Game.Gameplay
 					TargetPosition = Character.Position + (CharacterInput.TargetPosition * 2);
 					IsJumping = true;
 				}
-				else {
+				else
+				{
 					IsWalking = true;
 				}
 			}
@@ -207,9 +179,7 @@ namespace Game.Gameplay
 				Character.Position = Character.Position.MoveToward(TargetPosition, moveSpeed);
 
 				if (Character.Position.DistanceTo(TargetPosition) < 0.1f)
-				{
 					StopWalking();
-				}
 			}
 		}
 
@@ -217,6 +187,7 @@ namespace Game.Gameplay
 		{
 			EmitSignal(SignalName.Animation, "turn");
 		}
+
 		public void Jump(double delta)
 		{
 			if (IsJumping)
@@ -228,9 +199,7 @@ namespace Game.Gameplay
 				Character.Position = position;
 
 				if (Progress >= 1.0f)
-				{
 					StopWalking();
-				}
 			}
 		}
 

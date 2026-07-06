@@ -252,7 +252,7 @@ namespace Game.Core
 			if (ShopContainer != null)
 				ShopContainer.Visible = false;
 
-			await MessageManager.PlayText(message);
+			await MessageManager.PlayText(null, new string[] { message });
 
 			if (ShopContainer != null)
 				ShopContainer.Visible = true;

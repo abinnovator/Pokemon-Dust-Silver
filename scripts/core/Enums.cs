@@ -107,7 +107,35 @@ namespace Game.Core
         route8,
         saffroncity,
         route3_pokecenter,
-        route7
+        route7,
+        viridian_forest,
+        viridian_city_academy,
+        pewter_npc_house_1,
+        pewter_npc_house_2,
+        route_10_pokecenter,
+        power_plant,
+        rock_tunnel_f1,
+        rock_tunnel_f2,
+        route5_gate,
+        route8_gate,
+        route7_gate,
+        saffron_city_fighting_dojo,
+        saffron_city_trainer_fan_club,
+        saffron_city_poke_mart,
+        saffron_city_poke_center,
+        saffron_city_gym,
+        saffron_city_copycats_house_f1,
+        saffron_city_copycats_house_f2,
+        saffron_city_npc_house_1,
+        celadon_city
+
+
+
+        
+
+
+
+
     }
     public enum LevelGroups
     {
@@ -214,7 +242,11 @@ namespace Game.Core
         Delia,
         lass,
         bird_keeper,
-        bike_seller
+        bike_seller,
+        master_trainer_jaime,
+        master_trainer_chel,
+        master_trainer_garret,
+        master_trainer_raymond,
     }
     public enum GymLeaderAppearanceType
     {

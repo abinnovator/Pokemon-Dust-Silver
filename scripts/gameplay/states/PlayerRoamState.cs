@@ -19,6 +19,12 @@ namespace Game.Gameplay.States
 					StateMachine.ChangeState("Message");
 				}
 			};
+			Signals.Instance.MenuOpen += (value) => {
+				if (value)
+				{
+					StateMachine.ChangeState("Menu");
+				}
+			};
 		}
 		public override void _Process(double delta) {
 			if (GameManager.IsPlayerMovementLocked) return;
@@ -28,7 +34,9 @@ namespace Game.Gameplay.States
 			if (Input.IsActionJustPressed("bike"))
 			{
 				bool isOnBike = SaveManager.Instance.ToggleBike();
-				CharacterMovement.SpeedMultiplier = isOnBike ? 8: 4;
+                CharacterMovement.SpeedMultiplier = isOnBike ? 8 : 4;
+				var characterAnimation = StateOwner.GetNodeOrNull<CharacterAnimation>("AnimatedSprite2D");
+				characterAnimation?.SetBikeMode(isOnBike);
 				
 
 			}

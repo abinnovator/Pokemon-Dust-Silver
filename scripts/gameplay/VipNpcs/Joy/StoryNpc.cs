@@ -122,7 +122,7 @@ public partial class JoyNpc : CharacterBody2D
 	GD.Print("NPC: Attempting to play message...");
 	_stateMachine.ChangeState("Message");
 
-	await MessageManager.PlayText(["Hey! My name is Nurse Joy.", "I heal your pokemon for you."]);
+	await MessageManager.PlayText(null, new string[] { "Hey! My name is Nurse Joy.", "I heal your pokemon for you." });
 	await Task.Delay(100);
 
 	var party = SaveManager.Instance.CurrentSave.PartyDetails;
@@ -139,9 +139,9 @@ public partial class JoyNpc : CharacterBody2D
 	}
 	SaveManager.Instance.SaveToDisk();
 
-	await MessageManager.PlayText(["Your pokemon have been restored to full health."]);
+	await MessageManager.PlayText(null, new string[] { "Your pokemon have been restored to full health." });
 	await Task.Delay(100);
-	await MessageManager.PlayText(["Please take care of your pokemon."]);
+	await MessageManager.PlayText(null, new string[] { "Please take care of your pokemon." });
 
 	_stateMachine.ChangeState("Roam");
 }

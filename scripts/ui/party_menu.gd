@@ -29,6 +29,7 @@ func _unhandled_input(event):
 			if event.is_action_pressed("menu"):
 				menu.visible = true
 				screen_loaded = ScreenLoaded.JUST_MENU
+				Signals.emit_signal("MenuOpen", true)
 				get_viewport().set_input_as_handled()
 		
 		ScreenLoaded.JUST_MENU:
@@ -72,6 +73,9 @@ func handle_menu_selection():
 				card = load("res://scenes/ui/trainer_card.tscn").instantiate()
 				add_child(card)
 			screen_loaded = ScreenLoaded.CARD
+		4: # Exit Menu
+			close_menu()
+
 
 func close_sub_screen():
 	if party_screen:
@@ -89,3 +93,4 @@ func close_sub_screen():
 func close_menu():
 	menu.visible = false
 	screen_loaded = ScreenLoaded.NOTHING
+	Signals.emit_signal("MenuOpen", false)

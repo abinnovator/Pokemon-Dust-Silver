@@ -5,6 +5,7 @@ using Game.Utilities;
 using Godot;
 using Godot.Collections;
 using Logger = Game.Core.Logger;
+using System.Linq;
 
 namespace Game.Gameplay;
 
@@ -124,7 +125,7 @@ public partial class OakNpc : CharacterBody2D
 		// Cast check before playing messages
 		if (InputConfig is StoryNpcInputConfig config && config.Messages.Count > 0)
 		{
-			await MessageManager.PlayText([.. config.Messages]);
+			await MessageManager.PlayText(null, config.Messages.ToArray());
 		}
 		
 		_stateMachine.ChangeState("Roam");

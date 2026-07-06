@@ -83,7 +83,7 @@ position = Vector2(-72, -16)
 scale = Vector2(2, 1)
 
 [node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("3_vfvhy")]
-position = Vector2(65, -128)
+position = Vector2(32, -112)
 TargetLevelName = 2
 CurrentLevelTrigger = 1
 

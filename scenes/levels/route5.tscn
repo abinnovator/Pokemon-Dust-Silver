@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://k5nx08ud3d31"]
+[gd_scene load_steps=7 format=4 uid="uid://k5nx08ud3d31"]
 
 [ext_resource type="Script" uid="uid://byyquek5hybcy" path="res://scripts/gameplay/levels/Level.cs" id="1_526l6"]
 [ext_resource type="Texture2D" uid="uid://b17qdvkvws8sx" path="res://assets/levels/Kanto_Route_5_HGSS.png" id="2_4pujx"]
 [ext_resource type="TileSet" uid="uid://dplfeeajb2qga" path="res://resources/tilesets/level.tres" id="2_co77p"]
+[ext_resource type="Texture2D" uid="uid://blru5gnmacqhw" path="res://resources/spriteframes/battlebgroute_by_aveontrainer_ddpvmlj.png" id="2_qh0w6"]
 [ext_resource type="TileSet" uid="uid://xu15regjxj8m" path="res://resources/tilesets/update.tres" id="3_cjpnf"]
 [ext_resource type="PackedScene" uid="uid://b5hleje725g5f" path="res://scenes/levels/scene_trigger.tscn" id="5_cjpnf"]
 
@@ -12,6 +13,7 @@ LevelName = 40
 encounterRate = 2
 bottom = 512
 right = 608
+battleBackgroundTexture = ExtResource("2_qh0w6")
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -45,7 +47,7 @@ tile_map_data = PackedByteArray("AAAfAAEACAAAAAAAAAAfAAMACAAAAAAAAAAfAAUACAAAAAA
 tile_set = ExtResource("3_cjpnf")
 
 [node name="Buildings" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AAAZABYABwANACwAAAAZABcABwANAC0AAAAZABgABwANAC4AAAAZABkABwANAC8AAAAaABYABwAOACwAAAAaABcABwAOAC0AAAAaABgABwAOAC4AAAAaABkABwAOAC8AAAAbABYABwAPACwAAAAbABcABwAPAC0AAAAbABgABwAPAC4AAAAbABkABwAPAC8AAAAcABYABwAQACwAAAAcABcABwAQAC0AAAAcABgABwAQAC4AAAAcABkABwAQAC8AAAA=")
+tile_map_data = PackedByteArray("AAAZABYABwANACwAAAAZABcABwANAC0AAAAZABgABwANAC4AAAAZABkABwANAC8AAAAaABYABwAOACwAAAAaABcABwAOAC0AAAAaABgABwAOAC4AAAAaABkABwAOAC8AAAAbABYABwAPACwAAAAbABcABwAPAC0AAAAbABgABwAPAC4AAAAbABkABwAPAC8AAAAcABYABwAQACwAAAAcABcABwAQAC0AAAAcABgABwAQAC4AAAAcABkABwAQAC8AAAASABwABwARAAAAAAASAB0ABwARAAEAAAASAB4ABwARAAIAAAASAB8ABwARAAMAAAASACAABwARAAQAAAASACEABwARAAUAAAASACIABwARAAYAAAASACMABwARAAcAAAASACQABwARAAgAAAATABwABwASAAAAAAATAB0ABwASAAEAAAATAB4ABwASAAIAAAATAB8ABwASAAMAAAATACAABwASAAQAAAATACEABwASAAUAAAATACIABwASAAYAAAATACMABwASAAcAAAATACQABwASAAgAAAAUABwABwATAAAAAAAUAB0ABwATAAEAAAAUAB4ABwATAAIAAAAUAB8ABwATAAMAAAAUACAABwATAAQAAAAUACEABwATAAUAAAAUACIABwATAAYAAAAUACMABwATAAcAAAAUACQABwATAAgAAAAVABwABwAUAAAAAAAVAB0ABwAUAAEAAAAVAB4ABwAUAAIAAAAVAB8ABwAUAAMAAAAVACAABwAUAAQAAAAVACEABwAUAAUAAAAVACIABwAUAAYAAAAVACMABwAUAAcAAAAVACQABwAUAAgAAAAWABwABwAVAAAAAAAWAB0ABwAVAAEAAAAWAB4ABwAVAAIAAAAWAB8ABwAVAAMAAAAWACAABwAVAAQAAAAWACEABwAVAAUAAAAWACIABwAVAAYAAAAWACMABwAVAAcAAAAWACQABwAVAAgAAAAXAB0ABwAWAAEAAAAXAB4ABwAWAAIAAAAXAB8ABwAWAAMAAAAXACAABwAWAAQAAAAXACEABwAWAAUAAAAXACIABwAWAAYAAAAXACMABwAWAAcAAAAXACQABwAWAAgAAAA=")
 tile_set = ExtResource("3_cjpnf")
 
 [node name="SceneTriggers" type="Node2D" parent="."]
@@ -70,7 +72,8 @@ TargetLevelTrigger = 20
 CurrentLevelTrigger = 1
 
 [node name="SceneTrigger3" parent="Node2D" instance=ExtResource("5_cjpnf")]
-position = Vector2(296, 496)
-scale = Vector2(6, 1)
-TargetLevelName = 47
-CurrentLevelTrigger = 3
+position = Vector2(304, 448)
+scale = Vector2(4, 1)
+TargetLevelName = 58
+TargetLevelTrigger = 1
+CurrentLevelTrigger = 6

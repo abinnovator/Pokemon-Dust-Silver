@@ -46,7 +46,7 @@ public partial class BreakableTree : Area2D
 
 		tree.CollisionEnabled = false;
 
-		MessageManager.PlayText("Your pokemon destroyed the tree for you!");
+		_ = MessageManager.PlayText(null, new string[] { "Your pokemon destroyed the tree for you!" });
 	}
 }
 }
