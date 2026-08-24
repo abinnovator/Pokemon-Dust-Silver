@@ -127,7 +127,9 @@ namespace Game.Core
         saffron_city_copycats_house_f1,
         saffron_city_copycats_house_f2,
         saffron_city_npc_house_1,
-        celadon_city
+        celadon_city,
+        route_16,
+        route_17
 
 
 

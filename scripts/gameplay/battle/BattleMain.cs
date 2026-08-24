@@ -693,14 +693,6 @@ namespace Game.Gameplay
 				PopulatePokeballItems();
 			}
 		}
-		private void OnItemButtonPressed(){
-			Logger.Info("OnItemButtonPressed (Exp) called");
-			if (Items != null)
-			{
-				Items.Visible = true;
-				Bag.Visible = false;
-			}
-		}
 		private void onPokeballBackButtonPressed(){
 			if (CommandMenu != null) CommandMenu.Visible = false;
 			if (MoveMenu != null) MoveMenu.Visible = false;
@@ -907,6 +899,85 @@ namespace Game.Gameplay
 
 			return (action, amount, stat);
 		}
+		private void OnItemButtonPressed()
+		{
+			Logger.Info("OnItemButtonPressed called");
+			if (Items == null) return;
 
+			Items.Visible = true;
+			Bag.Visible = false;
+
+			var itemList = Items.GetNodeOrNull<ItemList>("ItemList");
+			if (itemList == null) return;
+
+			itemList.Clear();
+
+			var save = SaveManager.Instance?.CurrentSave;
+			if (save == null) return;
+
+			var battleCategories = new System.Collections.Generic.HashSet<string>
+			{
+				"medicine", "battle-items", "pp-recovery", "revival", "status-cures"
+			};
+
+			foreach (var entry in save.Inventory)
+			{
+				string itemId = entry.Key.AsString();
+				int quantity = entry.Value.AsInt32();
+				if (quantity <= 0) continue;
+
+				var item = PokeBase.LoadItem(itemId);
+				if (item == null) continue;
+				if (!battleCategories.Contains(item.Category?.ToLower())) continue;
+
+				int idx = itemList.AddItem($"{item.Name}  x{quantity}");
+				if (item.Sprite != null) itemList.SetItemIcon(idx, item.Sprite);
+				itemList.SetItemMetadata(idx, item.Name);
+			}
+
+			if (!itemList.IsConnected(ItemList.SignalName.ItemActivated, Callable.From<long>(OnBattleItemSelected)))
+				itemList.ItemActivated += OnBattleItemSelected;
+		}
+
+		private void OnBattleItemSelected(long index)
+		{
+			var itemList = Items.GetNodeOrNull<ItemList>("ItemList");
+			if (itemList == null) return;
+
+			string itemName = itemList.GetItemMetadata((int)index).AsString();
+			Items.Visible = false;
+			Bag.Visible = false;
+			CommandMenu.Visible = false;
+
+			_ = UseItemAndEndTurn(itemName);
+		}
+		public async Task  useItemAsync(string itemName){
+			var item = PokeBase.LoadItem(itemName);
+			if (item == null) return;
+
+			var (action, amount, stat) = ParseEffect(item.ShortEffect);
+			if (action == "Restores" && stat == "HP")
+			{
+				_playerPokemonHp = Math.Min(_playerPokemonHp + amount, _playerPokemon.BaseHp);
+				PlayerHPBar.Value = _playerPokemonHp;
+				await MessageManager.PlayText(null, new string[] { $"{PlayerID} restored {amount} HP!" });
+				SaveActivePokemonHp();
+			}
+		}
+		private async Task UseItemAndEndTurn(string itemName)
+		{
+			await useItemAsync(itemName);
+
+			var save = SaveManager.Instance?.CurrentSave;
+			var item = PokeBase.LoadItem(itemName);
+			if (save != null && item != null)
+			{
+				save.RemoveItem(item.Id);
+				SaveManager.Instance.SaveToDisk();
+			}
+
+			if (CommandMenu != null) CommandMenu.Visible = false;
+			await ExecuteEnemyTurnAsync();
+		}
 	}
 }

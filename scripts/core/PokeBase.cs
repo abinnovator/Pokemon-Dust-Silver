@@ -53,4 +53,14 @@ public partial class PokeBase : Node
         }
         return ball;
     }
+    public static ItemResource LoadItem(string id)
+    {
+        var item = GD.Load<ItemResource>("res://resources/items/" + id.ToString() + ".tres");
+        if (item == null)
+        {
+            Logger.Warning($"Item resource '{id}' not found.");
+            return null;
+        }
+        return item;
+    }
 }

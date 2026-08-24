@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://data6msd74fv5"]
+[gd_scene load_steps=22 format=3 uid="uid://data6msd74fv5"]
 
 [ext_resource type="PackedScene" uid="uid://djso2c744570x" path="res://scenes/levels/pallet_town.tscn" id="1_qu2ul"]
 [ext_resource type="PackedScene" uid="uid://ef45hbtodin8" path="res://scenes/levels/route1.tscn" id="2_uimdc"]
 [ext_resource type="PackedScene" uid="uid://ba86mi2ubb2rm" path="res://scenes/levels/route22.tscn" id="3_kase7"]
 [ext_resource type="PackedScene" uid="uid://3g2ds4xjc4c5" path="res://scenes/levels/virdian_city.tscn" id="4_cjvgp"]
 [ext_resource type="PackedScene" uid="uid://qqor6j7tqpiq" path="res://scenes/levels/route3.tscn" id="5_c8try"]
+[ext_resource type="PackedScene" uid="uid://brytiya83pdly" path="res://scenes/levels/route_16.tscn" id="5_gbcqk"]
 [ext_resource type="PackedScene" uid="uid://bjipd33vulgst" path="res://scenes/levels/route7.tscn" id="5_mr8ih"]
 [ext_resource type="PackedScene" uid="uid://cn2rbl2tgt17g" path="res://scenes/levels/saffroncity.tscn" id="5_unuon"]
 [ext_resource type="PackedScene" uid="uid://daxtd577fm4ug" path="res://scenes/levels/cerulean_city.tscn" id="6_6c3xg"]
@@ -35,6 +36,9 @@ position = Vector2(-2768, -2096)
 
 [node name="Level2" parent="." instance=ExtResource("4_cjvgp")]
 position = Vector2(-344, -2104)
+
+[node name="Route 16" parent="." instance=ExtResource("5_gbcqk")]
+position = Vector2(1696, -2048)
 
 [node name="Level16" parent="." instance=ExtResource("5_mr8ih")]
 position = Vector2(3496, -2184)
