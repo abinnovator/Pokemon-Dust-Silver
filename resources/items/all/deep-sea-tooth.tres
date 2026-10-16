@@ -18,7 +18,6 @@ image = SubResource("Image_cyf26")
 script = ExtResource("1_yycx6")
 Name = "deep-sea-tooth"
 Id = 203
-Cost = 2000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Doubles Clamperl’s Special Attack. Traded on a Clamperl: Holder evolves into Huntail."

@@ -18,7 +18,6 @@ image = SubResource("Image_y4wa2")
 script = ExtResource("1_ptv3c")
 Name = "whipped-dream"
 Id = 686
-Cost = 2000
 Category = "evolution"
 ShortEffect = "Traded on a Swirlix: Holder evolves into Slurpuff."
 Effect = "Traded on a Swirlix: Holder evolves into Slurpuff."

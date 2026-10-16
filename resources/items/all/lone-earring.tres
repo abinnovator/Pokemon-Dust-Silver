@@ -6,6 +6,5 @@
 script = ExtResource("1_ycrqc")
 Name = "lone-earring"
 Id = 1027
-Cost = 600
 Category = "loot"
 FlingPower = 30

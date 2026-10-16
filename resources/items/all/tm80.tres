@@ -18,7 +18,6 @@ image = SubResource("Image_wuems")
 script = ExtResource("1_x0n45")
 Name = "tm80"
 Id = 384
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Rock Slide to a compatible Pokémon."
 Effect = "Teaches Rock Slide to a compatible Pokémon."

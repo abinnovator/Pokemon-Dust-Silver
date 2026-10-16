@@ -6,5 +6,4 @@
 script = ExtResource("1_curdd")
 Name = "sandile-claw"
 Id = 1845
-Cost = 80
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_2m0bh")
 script = ExtResource("1_xn62b")
 Name = "lax-incense"
 Id = 232
-Cost = 5000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder’s evasion is increased by 5%. Breeding: Wobbuffet begets a Wynaut Egg."

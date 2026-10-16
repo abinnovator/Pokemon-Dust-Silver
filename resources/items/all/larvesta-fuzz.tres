@@ -6,5 +6,4 @@
 script = ExtResource("1_dvqur")
 Name = "larvesta-fuzz"
 Id = 1858
-Cost = 200
 Category = "tm-materials"

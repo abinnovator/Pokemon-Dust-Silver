@@ -18,7 +18,6 @@ image = SubResource("Image_avd1b")
 script = ExtResource("1_ub11a")
 Name = "tm64"
 Id = 368
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Explosion to a compatible Pokémon."
 Effect = "Teaches Explosion to a compatible Pokémon."

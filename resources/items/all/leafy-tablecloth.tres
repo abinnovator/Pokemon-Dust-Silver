@@ -6,5 +6,4 @@
 script = ExtResource("1_ubmmg")
 Name = "leafy-tablecloth"
 Id = 2029
-Cost = 2000
 Category = "picnic"

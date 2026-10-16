@@ -6,5 +6,4 @@
 script = ExtResource("1_agkgm")
 Name = "tentacool-candy"
 Id = 1087
-Cost = 20
 Category = "species-candies"

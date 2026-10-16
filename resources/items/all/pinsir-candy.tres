@@ -6,5 +6,4 @@
 script = ExtResource("1_ac5ho")
 Name = "pinsir-candy"
 Id = 1119
-Cost = 20
 Category = "species-candies"

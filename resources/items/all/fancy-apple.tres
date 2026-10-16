@@ -6,6 +6,5 @@
 script = ExtResource("1_h2ioi")
 Name = "fancy-apple"
 Id = 1153
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 20

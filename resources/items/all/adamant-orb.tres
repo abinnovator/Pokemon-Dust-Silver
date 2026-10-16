@@ -21,6 +21,6 @@ Id = 112
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Boosts the damage from Dialga’s Dragon-type and Steel-type moves by 20%."
-Effect = "Held by dialga :   Holder’s dragon- and steel-type moves have 1.2× their usual power."
+Effect = "Held by Dialga :   Holder’s Dragon- and Steel-type moves have 1.2× their usual power."
 FlingPower = 60
 Sprite = SubResource("ImageTexture_s6bwq")

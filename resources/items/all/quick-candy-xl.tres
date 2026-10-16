@@ -6,5 +6,4 @@
 script = ExtResource("1_ehtfo")
 Name = "quick-candy-xl"
 Id = 1057
-Cost = 20
 Category = "vitamins"

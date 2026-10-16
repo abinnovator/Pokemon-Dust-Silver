@@ -18,7 +18,6 @@ image = SubResource("Image_fl12d")
 script = ExtResource("1_2epd5")
 Name = "stardust"
 Id = 90
-Cost = 3000
 Category = "loot"
 ShortEffect = "Sell for 1000 Pokédollars, or to Ore Collector for 2000 Pokédollars."
 Effect = "Vendor trash."

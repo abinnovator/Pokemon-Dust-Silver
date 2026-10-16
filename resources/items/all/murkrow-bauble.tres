@@ -6,5 +6,4 @@
 script = ExtResource("1_bk1id")
 Name = "murkrow-bauble"
 Id = 1786
-Cost = 100
 Category = "tm-materials"

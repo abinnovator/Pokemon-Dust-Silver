@@ -6,5 +6,4 @@
 script = ExtResource("1_7wswg")
 Name = "psyduck-down"
 Id = 1765
-Cost = 60
 Category = "tm-materials"

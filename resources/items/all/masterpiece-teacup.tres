@@ -6,5 +6,4 @@
 script = ExtResource("1_kfpao")
 Name = "masterpiece-teacup"
 Id = 2111
-Cost = 9500
 Category = "evolution"

@@ -6,5 +6,4 @@
 script = ExtResource("1_ctuae")
 Name = "potato-salad"
 Id = 1749
-Cost = 110
 Category = "sandwich-ingredients"

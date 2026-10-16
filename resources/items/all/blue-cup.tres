@@ -6,5 +6,4 @@
 script = ExtResource("1_0npdo")
 Name = "blue-cup"
 Id = 2058
-Cost = 1500
 Category = "picnic"

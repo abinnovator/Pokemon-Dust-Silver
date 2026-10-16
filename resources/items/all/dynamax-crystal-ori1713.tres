@@ -6,5 +6,4 @@
 script = ExtResource("1_stwdk")
 Name = "dynamax-crystal-ori1713"
 Id = 1428
-Cost = 20
 Category = "dynamax-crystals"

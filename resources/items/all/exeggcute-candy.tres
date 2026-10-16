@@ -6,5 +6,4 @@
 script = ExtResource("1_chhs6")
 Name = "exeggcute-candy"
 Id = 1102
-Cost = 20
 Category = "species-candies"

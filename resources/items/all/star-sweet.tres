@@ -6,6 +6,5 @@
 script = ExtResource("1_5ftxv")
 Name = "star-sweet"
 Id = 1172
-Cost = 500
 Category = "evolution"
 FlingPower = 10

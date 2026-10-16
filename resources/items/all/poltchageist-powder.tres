@@ -6,5 +6,4 @@
 script = ExtResource("1_7yuoe")
 Name = "poltchageist-powder"
 Id = 2159
-Cost = 30
 Category = "tm-materials"

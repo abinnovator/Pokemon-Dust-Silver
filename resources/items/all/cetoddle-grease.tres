@@ -6,5 +6,4 @@
 script = ExtResource("1_nsshp")
 Name = "cetoddle-grease"
 Id = 1922
-Cost = 80
 Category = "tm-materials"

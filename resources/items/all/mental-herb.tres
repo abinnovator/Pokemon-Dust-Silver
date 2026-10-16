@@ -18,7 +18,6 @@ image = SubResource("Image_32npb")
 script = ExtResource("1_wljvy")
 Name = "mental-herb"
 Id = 196
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Consumed to cure infatuation. Gen V: Also removes Taunt, Encore, Torment, Disable, and Cursed Body."

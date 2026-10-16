@@ -6,5 +6,4 @@
 script = ExtResource("1_h1wgf")
 Name = "mimikyu-scrap"
 Id = 1885
-Cost = 40
 Category = "tm-materials"

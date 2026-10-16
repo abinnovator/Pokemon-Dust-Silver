@@ -18,7 +18,6 @@ image = SubResource("Image_i7q3q")
 script = ExtResource("1_bpswk")
 Name = "metal-coat"
 Id = 210
-Cost = 2000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Steel-Type moves from holder do 20% more damage."

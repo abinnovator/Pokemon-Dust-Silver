@@ -6,5 +6,4 @@
 script = ExtResource("1_box8k")
 Name = "tauros-hair"
 Id = 1776
-Cost = 100
 Category = "tm-materials"

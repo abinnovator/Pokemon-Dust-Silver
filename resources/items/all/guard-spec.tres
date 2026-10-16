@@ -18,7 +18,6 @@ image = SubResource("Image_an2cg")
 script = ExtResource("1_d0xd2")
 Name = "guard-spec"
 Id = 55
-Cost = 1500
 Category = "stat-boosts"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Prevents stat changes in battle for five turns in battle.  Raises happiness."

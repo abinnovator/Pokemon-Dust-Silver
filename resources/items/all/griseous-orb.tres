@@ -20,6 +20,6 @@ Name = "griseous-orb"
 Id = 442
 Category = "species-specific"
 ShortEffect = "Boosts the damage from Giratina’s Dragon-type and Ghost-type moves by 20%, and transforms it into Origin Forme."
-Effect = "Held by giratina :   Holder’s dragon and ghost moves have 1.2× their base power.      Holder is in Origin Forme.  This item cannot be held by any Pokémon but Giratina.  When you enter the Union Room or connect to Wi-Fi, this item returns to your bag."
+Effect = "Held by Giratina :   Holder’s Dragon and Ghost moves have 1.2× their base power.      Holder is in Origin Forme.  This item cannot be held by any Pokémon but Giratina.  When you enter the Union Room or connect to Wi-Fi, this item returns to your bag."
 FlingPower = 60
 Sprite = SubResource("ImageTexture_kag12")

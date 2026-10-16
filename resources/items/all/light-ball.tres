@@ -18,7 +18,6 @@ image = SubResource("Image_c1j17")
 script = ExtResource("1_bg2eq")
 Name = "light-ball"
 Id = 213
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Doubles Pikachu’s Attack and Special Attack. Breed on Pikachu or Raichu: Pichu Egg will have Volt Tackle."

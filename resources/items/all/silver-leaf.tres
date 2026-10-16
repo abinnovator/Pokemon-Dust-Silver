@@ -6,6 +6,5 @@
 script = ExtResource("1_o2gdk")
 Name = "silver-leaf"
 Id = 1030
-Cost = 1000
 Category = "loot"
 FlingPower = 30

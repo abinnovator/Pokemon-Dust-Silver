@@ -6,5 +6,4 @@
 script = ExtResource("1_121pv")
 Name = "punching-glove"
 Id = 1700
-Cost = 15000
 Category = "held-items"

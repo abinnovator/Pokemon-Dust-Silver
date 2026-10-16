@@ -6,5 +6,4 @@
 script = ExtResource("1_libmd")
 Name = "marmalade"
 Id = 1716
-Cost = 260
 Category = "sandwich-ingredients"

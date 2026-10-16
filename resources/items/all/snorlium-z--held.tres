@@ -20,5 +20,5 @@ Name = "snorlium-z--held"
 Id = 845
 Category = "z-crystals"
 ShortEffect = "Held: Allows Snorlax to upgrade Giga Impact into Pulverizing Pancake."
-Effect = "Held: Allows snorlax to upgrade giga impact into pulverizing pancake."
+Effect = "Held: Allows Snorlax to upgrade Giga Impact into Pulverizing Pancake."
 Sprite = SubResource("ImageTexture_yiajp")

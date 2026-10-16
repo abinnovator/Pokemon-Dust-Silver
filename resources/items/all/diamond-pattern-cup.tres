@@ -6,5 +6,4 @@
 script = ExtResource("1_cdhjf")
 Name = "diamond-pattern-cup"
 Id = 2055
-Cost = 800
 Category = "picnic"

@@ -6,5 +6,4 @@
 script = ExtResource("1_2to6m")
 Name = "igglybuff-fluff"
 Id = 1782
-Cost = 60
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_nx3am")
 Name = "cubone-candy"
 Id = 1103
-Cost = 20
 Category = "species-candies"

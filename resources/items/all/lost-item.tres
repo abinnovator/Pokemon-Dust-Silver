@@ -20,5 +20,5 @@ Name = "lost-item"
 Id = 478
 Category = "plot-advancement"
 ShortEffect = "A Poké Doll lost by the Copycat who lives in Saffron City. Trade for a Pass."
-Effect = "May be traded to the Copycat for a pass."
+Effect = "May be traded to the Copycat for a Pass."
 Sprite = SubResource("ImageTexture_w4j3h")

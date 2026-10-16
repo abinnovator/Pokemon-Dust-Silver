@@ -18,7 +18,6 @@ image = SubResource("Image_g3w1e")
 script = ExtResource("1_s64y0")
 Name = "quick-powder"
 Id = 251
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Doubles Ditto’s Speed when held. The boost is lost after transforming."

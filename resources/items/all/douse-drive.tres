@@ -20,6 +20,6 @@ Name = "douse-drive"
 Id = 563
 Category = "species-specific"
 ShortEffect = "Grants Genesect a blue, Water-type Techno Blast."
-Effect = "Held by genesect :   Holder’s buster is blue, and its techno blast is water-type."
+Effect = "Held by Genesect :   Holder’s buster is blue, and its Techno Blast is Water-type."
 FlingPower = 70
 Sprite = SubResource("ImageTexture_na4i2")

@@ -6,5 +6,4 @@
 script = ExtResource("1_buqlk")
 Name = "scyther-candy"
 Id = 1116
-Cost = 20
 Category = "species-candies"

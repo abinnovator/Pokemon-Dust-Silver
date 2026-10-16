@@ -18,7 +18,6 @@ image = SubResource("Image_jq75a")
 script = ExtResource("1_kacx6")
 Name = "ice-memory"
 Id = 915
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Ice form.  Changes Multi-Attack’s type to Ice."
 Effect = "Held: Changes Silvally to its Ice form.  Changes Multi-Attack’s type to Ice."

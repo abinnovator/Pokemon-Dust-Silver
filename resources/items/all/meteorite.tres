@@ -20,5 +20,5 @@ Name = "meteorite"
 Id = 537
 Category = "plot-advancement"
 ShortEffect = "FL: Deliver to Lostelle’s father. RSE: Trade to Professor Cozmo for TM27 (Return)."
-Effect = "RSE: May be traded to Professor Cozmo for tm27.  FRLG: A meteorite to be delivered to Lostelle’s father."
+Effect = "RSE: May be traded to Professor Cozmo for TM27.  FRLG: A meteorite to be delivered to Lostelle’s father."
 Sprite = SubResource("ImageTexture_438ng")

@@ -18,7 +18,6 @@ image = SubResource("Image_v8mr5")
 script = ExtResource("1_f1m8l")
 Name = "tm07"
 Id = 311
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Hail to a compatible Pokémon. (Gen II: Zap Cannon Gen I: Horn Drill)"
 Effect = "Teaches Hail to a compatible Pokémon."

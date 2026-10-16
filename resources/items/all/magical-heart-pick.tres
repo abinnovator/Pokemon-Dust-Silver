@@ -6,5 +6,4 @@
 script = ExtResource("1_p43r5")
 Name = "magical-heart-pick"
 Id = 2089
-Cost = 600
 Category = "picnic"

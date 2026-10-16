@@ -6,5 +6,4 @@
 script = ExtResource("1_p3fi7")
 Name = "koffing-gas"
 Id = 2126
-Cost = 25
 Category = "tm-materials"

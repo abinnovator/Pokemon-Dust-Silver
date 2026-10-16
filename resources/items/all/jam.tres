@@ -6,5 +6,4 @@
 script = ExtResource("1_p2lpw")
 Name = "jam"
 Id = 1715
-Cost = 120
 Category = "sandwich-ingredients"

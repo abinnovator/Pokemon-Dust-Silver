@@ -6,5 +6,4 @@
 script = ExtResource("1_bfj84")
 Name = "veluza-fillet"
 Id = 1914
-Cost = 140
 Category = "tm-materials"

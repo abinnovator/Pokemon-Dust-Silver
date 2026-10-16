@@ -6,6 +6,5 @@
 script = ExtResource("1_hqlhg")
 Name = "sweet-apple"
 Id = 1174
-Cost = 2200
 Category = "evolution"
 FlingPower = 30

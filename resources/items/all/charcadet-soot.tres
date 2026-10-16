@@ -6,5 +6,4 @@
 script = ExtResource("1_dhsam")
 Name = "charcadet-soot"
 Id = 1940
-Cost = 160
 Category = "tm-materials"

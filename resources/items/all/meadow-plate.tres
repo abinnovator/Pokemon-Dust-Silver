@@ -18,7 +18,6 @@ image = SubResource("Image_cbsdt")
 script = ExtResource("1_0bdmv")
 Name = "meadow-plate"
 Id = 278
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Grass-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Grass."

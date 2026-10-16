@@ -18,7 +18,6 @@ image = SubResource("Image_chu3a")
 script = ExtResource("1_ttvih")
 Name = "tm27"
 Id = 331
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Return to a compatible Pokémon. (Gen I: Fissure)"
 Effect = "Teaches Return to a compatible Pokémon."

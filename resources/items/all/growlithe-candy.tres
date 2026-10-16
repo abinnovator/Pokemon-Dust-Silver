@@ -6,5 +6,4 @@
 script = ExtResource("1_a0dxx")
 Name = "growlithe-candy"
 Id = 1082
-Cost = 20
 Category = "species-candies"

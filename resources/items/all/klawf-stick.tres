@@ -6,5 +6,4 @@
 script = ExtResource("1_3bl8f")
 Name = "klawf-stick"
 Id = 1741
-Cost = 500
 Category = "sandwich-ingredients"

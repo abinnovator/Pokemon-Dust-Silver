@@ -6,5 +6,4 @@
 script = ExtResource("1_71saf")
 Name = "orthworm-tarnish"
 Id = 1920
-Cost = 200
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_vjfag")
 Name = "flittle-down"
 Id = 1911
-Cost = 80
 Category = "tm-materials"

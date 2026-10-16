@@ -18,7 +18,6 @@ image = SubResource("Image_5h5ri")
 script = ExtResource("1_aauti")
 Name = "choice-specs"
 Id = 274
-Cost = 4000
 Category = "choice"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Increases Special Attack by 50%, but restricts the holder to only one move."

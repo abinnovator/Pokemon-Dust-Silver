@@ -6,5 +6,4 @@
 script = ExtResource("1_err5k")
 Name = "pikachu-cup"
 Id = 2060
-Cost = 2000
 Category = "picnic"

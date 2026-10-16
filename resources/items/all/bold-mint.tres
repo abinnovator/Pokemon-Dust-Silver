@@ -6,6 +6,5 @@
 script = ExtResource("1_h5ria")
 Name = "bold-mint"
 Id = 1293
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

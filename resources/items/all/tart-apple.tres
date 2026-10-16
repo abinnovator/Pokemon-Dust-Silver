@@ -6,6 +6,5 @@
 script = ExtResource("1_47i56")
 Name = "tart-apple"
 Id = 1175
-Cost = 2200
 Category = "evolution"
 FlingPower = 30

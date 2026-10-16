@@ -6,6 +6,5 @@
 script = ExtResource("1_sqlsf")
 Name = "tr71"
 Id = 1259
-Cost = 16000
 Category = "all-machines"
 FlingPower = 130

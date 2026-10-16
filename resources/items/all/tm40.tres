@@ -18,7 +18,6 @@ image = SubResource("Image_idni8")
 script = ExtResource("1_idni8")
 Name = "tm40"
 Id = 344
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Aerial Ace to a compatible Pokémon. (Gen II: Defense Curl Gen I: Skull Bash)"
 Effect = "Teaches Aerial Ace to a compatible Pokémon."

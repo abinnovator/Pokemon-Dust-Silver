@@ -6,5 +6,4 @@
 script = ExtResource("1_jt3gd")
 Name = "fire-pattern-cup"
 Id = 2056
-Cost = 800
 Category = "picnic"

@@ -6,5 +6,4 @@
 script = ExtResource("1_0lljg")
 Name = "shellder-pearl"
 Id = 1771
-Cost = 140
 Category = "tm-materials"

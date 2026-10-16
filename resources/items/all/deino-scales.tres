@@ -6,5 +6,4 @@
 script = ExtResource("1_os2nt")
 Name = "deino-scales"
 Id = 1857
-Cost = 200
 Category = "tm-materials"

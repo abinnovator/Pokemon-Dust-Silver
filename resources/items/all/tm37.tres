@@ -18,7 +18,6 @@ image = SubResource("Image_h8q7f")
 script = ExtResource("1_d112s")
 Name = "tm37"
 Id = 341
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Sandstorm to a compatible Pokémon. (Gen I: Egg Bomb)"
 Effect = "Teaches Sandstorm to a compatible Pokémon."

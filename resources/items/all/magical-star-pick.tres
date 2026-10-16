@@ -6,5 +6,4 @@
 script = ExtResource("1_f3n6a")
 Name = "magical-star-pick"
 Id = 2088
-Cost = 600
 Category = "picnic"

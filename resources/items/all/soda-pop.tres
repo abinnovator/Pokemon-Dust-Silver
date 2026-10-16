@@ -18,7 +18,6 @@ image = SubResource("Image_8q8tm")
 script = ExtResource("1_g6iwe")
 Name = "soda-pop"
 Id = 31
-Cost = 300
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 60 HP."

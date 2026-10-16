@@ -6,5 +6,4 @@
 script = ExtResource("1_b8eul")
 Name = "genius-mochi"
 Id = 2115
-Cost = 125
 Category = "vitamins"

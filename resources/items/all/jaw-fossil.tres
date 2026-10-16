@@ -18,7 +18,6 @@ image = SubResource("Image_gvpcy")
 script = ExtResource("1_e5rfs")
 Name = "jaw-fossil"
 Id = 729
-Cost = 7000
 Category = "dex-completion"
 ShortEffect = "Can be revived into a Tyrunt."
 Effect = "Can be revived into a Tyrunt."

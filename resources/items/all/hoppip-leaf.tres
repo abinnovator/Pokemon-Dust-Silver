@@ -6,5 +6,4 @@
 script = ExtResource("1_p05is")
 Name = "hoppip-leaf"
 Id = 1784
-Cost = 60
 Category = "tm-materials"

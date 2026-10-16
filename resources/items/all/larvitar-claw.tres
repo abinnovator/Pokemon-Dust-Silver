@@ -6,5 +6,4 @@
 script = ExtResource("1_lt6vb")
 Name = "larvitar-claw"
 Id = 1799
-Cost = 200
 Category = "tm-materials"

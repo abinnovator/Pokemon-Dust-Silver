@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_5j72k")
 Name = "peat-block"
-Id = 10002
+Id = 2231
 Category = "evolution"

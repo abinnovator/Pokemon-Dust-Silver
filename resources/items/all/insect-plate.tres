@@ -18,7 +18,6 @@ image = SubResource("Image_jsuwx")
 script = ExtResource("1_8vbnw")
 Name = "insect-plate"
 Id = 285
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Bug-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Bug."

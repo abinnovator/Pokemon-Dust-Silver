@@ -6,6 +6,5 @@
 script = ExtResource("1_kmuui")
 Name = "stretchy-spring"
 Id = 1024
-Cost = 20
 Category = "loot"
 FlingPower = 30

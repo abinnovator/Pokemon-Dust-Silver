@@ -6,5 +6,4 @@
 script = ExtResource("1_uhmqs")
 Name = "dynamax-crystal-aur1612"
 Id = 1464
-Cost = 20
 Category = "dynamax-crystals"

@@ -6,6 +6,5 @@
 script = ExtResource("1_gqwvp")
 Name = "berry-sweet"
 Id = 1169
-Cost = 500
 Category = "evolution"
 FlingPower = 10

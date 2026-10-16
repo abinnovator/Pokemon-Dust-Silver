@@ -18,7 +18,6 @@ image = SubResource("Image_xqqog")
 script = ExtResource("1_ffppg")
 Name = "up-grade"
 Id = 229
-Cost = 2000
 Category = "evolution"
 ShortEffect = "Traded on a Porygon: Holder evolves into Porygon2."
 Effect = "Held by Porygon: Evolves the holder into Porygon2 when traded."

@@ -18,7 +18,6 @@ image = SubResource("Image_6rjpp")
 script = ExtResource("1_k20iw")
 Name = "health-wing"
 Id = 606
-Cost = 300
 Category = "vitamins"
 ShortEffect = "Increases HP effort by 1."
 Effect = "Used on a party Pokémon :   Increases the target’s HP effort by 1."

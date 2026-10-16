@@ -36,7 +36,9 @@ namespace Game.Core
             if (SceneManager.isChanging) return;
 
             Logger.Info($"StartGymBattle called for {config.LeaderName}");
+            GameManager.IsPlayerMovementLocked = true;
             SaveOverworldState();
+            StopOverworldMusic();
             CurrentGymConfig = config;
 
             opponentPokemonId = PokemonID.none;
@@ -56,7 +58,9 @@ namespace Game.Core
             if (SceneManager.isChanging) return;
 
             Logger.Info("StartBattle (Trainer) called");
+            GameManager.IsPlayerMovementLocked = true;
             SaveOverworldState();
+            StopOverworldMusic();
             CurrentBattleConfig = config;
 
             if (Enum.TryParse(config.PokemonID.ToString(), true, out PokemonID id))
@@ -75,7 +79,9 @@ namespace Game.Core
 
             opponentPokemonLevel = GD.RandRange(minLevel, maxLevel);
             Logger.Info($"StartWildBattle called for {wildId} at Lv.{opponentPokemonLevel}");
+            GameManager.IsPlayerMovementLocked = true;
             SaveOverworldState();
+            StopOverworldMusic();
 
             opponentPokemonId = wildId;
 
@@ -108,10 +114,17 @@ namespace Game.Core
             SavedPlayerPosition = GameManager.GetPlayer().GlobalPosition;
         }
 
+        private void StopOverworldMusic()
+        {
+            SceneManager.GetCurrentLevel()?.StopMusic();
+        }
+
         private async void ReturnToOverworld()
         {
-            if (SceneManager.Instance != null)
+            try
             {
+                if (SceneManager.Instance == null) return;
+
                 await SceneManager.Instance.FadeOut();
                 await SceneManager.Instance.GetLevel(SavedLevelName);
                 
@@ -121,11 +134,14 @@ namespace Game.Core
                     player.GlobalPosition = SavedPlayerPosition;
                 }
 
+                SceneManager.GetCurrentLevel()?.PlayMusic();
                 await SceneManager.Instance.FadeIn();
-                
-                GameManager.IsPlayerMovementLocked = false;
-                
+
                 Logger.Info($"Returned to {SavedLevelName} at {SavedPlayerPosition}");
+            }
+            finally
+            {
+                GameManager.IsPlayerMovementLocked = false;
             }
         }
 

@@ -6,5 +6,4 @@
 script = ExtResource("1_cy517")
 Name = "gastly-gas"
 Id = 1772
-Cost = 80
 Category = "tm-materials"

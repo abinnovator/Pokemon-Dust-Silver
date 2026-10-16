@@ -18,7 +18,6 @@ image = SubResource("Image_ik1et")
 script = ExtResource("1_ik1et")
 Name = "tm21"
 Id = 325
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Frustration to a compatible Pokémon. (Gen I: Mega Drain)"
 Effect = "Teaches Frustration to a compatible Pokémon."

@@ -6,5 +6,4 @@
 script = ExtResource("1_3lc8a")
 Name = "dedenne-fur"
 Id = 1867
-Cost = 100
 Category = "tm-materials"

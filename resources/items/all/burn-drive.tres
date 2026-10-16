@@ -20,6 +20,6 @@ Name = "burn-drive"
 Id = 565
 Category = "species-specific"
 ShortEffect = "Grants Genesect a red, Fire-type Techno Blast."
-Effect = "Held by genesect :   Holder’s buster is red, and its techno blast is fire-type."
+Effect = "Held by Genesect :   Holder’s buster is red, and its Techno Blast is Fire-type."
 FlingPower = 70
 Sprite = SubResource("ImageTexture_h7p4u")

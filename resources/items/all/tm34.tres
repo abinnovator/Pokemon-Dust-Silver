@@ -18,7 +18,6 @@ image = SubResource("Image_58ibl")
 script = ExtResource("1_p88iw")
 Name = "tm34"
 Id = 338
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Sludge Wave to a compatible Pokémon. (Gen IV & III: Shock Wave Gen II: Swagger Gen I: Bide)"
 Effect = "Teaches Shock Wave to a compatible Pokémon."

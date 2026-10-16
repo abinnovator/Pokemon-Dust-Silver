@@ -18,7 +18,6 @@ image = SubResource("Image_njs7q")
 script = ExtResource("1_1786l")
 Name = "tm81"
 Id = 385
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches X-Scissor to a compatible Pokémon."
 Effect = "Teaches X-Scissor to a compatible Pokémon."

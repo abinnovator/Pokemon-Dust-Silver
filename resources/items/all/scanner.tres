@@ -20,5 +20,5 @@ Name = "scanner"
 Id = 535
 Category = "plot-advancement"
 ShortEffect = "Trade to Captain Stern for a DeepSeaTooth or DeepSeaScale."
-Effect = "May be traded to Captain Stern for a deep sea tooth or a deep sea scale."
+Effect = "May be traded to Captain Stern for a Deep Sea Tooth or a Deep Sea Scale."
 Sprite = SubResource("ImageTexture_56wbk")

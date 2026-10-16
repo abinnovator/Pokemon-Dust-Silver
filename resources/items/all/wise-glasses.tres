@@ -18,7 +18,6 @@ image = SubResource("Image_urlu8")
 script = ExtResource("1_yc0cy")
 Name = "wise-glasses"
 Id = 244
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Boosts the damage of special moves used by the holder by 1/10 (10%)."

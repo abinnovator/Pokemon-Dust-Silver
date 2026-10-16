@@ -6,5 +6,4 @@
 script = ExtResource("1_tslgv")
 Name = "indeedee-fur"
 Id = 1896
-Cost = 120
 Category = "tm-materials"

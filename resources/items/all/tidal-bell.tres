@@ -20,5 +20,5 @@ Name = "tidal-bell"
 Id = 485
 Category = "plot-advancement"
 ShortEffect = "Allows Kimono-girls to summon Lugia."
-Effect = "May be given to the Kimono Girls to summon lugia to the top of the bell tower."
+Effect = "May be given to the Kimono Girls to summon Lugia to the top of the Bell Tower."
 Sprite = SubResource("ImageTexture_hk4xk")

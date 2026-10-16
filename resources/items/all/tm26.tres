@@ -18,7 +18,6 @@ image = SubResource("Image_oxlr6")
 script = ExtResource("1_abfbc")
 Name = "tm26"
 Id = 330
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Earthquake to a compatible Pokémon."
 Effect = "Teaches Earthquake to a compatible Pokémon."

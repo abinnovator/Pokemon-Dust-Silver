@@ -18,7 +18,6 @@ image = SubResource("Image_t8xkq")
 script = ExtResource("1_8fddi")
 Name = "smoke-ball"
 Id = 205
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Allows the Holder to escape from any wild battle."

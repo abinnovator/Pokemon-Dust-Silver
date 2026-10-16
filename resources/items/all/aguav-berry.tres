@@ -18,7 +18,6 @@ image = SubResource("Image_bnvr8")
 script = ExtResource("1_0xibo")
 Name = "aguav-berry"
 Id = 139
-Cost = 80
 Category = "picky-healing"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pokémon that dislike bitter flavor."

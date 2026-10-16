@@ -6,5 +6,4 @@
 script = ExtResource("1_3aob3")
 Name = "komala-claw"
 Id = 1884
-Cost = 100
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_rryml")
 Name = "dynamax-crystal-phe99"
 Id = 1580
-Cost = 20
 Category = "dynamax-crystals"

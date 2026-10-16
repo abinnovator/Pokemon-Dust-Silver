@@ -6,5 +6,4 @@
 script = ExtResource("1_osrx0")
 Name = "axew-scales"
 Id = 1852
-Cost = 200
 Category = "tm-materials"

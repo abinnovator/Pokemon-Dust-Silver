@@ -20,5 +20,5 @@ Name = "jade-orb"
 Id = 469
 Category = "plot-advancement"
 ShortEffect = "Summons Rayquaza to the Embedded Tower."
-Effect = "Causes rayquaza to appear in the embedded tower."
+Effect = "Causes Rayquaza to appear in the Embedded Tower."
 Sprite = SubResource("ImageTexture_le6sm")

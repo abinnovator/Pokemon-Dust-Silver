@@ -18,7 +18,6 @@ image = SubResource("Image_dgtdi")
 script = ExtResource("1_kk3t1")
 Name = "tm86"
 Id = 390
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Grass Knot to a compatible Pokémon."
 Effect = "Teaches Grass Knot to a compatible Pokémon."

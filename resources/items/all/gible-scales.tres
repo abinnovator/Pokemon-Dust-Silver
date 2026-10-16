@@ -6,5 +6,4 @@
 script = ExtResource("1_mdunh")
 Name = "gible-scales"
 Id = 1836
-Cost = 200
 Category = "tm-materials"

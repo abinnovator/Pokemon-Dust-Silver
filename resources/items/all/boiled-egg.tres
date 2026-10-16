@@ -6,6 +6,5 @@
 script = ExtResource("1_70e42")
 Name = "boiled-egg"
 Id = 1159
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 20

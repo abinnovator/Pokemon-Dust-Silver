@@ -18,7 +18,6 @@ image = SubResource("Image_pw88v")
 script = ExtResource("1_f36s5")
 Name = "pink-nectar"
 Id = 891
-Cost = 300
 Category = "species-specific"
 ShortEffect = "Changes Oricorio to Pa’u Style."
 Effect = "Changes Oricorio to Pa’u Style.  Single-use and cannot be used in battle."

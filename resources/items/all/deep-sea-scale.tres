@@ -18,7 +18,6 @@ image = SubResource("Image_8p2cm")
 script = ExtResource("1_nbmtl")
 Name = "deep-sea-scale"
 Id = 204
-Cost = 2000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Doubles Clamperl’s Special Defense. Traded on a Clamperl: Holder evolves into Gorebyss."

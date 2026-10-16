@@ -20,5 +20,5 @@ Name = "machine-part"
 Id = 480
 Category = "plot-advancement"
 ShortEffect = "Must be replaced in the Power Plant to power the Magnet Train."
-Effect = "Must be replaced in the power plant to power the Magnet Train."
+Effect = "Must be replaced in the Kanto Power Plant to power the Magnet Train."
 Sprite = SubResource("ImageTexture_giwlm")

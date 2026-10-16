@@ -6,5 +6,4 @@
 script = ExtResource("1_dunbw")
 Name = "steel-tera-shard"
 Id = 1694
-Cost = 500
 Category = "tera-shard"

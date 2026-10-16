@@ -18,7 +18,6 @@ image = SubResource("Image_gspel")
 script = ExtResource("1_0547v")
 Name = "dubious-disc"
 Id = 301
-Cost = 2000
 Category = "evolution"
 ShortEffect = "Traded on a Porygon2: Holder evolves into Porygon-Z."
 Effect = "Held by Porygon2: Evolves the holder into Porygon-Z when traded."

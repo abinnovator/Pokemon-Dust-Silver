@@ -18,7 +18,6 @@ image = SubResource("Image_vpnoe")
 script = ExtResource("1_rs3d2")
 Name = "maranga-berry"
 Id = 725
-Cost = 80
 Category = "other"
 ShortEffect = "Held: When the holder is hit by a special move, increases its Special Defense by one stage."
 Effect = "Held: When the holder is hit by a special move, increases its Special Defense by one stage."

@@ -20,5 +20,5 @@ Name = "squirt-bottle"
 Id = 448
 Category = "plot-advancement"
 ShortEffect = "Use on Sudowoodo blocking the path on Route 36. Also waters berries."
-Effect = "Required to water berries within the berry pots.  Required to battle the sudowoodo on johto route 36.  This item cannot be directly used from the bag."
+Effect = "Required to water berries within the Berry Pots.  Required to battle the Sudowoodo on Route 36.  This item cannot be directly used from the bag."
 Sprite = SubResource("ImageTexture_p7itn")

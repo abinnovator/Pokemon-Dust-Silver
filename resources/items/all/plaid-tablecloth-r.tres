@@ -6,5 +6,4 @@
 script = ExtResource("1_wfmhs")
 Name = "plaid-tablecloth-r"
 Id = 2067
-Cost = 3000
 Category = "picnic"

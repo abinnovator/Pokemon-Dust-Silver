@@ -6,6 +6,5 @@
 script = ExtResource("1_yfy48")
 Name = "marble"
 Id = 1026
-Cost = 300
 Category = "loot"
 FlingPower = 30

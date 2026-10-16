@@ -6,6 +6,5 @@
 script = ExtResource("1_5wcch")
 Name = "brittle-bones"
 Id = 1154
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 30

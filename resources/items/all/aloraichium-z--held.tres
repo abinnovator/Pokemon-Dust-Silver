@@ -20,5 +20,5 @@ Name = "aloraichium-z--held"
 Id = 844
 Category = "z-crystals"
 ShortEffect = "Held: Allows Alola Raichu to upgrade Thunderbolt into Stoked Sparksurfer."
-Effect = "Held: Allows Alola raichu to upgrade thunderbolt into stoked sparksurfer."
+Effect = "Held: Allows Alola Raichu to upgrade Thunderbolt into Stoked Sparksurfer."
 Sprite = SubResource("ImageTexture_cu5q2")

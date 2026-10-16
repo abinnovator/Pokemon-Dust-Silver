@@ -6,5 +6,4 @@
 script = ExtResource("1_ophit")
 Name = "tarountula-thread"
 Id = 1907
-Cost = 60
 Category = "tm-materials"

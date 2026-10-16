@@ -18,7 +18,6 @@ image = SubResource("Image_wkdml")
 script = ExtResource("1_jv1xw")
 Name = "pearl-string"
 Id = 623
-Cost = 20000
 Category = "loot"
 ShortEffect = "Sell to Ore Collector for 25000 Pokédollars."
 Effect = "Cult vendor trash."

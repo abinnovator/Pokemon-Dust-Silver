@@ -20,5 +20,5 @@ Name = "auroraticket"
 Id = 557
 Category = "event-items"
 ShortEffect = "Allows access to Birth Island and Deoxys."
-Effect = "Provides access to Birth Island and deoxys."
+Effect = "Provides access to Birth Island and Deoxys."
 Sprite = SubResource("ImageTexture_34626")

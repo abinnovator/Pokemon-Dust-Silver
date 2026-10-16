@@ -18,7 +18,6 @@ image = SubResource("Image_7afp8")
 script = ExtResource("1_ia3oj")
 Name = "poison-memory"
 Id = 904
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Poison form.  Changes Multi-Attack’s type to Poison."
 Effect = "Held: Changes Silvally to its Poison form.  Changes Multi-Attack’s type to Poison."

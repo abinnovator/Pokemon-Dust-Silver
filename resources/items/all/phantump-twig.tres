@@ -6,5 +6,4 @@
 script = ExtResource("1_c7bre")
 Name = "phantump-twig"
 Id = 2153
-Cost = 20
 Category = "tm-materials"

@@ -6,6 +6,5 @@
 script = ExtResource("1_el05i")
 Name = "pungent-root"
 Id = 1156
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 10

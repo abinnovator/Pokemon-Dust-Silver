@@ -6,5 +6,4 @@
 script = ExtResource("1_k1322")
 Name = "mayonnaise"
 Id = 1704
-Cost = 120
 Category = "sandwich-ingredients"

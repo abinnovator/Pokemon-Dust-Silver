@@ -18,7 +18,6 @@ image = SubResource("Image_kqkbk")
 script = ExtResource("1_prw8q")
 Name = "shell-bell"
 Id = 230
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder receives 1/8 of the damage it deals when attacking."

@@ -6,6 +6,5 @@
 script = ExtResource("1_mr2hr")
 Name = "blunder-policy"
 Id = 1179
-Cost = 4000
 Category = "held-items"
 FlingPower = 80

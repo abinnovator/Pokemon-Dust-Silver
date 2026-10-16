@@ -18,7 +18,6 @@ image = SubResource("Image_ptfgu")
 script = ExtResource("1_gfpaq")
 Name = "pinap-berry"
 Id = 145
-Cost = 200
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

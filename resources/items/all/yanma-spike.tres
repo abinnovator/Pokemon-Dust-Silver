@@ -6,5 +6,4 @@
 script = ExtResource("1_wtyu7")
 Name = "yanma-spike"
 Id = 2132
-Cost = 35
 Category = "tm-materials"

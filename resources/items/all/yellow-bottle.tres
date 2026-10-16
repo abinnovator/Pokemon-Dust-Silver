@@ -6,5 +6,4 @@
 script = ExtResource("1_bgy31")
 Name = "yellow-bottle"
 Id = 2049
-Cost = 2000
 Category = "picnic"

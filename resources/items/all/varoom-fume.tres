@@ -6,5 +6,4 @@
 script = ExtResource("1_n2p5r")
 Name = "varoom-fume"
 Id = 1919
-Cost = 80
 Category = "tm-materials"

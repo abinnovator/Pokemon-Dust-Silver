@@ -6,5 +6,4 @@
 script = ExtResource("1_qtcth")
 Name = "krabby-candy"
 Id = 1100
-Cost = 20
 Category = "species-candies"

@@ -18,7 +18,6 @@ image = SubResource("Image_odobj")
 script = ExtResource("1_dia6s")
 Name = "tm28"
 Id = 332
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Dig to a compatible Pokémon."
 Effect = "Teaches Dig to a compatible Pokémon."

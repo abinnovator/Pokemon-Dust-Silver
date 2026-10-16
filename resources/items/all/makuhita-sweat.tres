@@ -6,5 +6,4 @@
 script = ExtResource("1_55mag")
 Name = "makuhita-sweat"
 Id = 1805
-Cost = 80
 Category = "tm-materials"

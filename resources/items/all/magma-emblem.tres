@@ -20,5 +20,5 @@ Name = "magma-emblem"
 Id = 561
 Category = "plot-advancement"
 ShortEffect = "Provides access to the Team Magma Hideout in the Jagged Pass."
-Effect = "Provides access to the magma hideout in the jagged pass."
+Effect = "Provides access to the Magma Hideout in the Jagged Pass."
 Sprite = SubResource("ImageTexture_3us2e")

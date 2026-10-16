@@ -6,5 +6,4 @@
 script = ExtResource("1_myfch")
 Name = "pineapple"
 Id = 1755
-Cost = 250
 Category = "sandwich-ingredients"

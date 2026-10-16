@@ -18,7 +18,6 @@ image = SubResource("Image_x2vby")
 script = ExtResource("1_ebdpv")
 Name = "heat-rock"
 Id = 261
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Sunny Day by the holder lasts 8 rounds instead of 5."

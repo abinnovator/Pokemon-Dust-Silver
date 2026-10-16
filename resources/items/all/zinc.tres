@@ -18,7 +18,6 @@ image = SubResource("Image_hsxp8")
 script = ExtResource("1_wqg6t")
 Name = "zinc"
 Id = 52
-Cost = 10000
 Category = "vitamins"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Raises Special Defense and happiness."

@@ -6,5 +6,4 @@
 script = ExtResource("1_tkpdl")
 Name = "dynamax-crystal-cvn4915"
 Id = 1622
-Cost = 20
 Category = "dynamax-crystals"

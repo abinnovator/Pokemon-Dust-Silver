@@ -18,7 +18,6 @@ image = SubResource("Image_tgqo0")
 script = ExtResource("1_kkmd6")
 Name = "lum-berry"
 Id = 134
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed to cure any status condition or confusion."

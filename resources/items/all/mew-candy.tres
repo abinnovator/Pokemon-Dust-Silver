@@ -6,5 +6,4 @@
 script = ExtResource("1_db4vw")
 Name = "mew-candy"
 Id = 1135
-Cost = 20
 Category = "species-candies"

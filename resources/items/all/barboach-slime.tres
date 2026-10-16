@@ -6,5 +6,4 @@
 script = ExtResource("1_g46ue")
 Name = "barboach-slime"
 Id = 1817
-Cost = 60
 Category = "tm-materials"

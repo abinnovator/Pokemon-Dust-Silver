@@ -18,7 +18,6 @@ image = SubResource("Image_fenys")
 script = ExtResource("1_bti23")
 Name = "lagging-tail"
 Id = 256
-Cost = 4000
 Category = "bad-held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder moves last in its priority bracket."

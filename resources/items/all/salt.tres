@@ -6,5 +6,4 @@
 script = ExtResource("1_w3vkr")
 Name = "salt"
 Id = 1710
-Cost = 90
 Category = "sandwich-ingredients"

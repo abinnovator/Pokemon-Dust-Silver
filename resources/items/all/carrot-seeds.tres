@@ -6,5 +6,4 @@
 script = ExtResource("1_jqwrn")
 Name = "carrot-seeds"
 Id = 1656
-Cost = 20
 Category = "plot-advancement"

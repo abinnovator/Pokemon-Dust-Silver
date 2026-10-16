@@ -6,6 +6,5 @@
 script = ExtResource("1_ionar")
 Name = "tr30"
 Id = 1218
-Cost = 4000
 Category = "all-machines"
 FlingPower = 10

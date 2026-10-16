@@ -6,5 +6,4 @@
 script = ExtResource("1_t4joo")
 Name = "magikarp-scales"
 Id = 1777
-Cost = 40
 Category = "tm-materials"

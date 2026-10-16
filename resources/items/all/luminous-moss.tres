@@ -18,7 +18,6 @@ image = SubResource("Image_5cq0u")
 script = ExtResource("1_uxujs")
 Name = "luminous-moss"
 Id = 688
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: If the holder is hit by a damaging Water move, raises its Special Defense by one stage."
 Effect = "Held: If the holder is hit by a damaging Water move, it consumes this item and raises its Special Defense by one stage."

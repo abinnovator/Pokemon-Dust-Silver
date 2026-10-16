@@ -6,5 +6,4 @@
 script = ExtResource("1_efh53")
 Name = "dreepy-powder"
 Id = 1905
-Cost = 200
 Category = "tm-materials"

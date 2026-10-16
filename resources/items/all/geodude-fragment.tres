@@ -6,5 +6,4 @@
 script = ExtResource("1_lmaon")
 Name = "geodude-fragment"
 Id = 2125
-Cost = 30
 Category = "tm-materials"

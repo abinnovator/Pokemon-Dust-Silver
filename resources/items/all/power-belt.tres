@@ -18,7 +18,6 @@ image = SubResource("Image_vhkns")
 script = ExtResource("1_m38ac")
 Name = "power-belt"
 Id = 267
-Cost = 3000
 Category = "effort-training"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder gains 4 Defense effort values, but has halved Speed in battle."

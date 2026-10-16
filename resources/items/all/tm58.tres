@@ -18,7 +18,6 @@ image = SubResource("Image_vn417")
 script = ExtResource("1_sfi5f")
 Name = "tm58"
 Id = 362
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Sky Drop to a compatible Pokémon. (Gen IV: Endure)"
 Effect = "Teaches Endure to a compatible Pokémon."

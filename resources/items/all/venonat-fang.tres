@@ -6,5 +6,4 @@
 script = ExtResource("1_exm77")
 Name = "venonat-fang"
 Id = 1762
-Cost = 80
 Category = "tm-materials"

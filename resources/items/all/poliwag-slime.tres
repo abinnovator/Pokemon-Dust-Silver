@@ -6,5 +6,4 @@
 script = ExtResource("1_gfb37")
 Name = "poliwag-slime"
 Id = 2123
-Cost = 35
 Category = "tm-materials"

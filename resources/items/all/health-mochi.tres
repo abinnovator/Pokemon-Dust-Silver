@@ -6,5 +6,4 @@
 script = ExtResource("1_uo365")
 Name = "health-mochi"
 Id = 2112
-Cost = 125
 Category = "vitamins"

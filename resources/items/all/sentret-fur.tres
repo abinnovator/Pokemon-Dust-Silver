@@ -6,5 +6,4 @@
 script = ExtResource("1_jmjc7")
 Name = "sentret-fur"
 Id = 2128
-Cost = 10
 Category = "tm-materials"

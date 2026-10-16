@@ -18,7 +18,6 @@ image = SubResource("Image_aot5r")
 script = ExtResource("1_4cag0")
 Name = "sharp-beak"
 Id = 221
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Flying-Type moves from holder do 20% more damage."

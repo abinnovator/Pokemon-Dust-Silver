@@ -18,7 +18,6 @@ image = SubResource("Image_8utl1")
 script = ExtResource("1_pbrmd")
 Name = "boost-mulch"
 Id = 693
-Cost = 200
 Category = "mulch"
 ShortEffect = "Causes soil to dry out in 4 hours."
 Effect = "Causes soil to dry out in 4 hours."

@@ -6,5 +6,4 @@
 script = ExtResource("1_s33yd")
 Name = "fomantis-leaf"
 Id = 1878
-Cost = 80
 Category = "tm-materials"

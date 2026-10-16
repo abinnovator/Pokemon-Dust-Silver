@@ -381,11 +381,6 @@ namespace Game.Gameplay
 				BattleManager.Instance.EndBattle();
 				QueueFree();
 			}
-			GameManager.IsPlayerMovementLocked = true;
-			GetTree().CreateTimer(0.3f).Timeout += () => 
-			{
-				GameManager.IsPlayerMovementLocked = false;
-			};
 		}
 
 		public async void RunAway()
@@ -690,7 +685,8 @@ namespace Game.Gameplay
 								int idInt = (int)pokemonData["ID"];
 								PokemonID id = (PokemonID)idInt;
 								int lvl = pokemonData.ContainsKey("Level") ? (int)pokemonData["Level"] : 5;
-								bool fainted = pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0;
+								bool fainted = (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+									|| (id == PlayerID && _playerPokemonHp <= 0);
 								btn.Text = fainted ? $"{id} (Lv.{lvl}) - Fainted" : $"{id} (Lv.{lvl})";
 								btn.Disabled = fainted;
 								btn.Visible = true;
@@ -714,6 +710,25 @@ namespace Game.Gameplay
 
 		private void switchPokemon(PokemonResource pokemon)
 		{
+			var partyDetails = SaveManager.Instance?.CurrentSave?.PartyDetails;
+			if (pokemon == null || partyDetails == null) return;
+
+			foreach (var entry in partyDetails)
+			{
+				var pokemonData = entry.Value.AsGodotDictionary();
+				if (pokemonData == null || !pokemonData.ContainsKey("ID")
+					|| (PokemonID)(int)pokemonData["ID"] != (PokemonID)pokemon.Id)
+					continue;
+
+				if ((pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+					|| ((PokemonID)pokemon.Id == PlayerID && _playerPokemonHp <= 0))
+				{
+					Logger.Info("Cannot switch to a fainted Pokemon.");
+					return;
+				}
+				break;
+			}
+
 			_playerPokemon = pokemon;
 			PlayerSprite.Texture = pokemon.BackSprite;
 			if (PlayerHPBar != null) { PlayerHPBar.MaxValue = pokemon.BaseHp; PlayerHPBar.Value = _playerPokemonHp; }
@@ -730,14 +745,15 @@ namespace Game.Gameplay
 			var pokemonData = partyDetails[index].AsGodotDictionary();
 			if (pokemonData == null || !pokemonData.ContainsKey("ID")) return;
 
-			if (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+			int idInt = (int)pokemonData["ID"];
+			PokemonID id = (PokemonID)idInt;
+			bool fainted = (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+				|| (id == PlayerID && _playerPokemonHp <= 0);
+			if (fainted)
 			{
 				Logger.Info("Cannot select a fainted Pokemon.");
 				return;
 			}
-
-			int idInt = (int)pokemonData["ID"];
-			PokemonID id = (PokemonID)idInt;
 
 			if (id == PlayerID)
 			{

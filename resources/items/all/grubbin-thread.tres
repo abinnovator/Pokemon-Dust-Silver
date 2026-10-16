@@ -6,5 +6,4 @@
 script = ExtResource("1_5x514")
 Name = "grubbin-thread"
 Id = 2154
-Cost = 25
 Category = "tm-materials"

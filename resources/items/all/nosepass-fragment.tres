@@ -6,5 +6,4 @@
 script = ExtResource("1_67sgl")
 Name = "nosepass-fragment"
 Id = 2139
-Cost = 40
 Category = "tm-materials"

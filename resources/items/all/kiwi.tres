@@ -6,5 +6,4 @@
 script = ExtResource("1_qc63o")
 Name = "kiwi"
 Id = 1754
-Cost = 180
 Category = "sandwich-ingredients"

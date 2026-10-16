@@ -6,5 +6,4 @@
 script = ExtResource("1_nwwce")
 Name = "rufflet-feather"
 Id = 1856
-Cost = 80
 Category = "tm-materials"

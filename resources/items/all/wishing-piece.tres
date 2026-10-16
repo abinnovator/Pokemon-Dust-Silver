@@ -6,6 +6,5 @@
 script = ExtResource("1_lclq8")
 Name = "wishing-piece"
 Id = 1310
-Cost = 20
 Category = "collectibles"
 FlingPower = 50

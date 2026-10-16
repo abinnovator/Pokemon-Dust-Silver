@@ -18,7 +18,6 @@ image = SubResource("Image_ibem7")
 script = ExtResource("1_xkduf")
 Name = "big-nugget"
 Id = 622
-Cost = 40000
 Category = "loot"
 ShortEffect = "Sell to Ore Collector for 30000 Pokédollars."
 Effect = "Cult vendor trash."

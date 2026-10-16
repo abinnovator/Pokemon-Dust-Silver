@@ -6,5 +6,4 @@
 script = ExtResource("1_tgrnr")
 Name = "flabebe-pollen"
 Id = 1862
-Cost = 80
 Category = "tm-materials"

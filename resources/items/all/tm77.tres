@@ -18,7 +18,6 @@ image = SubResource("Image_wcgkn")
 script = ExtResource("1_lddlo")
 Name = "tm77"
 Id = 381
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Psych Up to a compatible Pokémon."
 Effect = "Teaches Psych Up to a compatible Pokémon."

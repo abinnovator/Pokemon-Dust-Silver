@@ -6,5 +6,4 @@
 script = ExtResource("1_40k28")
 Name = "jalapeno"
 Id = 1756
-Cost = 220
 Category = "sandwich-ingredients"

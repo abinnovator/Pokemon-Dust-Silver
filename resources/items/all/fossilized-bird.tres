@@ -6,6 +6,5 @@
 script = ExtResource("1_d5ems")
 Name = "fossilized-bird"
 Id = 1163
-Cost = 5000
 Category = "dex-completion"
 FlingPower = 100

@@ -6,5 +6,4 @@
 script = ExtResource("1_l86wy")
 Name = "curry-powder"
 Id = 1758
-Cost = 450
 Category = "sandwich-ingredients"

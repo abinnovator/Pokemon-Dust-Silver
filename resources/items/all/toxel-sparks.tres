@@ -6,5 +6,4 @@
 script = ExtResource("1_tk4vm")
 Name = "toxel-sparks"
 Id = 1891
-Cost = 80
 Category = "tm-materials"

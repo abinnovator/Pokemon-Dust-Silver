@@ -6,6 +6,5 @@
 script = ExtResource("1_afjy6")
 Name = "polished-mud-ball"
 Id = 1031
-Cost = 1200
 Category = "loot"
 FlingPower = 30

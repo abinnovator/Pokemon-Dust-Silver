@@ -20,5 +20,5 @@ Name = "decidium-z--held"
 Id = 839
 Category = "z-crystals"
 ShortEffect = "Held: Allows Decidueye to upgrade Spirit Shackle into Sinister Arrow Raid."
-Effect = "Held: Allows decidueye to upgrade spirit shackle into sinister arrow raid."
+Effect = "Held: Allows Decidueye to upgrade Spirit Shackle into Sinister Arrow Raid."
 Sprite = SubResource("ImageTexture_e4tic")

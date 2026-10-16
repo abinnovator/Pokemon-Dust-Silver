@@ -18,7 +18,6 @@ image = SubResource("Image_0e7wx")
 script = ExtResource("1_6jdi0")
 Name = "icy-rock"
 Id = 259
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Hail by the holder lasts 8 rounds instead of 5."

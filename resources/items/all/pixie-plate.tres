@@ -18,7 +18,6 @@ image = SubResource("Image_sb6ug")
 script = ExtResource("1_bl4nx")
 Name = "pixie-plate"
 Id = 684
-Cost = 1000
 Category = "plates"
 ShortEffect = "Held: Fairy-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Fairy."
 Effect = "Held: Fairy-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Fairy."

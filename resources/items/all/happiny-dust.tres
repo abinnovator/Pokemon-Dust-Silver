@@ -6,5 +6,4 @@
 script = ExtResource("1_bxlnd")
 Name = "happiny-dust"
 Id = 1834
-Cost = 300
 Category = "tm-materials"

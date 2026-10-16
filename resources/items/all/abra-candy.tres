@@ -6,5 +6,4 @@
 script = ExtResource("1_rikqx")
 Name = "abra-candy"
 Id = 1084
-Cost = 20
 Category = "species-candies"

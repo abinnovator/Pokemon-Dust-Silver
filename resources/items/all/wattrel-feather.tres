@@ -6,5 +6,4 @@
 script = ExtResource("1_iwonr")
 Name = "wattrel-feather"
 Id = 1927
-Cost = 120
 Category = "tm-materials"

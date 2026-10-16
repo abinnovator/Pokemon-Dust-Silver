@@ -18,7 +18,6 @@ image = SubResource("Image_xob0k")
 script = ExtResource("1_7f0tn")
 Name = "red-nectar"
 Id = 889
-Cost = 300
 Category = "species-specific"
 ShortEffect = "Changes Oricorio to Baile Style."
 Effect = "Changes Oricorio to Baile Style.  Single-use and cannot be used in battle."

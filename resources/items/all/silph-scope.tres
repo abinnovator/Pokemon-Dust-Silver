@@ -20,5 +20,5 @@ Name = "silph-scope"
 Id = 548
 Category = "plot-advancement"
 ShortEffect = "Used to identify the true forms of ghosts in Pokémon Tower."
-Effect = "Identifies ghosts in pokemon tower."
+Effect = "Identifies ghosts in Pokémon Tower."
 Sprite = SubResource("ImageTexture_trbpm")

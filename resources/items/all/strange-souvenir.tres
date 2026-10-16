@@ -18,7 +18,6 @@ image = SubResource("Image_tl360")
 script = ExtResource("1_skcoi")
 Name = "strange-souvenir"
 Id = 727
-Cost = 3000
 Category = "loot"
 ShortEffect = "Vendor trash."
 Effect = "Vendor trash."

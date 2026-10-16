@@ -18,7 +18,6 @@ image = SubResource("Image_vo766")
 script = ExtResource("1_rihct")
 Name = "nugget"
 Id = 92
-Cost = 10000
 Category = "loot"
 ShortEffect = "Sell for 5000 Pokédollars, or to Ore Collector for 10000 Pokédollars."
 Effect = "Vendor trash."

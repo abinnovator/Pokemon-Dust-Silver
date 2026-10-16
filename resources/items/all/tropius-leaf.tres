@@ -6,5 +6,4 @@
 script = ExtResource("1_rn5fi")
 Name = "tropius-leaf"
 Id = 1819
-Cost = 140
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_vloip")
 script = ExtResource("1_qdjiy")
 Name = "tm73"
 Id = 377
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Thunder Wave to a compatible Pokémon."
 Effect = "Teaches Thunder Wave to a compatible Pokémon."

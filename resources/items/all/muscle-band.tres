@@ -18,7 +18,6 @@ image = SubResource("Image_nu7wt")
 script = ExtResource("1_r4sjv")
 Name = "muscle-band"
 Id = 243
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Boosts the damage of physical moves used by the holder by 10%."

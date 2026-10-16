@@ -6,5 +6,4 @@
 script = ExtResource("1_fntsi")
 Name = "dynamax-crystal-vel3485"
 Id = 1583
-Cost = 20
 Category = "dynamax-crystals"

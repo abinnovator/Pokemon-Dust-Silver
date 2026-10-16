@@ -6,5 +6,4 @@
 script = ExtResource("1_7pb83")
 Name = "crabrawler-shell"
 Id = 1873
-Cost = 100
 Category = "tm-materials"

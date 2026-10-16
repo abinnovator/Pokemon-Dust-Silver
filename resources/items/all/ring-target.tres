@@ -18,7 +18,6 @@ image = SubResource("Image_s3ld0")
 script = ExtResource("1_e8i36")
 Name = "ring-target"
 Id = 586
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Negates the holder’s type immunities. Ability immunities are not removed."
 Effect = "Held :   When one of the user’s types would render it immune to damage, that type is ignored for damage calculation."

@@ -18,7 +18,6 @@ image = SubResource("Image_2vrly")
 script = ExtResource("1_s13fo")
 Name = "tm83"
 Id = 387
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Work Up to a compatible Pokémon. (Gen IV: Natural Gift)"
 Effect = "Teaches Natural Gift to a compatible Pokémon."

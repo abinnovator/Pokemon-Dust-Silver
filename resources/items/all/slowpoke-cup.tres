@@ -6,5 +6,4 @@
 script = ExtResource("1_0820j")
 Name = "slowpoke-cup"
 Id = 2062
-Cost = 2000
 Category = "picnic"

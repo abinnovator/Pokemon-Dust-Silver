@@ -18,7 +18,6 @@ image = SubResource("Image_p3gct")
 script = ExtResource("1_jg8vv")
 Name = "tm72"
 Id = 376
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Volt Switch to a compatible Pokémon. (Gen IV: Avalanche)"
 Effect = "Teaches Avalanche to a compatible Pokémon."

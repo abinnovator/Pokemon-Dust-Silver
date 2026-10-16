@@ -18,7 +18,6 @@ image = SubResource("Image_51iqf")
 script = ExtResource("1_00vvk")
 Name = "sea-incense"
 Id = 231
-Cost = 2000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Water-Type moves from holder do 20% more damage. Breeding: Marill or Azumarill beget an Azurill Egg."

@@ -6,5 +6,4 @@
 script = ExtResource("1_kgw6w")
 Name = "fletchling-feather"
 Id = 1859
-Cost = 60
 Category = "tm-materials"

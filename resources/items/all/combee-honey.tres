@@ -6,5 +6,4 @@
 script = ExtResource("1_sk8ro")
 Name = "combee-honey"
 Id = 1826
-Cost = 100
 Category = "tm-materials"

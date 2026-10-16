@@ -18,7 +18,6 @@ image = SubResource("Image_w8rgv")
 script = ExtResource("1_pfhhu")
 Name = "clever-wing"
 Id = 610
-Cost = 300
 Category = "vitamins"
 ShortEffect = "Increases Special Defense effort by 1."
 Effect = "Used on a party Pokémon :   Increases the target’s Special Defense effort by 1."

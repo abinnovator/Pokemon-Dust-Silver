@@ -6,5 +6,4 @@
 script = ExtResource("1_x6pue")
 Name = "spinarak-thread"
 Id = 2130
-Cost = 10
 Category = "tm-materials"

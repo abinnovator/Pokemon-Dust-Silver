@@ -18,7 +18,6 @@ image = SubResource("Image_jpwj2")
 script = ExtResource("1_j7fpu")
 Name = "rose-incense"
 Id = 295
-Cost = 2000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Grass-Type moves from holder do 20% more damage. Breeding: Roselia or Roserade beget a Budew Egg."

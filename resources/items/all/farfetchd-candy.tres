@@ -6,5 +6,4 @@
 script = ExtResource("1_fjt54")
 Name = "farfetchd-candy"
 Id = 1092
-Cost = 20
 Category = "species-candies"

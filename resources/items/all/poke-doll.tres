@@ -18,7 +18,6 @@ image = SubResource("Image_nxxsh")
 script = ExtResource("1_sxd6m")
 Name = "poke-doll"
 Id = 63
-Cost = 300
 Category = "spelunking"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Ends a wild battle."

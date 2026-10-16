@@ -18,7 +18,6 @@ image = SubResource("Image_5a300")
 script = ExtResource("1_pft2w")
 Name = "fist-plate"
 Id = 280
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Fighting-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Fighting."

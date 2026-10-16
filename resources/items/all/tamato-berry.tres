@@ -18,7 +18,6 @@ image = SubResource("Image_llq1c")
 script = ExtResource("1_ef47r")
 Name = "tamato-berry"
 Id = 151
-Cost = 80
 Category = "effort-drop"
 ShortEffect = "Drops Speed Effort Values by 10 and raises happiness."
 Effect = "Used on a party Pokémon :   Increases happiness by 10/5/2.  Lowers Speed effort by 10."

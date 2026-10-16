@@ -20,5 +20,5 @@ Name = "old-sea-map"
 Id = 562
 Category = "event-items"
 ShortEffect = "Allows access to Faraway Island and Mew. Unreleased outside of Japan."
-Effect = "Provides access to Faraway Island and mew."
+Effect = "Provides access to Faraway Island and Mew."
 Sprite = SubResource("ImageTexture_t8t27")

@@ -6,5 +6,4 @@
 script = ExtResource("1_qahme")
 Name = "dratini-scales"
 Id = 1780
-Cost = 200
 Category = "tm-materials"

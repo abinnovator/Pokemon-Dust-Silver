@@ -18,7 +18,6 @@ image = SubResource("Image_g6fml")
 script = ExtResource("1_3yvfa")
 Name = "light-clay"
 Id = 246
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Light Screen and Reflect used by the holder last 8 rounds instead of 5."

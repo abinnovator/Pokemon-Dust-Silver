@@ -6,6 +6,5 @@
 script = ExtResource("1_j0pn8")
 Name = "coconut-milk"
 Id = 1319
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 10

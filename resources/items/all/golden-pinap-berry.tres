@@ -6,6 +6,5 @@
 script = ExtResource("1_77ljb")
 Name = "golden-pinap-berry"
 Id = 1019
-Cost = 5000
 Category = "catching-bonus"
 FlingPower = 10

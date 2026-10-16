@@ -6,5 +6,4 @@
 script = ExtResource("1_mpiwg")
 Name = "magmar-candy"
 Id = 1137
-Cost = 20
 Category = "species-candies"

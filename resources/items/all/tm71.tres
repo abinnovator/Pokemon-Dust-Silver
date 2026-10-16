@@ -18,7 +18,6 @@ image = SubResource("Image_tek8p")
 script = ExtResource("1_kloif")
 Name = "tm71"
 Id = 375
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Stone Edge to a compatible Pokémon."
 Effect = "Teaches Stone Edge to a compatible Pokémon."

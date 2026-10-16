@@ -18,7 +18,6 @@ image = SubResource("Image_556wx")
 script = ExtResource("1_aepxf")
 Name = "tm84"
 Id = 388
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Poison Jab to a compatible Pokémon."
 Effect = "Teaches Poison Jab to a compatible Pokémon."

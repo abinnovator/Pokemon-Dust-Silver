@@ -6,5 +6,4 @@
 script = ExtResource("1_rxnjt")
 Name = "mewtwo-candy"
 Id = 1134
-Cost = 20
 Category = "species-candies"

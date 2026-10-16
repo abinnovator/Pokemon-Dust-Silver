@@ -18,7 +18,6 @@ image = SubResource("Image_3533n")
 script = ExtResource("1_udu1p")
 Name = "tm02"
 Id = 306
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Dragon Claw to a compatible Pokémon. (Gen II: Headbutt Gen I: Razor Wind)"
 Effect = "Teaches Dragon Claw to a compatible Pokémon."

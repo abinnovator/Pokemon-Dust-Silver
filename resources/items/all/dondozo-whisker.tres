@@ -6,5 +6,4 @@
 script = ExtResource("1_o21es")
 Name = "dondozo-whisker"
 Id = 1913
-Cost = 160
 Category = "tm-materials"

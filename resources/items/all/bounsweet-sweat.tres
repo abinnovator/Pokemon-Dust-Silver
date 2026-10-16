@@ -6,5 +6,4 @@
 script = ExtResource("1_dk2qg")
 Name = "bounsweet-sweat"
 Id = 1880
-Cost = 80
 Category = "tm-materials"

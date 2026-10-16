@@ -18,7 +18,6 @@ image = SubResource("Image_er04m")
 script = ExtResource("1_n2onm")
 Name = "earth-plate"
 Id = 282
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Ground-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Ground."

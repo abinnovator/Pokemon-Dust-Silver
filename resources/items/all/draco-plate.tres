@@ -18,7 +18,6 @@ image = SubResource("Image_yhfou")
 script = ExtResource("1_cmguf")
 Name = "draco-plate"
 Id = 288
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Dragon-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Dragon."

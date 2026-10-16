@@ -18,7 +18,6 @@ image = SubResource("Image_7p0tk")
 script = ExtResource("1_wo4qm")
 Name = "tm65"
 Id = 369
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Shadow Claw to a compatible Pokémon."
 Effect = "Teaches Shadow Claw to a compatible Pokémon."

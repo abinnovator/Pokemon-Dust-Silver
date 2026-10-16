@@ -18,7 +18,6 @@ image = SubResource("Image_as5i3")
 script = ExtResource("1_jxcte")
 Name = "figy-berry"
 Id = 136
-Cost = 80
 Category = "picky-healing"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pokémon that dislike spicy flavor."

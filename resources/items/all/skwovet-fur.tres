@@ -6,5 +6,4 @@
 script = ExtResource("1_o2fo7")
 Name = "skwovet-fur"
 Id = 1888
-Cost = 60
 Category = "tm-materials"

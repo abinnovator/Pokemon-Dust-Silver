@@ -6,5 +6,4 @@
 script = ExtResource("1_t8u3i")
 Name = "azurill-fur"
 Id = 1806
-Cost = 60
 Category = "tm-materials"

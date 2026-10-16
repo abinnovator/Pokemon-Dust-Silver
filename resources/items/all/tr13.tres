@@ -6,6 +6,5 @@
 script = ExtResource("1_s4fat")
 Name = "tr13"
 Id = 1201
-Cost = 2000
 Category = "all-machines"
 FlingPower = 10

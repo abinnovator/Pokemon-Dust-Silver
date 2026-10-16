@@ -18,7 +18,6 @@ image = SubResource("Image_026ji")
 script = ExtResource("1_wrck6")
 Name = "tm76"
 Id = 380
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Struggle Bug to a compatible Pokémon. (Gen IV: Stealth Rock)"
 Effect = "Teaches Stealth Rock to a compatible Pokémon."

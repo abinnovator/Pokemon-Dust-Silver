@@ -6,5 +6,4 @@
 script = ExtResource("1_3vq32")
 Name = "red-bell-pepper"
 Id = 1732
-Cost = 240
 Category = "sandwich-ingredients"

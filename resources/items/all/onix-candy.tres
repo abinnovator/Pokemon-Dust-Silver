@@ -6,5 +6,4 @@
 script = ExtResource("1_uwll8")
 Name = "onix-candy"
 Id = 1098
-Cost = 20
 Category = "species-candies"

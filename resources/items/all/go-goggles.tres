@@ -20,5 +20,5 @@ Name = "go-goggles"
 Id = 536
 Category = "gameplay"
 ShortEffect = "Allows passage through windy deserts."
-Effect = "Allows the trainer to enter the desert on hoenn route 111."
+Effect = "Allows the trainer to enter the desert on Route 111."
 Sprite = SubResource("ImageTexture_po2xa")

@@ -6,5 +6,4 @@
 script = ExtResource("1_iv20b")
 Name = "pawniard-blade"
 Id = 1855
-Cost = 80
 Category = "tm-materials"

@@ -71,6 +71,8 @@ legendary bird of
 fire. Every flapof its wings
 creates a dazzling
 flash of flames."
+TypeOne = 2
+TypeTwo = 10
 Height = 20
 Weight = 600
 BaseExperience = 261
@@ -80,7 +82,7 @@ BaseDefense = 90
 BaseSpecialAttack = 125
 BaseSpecialDefense = 85
 BaseSpeed = 90
-LearnableMoves = Array[String](["razor-wind", "gust", "wing-attack", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "ember", "flamethrower", "hyper-beam", "peck", "solar-beam", "fire-spin", "toxic", "agility", "rage", "mimic", "double-team", "reflect", "bide", "fire-blast", "swift", "sky-attack", "rest", "substitute", "snore", "curse", "protect", "mud-slap", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "return", "frustration", "safeguard", "hidden-power", "twister", "rain-dance", "sunny-day", "ancient-power", "rock-smash", "heat-wave", "will-o-wisp", "facade", "helping-hand", "secret-power", "weather-ball", "air-cutter", "overheat", "aerial-ace", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "flare-blitz", "air-slash", "brave-bird", "giga-impact", "defog", "ominous-wind", "flame-charge", "round", "sky-drop", "incinerate", "acrobatics", "hurricane", "confide", "mystical-fire", "laser-focus", "burn-up", "burning-jealousy", "dual-wingbeat", "scorching-sands", "tera-blast", "temper-flare"])
+LearnableMoves = Array[String](["razor-wind", "gust", "wing-attack", "whirlwind", "fly", "headbutt", "take-down", "double-edge", "leer", "roar", "ember", "flamethrower", "hyper-beam", "peck", "solar-beam", "fire-spin", "toxic", "agility", "rage", "mimic", "double-team", "reflect", "bide", "fire-blast", "swift", "sky-attack", "rest", "substitute", "snore", "curse", "protect", "mud-slap", "detect", "sandstorm", "endure", "swagger", "steel-wing", "sleep-talk", "return", "frustration", "safeguard", "morning-sun", "hidden-power", "twister", "rain-dance", "sunny-day", "ancient-power", "rock-smash", "heat-wave", "will-o-wisp", "facade", "helping-hand", "secret-power", "weather-ball", "air-cutter", "overheat", "extrasensory", "aerial-ace", "roost", "natural-gift", "pluck", "tailwind", "u-turn", "flare-blitz", "air-slash", "brave-bird", "giga-impact", "defog", "ominous-wind", "flame-charge", "round", "sky-drop", "incinerate", "acrobatics", "hurricane", "confide", "mystical-fire", "laser-focus", "burn-up", "burning-jealousy", "dual-wingbeat", "scorching-sands", "tera-blast", "temper-flare"])
 LevelUpMoves = Dictionary[String, int]({
 "agility": 55,
 "air-slash": 50,

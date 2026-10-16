@@ -18,7 +18,6 @@ image = SubResource("Image_gwufy")
 script = ExtResource("1_l8no0")
 Name = "tm50"
 Id = 354
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Overheat to a compatible Pokémon. (Gen II: Nightmare Gen I: Substitute)"
 Effect = "Teaches Overheat to a compatible Pokémon."

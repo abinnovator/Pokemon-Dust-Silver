@@ -6,6 +6,5 @@
 script = ExtResource("1_hgb70")
 Name = "bobs-food-tin"
 Id = 1145
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 80

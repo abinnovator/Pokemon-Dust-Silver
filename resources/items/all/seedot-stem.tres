@@ -6,5 +6,4 @@
 script = ExtResource("1_dc8xh")
 Name = "seedot-stem"
 Id = 2138
-Cost = 20
 Category = "tm-materials"

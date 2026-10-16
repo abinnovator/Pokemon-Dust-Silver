@@ -6,5 +6,4 @@
 script = ExtResource("1_uyuvw")
 Name = "rockruff-rock"
 Id = 1875
-Cost = 80
 Category = "tm-materials"

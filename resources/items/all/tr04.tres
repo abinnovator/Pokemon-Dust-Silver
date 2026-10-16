@@ -6,6 +6,5 @@
 script = ExtResource("1_uweop")
 Name = "tr04"
 Id = 1192
-Cost = 10000
 Category = "all-machines"
 FlingPower = 90

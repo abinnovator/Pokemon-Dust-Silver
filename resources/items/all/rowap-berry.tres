@@ -18,7 +18,6 @@ image = SubResource("Image_e1kp3")
 script = ExtResource("1_hbvwm")
 Name = "rowap-berry"
 Id = 189
-Cost = 80
 Category = "other"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed to deal 1/8 attacker’s max HP when holder is struck by a special attack."

@@ -18,7 +18,6 @@ image = SubResource("Image_55ms4")
 script = ExtResource("1_tx43m")
 Name = "stick"
 Id = 236
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Raises Farfetch’d’s critical hit ratio by two stages."

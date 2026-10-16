@@ -18,7 +18,6 @@ image = SubResource("Image_735v5")
 script = ExtResource("1_sscj0")
 Name = "tm36"
 Id = 340
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Sludge Bomb to a compatible Pokémon. (Gen I: Selfdestruct)"
 Effect = "Teaches Sludge Bomb to a compatible Pokémon."

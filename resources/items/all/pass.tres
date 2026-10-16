@@ -20,5 +20,5 @@ Name = "pass"
 Id = 479
 Category = "plot-advancement"
 ShortEffect = "Grants access to ride the Magnet Train between Goldenrod City and Saffron City."
-Effect = "Allows the trainer to ride the Magnet Train between goldenrod city and saffron city."
+Effect = "Allows the trainer to ride the Magnet Train between Goldenrod City and Saffron City."
 Sprite = SubResource("ImageTexture_f4kwu")

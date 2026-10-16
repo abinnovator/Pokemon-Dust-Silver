@@ -6,5 +6,4 @@
 script = ExtResource("1_7qblm")
 Name = "striped-tablecloth"
 Id = 2071
-Cost = 1500
 Category = "picnic"

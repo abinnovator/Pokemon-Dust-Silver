@@ -18,7 +18,6 @@ image = SubResource("Image_34pqe")
 script = ExtResource("1_ii7sj")
 Name = "purple-nectar"
 Id = 892
-Cost = 300
 Category = "species-specific"
 ShortEffect = "Changes Oricorio to Sensu Style."
 Effect = "Changes Oricorio to Sensu Style.  Single-use and cannot be used in battle."

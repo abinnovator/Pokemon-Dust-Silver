@@ -6,5 +6,4 @@
 script = ExtResource("1_8bbrb")
 Name = "polka-dot-cup"
 Id = 2024
-Cost = 800
 Category = "picnic"

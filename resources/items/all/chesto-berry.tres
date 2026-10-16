@@ -18,7 +18,6 @@ image = SubResource("Image_i1oqg")
 script = ExtResource("1_rm4qh")
 Name = "chesto-berry"
 Id = 127
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when asleep to cure sleep."

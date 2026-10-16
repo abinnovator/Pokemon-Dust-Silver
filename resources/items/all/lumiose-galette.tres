@@ -18,7 +18,6 @@ image = SubResource("Image_xnq7c")
 script = ExtResource("1_a5mq8")
 Name = "lumiose-galette"
 Id = 728
-Cost = 350
 Category = "status-cures"
 ShortEffect = "Cures all major status ailments and confusion."
 Effect = "Cures all major status ailments and confusion."

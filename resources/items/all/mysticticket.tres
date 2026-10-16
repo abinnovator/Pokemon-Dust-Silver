@@ -20,5 +20,5 @@ Name = "mysticticket"
 Id = 556
 Category = "event-items"
 ShortEffect = "Allows access to Navel Rock and Lugia or Ho-oh."
-Effect = "Provides access to Navel Rock, ho oh, and lugia."
+Effect = "Provides access to Navel Rock, Ho-Oh, and Lugia."
 Sprite = SubResource("ImageTexture_ofusn")

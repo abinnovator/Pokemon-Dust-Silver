@@ -18,7 +18,6 @@ image = SubResource("Image_n6txn")
 script = ExtResource("1_58vlx")
 Name = "poison-barb"
 Id = 222
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Poison-Type moves from holder do 20% more damage."

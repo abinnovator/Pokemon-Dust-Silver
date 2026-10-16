@@ -18,7 +18,6 @@ image = SubResource("Image_7shs2")
 script = ExtResource("1_6bi58")
 Name = "starf-berry"
 Id = 184
-Cost = 80
 Category = "in-a-pinch"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/4 max HP to boost a random stat by two stages."

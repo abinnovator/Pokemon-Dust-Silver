@@ -6,5 +6,4 @@
 script = ExtResource("1_lj886")
 Name = "onion"
 Id = 1729
-Cost = 130
 Category = "sandwich-ingredients"

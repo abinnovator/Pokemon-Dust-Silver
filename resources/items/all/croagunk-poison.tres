@@ -6,5 +6,4 @@
 script = ExtResource("1_na4nj")
 Name = "croagunk-poison"
 Id = 1839
-Cost = 80
 Category = "tm-materials"

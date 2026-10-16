@@ -6,5 +6,4 @@
 script = ExtResource("1_g54c0")
 Name = "whipped-cream"
 Id = 1713
-Cost = 200
 Category = "sandwich-ingredients"

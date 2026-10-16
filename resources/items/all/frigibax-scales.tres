@@ -6,5 +6,4 @@
 script = ExtResource("1_yo4ph")
 Name = "frigibax-scales"
 Id = 1923
-Cost = 200
 Category = "tm-materials"

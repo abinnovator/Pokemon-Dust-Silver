@@ -6,5 +6,4 @@
 script = ExtResource("1_7e7j2")
 Name = "big-bamboo-shoot"
 Id = 1674
-Cost = 1500
 Category = "loot"

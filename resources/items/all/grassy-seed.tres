@@ -18,7 +18,6 @@ image = SubResource("Image_8k03b")
 script = ExtResource("1_wshu7")
 Name = "grassy-seed"
 Id = 901
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Consumed on Grassy Terrain and raises the holder’s Defense by one stage."
 Effect = "Held: If the holder enters battle during Grassy Terrain, or if Grassy Terrain is activated while the holder is in battle, this item is consumed and the holder’s Defense raises by one stage."

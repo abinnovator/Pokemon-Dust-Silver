@@ -18,7 +18,6 @@ image = SubResource("Image_23s5i")
 script = ExtResource("1_oc4jh")
 Name = "tm91"
 Id = 395
-Cost = 20000
 Category = "all-machines"
 ShortEffect = "Teaches Flash Cannon to a compatible Pokémon."
 Effect = "Teaches Flash Cannon to a compatible Pokémon."

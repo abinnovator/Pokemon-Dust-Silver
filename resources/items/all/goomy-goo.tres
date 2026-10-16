@@ -6,5 +6,4 @@
 script = ExtResource("1_vb3bd")
 Name = "goomy-goo"
 Id = 1868
-Cost = 140
 Category = "tm-materials"

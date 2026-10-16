@@ -18,7 +18,6 @@ image = SubResource("Image_8o2ib")
 script = ExtResource("1_o1mqu")
 Name = "max-repel"
 Id = 77
-Cost = 900
 Category = "spelunking"
 ShortEffect = "For 250 steps, prevents wild encounters of level lower than your party’s lead Pokémon."
 Effect = "Used outside of battle :   Trainer will skip encounters with wild Pokémon of a lower level than the lead party Pokémon.  This effect wears off after the trainer takes 250 steps."

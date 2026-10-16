@@ -18,7 +18,6 @@ image = SubResource("Image_7kbds")
 script = ExtResource("1_p75uh")
 Name = "smooth-rock"
 Id = 260
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Sandstorm by the holder lasts 8 rounds instead of 5."

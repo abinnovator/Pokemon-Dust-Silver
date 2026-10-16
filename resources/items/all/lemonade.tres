@@ -18,7 +18,6 @@ image = SubResource("Image_2aqt4")
 script = ExtResource("1_ckt41")
 Name = "lemonade"
 Id = 32
-Cost = 400
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 80 HP."

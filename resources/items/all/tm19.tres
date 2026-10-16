@@ -18,7 +18,6 @@ image = SubResource("Image_lffyp")
 script = ExtResource("1_vdxql")
 Name = "tm19"
 Id = 323
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Telekinesis to a compatible Pokémon. (Gen IV & III & II: Giga Drain Gen I: Seismic Toss)"
 Effect = "Teaches Giga Drain to a compatible Pokémon."

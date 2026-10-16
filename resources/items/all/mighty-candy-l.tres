@@ -6,5 +6,4 @@
 script = ExtResource("1_es56f")
 Name = "mighty-candy-l"
 Id = 1047
-Cost = 20
 Category = "vitamins"

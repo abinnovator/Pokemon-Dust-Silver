@@ -18,7 +18,6 @@ image = SubResource("Image_bhitx")
 script = ExtResource("1_o46py")
 Name = "fighting-memory"
 Id = 902
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Fighting form.  Changes Multi-Attack’s type to Fighting."
 Effect = "Held: Changes Silvally to its Fighting form.  Changes Multi-Attack’s type to Fighting."

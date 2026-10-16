@@ -18,7 +18,6 @@ image = SubResource("Image_ujqws")
 script = ExtResource("1_2ovgi")
 Name = "tm54"
 Id = 358
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches False Swipe to a compatible Pokémon."
 Effect = "Teaches False Swipe to a compatible Pokémon."

@@ -6,5 +6,4 @@
 script = ExtResource("1_b1ly3")
 Name = "swablu-fluff"
 Id = 1814
-Cost = 100
 Category = "tm-materials"

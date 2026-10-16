@@ -6,5 +6,4 @@
 script = ExtResource("1_d5ppv")
 Name = "fried-fillet"
 Id = 1743
-Cost = 360
 Category = "sandwich-ingredients"

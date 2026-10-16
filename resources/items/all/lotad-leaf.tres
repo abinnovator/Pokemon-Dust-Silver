@@ -6,5 +6,4 @@
 script = ExtResource("1_ql5w1")
 Name = "lotad-leaf"
 Id = 2137
-Cost = 20
 Category = "tm-materials"

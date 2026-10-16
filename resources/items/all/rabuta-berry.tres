@@ -18,7 +18,6 @@ image = SubResource("Image_8nwqe")
 script = ExtResource("1_mm64w")
 Name = "rabuta-berry"
 Id = 154
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

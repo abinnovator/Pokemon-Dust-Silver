@@ -18,7 +18,6 @@ image = SubResource("Image_n6d8d")
 script = ExtResource("1_5jdo5")
 Name = "fresh-water"
 Id = 30
-Cost = 200
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 50 HP."

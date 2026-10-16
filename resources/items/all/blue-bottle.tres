@@ -6,5 +6,4 @@
 script = ExtResource("1_cursc")
 Name = "blue-bottle"
 Id = 2048
-Cost = 2000
 Category = "picnic"

@@ -18,7 +18,6 @@ image = SubResource("Image_jb7wk")
 script = ExtResource("1_86pxn")
 Name = "resist-wing"
 Id = 608
-Cost = 300
 Category = "vitamins"
 ShortEffect = "Increases Defense effort by 1."
 Effect = "Used on a party Pokémon :   Increases the target’s Defense effort by 1."

@@ -6,6 +6,5 @@
 script = ExtResource("1_76q0g")
 Name = "cracked-pot"
 Id = 1311
-Cost = 1600
 Category = "evolution"
 FlingPower = 80

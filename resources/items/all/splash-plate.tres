@@ -18,7 +18,6 @@ image = SubResource("Image_rn76p")
 script = ExtResource("1_k1y1g")
 Name = "splash-plate"
 Id = 276
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Water-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Water."

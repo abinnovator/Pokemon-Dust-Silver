@@ -18,7 +18,6 @@ image = SubResource("Image_ciioa")
 script = ExtResource("1_bpdir")
 Name = "spelon-berry"
 Id = 156
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

@@ -18,7 +18,6 @@ image = SubResource("Image_jecj0")
 script = ExtResource("1_r5kqg")
 Name = "damp-mulch"
 Id = 96
-Cost = 200
 Category = "mulch"
 ShortEffect = "Growing time of berries is increased, but the soil dries out slower."
 Effect = "Used on a patch of soil :   Plant’s growth stages will each last 25% more time.  Dries soil out more slowly."

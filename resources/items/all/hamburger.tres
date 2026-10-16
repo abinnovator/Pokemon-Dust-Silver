@@ -6,5 +6,4 @@
 script = ExtResource("1_gcnnt")
 Name = "hamburger"
 Id = 1740
-Cost = 380
 Category = "sandwich-ingredients"

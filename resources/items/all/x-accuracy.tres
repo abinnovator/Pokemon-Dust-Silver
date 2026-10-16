@@ -18,7 +18,6 @@ image = SubResource("Image_it4vo")
 script = ExtResource("1_0khvj")
 Name = "x-accuracy"
 Id = 60
-Cost = 1000
 Category = "stat-boosts"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Raises accuracy by one stage in battle.  Raises happiness."

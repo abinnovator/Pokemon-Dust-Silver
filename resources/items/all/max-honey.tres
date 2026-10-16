@@ -6,6 +6,5 @@
 script = ExtResource("1_7ix2y")
 Name = "max-honey"
 Id = 1630
-Cost = 4000
 Category = "revival"
 FlingPower = 30

@@ -18,7 +18,6 @@ image = SubResource("Image_xjbpq")
 script = ExtResource("1_y18wv")
 Name = "tm59"
 Id = 363
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Incinerate to a compatible Pokémon. (Gen IV: Dragon Pulse)"
 Effect = "Teaches Dragon Pulse to a compatible Pokémon."

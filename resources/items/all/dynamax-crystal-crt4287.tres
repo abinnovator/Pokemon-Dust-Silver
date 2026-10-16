@@ -6,5 +6,4 @@
 script = ExtResource("1_hbari")
 Name = "dynamax-crystal-crt4287"
 Id = 1488
-Cost = 20
 Category = "dynamax-crystals"

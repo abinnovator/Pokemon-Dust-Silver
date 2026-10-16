@@ -18,7 +18,6 @@ image = SubResource("Image_spobb")
 script = ExtResource("1_4tcy3")
 Name = "tm30"
 Id = 334
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Shadow Ball to a compatible Pokémon. (Gen I: Teleport)"
 Effect = "Teaches Shadow Ball to a compatible Pokémon."

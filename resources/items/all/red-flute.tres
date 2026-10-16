@@ -18,7 +18,6 @@ image = SubResource("Image_x8yyo")
 script = ExtResource("1_ohjo0")
 Name = "red-flute"
 Id = 67
-Cost = 20
 Category = "flutes"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Cures attraction."

@@ -6,5 +6,4 @@
 script = ExtResource("1_jd2av")
 Name = "smart-candy-l"
 Id = 1049
-Cost = 20
 Category = "vitamins"

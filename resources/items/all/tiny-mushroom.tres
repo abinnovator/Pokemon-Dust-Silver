@@ -18,7 +18,6 @@ image = SubResource("Image_iiibf")
 script = ExtResource("1_sarf0")
 Name = "tiny-mushroom"
 Id = 86
-Cost = 500
 Category = "loot"
 ShortEffect = "Fire Red and Leaf Green: Trade two for prior Level-up moves. Sell for 250 Pokédollars, or to Hungry Maid for 500 Pokédollars."
 Effect = "Vendor trash."

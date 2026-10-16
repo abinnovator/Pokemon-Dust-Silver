@@ -6,5 +6,4 @@
 script = ExtResource("1_1d3dy")
 Name = "cleffa-fur"
 Id = 2121
-Cost = 25
 Category = "tm-materials"

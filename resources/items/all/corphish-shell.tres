@@ -6,5 +6,4 @@
 script = ExtResource("1_kem8q")
 Name = "corphish-shell"
 Id = 2142
-Cost = 10
 Category = "tm-materials"

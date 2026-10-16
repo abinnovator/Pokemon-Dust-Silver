@@ -6,6 +6,5 @@
 script = ExtResource("1_5eaq3")
 Name = "lure"
 Id = 1036
-Cost = 400
 Category = "spelunking"
 FlingPower = 30

@@ -18,7 +18,6 @@ image = SubResource("Image_mc5j3")
 script = ExtResource("1_p3hdb")
 Name = "dragon-fang"
 Id = 227
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Dragon-Type moves from holder do 20% more damage."

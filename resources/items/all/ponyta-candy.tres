@@ -6,5 +6,4 @@
 script = ExtResource("1_nlbdt")
 Name = "ponyta-candy"
 Id = 1089
-Cost = 20
 Category = "species-candies"

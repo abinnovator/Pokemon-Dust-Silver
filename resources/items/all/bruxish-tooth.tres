@@ -6,5 +6,4 @@
 script = ExtResource("1_8bxsm")
 Name = "bruxish-tooth"
 Id = 1886
-Cost = 100
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_i3ara")
 Name = "pachirisu-fur"
 Id = 1827
-Cost = 100
 Category = "tm-materials"

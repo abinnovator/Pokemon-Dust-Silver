@@ -6,6 +6,5 @@
 script = ExtResource("1_g2v2p")
 Name = "fossilized-fish"
 Id = 1164
-Cost = 5000
 Category = "dex-completion"
 FlingPower = 100

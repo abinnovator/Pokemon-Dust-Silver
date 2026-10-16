@@ -6,5 +6,4 @@
 script = ExtResource("1_wv1px")
 Name = "drowzee-fur"
 Id = 1773
-Cost = 60
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_8m08m")
 Name = "tomato"
 Id = 1725
-Cost = 100
 Category = "sandwich-ingredients"

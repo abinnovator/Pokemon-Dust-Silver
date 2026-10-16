@@ -6,6 +6,5 @@
 script = ExtResource("1_prt4q")
 Name = "rash-mint"
 Id = 1299
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

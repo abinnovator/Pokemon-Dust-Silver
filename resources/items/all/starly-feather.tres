@@ -6,5 +6,4 @@
 script = ExtResource("1_pmkio")
 Name = "starly-feather"
 Id = 1823
-Cost = 60
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_avtsk")
 script = ExtResource("1_6frui")
 Name = "durin-berry"
 Id = 159
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

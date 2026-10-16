@@ -20,5 +20,5 @@ Name = "bike-voucher"
 Id = 545
 Category = "plot-advancement"
 ShortEffect = "Trade in Cerulean bike shop for a Bicycle."
-Effect = "May be traded for a bicycle."
+Effect = "May be traded for a Bicycle."
 Sprite = SubResource("ImageTexture_7fyrh")

@@ -6,5 +6,4 @@
 script = ExtResource("1_mr7xi")
 Name = "klawf-claw"
 Id = 1931
-Cost = 200
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_yiosf")
 script = ExtResource("1_ndpvu")
 Name = "damp-rock"
 Id = 262
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Rain Dance by the holder lasts 8 rounds instead of 5."

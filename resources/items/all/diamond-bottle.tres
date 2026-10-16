@@ -6,5 +6,4 @@
 script = ExtResource("1_ig8ld")
 Name = "diamond-bottle"
 Id = 2020
-Cost = 1000
 Category = "picnic"

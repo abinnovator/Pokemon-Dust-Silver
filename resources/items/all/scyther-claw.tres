@@ -6,5 +6,4 @@
 script = ExtResource("1_75kbj")
 Name = "scyther-claw"
 Id = 1775
-Cost = 100
 Category = "tm-materials"

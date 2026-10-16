@@ -18,7 +18,6 @@ image = SubResource("Image_uoiqq")
 script = ExtResource("1_v844r")
 Name = "tm98"
 Id = 747
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches a Pokémon TM98."
 Effect = "Teaches a Pokémon TM98."

@@ -6,5 +6,4 @@
 script = ExtResource("1_vogu4")
 Name = "snover-berries"
 Id = 1841
-Cost = 60
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_7s1ku")
 Name = "chewtle-claw"
 Id = 1887
-Cost = 80
 Category = "tm-materials"

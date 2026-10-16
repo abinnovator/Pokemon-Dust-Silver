@@ -20,5 +20,5 @@ Name = "pikashunium-z--held"
 Id = 877
 Category = "z-crystals"
 ShortEffect = "Held: Allows cap-wearing Pikachu to upgrade Thunderbolt into 10,000,000 Volt Thunderbolt."
-Effect = "Held: Allows cap-wearing pikachu to upgrade thunderbolt into 10 000 000 volt thunderbolt."
+Effect = "Held: Allows cap-wearing Pikachu to upgrade Thunderbolt into 10,000,000 Volt Thunderbolt."
 Sprite = SubResource("ImageTexture_rm7c1")

@@ -6,5 +6,4 @@
 script = ExtResource("1_obrcw")
 Name = "mareep-wool"
 Id = 1783
-Cost = 60
 Category = "tm-materials"

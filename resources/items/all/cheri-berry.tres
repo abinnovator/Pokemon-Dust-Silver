@@ -18,7 +18,6 @@ image = SubResource("Image_kxgod")
 script = ExtResource("1_rhqid")
 Name = "cheri-berry"
 Id = 126
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when paralyzed to cure paralysis."

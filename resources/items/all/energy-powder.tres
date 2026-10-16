@@ -18,7 +18,6 @@ image = SubResource("Image_2uhgb")
 script = ExtResource("1_4c85q")
 Name = "energy-powder"
 Id = 34
-Cost = 500
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 50 HP, but lowers happiness."

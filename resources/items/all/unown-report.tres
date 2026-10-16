@@ -20,5 +20,5 @@ Name = "unown-report"
 Id = 471
 Category = "gameplay"
 ShortEffect = "Keeps track of Unown types caught."
-Effect = "Lists which unown forms the trainer has caught."
+Effect = "Lists which Unown forms the trainer has caught."
 Sprite = SubResource("ImageTexture_4ynm6")

@@ -18,7 +18,6 @@ image = SubResource("Image_p1f3q")
 script = ExtResource("1_gqcie")
 Name = "protective-pads"
 Id = 897
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Prevents side effects of contact moves used on the holder."
 Effect = "Held: Prevents side effects of contact moves used on the holder."

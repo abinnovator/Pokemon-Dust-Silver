@@ -18,7 +18,6 @@ image = SubResource("Image_ddnbv")
 script = ExtResource("1_7uxwr")
 Name = "micle-berry"
 Id = 186
-Cost = 80
 Category = "in-a-pinch"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/4 max HP to boost accuracy of next move by 20%. (Gen IV: Perfect accuracy)"

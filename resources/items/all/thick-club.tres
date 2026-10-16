@@ -18,7 +18,6 @@ image = SubResource("Image_ya2ju")
 script = ExtResource("1_ihsyb")
 Name = "thick-club"
 Id = 235
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Doubles Cubone or Marowak’s Attack."

@@ -18,7 +18,6 @@ image = SubResource("Image_v8t7s")
 script = ExtResource("1_ru6ol")
 Name = "big-root"
 Id = 273
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Increases HP recovered from draining moves, Ingrain, and Aqua Ring by 3/10 (30%)."

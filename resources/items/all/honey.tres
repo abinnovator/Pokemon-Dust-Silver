@@ -18,7 +18,6 @@ image = SubResource("Image_uw833")
 script = ExtResource("1_oqwcy")
 Name = "honey"
 Id = 94
-Cost = 900
 Category = "dex-completion"
 Effect = "Used outside of battle :   Immediately triggers a wild Pokémon battle, as long as the trainer is somewhere with wild Pokémon—i.e., in tall grass, in a cave, or surfing.  Can be smeared on sweet-smelling trees to attract tree-dwelling Pokémon after six hours."
 FlingPower = 30

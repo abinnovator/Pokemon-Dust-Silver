@@ -20,5 +20,5 @@ Name = "blue-orb"
 Id = 468
 Category = "plot-advancement"
 ShortEffect = "Summons Kyogre to the Embedded Tower."
-Effect = "Causes kyogre to appear in the embedded tower."
+Effect = "Causes Kyogre to appear in the Embedded Tower."
 Sprite = SubResource("ImageTexture_6k6uf")

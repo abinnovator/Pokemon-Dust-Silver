@@ -18,7 +18,6 @@ image = SubResource("Image_vu5cx")
 script = ExtResource("1_g2kv5")
 Name = "persim-berry"
 Id = 133
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when confused to cure confusion."

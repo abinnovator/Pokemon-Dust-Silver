@@ -18,7 +18,6 @@ image = SubResource("Image_f52ef")
 script = ExtResource("1_wvv4b")
 Name = "wepear-berry"
 Id = 144
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

@@ -18,7 +18,6 @@ image = SubResource("Image_rwo2x")
 script = ExtResource("1_cekuo")
 Name = "tm60"
 Id = 364
-Cost = 30000
 Category = "all-machines"
 ShortEffect = "Teaches Quash to a compatible Pokémon. (Gen IV: Drain Punch)"
 Effect = "Teaches Drain Punch to a compatible Pokémon."

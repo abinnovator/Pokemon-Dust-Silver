@@ -18,6 +18,5 @@ image = SubResource("Image_j3ioq")
 script = ExtResource("1_vvgbv")
 Name = "tm00"
 Id = 1288
-Cost = 10000
 Category = "all-machines"
 Sprite = SubResource("ImageTexture_2mlqh")

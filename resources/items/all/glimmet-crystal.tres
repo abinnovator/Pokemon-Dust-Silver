@@ -6,5 +6,4 @@
 script = ExtResource("1_amhkq")
 Name = "glimmet-crystal"
 Id = 1933
-Cost = 120
 Category = "tm-materials"

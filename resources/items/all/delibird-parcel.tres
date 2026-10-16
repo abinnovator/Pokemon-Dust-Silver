@@ -6,5 +6,4 @@
 script = ExtResource("1_d14yi")
 Name = "delibird-parcel"
 Id = 1795
-Cost = 240
 Category = "tm-materials"

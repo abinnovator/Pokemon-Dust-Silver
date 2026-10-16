@@ -18,7 +18,6 @@ image = SubResource("Image_dxx37")
 script = ExtResource("1_qtwu7")
 Name = "safety-goggles"
 Id = 690
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm."
 Effect = "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm."

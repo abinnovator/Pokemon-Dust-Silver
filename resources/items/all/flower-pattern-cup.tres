@@ -6,5 +6,4 @@
 script = ExtResource("1_rym03")
 Name = "flower-pattern-cup"
 Id = 2025
-Cost = 800
 Category = "picnic"

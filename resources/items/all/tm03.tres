@@ -18,7 +18,6 @@ image = SubResource("Image_ajkob")
 script = ExtResource("1_jhy3p")
 Name = "tm03"
 Id = 307
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Psyshock to a compatible Pokémon. (Gen IV & III: Water Pulse Gen II: Curse Gen I: Swords Dance)"
 Effect = "Teaches Water Pulse to a compatible Pokémon."

@@ -18,7 +18,6 @@ image = SubResource("Image_ifwlp")
 script = ExtResource("1_8rucc")
 Name = "balm-mushroom"
 Id = 621
-Cost = 15000
 Category = "loot"
 ShortEffect = "Sell to Hungry Maid for 25000 Pokédollars."
 Effect = "Cult vendor trash."

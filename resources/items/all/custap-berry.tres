@@ -18,7 +18,6 @@ image = SubResource("Image_1ot22")
 script = ExtResource("1_igijo")
 Name = "custap-berry"
 Id = 187
-Cost = 80
 Category = "in-a-pinch"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/4 max HP when using a move to go first."

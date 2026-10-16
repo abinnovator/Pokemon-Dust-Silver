@@ -6,5 +6,4 @@
 script = ExtResource("1_uipqt")
 Name = "eevee-fur"
 Id = 1779
-Cost = 200
 Category = "tm-materials"

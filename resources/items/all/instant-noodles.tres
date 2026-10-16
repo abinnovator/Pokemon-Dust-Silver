@@ -6,6 +6,5 @@
 script = ExtResource("1_4cxah")
 Name = "instant-noodles"
 Id = 1320
-Cost = 150
 Category = "curry-ingredients"
 FlingPower = 10

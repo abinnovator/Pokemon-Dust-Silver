@@ -6,5 +6,4 @@
 script = ExtResource("1_xkrb0")
 Name = "slugma-lava"
 Id = 2134
-Cost = 20
 Category = "tm-materials"

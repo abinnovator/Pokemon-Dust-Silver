@@ -20,5 +20,5 @@ Name = "rm-6-key"
 Id = 541
 Category = "plot-advancement"
 ShortEffect = "Unlocks room 6 on the Abandoned Ship."
-Effect = "Unlocks room 6 on the abandoned ship."
+Effect = "Unlocks room 6 on the Abandoned Ship."
 Sprite = SubResource("ImageTexture_281k3")

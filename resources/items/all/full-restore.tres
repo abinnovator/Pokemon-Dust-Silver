@@ -18,7 +18,6 @@ image = SubResource("Image_gjyj4")
 script = ExtResource("1_gjyj4")
 Name = "full-restore"
 Id = 23
-Cost = 3000
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores HP to full and cures any status ailment and confusion."

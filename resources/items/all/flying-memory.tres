@@ -18,7 +18,6 @@ image = SubResource("Image_7pxsg")
 script = ExtResource("1_g144l")
 Name = "flying-memory"
 Id = 903
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Flying form.  Changes Multi-Attack’s type to Flying."
 Effect = "Held: Changes Silvally to its Flying form.  Changes Multi-Attack’s type to Flying."

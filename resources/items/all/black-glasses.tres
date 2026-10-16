@@ -18,7 +18,6 @@ image = SubResource("Image_6fa7q")
 script = ExtResource("1_ikeb5")
 Name = "black-glasses"
 Id = 217
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Dark-Type moves from holder do 20% more damage."

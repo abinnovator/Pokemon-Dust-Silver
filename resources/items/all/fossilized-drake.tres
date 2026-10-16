@@ -6,6 +6,5 @@
 script = ExtResource("1_0sj78")
 Name = "fossilized-drake"
 Id = 1165
-Cost = 5000
 Category = "dex-completion"
 FlingPower = 100

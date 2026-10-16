@@ -6,6 +6,5 @@
 script = ExtResource("1_4bpdu")
 Name = "galarica-cuff"
 Id = 1633
-Cost = 3000
 Category = "collectibles"
 FlingPower = 30

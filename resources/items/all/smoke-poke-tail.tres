@@ -6,6 +6,5 @@
 script = ExtResource("1_1uqwv")
 Name = "smoke-poke-tail"
 Id = 1151
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 10

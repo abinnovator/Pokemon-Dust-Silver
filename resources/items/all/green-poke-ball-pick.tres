@@ -6,5 +6,4 @@
 script = ExtResource("1_4r3wy")
 Name = "green-poke-ball-pick"
 Id = 2084
-Cost = 200
 Category = "picnic"

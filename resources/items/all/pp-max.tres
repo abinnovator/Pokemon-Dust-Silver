@@ -18,7 +18,6 @@ image = SubResource("Image_voyv0")
 script = ExtResource("1_qxgj2")
 Name = "pp-max"
 Id = 53
-Cost = 10000
 Category = "vitamins"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Raises a move’s max PP by 60%."

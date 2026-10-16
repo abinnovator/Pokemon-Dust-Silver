@@ -20,5 +20,5 @@ Name = "gracidea"
 Id = 444
 Category = "event-items"
 ShortEffect = "Changes an unfrozen Shaymin to Sky Forme in the day."
-Effect = "Used by trainer on a shaymin :   Changes the target Shaymin from Land Forme to Sky Forme.      This item cannot be used on a frozen Shaymin or at night.  Sky Forme Shaymin will revert to Land Forme overnight, when frozen, and upon entering a link battle.  This item must be used again to change it back."
+Effect = "Used by trainer on a Shaymin :   Changes the target Shaymin from Land Forme to Sky Forme.      This item cannot be used on a frozen Shaymin or at night.  Sky Forme Shaymin will revert to Land Forme overnight, when frozen, and upon entering a link battle.  This item must be used again to change it back."
 Sprite = SubResource("ImageTexture_2eeou")

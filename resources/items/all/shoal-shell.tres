@@ -18,7 +18,6 @@ image = SubResource("Image_q5ked")
 script = ExtResource("1_84iwk")
 Name = "shoal-shell"
 Id = 71
-Cost = 20
 Category = "collectibles"
 Attributes = PackedStringArray("countable")
 ShortEffect = "No effect. Gen III: Trade four and four Shoal Salts for a Shell Bell."

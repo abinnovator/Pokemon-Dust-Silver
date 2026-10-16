@@ -6,5 +6,4 @@
 script = ExtResource("1_s6ocb")
 Name = "basculin-fang"
 Id = 1844
-Cost = 80
 Category = "tm-materials"

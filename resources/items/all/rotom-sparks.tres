@@ -6,5 +6,4 @@
 script = ExtResource("1_65ajo")
 Name = "rotom-sparks"
 Id = 1842
-Cost = 200
 Category = "tm-materials"

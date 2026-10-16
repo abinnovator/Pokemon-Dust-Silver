@@ -18,7 +18,6 @@ image = SubResource("Image_m0h47")
 script = ExtResource("1_5vleo")
 Name = "tm39"
 Id = 343
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Rock Tomb to a compatible Pokémon. (Gen II & I: Swift)"
 Effect = "Teaches Rock Tomb to a compatible Pokémon."

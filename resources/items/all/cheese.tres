@@ -6,5 +6,4 @@
 script = ExtResource("1_l5pre")
 Name = "cheese"
 Id = 1750
-Cost = 120
 Category = "sandwich-ingredients"

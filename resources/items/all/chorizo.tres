@@ -6,5 +6,4 @@
 script = ExtResource("1_ajvwg")
 Name = "chorizo"
 Id = 1738
-Cost = 150
 Category = "sandwich-ingredients"

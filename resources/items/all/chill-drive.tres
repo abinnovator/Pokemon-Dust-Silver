@@ -20,6 +20,6 @@ Name = "chill-drive"
 Id = 566
 Category = "species-specific"
 ShortEffect = "Grants Genesect a white, Ice-type Techno Blast."
-Effect = "Held by genesect :   Holder’s buster is white, and its techno blast becomes ice-type."
+Effect = "Held by Genesect :   Holder’s buster is white, and its Techno Blast becomes Ice-type."
 FlingPower = 70
 Sprite = SubResource("ImageTexture_adwsn")

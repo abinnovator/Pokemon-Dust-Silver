@@ -6,5 +6,4 @@
 script = ExtResource("1_fc3ug")
 Name = "porygon-candy"
 Id = 1125
-Cost = 20
 Category = "species-candies"

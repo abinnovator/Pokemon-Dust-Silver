@@ -6,6 +6,5 @@
 script = ExtResource("1_ladfk")
 Name = "gold-leaf"
 Id = 1029
-Cost = 1000
 Category = "loot"
 FlingPower = 30

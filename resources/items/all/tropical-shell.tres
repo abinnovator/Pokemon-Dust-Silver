@@ -6,6 +6,5 @@
 script = ExtResource("1_qv5ib")
 Name = "tropical-shell"
 Id = 1032
-Cost = 2000
 Category = "loot"
 FlingPower = 30

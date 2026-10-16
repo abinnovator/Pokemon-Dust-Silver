@@ -18,7 +18,6 @@ image = SubResource("Image_43l27")
 script = ExtResource("1_sbjic")
 Name = "luck-incense"
 Id = 296
-Cost = 11000
 Category = "training"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Doubles the money earned from a battle. Does not stack with Amulet Coin. Breeding: Chansey and Blissey beget a Happiny Egg."

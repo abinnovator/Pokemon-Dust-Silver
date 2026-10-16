@@ -18,7 +18,6 @@ image = SubResource("Image_s8bly")
 script = ExtResource("1_2siwb")
 Name = "tm09"
 Id = 313
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Venoshock to a compatible Pokémon. (Gen IV & III: Bullet Seed Gen II: Psych Up Gen I: Take Down)"
 Effect = "Teaches Bullet Seed to a compatible Pokémon."

@@ -6,5 +6,4 @@
 script = ExtResource("1_v32js")
 Name = "peanut-butter"
 Id = 1708
-Cost = 300
 Category = "sandwich-ingredients"

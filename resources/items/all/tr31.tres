@@ -6,6 +6,5 @@
 script = ExtResource("1_xswbm")
 Name = "tr31"
 Id = 1219
-Cost = 10000
 Category = "all-machines"
 FlingPower = 100

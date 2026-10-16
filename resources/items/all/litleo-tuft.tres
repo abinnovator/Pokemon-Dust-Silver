@@ -6,5 +6,4 @@
 script = ExtResource("1_ccxd7")
 Name = "litleo-tuft"
 Id = 1861
-Cost = 80
 Category = "tm-materials"

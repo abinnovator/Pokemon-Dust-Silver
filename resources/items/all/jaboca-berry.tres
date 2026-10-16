@@ -18,7 +18,6 @@ image = SubResource("Image_hp48x")
 script = ExtResource("1_la86i")
 Name = "jaboca-berry"
 Id = 188
-Cost = 80
 Category = "other"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed to deal 1/8 attacker’s max HP when holder is struck by a physical attack."

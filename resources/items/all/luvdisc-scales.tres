@@ -6,5 +6,4 @@
 script = ExtResource("1_dfh7s")
 Name = "luvdisc-scales"
 Id = 1821
-Cost = 160
 Category = "tm-materials"

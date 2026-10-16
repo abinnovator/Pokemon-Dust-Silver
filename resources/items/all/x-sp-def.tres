@@ -18,7 +18,6 @@ image = SubResource("Image_ao4ng")
 script = ExtResource("1_hyaax")
 Name = "x-sp-def"
 Id = 62
-Cost = 2000
 Category = "stat-boosts"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Raises Special Defense by one stage in battle.  Raises happiness."

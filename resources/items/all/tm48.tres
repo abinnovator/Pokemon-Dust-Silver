@@ -18,7 +18,6 @@ image = SubResource("Image_vgv3c")
 script = ExtResource("1_cer7i")
 Name = "tm48"
 Id = 352
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Round to a compatible Pokémon. (Gen IV & III: Skill Swap Gen II: Fire Punch Gen I: Rock Slide)"
 Effect = "Teaches Skill Swap to a compatible Pokémon."

@@ -6,7 +6,6 @@
 script = ExtResource("1_e70ei")
 Name = "linking-cord"
 Id = 2160
-Cost = 8000
 Category = "evolution"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "holdable")
 ShortEffect = "Allows a Pokemon whose evolution is usually triggered by trading to evolve"

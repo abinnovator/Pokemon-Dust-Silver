@@ -18,7 +18,6 @@ image = SubResource("Image_gu2lb")
 script = ExtResource("1_k1pur")
 Name = "swift-wing"
 Id = 611
-Cost = 300
 Category = "vitamins"
 ShortEffect = "Increases Speed effort by 1."
 Effect = "Used on a party Pokémon :   Increases the target’s Speed effort by 1."

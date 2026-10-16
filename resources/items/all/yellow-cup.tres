@@ -6,5 +6,4 @@
 script = ExtResource("1_pmqpy")
 Name = "yellow-cup"
 Id = 2059
-Cost = 1500
 Category = "picnic"

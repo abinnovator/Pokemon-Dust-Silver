@@ -18,7 +18,6 @@ image = SubResource("Image_3xwaq")
 script = ExtResource("1_flwdi")
 Name = "iron"
 Id = 47
-Cost = 10000
 Category = "vitamins"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Raises Defense effort and happiness."

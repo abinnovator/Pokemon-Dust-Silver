@@ -6,5 +6,4 @@
 script = ExtResource("1_6nw6u")
 Name = "ham"
 Id = 1736
-Cost = 170
 Category = "sandwich-ingredients"

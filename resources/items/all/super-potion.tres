@@ -18,7 +18,6 @@ image = SubResource("Image_f303s")
 script = ExtResource("1_lt6xd")
 Name = "super-potion"
 Id = 26
-Cost = 700
 Category = "healing"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 50 HP."

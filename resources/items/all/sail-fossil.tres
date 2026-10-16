@@ -18,7 +18,6 @@ image = SubResource("Image_cbaxu")
 script = ExtResource("1_hmame")
 Name = "sail-fossil"
 Id = 730
-Cost = 7000
 Category = "dex-completion"
 ShortEffect = "Can be revived into an Amaura."
 Effect = "Can be revived into an Amaura."

@@ -6,6 +6,5 @@
 script = ExtResource("1_ibpfw")
 Name = "armorite-ore"
 Id = 1639
-Cost = 20
 Category = "collectibles"
 FlingPower = 30

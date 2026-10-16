@@ -6,5 +6,4 @@
 script = ExtResource("1_ngfxd")
 Name = "dynamax-crystal-umi5735"
 Id = 1486
-Cost = 20
 Category = "dynamax-crystals"

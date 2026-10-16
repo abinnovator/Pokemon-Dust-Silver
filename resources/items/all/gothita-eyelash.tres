@@ -6,5 +6,4 @@
 script = ExtResource("1_3csvc")
 Name = "gothita-eyelash"
 Id = 1847
-Cost = 80
 Category = "tm-materials"

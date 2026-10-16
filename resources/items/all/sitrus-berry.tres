@@ -18,7 +18,6 @@ image = SubResource("Image_nijbp")
 script = ExtResource("1_dtv14")
 Name = "sitrus-berry"
 Id = 135
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/2 max HP to recover 1/4 max HP."

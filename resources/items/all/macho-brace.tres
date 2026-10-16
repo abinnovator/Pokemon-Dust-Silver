@@ -18,7 +18,6 @@ image = SubResource("Image_w2ha3")
 script = ExtResource("1_rkgsk")
 Name = "macho-brace"
 Id = 192
-Cost = 3000
 Category = "effort-training"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder gains double effort values from battles, but has halved Speed in battle."

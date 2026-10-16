@@ -6,5 +6,4 @@
 script = ExtResource("1_1gsym")
 Name = "rhyhorn-candy"
 Id = 1108
-Cost = 20
 Category = "species-candies"

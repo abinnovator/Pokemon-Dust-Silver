@@ -18,7 +18,6 @@ image = SubResource("Image_7jmq0")
 script = ExtResource("1_jet2h")
 Name = "toxic-orb"
 Id = 249
-Cost = 4000
 Category = "bad-held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Inflicts Toxic on the holder at the end of the turn. Activates after Poison damage would occur."

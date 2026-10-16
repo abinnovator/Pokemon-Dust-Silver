@@ -6,5 +6,4 @@
 script = ExtResource("1_10u46")
 Name = "cyber-ball"
 Id = 2035
-Cost = 2000
 Category = "picnic"

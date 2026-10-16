@@ -18,7 +18,6 @@ image = SubResource("Image_gb1ok")
 script = ExtResource("1_ibu8g")
 Name = "rock-incense"
 Id = 292
-Cost = 2000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Rock-Type moves from holder do 20% more damage. Breeding: Sudowoodo begets a Bonsly Egg."

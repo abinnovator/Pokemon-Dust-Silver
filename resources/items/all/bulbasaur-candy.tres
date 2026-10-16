@@ -6,5 +6,4 @@
 script = ExtResource("1_2648k")
 Name = "bulbasaur-candy"
 Id = 1058
-Cost = 20
 Category = "species-candies"

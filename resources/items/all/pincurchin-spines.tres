@@ -6,5 +6,4 @@
 script = ExtResource("1_iooey")
 Name = "pincurchin-spines"
 Id = 1897
-Cost = 100
 Category = "tm-materials"

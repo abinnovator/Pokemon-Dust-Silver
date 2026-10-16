@@ -18,7 +18,6 @@ image = SubResource("Image_b3r4l")
 script = ExtResource("1_rt1jt")
 Name = "casteliacone"
 Id = 632
-Cost = 350
 Category = "status-cures"
 ShortEffect = "Cures any status ailment and confusion."
 Effect = "Used on a party Pokémon :   Cures any status ailment and confusion."

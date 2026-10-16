@@ -20,5 +20,5 @@ Name = "acro-bike"
 Id = 528
 Category = "gameplay"
 ShortEffect = "More maneuverable than the Mach Bike, and allows hopping along rails."
-Effect = "Increases movement speed outside or in caves.  Slower than the mach bike.  Can perform various tricks, allowing the trainer to reach certain special areas."
+Effect = "Increases movement speed outside or in caves.  Slower than the Mach Bike.  Can perform various tricks, allowing the trainer to reach certain special areas."
 Sprite = SubResource("ImageTexture_f18ct")

@@ -18,7 +18,6 @@ image = SubResource("Image_affjv")
 script = ExtResource("1_ugi1s")
 Name = "revival-herb"
 Id = 37
-Cost = 2800
 Category = "revival"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Revives with full HP, but lowers happiness."

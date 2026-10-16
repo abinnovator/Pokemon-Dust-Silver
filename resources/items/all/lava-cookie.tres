@@ -18,7 +18,6 @@ image = SubResource("Image_tui8y")
 script = ExtResource("1_7soem")
 Name = "lava-cookie"
 Id = 42
-Cost = 350
 Category = "status-cures"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Cures any status ailment and confusion."

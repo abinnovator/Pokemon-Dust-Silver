@@ -6,5 +6,4 @@
 script = ExtResource("1_ev6vj")
 Name = "tandemaus-fur"
 Id = 1921
-Cost = 80
 Category = "tm-materials"

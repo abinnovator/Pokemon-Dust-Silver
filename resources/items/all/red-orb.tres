@@ -20,5 +20,5 @@ Name = "red-orb"
 Id = 467
 Category = "plot-advancement"
 ShortEffect = "Summons Groudon to the Embedded Tower."
-Effect = "Causes groudon to appear in the embedded tower."
+Effect = "Causes Groudon to appear in the Embedded Tower."
 Sprite = SubResource("ImageTexture_ywwl3")

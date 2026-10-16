@@ -66,9 +66,11 @@ image = SubResource("Image_5w65h")
 script = ExtResource("1_car5c")
 Name = "aerodactyl"
 Id = 142
-Description = "A Pokémon that roamed the skies
-in the dinosaur era. Its teeth are
-like saw blades."
+Description = "A ferocious, pre­
+historic POKéMON
+that goes for theenemy's throat
+with its serrated
+saw-like fangs."
 TypeOne = 13
 TypeTwo = 10
 Height = 18

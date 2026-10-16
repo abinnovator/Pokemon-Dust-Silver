@@ -20,5 +20,5 @@ Name = "eon-ticket"
 Id = 534
 Category = "event-items"
 ShortEffect = "Provides access to Southern Island and Latias or Latios."
-Effect = "Provides access to southern island and either latias or latios, whichever is not available roaming around Hoenn."
+Effect = "Provides access to Southern Island and either Latias or Latios, whichever is not available roaming around Hoenn."
 Sprite = SubResource("ImageTexture_fxugu")

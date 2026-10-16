@@ -6,5 +6,4 @@
 script = ExtResource("1_h3368")
 Name = "chili-sauce"
 Id = 1709
-Cost = 320
 Category = "sandwich-ingredients"

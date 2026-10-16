@@ -6,5 +6,4 @@
 script = ExtResource("1_yyy0o")
 Name = "poison-tera-shard"
 Id = 1685
-Cost = 500
 Category = "tera-shard"

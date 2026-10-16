@@ -6,6 +6,5 @@
 script = ExtResource("1_t54sx")
 Name = "adamant-mint"
 Id = 1290
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

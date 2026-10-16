@@ -6,5 +6,4 @@
 script = ExtResource("1_fxugs")
 Name = "psyduck-candy"
 Id = 1080
-Cost = 20
 Category = "species-candies"

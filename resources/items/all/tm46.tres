@@ -18,7 +18,6 @@ image = SubResource("Image_aac43")
 script = ExtResource("1_jnadn")
 Name = "tm46"
 Id = 350
-Cost = 30000
 Category = "all-machines"
 ShortEffect = "Teaches Thief to a compatible Pokémon. (Gen I: Psywave)"
 Effect = "Teaches Thief to a compatible Pokémon."

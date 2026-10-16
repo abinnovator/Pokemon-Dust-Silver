@@ -18,7 +18,6 @@ image = SubResource("Image_r1hxi")
 script = ExtResource("1_vx8vb")
 Name = "elixir"
 Id = 40
-Cost = 3000
 Category = "pp-recovery"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Restores 10 PP for each move."

@@ -20,5 +20,5 @@ Name = "tapunium-z--held"
 Id = 842
 Category = "z-crystals"
 ShortEffect = "Held: Allows the Tapus to upgrade Nature’s Madness into Guardian of Alola."
-Effect = "Held: Allows tapu koko, tapu lele, tapu bulu, and tapu fini to upgrade natures madness into guardian of alola."
+Effect = "Held: Allows Tapu Koko, Tapu Lele, Tapu Bulu, and Tapu Fini to upgrade Nature’s Madness into Guardian of Alola."
 Sprite = SubResource("ImageTexture_ege0w")

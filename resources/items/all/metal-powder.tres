@@ -18,7 +18,6 @@ image = SubResource("Image_a8wcf")
 script = ExtResource("1_184p6")
 Name = "metal-powder"
 Id = 234
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Raises Ditto’s Defense and Special Defense by 50%. The boost is lost after transforming."

@@ -18,7 +18,6 @@ image = SubResource("Image_doypl")
 script = ExtResource("1_ctcwa")
 Name = "discount-coupon"
 Id = 726
-Cost = 20
 Category = "loot"
 ShortEffect = "Can be used at a boutique for a 50% discount.  Consumed once used."
 Effect = "Can be used at a boutique for a 50% discount.  Consumed once used."

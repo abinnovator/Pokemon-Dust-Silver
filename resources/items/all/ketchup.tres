@@ -6,5 +6,4 @@
 script = ExtResource("1_1mima")
 Name = "ketchup"
 Id = 1705
-Cost = 110
 Category = "sandwich-ingredients"

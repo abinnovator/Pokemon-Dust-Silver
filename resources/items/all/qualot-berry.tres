@@ -18,7 +18,6 @@ image = SubResource("Image_mt28h")
 script = ExtResource("1_tlw46")
 Name = "qualot-berry"
 Id = 148
-Cost = 80
 Category = "effort-drop"
 ShortEffect = "Drops Defense Effort Values by 10 and raises happiness."
 Effect = "Used on a party Pokémon :   Increases happiness by 10/5/2.  Lowers Defense effort by 10."

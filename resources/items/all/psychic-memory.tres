@@ -18,7 +18,6 @@ image = SubResource("Image_qsyul")
 script = ExtResource("1_18gcg")
 Name = "psychic-memory"
 Id = 914
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Psychic form.  Changes Multi-Attack’s type to Psychic."
 Effect = "Held: Changes Silvally to its Psychic form.  Changes Multi-Attack’s type to Psychic."

@@ -18,7 +18,6 @@ image = SubResource("Image_8e28s")
 script = ExtResource("1_vinxn")
 Name = "razor-claw"
 Id = 303
-Cost = 5000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Raises the holder’s critical hit ratio by one stage. Held by a Sneasel while levelling up at night: Holder evolves into Weavile."

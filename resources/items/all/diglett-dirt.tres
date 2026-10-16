@@ -6,5 +6,4 @@
 script = ExtResource("1_2foqh")
 Name = "diglett-dirt"
 Id = 1763
-Cost = 80
 Category = "tm-materials"

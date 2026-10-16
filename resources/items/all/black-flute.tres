@@ -18,7 +18,6 @@ image = SubResource("Image_b37lj")
 script = ExtResource("1_p1h4y")
 Name = "black-flute"
 Id = 68
-Cost = 20
 Category = "spelunking"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "holdable")
 ShortEffect = "Halves the wild Pokémon encounter rate."

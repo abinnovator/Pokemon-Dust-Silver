@@ -6,5 +6,4 @@
 script = ExtResource("1_m5cvs")
 Name = "clauncher-claw"
 Id = 1865
-Cost = 100
 Category = "tm-materials"

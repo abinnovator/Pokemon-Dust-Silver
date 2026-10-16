@@ -18,7 +18,6 @@ image = SubResource("Image_jm755")
 script = ExtResource("1_spoey")
 Name = "tm32"
 Id = 336
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Double Team to a compatible Pokémon."
 Effect = "Teaches Double Team to a compatible Pokémon."

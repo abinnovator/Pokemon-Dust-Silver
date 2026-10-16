@@ -6,5 +6,4 @@
 script = ExtResource("1_qajch")
 Name = "surskit-syrup"
 Id = 1802
-Cost = 60
 Category = "tm-materials"

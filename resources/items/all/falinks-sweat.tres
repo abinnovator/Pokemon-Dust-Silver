@@ -6,5 +6,4 @@
 script = ExtResource("1_wcimf")
 Name = "falinks-sweat"
 Id = 1892
-Cost = 120
 Category = "tm-materials"

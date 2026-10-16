@@ -18,7 +18,6 @@ image = SubResource("Image_xmugt")
 script = ExtResource("1_qmph4")
 Name = "tm08"
 Id = 312
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Bulk Up to a compatible Pokémon. (Gen II: Rock Smash Gen I: Body Slam)"
 Effect = "Teaches Bulk Up to a compatible Pokémon."

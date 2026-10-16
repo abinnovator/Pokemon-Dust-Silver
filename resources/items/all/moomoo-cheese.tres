@@ -6,6 +6,5 @@
 script = ExtResource("1_2bf40")
 Name = "moomoo-cheese"
 Id = 1315
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 20

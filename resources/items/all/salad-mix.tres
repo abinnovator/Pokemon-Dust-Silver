@@ -6,6 +6,5 @@
 script = ExtResource("1_e42hw")
 Name = "salad-mix"
 Id = 1157
-Cost = 400
 Category = "curry-ingredients"
 FlingPower = 10

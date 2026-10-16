@@ -20,5 +20,5 @@ Name = "rainbow-wing"
 Id = 482
 Category = "plot-advancement"
 ShortEffect = "Summons Ho-Oh at the top of the Bell Tower."
-Effect = "Causes ho oh to appear at the top of bell tower."
+Effect = "Causes Ho-Oh to appear at the top of Bell Tower."
 Sprite = SubResource("ImageTexture_xg5mq")

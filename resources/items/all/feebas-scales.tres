@@ -6,5 +6,4 @@
 script = ExtResource("1_o6mxr")
 Name = "feebas-scales"
 Id = 2143
-Cost = 35
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_mb22e")
 Name = "potato-tortilla"
 Id = 1745
-Cost = 250
 Category = "sandwich-ingredients"

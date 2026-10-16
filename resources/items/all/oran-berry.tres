@@ -18,7 +18,6 @@ image = SubResource("Image_d583x")
 script = ExtResource("1_n4wej")
 Name = "oran-berry"
 Id = 132
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/2 max HP to recover 10 HP."

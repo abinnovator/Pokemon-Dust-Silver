@@ -18,7 +18,6 @@ image = SubResource("Image_ujb3g")
 script = ExtResource("1_xum0o")
 Name = "zap-plate"
 Id = 277
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Electric-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Electric."

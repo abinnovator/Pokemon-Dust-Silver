@@ -18,7 +18,6 @@ image = SubResource("Image_017g6")
 script = ExtResource("1_bspjh")
 Name = "hondew-berry"
 Id = 149
-Cost = 80
 Category = "effort-drop"
 ShortEffect = "Drops Special Attack Effort Values by 10 and raises happiness."
 Effect = "Used on a party Pokémon :   Increases happiness by 10/5/2.  Lowers Special Attack effort by 10."

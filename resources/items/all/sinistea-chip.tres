@@ -6,5 +6,4 @@
 script = ExtResource("1_07ixj")
 Name = "sinistea-chip"
 Id = 1901
-Cost = 80
 Category = "tm-materials"

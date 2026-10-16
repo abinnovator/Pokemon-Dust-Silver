@@ -71,6 +71,7 @@ that exudes a
 gentle aura.Has the ability
 to change climate
 conditions."
+TypeOne = 15
 Height = 40
 Weight = 165
 BaseExperience = 147
@@ -98,6 +99,9 @@ LevelUpMoves = Dictionary[String, int]({
 "twister": 1,
 "wrap": 1
 })
+CanEvolve = true
+EvolvesInto = 149
+EvolutionLevel = 55
 FrontSprite = SubResource("ImageTexture_nt6hf")
 ShinyFrontSprite = SubResource("ImageTexture_0tewt")
 BackSprite = SubResource("ImageTexture_6bcdo")

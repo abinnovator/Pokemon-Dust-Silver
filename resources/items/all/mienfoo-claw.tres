@@ -6,5 +6,4 @@
 script = ExtResource("1_636m3")
 Name = "mienfoo-claw"
 Id = 2150
-Cost = 40
 Category = "tm-materials"

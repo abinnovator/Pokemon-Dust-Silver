@@ -6,5 +6,4 @@
 script = ExtResource("1_f0m5a")
 Name = "lettuce"
 Id = 1724
-Cost = 90
 Category = "sandwich-ingredients"

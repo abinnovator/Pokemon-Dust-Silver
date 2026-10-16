@@ -18,7 +18,6 @@ image = SubResource("Image_gqdc5")
 script = ExtResource("1_ks3b1")
 Name = "electirizer"
 Id = 299
-Cost = 2000
 Category = "evolution"
 ShortEffect = "Traded on an Electabuzz: Holder evolves into Electivire."
 Effect = "Held by Electabuzz: Evolves the holder into Electivire when traded."

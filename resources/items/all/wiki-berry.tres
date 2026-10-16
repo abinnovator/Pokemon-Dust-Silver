@@ -18,7 +18,6 @@ image = SubResource("Image_m2ptj")
 script = ExtResource("1_ngii0")
 Name = "wiki-berry"
 Id = 137
-Cost = 80
 Category = "picky-healing"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pokémon that dislike dry flavor."

@@ -18,7 +18,6 @@ image = SubResource("Image_qagng")
 script = ExtResource("1_kekyl")
 Name = "tm42"
 Id = 346
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Facade to a compatible Pokémon. (Gen II & I: Dream Eater)"
 Effect = "Teaches Facade to a compatible Pokémon."

@@ -18,7 +18,6 @@ image = SubResource("Image_nn5s5")
 script = ExtResource("1_btdkt")
 Name = "tm20"
 Id = 324
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Safeguard to a compatible Pokémon. (Gen II: Endure Gen I: Rage)"
 Effect = "Teaches Safeguard to a compatible Pokémon."

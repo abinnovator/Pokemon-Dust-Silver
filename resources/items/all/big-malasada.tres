@@ -18,7 +18,6 @@ image = SubResource("Image_pnso2")
 script = ExtResource("1_kjjlj")
 Name = "big-malasada"
 Id = 888
-Cost = 350
 Category = "status-cures"
 ShortEffect = "Cures major status ailments and confusion."
 Effect = "Cures major status ailments and confusion."

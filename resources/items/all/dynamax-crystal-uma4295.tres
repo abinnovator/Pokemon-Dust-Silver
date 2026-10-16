@@ -6,5 +6,4 @@
 script = ExtResource("1_dasfs")
 Name = "dynamax-crystal-uma4295"
 Id = 1402
-Cost = 20
 Category = "dynamax-crystals"

@@ -18,7 +18,6 @@ image = SubResource("Image_tpa0a")
 script = ExtResource("1_61p85")
 Name = "fairy-memory"
 Id = 918
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Fairy form.  Changes Multi-Attack’s type to Fairy."
 Effect = "Held: Changes Silvally to its Fairy form.  Changes Multi-Attack’s type to Fairy."

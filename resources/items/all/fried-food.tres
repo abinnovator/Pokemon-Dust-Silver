@@ -6,6 +6,5 @@
 script = ExtResource("1_1ch61")
 Name = "fried-food"
 Id = 1158
-Cost = 150
 Category = "curry-ingredients"
 FlingPower = 10

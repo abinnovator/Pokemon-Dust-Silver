@@ -6,5 +6,4 @@
 script = ExtResource("1_hbo40")
 Name = "geodude-candy"
 Id = 1088
-Cost = 20
 Category = "species-candies"

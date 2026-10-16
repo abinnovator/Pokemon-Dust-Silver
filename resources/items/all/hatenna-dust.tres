@@ -6,5 +6,4 @@
 script = ExtResource("1_3seqi")
 Name = "hatenna-dust"
 Id = 1902
-Cost = 80
 Category = "tm-materials"

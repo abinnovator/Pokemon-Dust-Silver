@@ -20,5 +20,5 @@ Name = "eevium-z--held"
 Id = 846
 Category = "z-crystals"
 ShortEffect = "Held: Allows Eevee to upgrade Last Resort into Extreme Evoboost."
-Effect = "Held: Allows eevee to upgrade last resort into extreme evoboost."
+Effect = "Held: Allows Eevee to upgrade Last Resort into Extreme Evoboost."
 Sprite = SubResource("ImageTexture_aat07")

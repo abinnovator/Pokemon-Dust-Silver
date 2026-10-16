@@ -6,6 +6,5 @@
 script = ExtResource("1_micpp")
 Name = "ribbon-sweet"
 Id = 1173
-Cost = 500
 Category = "evolution"
 FlingPower = 10

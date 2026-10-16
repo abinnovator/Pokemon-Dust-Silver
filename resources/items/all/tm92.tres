@@ -18,7 +18,6 @@ image = SubResource("Image_wqma3")
 script = ExtResource("1_4td4k")
 Name = "tm92"
 Id = 396
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Trick Room to a compatible Pokémon."
 Effect = "Teaches Trick Room to a compatible Pokémon."

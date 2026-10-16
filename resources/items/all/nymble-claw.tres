@@ -6,5 +6,4 @@
 script = ExtResource("1_51shx")
 Name = "nymble-claw"
 Id = 1908
-Cost = 60
 Category = "tm-materials"

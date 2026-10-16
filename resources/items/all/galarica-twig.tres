@@ -6,6 +6,5 @@
 script = ExtResource("1_rih57")
 Name = "galarica-twig"
 Id = 1632
-Cost = 20
 Category = "collectibles"
 FlingPower = 30

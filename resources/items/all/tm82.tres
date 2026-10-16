@@ -18,7 +18,6 @@ image = SubResource("Image_c2npf")
 script = ExtResource("1_ycn40")
 Name = "tm82"
 Id = 386
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Dragon Tail to a compatible Pokémon. (Gen IV: Sleep Talk)"
 Effect = "Teaches Sleep Talk to a compatible Pokémon."

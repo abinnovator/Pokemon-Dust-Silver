@@ -18,7 +18,6 @@ image = SubResource("Image_aggm2")
 script = ExtResource("1_muueb")
 Name = "focus-sash"
 Id = 252
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder survives any single-hit attack at 1 HP if at max HP, then the item is consumed."

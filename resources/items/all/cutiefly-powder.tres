@@ -6,5 +6,4 @@
 script = ExtResource("1_m3p10")
 Name = "cutiefly-powder"
 Id = 2155
-Cost = 25
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_qhpyj")
 script = ExtResource("1_13huc")
 Name = "poke-toy"
 Id = 618
-Cost = 100
 Category = "spelunking"
 ShortEffect = "Ends a wild battle."
 Effect = "Used in battle :   Ends a wild battle.  Cannot be used in trainer battles."

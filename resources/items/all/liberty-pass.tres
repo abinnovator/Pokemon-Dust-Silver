@@ -20,5 +20,5 @@ Name = "liberty-pass"
 Id = 615
 Category = "event-items"
 ShortEffect = "Allows access to Liberty Garden and Victini."
-Effect = "Allows passage on the castelia city ship, which leads to liberty garden and victini."
+Effect = "Allows passage on the Castelia City ship, which leads to Liberty Garden and Victini."
 Sprite = SubResource("ImageTexture_medy7")

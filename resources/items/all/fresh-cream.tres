@@ -6,6 +6,5 @@
 script = ExtResource("1_g8kbp")
 Name = "fresh-cream"
 Id = 1317
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 10

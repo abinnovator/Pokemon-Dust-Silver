@@ -6,5 +6,4 @@
 script = ExtResource("1_ougb4")
 Name = "stonjourner-stone"
 Id = 1903
-Cost = 120
 Category = "tm-materials"

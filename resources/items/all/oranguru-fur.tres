@@ -6,5 +6,4 @@
 script = ExtResource("1_lkivm")
 Name = "oranguru-fur"
 Id = 1881
-Cost = 120
 Category = "tm-materials"

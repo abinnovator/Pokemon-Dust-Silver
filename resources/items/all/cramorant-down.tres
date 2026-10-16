@@ -6,5 +6,4 @@
 script = ExtResource("1_2unm4")
 Name = "cramorant-down"
 Id = 2157
-Cost = 30
 Category = "tm-materials"

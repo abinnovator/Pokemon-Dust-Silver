@@ -18,7 +18,6 @@ image = SubResource("Image_bkdv2")
 script = ExtResource("1_cq5ii")
 Name = "scope-lens"
 Id = 209
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Raises the holder’s critical hit ratio by one stage."

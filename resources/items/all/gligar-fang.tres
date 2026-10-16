@@ -6,5 +6,4 @@
 script = ExtResource("1_12qht")
 Name = "gligar-fang"
 Id = 2133
-Cost = 40
 Category = "tm-materials"

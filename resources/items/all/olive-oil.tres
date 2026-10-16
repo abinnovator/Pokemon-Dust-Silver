@@ -6,5 +6,4 @@
 script = ExtResource("1_ttbem")
 Name = "olive-oil"
 Id = 1717
-Cost = 300
 Category = "sandwich-ingredients"

@@ -6,5 +6,4 @@
 script = ExtResource("1_qji72")
 Name = "scatterbug-powder"
 Id = 1860
-Cost = 40
 Category = "tm-materials"

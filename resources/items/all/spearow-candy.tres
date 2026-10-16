@@ -6,5 +6,4 @@
 script = ExtResource("1_c13js")
 Name = "spearow-candy"
 Id = 1065
-Cost = 20
 Category = "species-candies"

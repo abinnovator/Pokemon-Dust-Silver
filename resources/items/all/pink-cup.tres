@@ -6,5 +6,4 @@
 script = ExtResource("1_xnwnf")
 Name = "pink-cup"
 Id = 2057
-Cost = 1500
 Category = "picnic"

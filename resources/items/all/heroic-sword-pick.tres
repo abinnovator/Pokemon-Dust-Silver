@@ -6,5 +6,4 @@
 script = ExtResource("1_s06a5")
 Name = "heroic-sword-pick"
 Id = 2087
-Cost = 2000
 Category = "picnic"

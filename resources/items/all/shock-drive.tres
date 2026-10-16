@@ -20,6 +20,6 @@ Name = "shock-drive"
 Id = 564
 Category = "species-specific"
 ShortEffect = "Grants Genesect a yellow, Electric-type Techno Blast."
-Effect = "Held by genesect :   Holder’s buster is yellow, and its techno blast is electric-type."
+Effect = "Held by Genesect :   Holder’s buster is yellow, and its Techno Blast is Electric-type."
 FlingPower = 70
 Sprite = SubResource("ImageTexture_2sn65")

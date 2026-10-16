@@ -18,7 +18,6 @@ image = SubResource("Image_vwu7k")
 script = ExtResource("1_h0g7k")
 Name = "tm57"
 Id = 361
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Charge Beam to a compatible Pokémon."
 Effect = "Teaches Charge Beam to a compatible Pokémon."

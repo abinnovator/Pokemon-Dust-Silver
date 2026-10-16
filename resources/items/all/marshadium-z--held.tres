@@ -20,5 +20,5 @@ Name = "marshadium-z--held"
 Id = 843
 Category = "z-crystals"
 ShortEffect = "Held: Allows Marshadow to upgrade Spectral Thief into Soul-Stealing 7 Star Strike."
-Effect = "Held: Allows marshadow to upgrade spectral thief into soul stealing 7 star strike."
+Effect = "Held: Allows Marshadow to upgrade Spectral Thief into Soul-Stealing 7-Star Strike."
 Sprite = SubResource("ImageTexture_2o1c1")

@@ -6,5 +6,4 @@
 script = ExtResource("1_sfc1s")
 Name = "shellder-candy"
 Id = 1096
-Cost = 20
 Category = "species-candies"

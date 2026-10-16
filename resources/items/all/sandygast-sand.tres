@@ -6,5 +6,4 @@
 script = ExtResource("1_axtt2")
 Name = "sandygast-sand"
 Id = 1883
-Cost = 80
 Category = "tm-materials"

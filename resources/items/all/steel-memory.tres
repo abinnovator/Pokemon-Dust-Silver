@@ -18,7 +18,6 @@ image = SubResource("Image_vqs0b")
 script = ExtResource("1_oyrhl")
 Name = "steel-memory"
 Id = 909
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Steel form.  Changes Multi-Attack’s type to Steel."
 Effect = "Held: Changes Silvally to its Steel form.  Changes Multi-Attack’s type to Steel."

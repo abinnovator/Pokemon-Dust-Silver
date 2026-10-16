@@ -18,7 +18,6 @@ image = SubResource("Image_c5c8l")
 script = ExtResource("1_m4bto")
 Name = "rawst-berry"
 Id = 129
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when burned to cure a burn."

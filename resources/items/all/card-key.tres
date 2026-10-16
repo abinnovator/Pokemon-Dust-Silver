@@ -20,5 +20,5 @@ Name = "card-key"
 Id = 475
 Category = "plot-advancement"
 ShortEffect = "HS: Opens doors in the Radio Tower. Gen III: Unlocks Silph Co Doors."
-Effect = "Used by trainer outside of battle :   Opens doors in the goldenrod city Radio Tower."
+Effect = "Used by trainer outside of battle :   Opens doors in the Goldenrod City Radio Tower."
 Sprite = SubResource("ImageTexture_u6evm")

@@ -6,5 +6,4 @@
 script = ExtResource("1_bgd06")
 Name = "zangoose-claw"
 Id = 1815
-Cost = 120
 Category = "tm-materials"

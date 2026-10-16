@@ -6,5 +6,4 @@
 script = ExtResource("1_2sm25")
 Name = "kricketot-shell"
 Id = 1824
-Cost = 40
 Category = "tm-materials"

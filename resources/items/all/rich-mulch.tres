@@ -18,7 +18,6 @@ image = SubResource("Image_fn61p")
 script = ExtResource("1_5gvui")
 Name = "rich-mulch"
 Id = 691
-Cost = 200
 Category = "mulch"
 ShortEffect = "Increases the total number of Berries by 2."
 Effect = "Increases the total number of Berries by 2."

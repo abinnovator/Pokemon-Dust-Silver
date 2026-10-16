@@ -18,7 +18,6 @@ image = SubResource("Image_3txum")
 script = ExtResource("1_g2n3s")
 Name = "lucky-punch"
 Id = 233
-Cost = 1000
 Category = "species-specific"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Raises Chansey’s critical hit ratio by two stages."

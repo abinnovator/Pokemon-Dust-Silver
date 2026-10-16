@@ -6,5 +6,4 @@
 script = ExtResource("1_ibvee")
 Name = "pink-bottle"
 Id = 2047
-Cost = 2000
 Category = "picnic"

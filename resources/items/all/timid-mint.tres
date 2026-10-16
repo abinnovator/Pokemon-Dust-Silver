@@ -6,6 +6,5 @@
 script = ExtResource("1_inhpd")
 Name = "timid-mint"
 Id = 1305
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

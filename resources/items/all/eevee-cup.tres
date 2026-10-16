@@ -6,5 +6,4 @@
 script = ExtResource("1_aos1v")
 Name = "eevee-cup"
 Id = 2061
-Cost = 2000
 Category = "picnic"

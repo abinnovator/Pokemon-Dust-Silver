@@ -6,5 +6,4 @@
 script = ExtResource("1_b2ewa")
 Name = "oricorio-feather"
 Id = 1874
-Cost = 100
 Category = "tm-materials"

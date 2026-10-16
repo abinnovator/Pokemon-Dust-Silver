@@ -18,7 +18,6 @@ image = SubResource("Image_xl86s")
 script = ExtResource("1_3ri6k")
 Name = "snowball"
 Id = 689
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: If the holder is hit by a damaging Ice move, raises its Attack by one stage."
 Effect = "Held: If the holder is hit by a damaging Ice move, raises its Attack by one stage."

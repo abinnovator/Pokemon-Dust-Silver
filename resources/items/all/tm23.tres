@@ -18,7 +18,6 @@ image = SubResource("Image_l7vgp")
 script = ExtResource("1_jffke")
 Name = "tm23"
 Id = 327
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Smack Down to a compatible Pokémon. (Gen IV & III & II: Iron Tail Gen I: Dragon Rage)"
 Effect = "Teaches Iron Tail to a compatible Pokémon."

@@ -20,5 +20,5 @@ Name = "gold-teeth"
 Id = 546
 Category = "plot-advancement"
 ShortEffect = "The Safari Zone Warden’s dentures. Trade for HM04 (Strength)."
-Effect = "The Safari Zone warden’s teeth, to be returned to him for hm04."
+Effect = "The Safari Zone warden’s teeth, to be returned to him for HM04."
 Sprite = SubResource("ImageTexture_fe4oy")

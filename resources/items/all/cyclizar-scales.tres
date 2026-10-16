@@ -6,5 +6,4 @@
 script = ExtResource("1_pi8bv")
 Name = "cyclizar-scales"
 Id = 1925
-Cost = 120
 Category = "tm-materials"

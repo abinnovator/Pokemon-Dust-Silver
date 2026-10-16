@@ -6,5 +6,4 @@
 script = ExtResource("1_0f1lq")
 Name = "snom-thread"
 Id = 1898
-Cost = 80
 Category = "tm-materials"

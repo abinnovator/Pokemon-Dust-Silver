@@ -18,7 +18,6 @@ image = SubResource("Image_11ek8")
 script = ExtResource("1_y08xy")
 Name = "grip-claw"
 Id = 263
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder’s multi-turn trapping moves last 5 turns."

@@ -18,7 +18,6 @@ image = SubResource("Image_nnhxe")
 script = ExtResource("1_m8id2")
 Name = "blue-scarf"
 Id = 238
-Cost = 100
 Category = "scarves"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Raises the holder’s Beauty while in a contest."

@@ -18,7 +18,6 @@ image = SubResource("Image_x71l6")
 script = ExtResource("1_xhf3e")
 Name = "ganlon-berry"
 Id = 179
-Cost = 80
 Category = "in-a-pinch"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/4 max HP to boost Defense."

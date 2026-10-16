@@ -44,6 +44,11 @@ namespace Game.Gameplay
 		public override void _Ready()
 		{
 			Logger.Info($"Level {LevelName} loaded");
+			PlayMusic();
+		}
+
+		public void PlayMusic()
+		{
 			if (BackgroundMusic != null && MusicPlayer != null)
 			{
 				Logger.Info($"Playing music: {BackgroundMusic.ResourcePath}");
@@ -54,6 +59,11 @@ namespace Game.Gameplay
 			{
 				Logger.Info($"Music null: BackgroundMusic={BackgroundMusic == null}, MusicPlayer={MusicPlayer == null}");
 			}
+		}
+
+		public void StopMusic()
+		{
+			MusicPlayer?.Stop();
 		}
 		public override void _Process(double delta)
 		{

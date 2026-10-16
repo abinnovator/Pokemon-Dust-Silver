@@ -20,5 +20,5 @@ Name = "mewnium-z--held"
 Id = 847
 Category = "z-crystals"
 ShortEffect = "Held: Allows Mew to upgrade Psychic into Genesis Supernova."
-Effect = "Held: Allows mew to upgrade psychic into genesis supernova."
+Effect = "Held: Allows Mew to upgrade Psychic into Genesis Supernova."
 Sprite = SubResource("ImageTexture_sf3bd")

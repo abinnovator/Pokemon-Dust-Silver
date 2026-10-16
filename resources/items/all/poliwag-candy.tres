@@ -6,5 +6,4 @@
 script = ExtResource("1_pmrsl")
 Name = "poliwag-candy"
 Id = 1083
-Cost = 20
 Category = "species-candies"

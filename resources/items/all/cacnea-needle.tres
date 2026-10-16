@@ -6,5 +6,4 @@
 script = ExtResource("1_4hoia")
 Name = "cacnea-needle"
 Id = 1813
-Cost = 80
 Category = "tm-materials"

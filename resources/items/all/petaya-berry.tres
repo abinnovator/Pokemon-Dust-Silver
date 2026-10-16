@@ -18,7 +18,6 @@ image = SubResource("Image_y6wau")
 script = ExtResource("1_kac5e")
 Name = "petaya-berry"
 Id = 181
-Cost = 80
 Category = "in-a-pinch"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed at 1/4 max HP to boost Special Attack."

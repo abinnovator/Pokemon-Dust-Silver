@@ -6,6 +6,5 @@
 script = ExtResource("1_5a1wj")
 Name = "jolly-mint"
 Id = 1307
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

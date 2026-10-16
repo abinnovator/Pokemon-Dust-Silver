@@ -6,5 +6,4 @@
 script = ExtResource("1_clxob")
 Name = "wooper-slime"
 Id = 1942
-Cost = 60
 Category = "tm-materials"

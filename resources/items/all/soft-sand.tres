@@ -18,7 +18,6 @@ image = SubResource("Image_bik86")
 script = ExtResource("1_bggk4")
 Name = "soft-sand"
 Id = 214
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Ground-Type moves from holder do 20% more damage."

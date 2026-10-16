@@ -20,5 +20,5 @@ Name = "basement-key"
 Id = 476
 Category = "plot-advancement"
 ShortEffect = "HS: Key to the tunnel under Goldenrod City. Gen III: Key to New Mauville."
-Effect = "Used by trainer outside of battle :   Opens the door to the basement tunnel under goldenrod city."
+Effect = "Used by trainer outside of battle :   Opens the door to the basement tunnel under Goldenrod City."
 Sprite = SubResource("ImageTexture_defsu")

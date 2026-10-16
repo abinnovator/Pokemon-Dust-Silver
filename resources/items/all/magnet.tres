@@ -18,7 +18,6 @@ image = SubResource("Image_8x7qe")
 script = ExtResource("1_fb2wb")
 Name = "magnet"
 Id = 219
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Electric-Type moves from holder do 20% more damage."

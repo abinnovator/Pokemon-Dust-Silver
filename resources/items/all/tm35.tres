@@ -18,7 +18,6 @@ image = SubResource("Image_7vtqc")
 script = ExtResource("1_7hnfq")
 Name = "tm35"
 Id = 339
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Flamethrower to a compatible Pokémon. (Gen II: Sleep Talk Gen I: Metronome)"
 Effect = "Teaches Flamethrower to a compatible Pokémon."

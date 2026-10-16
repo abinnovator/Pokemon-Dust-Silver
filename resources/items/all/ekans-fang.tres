@@ -6,5 +6,4 @@
 script = ExtResource("1_gdvno")
 Name = "ekans-fang"
 Id = 2119
-Cost = 15
 Category = "tm-materials"

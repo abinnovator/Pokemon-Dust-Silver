@@ -6,5 +6,4 @@
 script = ExtResource("1_hjcrs")
 Name = "smoliv-oil"
 Id = 1916
-Cost = 80
 Category = "tm-materials"

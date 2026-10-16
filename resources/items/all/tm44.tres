@@ -18,7 +18,6 @@ image = SubResource("Image_3cqwd")
 script = ExtResource("1_uh8oc")
 Name = "tm44"
 Id = 348
-Cost = 100000
 Category = "all-machines"
 ShortEffect = "Teaches Rest to a compatible Pokémon."
 Effect = "Teaches Rest to a compatible Pokémon."

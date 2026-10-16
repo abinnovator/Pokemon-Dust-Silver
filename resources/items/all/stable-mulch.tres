@@ -18,7 +18,6 @@ image = SubResource("Image_ef8gk")
 script = ExtResource("1_yrcx5")
 Name = "stable-mulch"
 Id = 97
-Cost = 200
 Category = "mulch"
 ShortEffect = "Berries stay on the plant for longer than their usual time."
 Effect = "Used on a patch of soil :   Fully-grown plant will last 25% longer before dying and possibly regrowing."

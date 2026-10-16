@@ -6,5 +6,4 @@
 script = ExtResource("1_v4gx0")
 Name = "bombirdier-feather"
 Id = 1928
-Cost = 200
 Category = "tm-materials"

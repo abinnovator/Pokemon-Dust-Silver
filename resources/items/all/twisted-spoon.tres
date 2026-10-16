@@ -18,7 +18,6 @@ image = SubResource("Image_t5v1b")
 script = ExtResource("1_uv0dy")
 Name = "twisted-spoon"
 Id = 225
-Cost = 1000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Psychic-Type moves from holder do 20% more damage."

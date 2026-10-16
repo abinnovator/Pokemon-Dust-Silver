@@ -6,5 +6,4 @@
 script = ExtResource("1_xj3d1")
 Name = "sunkern-leaf"
 Id = 1785
-Cost = 60
 Category = "tm-materials"

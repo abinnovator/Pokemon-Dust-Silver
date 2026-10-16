@@ -18,7 +18,6 @@ image = SubResource("Image_6t6y0")
 script = ExtResource("1_am0si")
 Name = "iron-ball"
 Id = 255
-Cost = 4000
 Category = "bad-held-items"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Holder’s Speed is halved. Negates all Ground-type immunities, and makes Flying-types take neutral damage from Ground-type moves. Arena Trap. Spikes, and Toxic Spikes affect the holder."

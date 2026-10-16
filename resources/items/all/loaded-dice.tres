@@ -6,5 +6,4 @@
 script = ExtResource("1_5vd0p")
 Name = "loaded-dice"
 Id = 1702
-Cost = 20000
 Category = "held-items"

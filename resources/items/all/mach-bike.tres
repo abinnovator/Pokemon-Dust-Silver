@@ -20,5 +20,5 @@ Name = "mach-bike"
 Id = 527
 Category = "gameplay"
 ShortEffect = "Faster than the Acro Bike, and can ride up sandy slopes and across cracked floors."
-Effect = "Increases movement speed outside or in caves.  Faster than the acro bike.  Allows the trainer to ascend muddy slopes."
+Effect = "Increases movement speed outside or in caves.  Faster than the Acro Bike.  Allows the trainer to ascend muddy slopes."
 Sprite = SubResource("ImageTexture_li82t")

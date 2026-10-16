@@ -18,7 +18,6 @@ image = SubResource("Image_rk84p")
 script = ExtResource("1_irwl6")
 Name = "stone-plate"
 Id = 286
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Rock-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Rock."

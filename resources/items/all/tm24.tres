@@ -18,7 +18,6 @@ image = SubResource("Image_j6f1r")
 script = ExtResource("1_m20ar")
 Name = "tm24"
 Id = 328
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Thunderbolt to a compatible Pokémon. (Gen II: DragonBreath)"
 Effect = "Teaches Thunderbolt to a compatible Pokémon."

@@ -6,5 +6,4 @@
 script = ExtResource("1_u8ckj")
 Name = "shroomish-spores"
 Id = 1803
-Cost = 80
 Category = "tm-materials"

@@ -20,5 +20,5 @@ Name = "pikanium-z--held"
 Id = 835
 Category = "z-crystals"
 ShortEffect = "Held: Allows Pikachu to upgrade Volt Tackle into Catastropika."
-Effect = "Held: Allows pikachu to upgrade volt tackle into catastropika."
+Effect = "Held: Allows Pikachu to upgrade Volt Tackle into Catastropika."
 Sprite = SubResource("ImageTexture_x4o7c")

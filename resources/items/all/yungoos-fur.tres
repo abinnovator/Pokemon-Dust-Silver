@@ -6,5 +6,4 @@
 script = ExtResource("1_tln4o")
 Name = "yungoos-fur"
 Id = 1872
-Cost = 60
 Category = "tm-materials"

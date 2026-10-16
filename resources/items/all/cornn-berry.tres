@@ -18,7 +18,6 @@ image = SubResource("Image_uj7fa")
 script = ExtResource("1_tkjv6")
 Name = "cornn-berry"
 Id = 152
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

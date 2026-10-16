@@ -6,5 +6,4 @@
 script = ExtResource("1_wltsh")
 Name = "cryogonal-ice"
 Id = 1854
-Cost = 100
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_4yrdl")
 Name = "alomomola-mucus"
 Id = 1850
-Cost = 120
 Category = "tm-materials"

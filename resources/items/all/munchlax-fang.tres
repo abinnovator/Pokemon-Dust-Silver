@@ -6,5 +6,4 @@
 script = ExtResource("1_0qhd1")
 Name = "munchlax-fang"
 Id = 2127
-Cost = 40
 Category = "tm-materials"

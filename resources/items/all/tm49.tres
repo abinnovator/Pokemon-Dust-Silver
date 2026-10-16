@@ -18,7 +18,6 @@ image = SubResource("Image_ng1n2")
 script = ExtResource("1_t6q34")
 Name = "tm49"
 Id = 353
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Echoed Voice to a compatible Pokémon. (Gen IV & III: Snatch Gen II: Fury Cutter Gen I: Tri Attack)"
 Effect = "Teaches Snatch to a compatible Pokémon."

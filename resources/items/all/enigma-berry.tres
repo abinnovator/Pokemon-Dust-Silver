@@ -18,7 +18,6 @@ image = SubResource("Image_gd6hf")
 script = ExtResource("1_ago11")
 Name = "enigma-berry"
 Id = 185
-Cost = 80
 Category = "other"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when struck by a super-effective attack to restore 1/4 max HP."

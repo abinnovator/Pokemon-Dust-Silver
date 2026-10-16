@@ -6,5 +6,4 @@
 script = ExtResource("1_clagm")
 Name = "chansey-candy"
 Id = 1109
-Cost = 20
 Category = "species-candies"

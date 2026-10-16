@@ -18,7 +18,6 @@ image = SubResource("Image_s6umm")
 script = ExtResource("1_8rjbw")
 Name = "icicle-plate"
 Id = 279
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Ice-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Ice."

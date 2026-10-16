@@ -6,5 +6,4 @@
 script = ExtResource("1_mdylk")
 Name = "skrelp-kelp"
 Id = 1864
-Cost = 100
 Category = "tm-materials"

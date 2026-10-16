@@ -18,7 +18,6 @@ image = SubResource("Image_spxah")
 script = ExtResource("1_rjv5n")
 Name = "rocky-helmet"
 Id = 583
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage."
 Effect = "Held :   When the holder is hit by a contact move, the attacking Pokémon takes 1/6 its max HP in damage."

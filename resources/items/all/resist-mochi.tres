@@ -6,5 +6,4 @@
 script = ExtResource("1_43ckp")
 Name = "resist-mochi"
 Id = 2114
-Cost = 125
 Category = "vitamins"

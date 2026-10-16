@@ -6,5 +6,4 @@
 script = ExtResource("1_s60sc")
 Name = "dynamax-crystal-aur2088"
 Id = 1459
-Cost = 20
 Category = "dynamax-crystals"

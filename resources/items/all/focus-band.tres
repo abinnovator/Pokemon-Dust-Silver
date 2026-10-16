@@ -18,7 +18,6 @@ image = SubResource("Image_4k5nl")
 script = ExtResource("1_gkdu0")
 Name = "focus-band"
 Id = 207
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Holder has 10% chance to survive attacks or self-inflicted damage at 1 HP."

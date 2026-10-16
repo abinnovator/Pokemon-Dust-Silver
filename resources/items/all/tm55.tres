@@ -18,7 +18,6 @@ image = SubResource("Image_rllu0")
 script = ExtResource("1_t4kg7")
 Name = "tm55"
 Id = 359
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Scald to a compatible Pokémon. (Gen IV: Brine)"
 Effect = "Teaches Brine to a compatible Pokémon."

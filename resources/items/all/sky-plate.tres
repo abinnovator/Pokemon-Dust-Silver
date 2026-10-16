@@ -18,7 +18,6 @@ image = SubResource("Image_023a8")
 script = ExtResource("1_oeceg")
 Name = "sky-plate"
 Id = 283
-Cost = 1000
 Category = "plates"
 Attributes = PackedStringArray("holdable", "holdable-active", "underground")
 ShortEffect = "Held: Flying-Type moves from holder do 20% more damage. Changes Arceus’s and Judgment’s type to Flying."

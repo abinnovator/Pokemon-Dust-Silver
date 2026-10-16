@@ -18,7 +18,6 @@ image = SubResource("Image_xra0u")
 script = ExtResource("1_bbrtu")
 Name = "ground-memory"
 Id = 905
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Ground form.  Changes Multi-Attack’s type to Ground."
 Effect = "Held: Changes Silvally to its Ground form.  Changes Multi-Attack’s type to Ground."

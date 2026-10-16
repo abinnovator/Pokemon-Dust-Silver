@@ -6,6 +6,5 @@
 script = ExtResource("1_dshox")
 Name = "utility-umbrella"
 Id = 1181
-Cost = 4000
 Category = "held-items"
 FlingPower = 60

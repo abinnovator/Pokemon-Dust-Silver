@@ -6,5 +6,4 @@
 script = ExtResource("1_yjpv1")
 Name = "magikarp-candy"
 Id = 1121
-Cost = 20
 Category = "species-candies"

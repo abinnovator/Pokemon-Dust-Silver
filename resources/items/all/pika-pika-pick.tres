@@ -6,5 +6,4 @@
 script = ExtResource("1_g8otp")
 Name = "pika-pika-pick"
 Id = 2040
-Cost = 480
 Category = "picnic"

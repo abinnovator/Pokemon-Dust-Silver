@@ -6,6 +6,5 @@
 script = ExtResource("1_fv1cv")
 Name = "tr50"
 Id = 1238
-Cost = 10000
 Category = "all-machines"
 FlingPower = 90

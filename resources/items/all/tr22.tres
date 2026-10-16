@@ -6,6 +6,5 @@
 script = ExtResource("1_dwbun")
 Name = "tr22"
 Id = 1210
-Cost = 10000
 Category = "all-machines"
 FlingPower = 90

@@ -18,7 +18,6 @@ image = SubResource("Image_nag11")
 script = ExtResource("1_mt7vx")
 Name = "razor-fang"
 Id = 304
-Cost = 5000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Damaging moves gain a 10% chance to make their target flinch. Held by a Gligar while levelling up: Holder evolves into Gliscor."

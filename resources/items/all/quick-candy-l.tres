@@ -6,5 +6,4 @@
 script = ExtResource("1_ck03g")
 Name = "quick-candy-l"
 Id = 1051
-Cost = 20
 Category = "vitamins"

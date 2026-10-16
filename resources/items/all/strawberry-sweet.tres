@@ -6,6 +6,5 @@
 script = ExtResource("1_muv5f")
 Name = "strawberry-sweet"
 Id = 1167
-Cost = 500
 Category = "evolution"
 FlingPower = 10

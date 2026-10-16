@@ -6,5 +6,4 @@
 script = ExtResource("1_pikt1")
 Name = "red-flag-pick"
 Id = 2038
-Cost = 120
 Category = "picnic"

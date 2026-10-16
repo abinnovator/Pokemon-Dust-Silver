@@ -6,5 +6,4 @@
 script = ExtResource("1_omyam")
 Name = "dunsparce-scales"
 Id = 1790
-Cost = 120
 Category = "tm-materials"

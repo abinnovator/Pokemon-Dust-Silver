@@ -6,5 +6,4 @@
 script = ExtResource("1_yu3um")
 Name = "covert-cloak"
 Id = 1701
-Cost = 20000
 Category = "held-items"

@@ -18,7 +18,6 @@ image = SubResource("Image_eyn81")
 script = ExtResource("1_jyhr4")
 Name = "pure-incense"
 Id = 297
-Cost = 6000
 Category = "training"
 Attributes = PackedStringArray("holdable")
 ShortEffect = "Prevents wild encounters of level lower than your party’s lead Pokémon. Breeding: Chimecho begets a Chingling Egg."

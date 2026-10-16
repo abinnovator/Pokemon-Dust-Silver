@@ -6,5 +6,4 @@
 script = ExtResource("1_qj1l6")
 Name = "rookidee-feather"
 Id = 1890
-Cost = 80
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_gvb6y")
 script = ExtResource("1_dyak4")
 Name = "calcium"
 Id = 49
-Cost = 10000
 Category = "vitamins"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable")
 ShortEffect = "Raises Special Attack effort and happiness."

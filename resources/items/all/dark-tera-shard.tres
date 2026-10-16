@@ -6,5 +6,4 @@
 script = ExtResource("1_ql3a0")
 Name = "dark-tera-shard"
 Id = 1693
-Cost = 500
 Category = "tera-shard"

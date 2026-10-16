@@ -6,5 +6,4 @@
 script = ExtResource("1_keebl")
 Name = "fairy-feather"
 Id = 2105
-Cost = 750
 Category = "held-items"

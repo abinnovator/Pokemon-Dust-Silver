@@ -6,5 +6,4 @@
 script = ExtResource("1_gct48")
 Name = "finneon-scales"
 Id = 1840
-Cost = 80
 Category = "tm-materials"

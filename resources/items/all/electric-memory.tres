@@ -18,7 +18,6 @@ image = SubResource("Image_64a3a")
 script = ExtResource("1_2b8u4")
 Name = "electric-memory"
 Id = 913
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Electric form.  Changes Multi-Attack’s type to Electric."
 Effect = "Held: Changes Silvally to its Electric form.  Changes Multi-Attack’s type to Electric."

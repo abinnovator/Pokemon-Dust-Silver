@@ -18,7 +18,6 @@ image = SubResource("Image_litak")
 script = ExtResource("1_81y6e")
 Name = "tm66"
 Id = 370
-Cost = 30000
 Category = "all-machines"
 ShortEffect = "Teaches Payback to a compatible Pokémon."
 Effect = "Teaches Payback to a compatible Pokémon."

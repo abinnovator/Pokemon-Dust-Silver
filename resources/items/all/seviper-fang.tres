@@ -6,5 +6,4 @@
 script = ExtResource("1_43ewp")
 Name = "seviper-fang"
 Id = 1816
-Cost = 120
 Category = "tm-materials"

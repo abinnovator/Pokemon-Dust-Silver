@@ -6,5 +6,4 @@
 script = ExtResource("1_0war4")
 Name = "horseradish"
 Id = 1757
-Cost = 410
 Category = "sandwich-ingredients"

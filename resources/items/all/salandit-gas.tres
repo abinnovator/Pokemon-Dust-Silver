@@ -6,5 +6,4 @@
 script = ExtResource("1_8wuea")
 Name = "salandit-gas"
 Id = 1879
-Cost = 80
 Category = "tm-materials"

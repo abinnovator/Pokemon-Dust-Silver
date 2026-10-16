@@ -20,5 +20,5 @@ Name = "mystery-egg"
 Id = 483
 Category = "plot-advancement"
 ShortEffect = "Deliver to Professor Elm."
-Effect = "Must be obtained to trigger the break-in at Professor Elm’s lab, the first rival battle, and access to johto route 31."
+Effect = "Must be obtained to trigger the break-in at Professor Elm’s lab, the first rival battle, and access to Route 31."
 Sprite = SubResource("ImageTexture_bk5kt")

@@ -6,5 +6,4 @@
 script = ExtResource("1_3jwr3")
 Name = "sandshrew-claw"
 Id = 2120
-Cost = 10
 Category = "tm-materials"

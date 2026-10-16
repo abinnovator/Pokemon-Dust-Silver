@@ -6,5 +6,4 @@
 script = ExtResource("1_xdpe6")
 Name = "litwick-soot"
 Id = 2149
-Cost = 30
 Category = "tm-materials"

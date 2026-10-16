@@ -20,5 +20,5 @@ Name = "tea"
 Id = 555
 Category = "plot-advancement"
 ShortEffect = "Grants access to Saffron City."
-Effect = "Used to bribe the saffron city guards for entry to the city."
+Effect = "Used to bribe the Saffron City guards for entry to the city."
 Sprite = SubResource("ImageTexture_r4uqg")

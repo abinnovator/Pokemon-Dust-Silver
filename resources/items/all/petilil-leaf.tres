@@ -6,5 +6,4 @@
 script = ExtResource("1_sm8d8")
 Name = "petilil-leaf"
 Id = 1843
-Cost = 60
 Category = "tm-materials"

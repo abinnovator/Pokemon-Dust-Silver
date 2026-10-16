@@ -6,5 +6,4 @@
 script = ExtResource("1_knb4i")
 Name = "sewaddle-leaf"
 Id = 2147
-Cost = 20
 Category = "tm-materials"

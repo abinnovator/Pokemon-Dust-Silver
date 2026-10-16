@@ -18,7 +18,6 @@ image = SubResource("Image_10pwy")
 script = ExtResource("1_5bcwy")
 Name = "electric-seed"
 Id = 898
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Consumed on Electric Terrain and raises the holder’s Defense by one stage."
 Effect = "Held: If the holder enters battle during Electric Terrain, or if Electric Terrain is activated while the holder is in battle, this item is consumed and the holder’s Defense raises by one stage."

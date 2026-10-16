@@ -18,7 +18,6 @@ image = SubResource("Image_0ghsh")
 script = ExtResource("1_iw8wc")
 Name = "tm01"
 Id = 305
-Cost = 40000
 Category = "all-machines"
 ShortEffect = "Teaches Hone Claws to a compatible Pokémon. (Gen IV & III: Focus Punch Gen II: DynamicPunch Gen I: Mega Punch)"
 Effect = "Teaches Focus Punch to a compatible Pokémon."

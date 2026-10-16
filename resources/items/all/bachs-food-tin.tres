@@ -6,6 +6,5 @@
 script = ExtResource("1_nwxcm")
 Name = "bachs-food-tin"
 Id = 1146
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 80

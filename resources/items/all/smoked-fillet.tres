@@ -6,5 +6,4 @@
 script = ExtResource("1_s16mv")
 Name = "smoked-fillet"
 Id = 1742
-Cost = 330
 Category = "sandwich-ingredients"

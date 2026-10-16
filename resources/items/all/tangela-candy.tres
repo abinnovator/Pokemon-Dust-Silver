@@ -6,5 +6,4 @@
 script = ExtResource("1_b8uli")
 Name = "tangela-candy"
 Id = 1110
-Cost = 20
 Category = "species-candies"

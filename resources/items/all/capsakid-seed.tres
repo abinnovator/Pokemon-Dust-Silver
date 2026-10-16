@@ -6,5 +6,4 @@
 script = ExtResource("1_hti1u")
 Name = "capsakid-seed"
 Id = 1917
-Cost = 80
 Category = "tm-materials"

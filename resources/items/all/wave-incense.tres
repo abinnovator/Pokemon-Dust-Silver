@@ -18,7 +18,6 @@ image = SubResource("Image_7cm1q")
 script = ExtResource("1_xy4w3")
 Name = "wave-incense"
 Id = 294
-Cost = 2000
 Category = "type-enhancement"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Water-Type moves from holder do 20% more damage. Breeding: Mantine begets a Mantyke Egg."

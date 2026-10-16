@@ -6,5 +6,4 @@
 script = ExtResource("1_j264r")
 Name = "arrokuda-scales"
 Id = 1889
-Cost = 80
 Category = "tm-materials"

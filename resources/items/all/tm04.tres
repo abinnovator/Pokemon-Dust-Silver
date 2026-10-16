@@ -18,7 +18,6 @@ image = SubResource("Image_6omah")
 script = ExtResource("1_ft5ee")
 Name = "tm04"
 Id = 308
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Calm Mind to a compatible Pokémon. (Gen II: Rollout Gen I: Whirlwind)"
 Effect = "Teaches Calm Mind to a compatible Pokémon."

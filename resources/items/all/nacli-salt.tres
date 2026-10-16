@@ -6,5 +6,4 @@
 script = ExtResource("1_hvchj")
 Name = "nacli-salt"
 Id = 1932
-Cost = 80
 Category = "tm-materials"

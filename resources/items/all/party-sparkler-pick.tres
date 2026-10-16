@@ -6,5 +6,4 @@
 script = ExtResource("1_y0l3x")
 Name = "party-sparkler-pick"
 Id = 2086
-Cost = 1600
 Category = "picnic"

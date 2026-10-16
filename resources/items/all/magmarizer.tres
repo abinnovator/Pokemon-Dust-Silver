@@ -18,7 +18,6 @@ image = SubResource("Image_muxkv")
 script = ExtResource("1_wmfpv")
 Name = "magmarizer"
 Id = 300
-Cost = 2000
 Category = "evolution"
 ShortEffect = "Traded on a Magmar: Holder evolves into Magmortar."
 Effect = "Held by Magmar: Evolves the holder into Magmortar when traded."

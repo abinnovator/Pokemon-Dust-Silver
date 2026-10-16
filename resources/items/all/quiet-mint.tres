@@ -6,6 +6,5 @@
 script = ExtResource("1_paiph")
 Name = "quiet-mint"
 Id = 1300
-Cost = 20
 Category = "nature-mints"
 FlingPower = 10

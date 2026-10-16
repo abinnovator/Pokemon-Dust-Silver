@@ -20,5 +20,5 @@ Name = "incinium-z--held"
 Id = 840
 Category = "z-crystals"
 ShortEffect = "Held: Allows Incineroar to upgrade Darkest Lariat into Malicious Moonsault."
-Effect = "Held: Allows incineroar to upgrade darkest lariat into malicious moonsault."
+Effect = "Held: Allows Incineroar to upgrade Darkest Lariat into Malicious Moonsault."
 Sprite = SubResource("ImageTexture_keb2r")

@@ -6,6 +6,5 @@
 script = ExtResource("1_t7bx4")
 Name = "chalky-stone"
 Id = 1025
-Cost = 60
 Category = "loot"
 FlingPower = 30

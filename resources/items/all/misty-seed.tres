@@ -18,7 +18,6 @@ image = SubResource("Image_iw7lo")
 script = ExtResource("1_n4rjw")
 Name = "misty-seed"
 Id = 900
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Consumed on Misty Terrain and raises the holder’s Special Defense by one stage."
 Effect = "Held: If the holder enters battle during Misty Terrain, or if Misty Terrain is activated while the holder is in battle, this item is consumed and the holder’s Special Defense raises by one stage."

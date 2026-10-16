@@ -6,6 +6,5 @@
 script = ExtResource("1_mgewo")
 Name = "packaged-curry"
 Id = 1318
-Cost = 950
 Category = "curry-ingredients"
 FlingPower = 10

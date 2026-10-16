@@ -6,5 +6,4 @@
 script = ExtResource("1_gvupg")
 Name = "wiglett-sand"
 Id = 1912
-Cost = 80
 Category = "tm-materials"

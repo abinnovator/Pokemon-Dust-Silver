@@ -6,5 +6,4 @@
 script = ExtResource("1_8k3o1")
 Name = "heracross-claw"
 Id = 1792
-Cost = 100
 Category = "tm-materials"

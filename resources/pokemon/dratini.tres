@@ -71,6 +71,7 @@ mythical POKéMON
 until recentlywhen a small
 colony was found
 living underwater."
+TypeOne = 15
 Height = 18
 Weight = 33
 BaseExperience = 60
@@ -98,6 +99,9 @@ LevelUpMoves = Dictionary[String, int]({
 "twister": 15,
 "wrap": 1
 })
+CanEvolve = true
+EvolvesInto = 148
+EvolutionLevel = 30
 FrontSprite = SubResource("ImageTexture_1tbve")
 ShinyFrontSprite = SubResource("ImageTexture_o1d2b")
 BackSprite = SubResource("ImageTexture_qhsk1")

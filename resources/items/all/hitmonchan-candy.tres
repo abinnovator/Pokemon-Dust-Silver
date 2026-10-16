@@ -6,5 +6,4 @@
 script = ExtResource("1_un3ci")
 Name = "hitmonchan-candy"
 Id = 1105
-Cost = 20
 Category = "species-candies"

@@ -6,5 +6,4 @@
 script = ExtResource("1_eqf2s")
 Name = "spiritomb-fragment"
 Id = 1835
-Cost = 240
 Category = "tm-materials"

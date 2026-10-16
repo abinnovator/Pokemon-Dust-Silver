@@ -20,5 +20,5 @@ Name = "enigma-stone"
 Id = 470
 Category = "event-items"
 ShortEffect = "S: Summons Latias H: Summons Latios."
-Effect = "When taken to the pewter city museum, causes latias or latios to attack the trainer.  The Pokémon to appear will be whicher can’t be encountered roaming in the wild."
+Effect = "When taken to the Pewter City museum, causes Latias or Latios to attack the trainer.  The Pokémon to appear will be whicher can’t be encountered roaming in the wild."
 Sprite = SubResource("ImageTexture_tp32y")

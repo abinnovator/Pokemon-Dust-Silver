@@ -6,5 +6,4 @@
 script = ExtResource("1_ypeu2")
 Name = "drifloon-gas"
 Id = 1830
-Cost = 80
 Category = "tm-materials"

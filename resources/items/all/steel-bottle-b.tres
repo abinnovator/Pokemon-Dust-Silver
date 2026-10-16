@@ -6,5 +6,4 @@
 script = ExtResource("1_hvdrr")
 Name = "steel-bottle-b"
 Id = 2052
-Cost = 1500
 Category = "picnic"

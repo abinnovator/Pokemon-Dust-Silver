@@ -18,7 +18,6 @@ image = SubResource("Image_86aij")
 script = ExtResource("1_i4ui6")
 Name = "festival-ticket"
 Id = 881
-Cost = 10
 Category = "gameplay"
 ShortEffect = "Hosts a mission in Festival Plaza."
 Effect = "Hosts a mission in Festival Plaza."

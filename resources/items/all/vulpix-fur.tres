@@ -6,5 +6,4 @@
 script = ExtResource("1_utcs1")
 Name = "vulpix-fur"
 Id = 2122
-Cost = 35
 Category = "tm-materials"

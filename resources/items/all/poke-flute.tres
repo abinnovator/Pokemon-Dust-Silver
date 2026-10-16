@@ -20,5 +20,5 @@ Name = "poke-flute"
 Id = 544
 Category = "plot-advancement"
 ShortEffect = "Use to awaken sleeping Pokémon, including Snorlax on roads."
-Effect = "Wakes up sleeping Pokémon.  Required to wake up sleeping snorlax on the overworld."
+Effect = "Wakes up sleeping Pokémon.  Required to wake up sleeping Snorlax on the overworld."
 Sprite = SubResource("ImageTexture_n13dy")

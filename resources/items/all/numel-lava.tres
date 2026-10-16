@@ -6,5 +6,4 @@
 script = ExtResource("1_ow2tg")
 Name = "numel-lava"
 Id = 1810
-Cost = 80
 Category = "tm-materials"

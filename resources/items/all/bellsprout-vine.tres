@@ -6,5 +6,4 @@
 script = ExtResource("1_35b5g")
 Name = "bellsprout-vine"
 Id = 2124
-Cost = 25
 Category = "tm-materials"

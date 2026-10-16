@@ -18,7 +18,6 @@ image = SubResource("Image_36438")
 script = ExtResource("1_j6p67")
 Name = "star-piece"
 Id = 91
-Cost = 12000
 Category = "loot"
 Attributes = PackedStringArray("underground")
 ShortEffect = "Platinum: Trade for one of each color Shard. Black and White: Trade for PP Up. Sell for 4900 Pokédollars, or to Ore Collector for 9800 Pokédollars."

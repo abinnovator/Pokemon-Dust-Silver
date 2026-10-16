@@ -6,5 +6,4 @@
 script = ExtResource("1_u7v24")
 Name = "gimmighoul-coin"
 Id = 1938
-Cost = 800
 Category = "tm-materials"

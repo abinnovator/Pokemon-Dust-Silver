@@ -6,5 +6,4 @@
 script = ExtResource("1_ki74w")
 Name = "blue-flag-pick"
 Id = 2039
-Cost = 120
 Category = "picnic"

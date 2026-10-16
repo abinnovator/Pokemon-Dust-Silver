@@ -20,5 +20,5 @@ Name = "clear-bell"
 Id = 474
 Category = "plot-advancement"
 ShortEffect = "HS: Allows Kimono-girls to summon Ho-oh. C: Summons Suicune to the Tin Tower."
-Effect = "May be given to the Kimono Girls to summon ho oh to the top of the bell tower."
+Effect = "May be given to the Kimono Girls to summon Ho-Oh to the top of the Bell Tower."
 Sprite = SubResource("ImageTexture_bq3x6")

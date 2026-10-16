@@ -18,7 +18,6 @@ image = SubResource("Image_7hy1i")
 script = ExtResource("1_af4yu")
 Name = "pamtre-berry"
 Id = 157
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

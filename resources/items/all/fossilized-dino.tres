@@ -6,6 +6,5 @@
 script = ExtResource("1_a2kxj")
 Name = "fossilized-dino"
 Id = 1166
-Cost = 5000
 Category = "dex-completion"
 FlingPower = 100

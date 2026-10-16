@@ -18,7 +18,6 @@ image = SubResource("Image_ag47y")
 script = ExtResource("1_1pk2q")
 Name = "muscle-wing"
 Id = 607
-Cost = 300
 Category = "vitamins"
 ShortEffect = "Increases Attack effort by 1."
 Effect = "Used on a party Pokémon :   Increases the target’s Attack effort by 1."

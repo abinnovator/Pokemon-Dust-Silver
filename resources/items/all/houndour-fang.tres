@@ -6,5 +6,4 @@
 script = ExtResource("1_oqdpy")
 Name = "houndour-fang"
 Id = 1796
-Cost = 80
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_2xx4t")
 Name = "cufant-tarnish"
 Id = 1893
-Cost = 80
 Category = "tm-materials"

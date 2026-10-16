@@ -6,6 +6,5 @@
 script = ExtResource("1_lsfiq")
 Name = "eject-pack"
 Id = 1177
-Cost = 4000
 Category = "held-items"
 FlingPower = 50

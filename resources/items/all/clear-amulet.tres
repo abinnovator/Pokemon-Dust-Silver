@@ -6,5 +6,4 @@
 script = ExtResource("1_17qd2")
 Name = "clear-amulet"
 Id = 1698
-Cost = 30000
 Category = "held-items"

@@ -6,5 +6,4 @@
 script = ExtResource("1_kbi6e")
 Name = "vullaby-feather"
 Id = 2151
-Cost = 35
 Category = "tm-materials"

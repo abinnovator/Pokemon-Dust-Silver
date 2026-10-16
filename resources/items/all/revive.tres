@@ -18,7 +18,6 @@ image = SubResource("Image_tn2w0")
 script = ExtResource("1_tn2w0")
 Name = "revive"
 Id = 28
-Cost = 2000
 Category = "revival"
 Attributes = PackedStringArray("countable", "consumable", "usable-overworld", "usable-in-battle", "holdable", "underground")
 ShortEffect = "Revives with half HP."

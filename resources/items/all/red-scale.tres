@@ -20,5 +20,5 @@ Name = "red-scale"
 Id = 477
 Category = "plot-advancement"
 ShortEffect = "Trade to Mr. Pokémon for an Exp. Share."
-Effect = "May be traded to Mr. Pokémon for an exp share."
+Effect = "May be traded to Mr. Pokémon for an Exp. Share."
 Sprite = SubResource("ImageTexture_h2eji")

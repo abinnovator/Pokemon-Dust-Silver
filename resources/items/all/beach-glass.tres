@@ -6,6 +6,5 @@
 script = ExtResource("1_vofvs")
 Name = "beach-glass"
 Id = 1028
-Cost = 800
 Category = "loot"
 FlingPower = 30

@@ -6,5 +6,4 @@
 script = ExtResource("1_ixwer")
 Name = "striped-cup"
 Id = 2023
-Cost = 800
 Category = "picnic"

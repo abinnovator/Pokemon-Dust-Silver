@@ -6,5 +6,4 @@
 script = ExtResource("1_rxtau")
 Name = "timburr-sweat"
 Id = 2146
-Cost = 30
 Category = "tm-materials"

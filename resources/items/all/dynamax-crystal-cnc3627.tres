@@ -6,5 +6,4 @@
 script = ExtResource("1_bvdok")
 Name = "dynamax-crystal-cnc3627"
 Id = 1450
-Cost = 20
 Category = "dynamax-crystals"

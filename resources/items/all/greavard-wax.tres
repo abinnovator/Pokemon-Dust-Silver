@@ -6,5 +6,4 @@
 script = ExtResource("1_qckn1")
 Name = "greavard-wax"
 Id = 1910
-Cost = 80
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_o2cf1")
 script = ExtResource("1_j4c1a")
 Name = "tm25"
 Id = 329
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Thunder to a compatible Pokémon."
 Effect = "Teaches Thunder to a compatible Pokémon."

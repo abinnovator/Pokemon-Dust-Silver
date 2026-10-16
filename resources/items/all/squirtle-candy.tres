@@ -6,5 +6,4 @@
 script = ExtResource("1_mpfg1")
 Name = "squirtle-candy"
 Id = 1060
-Cost = 20
 Category = "species-candies"

@@ -65,6 +65,7 @@ namespace Game.Gameplay
 		[Export] public Sprite2D[] Sprites;
 		[Export] public Node2D Party;
 		private bool _isProcessingTurn = false;
+		private bool _isThrowingPokeball = false;
 		[ExportCategory("Music")]
 		[Export] public AudioStream BackgroundMusic;
 		[Export] public AudioStreamPlayer MusicPlayer;
@@ -90,7 +91,7 @@ namespace Game.Gameplay
 			msg.GetParent()?.RemoveChild(msg);
 			AddChild(msg);
 			msg.Layer = 10;
-			
+
 			if (BattleManager.Instance != null)
 			{
 				PlayerID = BattleManager.Instance.playerPokemonId;
@@ -113,7 +114,7 @@ namespace Game.Gameplay
 			if (OpponentSprite != null) OpponentSprite.Setup(OpponentID);
 
 			Logger.Info($"BattleMain _Ready. PartyMenu: {PartyMenu?.Name ?? "NULL"}, PokemonButtons Count: {PokemonButtons?.Length ?? 0}");
-			
+
 			if (BattleButton != null) BattleButton.Pressed += () => OnBattleButtonPressed();
 			if (RunButton != null) RunButton.Pressed += () => RunAway();
 			if (BackButton != null) BackButton.Pressed += () => OnBackButtonPressed();
@@ -122,7 +123,7 @@ namespace Game.Gameplay
 			if (BagMenuButton != null) BagMenuButton.Pressed += () => OnBagMenuButtonPressed();
 			if (BagBackButton != null) BagBackButton.Pressed += () => OnBagBackButtonPressed();
 			if (PokeballBackButton != null) PokeballBackButton.Pressed += () => onPokeballBackButtonPressed();
-			
+
 			if (PokemonButtons != null)
 			{
 				Logger.Info($"Connecting {PokemonButtons.Length} Party Slot Buttons");
@@ -185,14 +186,14 @@ namespace Game.Gameplay
 			}
 
 			Logger.Info($"Player Pokemon Learnable Moves: {string.Join(", ", _playerPokemon.LearnableMoves)}");
-			
+
 			if (MoveButtons != null)
 			{
 				foreach (var btn in MoveButtons)
 				{
 					if (btn != null)
 					{
-						btn.Pressed += async () => 
+						btn.Pressed += async () =>
 						{
 							string moveName = (btn as Button)?.Text ?? btn.Name.ToString();
 							await OnMoveSelectedAsync(moveName);
@@ -226,8 +227,8 @@ namespace Game.Gameplay
 				Logger.Warning("SaveManager.Instance or CurrentSave is NULL in _Ready");
 			}
 
-		
-			if (partyData == null) 
+
+			if (partyData == null)
 			{
 				Game.Core.Logger.Error("Party Data is null!");
 				return;
@@ -264,9 +265,9 @@ namespace Game.Gameplay
 					HpBars[i].MaxValue = pokemonResource.BaseHp;
 					HpBars[i].Value = pokemonDict["CurrentHP"].AsInt32();
 				}
-				
+
 				if (Sprites[i] != null)
-					Sprites[i].Texture = pokemonResource.FrontSprite; 
+					Sprites[i].Texture = pokemonResource.FrontSprite;
 			}
 			PokeBackButton.Pressed += OnPokemonBackButtonPressed;
 		}
@@ -306,11 +307,11 @@ namespace Game.Gameplay
 					break;
 			}
 			SaveActivePokemonHp();
-			
+
 			var msg = MessageManager.Instance;
 			msg.GetParent()?.RemoveChild(msg);
 			GetTree().Root.AddChild(msg);
-			
+
 			if (BattleManager.Instance != null)
 			{
 				BattleManager.Instance.EndBattle();
@@ -395,7 +396,7 @@ namespace Game.Gameplay
 			float baseDamage = ((levelPart * move.Power * adRatio) / 50.0f) + 2.0f;
 			float randomModifier = (float)GD.RandRange(0.85, 1.0);
 			float multiplier = TypeChart.GetMultiplier(move.PokemonType, defender.TypeOne);
-			
+
 			return (Mathf.FloorToInt(baseDamage * randomModifier * multiplier), multiplier);
 		}
 
@@ -421,24 +422,24 @@ namespace Game.Gameplay
 		    foreach (var btn in MoveButtons)
 		        if (btn != null) btn.Disabled = disabled;
 		}
-				
-				
+
+
 
 		public async Task ExecuteMoveAsync(PokemonResource attacker, PokemonResource defender, string moveName, bool isPlayerAttacking)
 		{
-			
+
 
 			LastTurnWasPlayer = isPlayerAttacking;
 			UpdateLog($"{(isPlayerAttacking ? "Player" : "Enemy")} used {moveName}!");
 			await MessageManager.PlayText(null, new string[] { $"{(isPlayerAttacking ? _playerPokemon.Name : _oppPokemon.Name)} used {moveName}!" });
 			var move = PokeBase.LoadMove(moveName);
 			if (move == null) return;
-			
+
 
 			int attackerLevel = isPlayerAttacking ? _playerPokemonLevel : _oppPokemonLevel;
 			var (damage, multiplier) = CalculateDamage(attacker, defender, move, attackerLevel);
 			string effectMessage = TypeChart.GetEffectivenessMessage(multiplier);
-			
+
 			if (isPlayerAttacking)
 			{
 				_oppPokemonHp = Math.Max(0, _oppPokemonHp - damage);
@@ -500,6 +501,7 @@ namespace Game.Gameplay
 
 			if (_playerPokemonHp <= 0)
 			{
+				SaveActivePokemonHp();
 				int healthyCount = 0;
 				foreach (var entry in SaveManager.Instance?.CurrentSave?.PartyDetails)
 				{
@@ -538,14 +540,14 @@ namespace Game.Gameplay
 				CommandMenu.Visible = false;
 				MoveMenu.Visible = false;
 				PartyMenu.Visible = false;
-				
+
 				if (BackButton != null) BackButton.Visible = false;
 				if (BagBackButton != null) BagBackButton.Visible = true;
 				if (Bag.GetChild(0) is Button pbBtn) { pbBtn.Text = "Pokeballs"; pbBtn.Visible = true; }
 				if (Bag.GetChild(1) is Button expBtn) { expBtn.Text = "Exp"; expBtn.Visible = true; }
 				if (Bag.GetChild(2) is Button backBtn) { backBtn.Text = "Back"; backBtn.Visible = true; }
-				
-				
+
+
 				PopulateBagItems();
 			}
 		}
@@ -556,7 +558,7 @@ namespace Game.Gameplay
 			if (save == null) return;
 
 			Logger.Info($"Populating Bag with {save.Pokeballs.Count} items");
-			
+
 			// for (int i = 0; i < BagButtons.Length; i++)
 			// {
 			//     var btn = BagButtons[i];
@@ -572,7 +574,7 @@ namespace Game.Gameplay
 			//     else
 			//     {
 			//         if (btn is Button b) b.Text = "---";
-			//         btn.Visible = true; 
+			//         btn.Visible = true;
 			//         btn.Disabled = true;
 			//     }
 			// }
@@ -589,7 +591,7 @@ namespace Game.Gameplay
 				BackButton.Visible = false;
 				PokemonBackButton.Visible = true;
 				Party.Visible = true;
-				
+
 				Logger.Info($"PartyMenu Visibility: {PartyMenu.Visible}, Children: {PartyMenu.GetChildCount()}");
 				var partyDetails = SaveManager.Instance.CurrentSave?.PartyDetails;
 				Logger.Info($"PartyDetails count: {partyDetails?.Count ?? -1}");
@@ -610,7 +612,8 @@ namespace Game.Gameplay
 								int idInt = (int)pokemonData["ID"];
 								PokemonID id = (PokemonID)idInt;
 								int lvl = pokemonData.ContainsKey("Level") ? (int)pokemonData["Level"] : 5;
-								bool fainted = pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0;
+								bool fainted = (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+									|| (id == PlayerID && _playerPokemonHp <= 0);
 								btn.Text = fainted ? $"{id} (Lv.{lvl}) - Fainted" : $"{id} (Lv.{lvl})";
 								btn.Disabled = fainted;
 								btn.Visible = true;
@@ -622,7 +625,7 @@ namespace Game.Gameplay
 							btn.Text = "---";
 							btn.Disabled = true;
 							// Optionally hide empty slots if that's preferred, but let's keep them visible for now to see if they show up
-							btn.Visible = true; 
+							btn.Visible = true;
 						}
 						buttonIdx++;
 					}
@@ -635,6 +638,25 @@ namespace Game.Gameplay
 		}
 		private void switchPokemon(PokemonResource pokemon)
 		{
+			var partyDetails = SaveManager.Instance?.CurrentSave?.PartyDetails;
+			if (pokemon == null || partyDetails == null) return;
+
+			foreach (var entry in partyDetails)
+			{
+				var pokemonData = entry.Value.AsGodotDictionary();
+				if (pokemonData == null || !pokemonData.ContainsKey("ID")
+					|| (PokemonID)(int)pokemonData["ID"] != (PokemonID)pokemon.Id)
+					continue;
+
+				if ((pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+					|| ((PokemonID)pokemon.Id == PlayerID && _playerPokemonHp <= 0))
+				{
+					Logger.Info("Cannot switch to a fainted Pokemon.");
+					return;
+				}
+				break;
+			}
+
 			_playerPokemon = pokemon;
 			PlayerSprite.Texture = pokemon.BackSprite;
 			PlayerHPBar.MaxValue = pokemon.BaseHp;
@@ -652,14 +674,15 @@ namespace Game.Gameplay
 			var pokemonData = partyDetails[index].AsGodotDictionary();
 			if (pokemonData == null || !pokemonData.ContainsKey("ID")) return;
 
-			if (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+			int idInt = (int)pokemonData["ID"];
+			PokemonID id = (PokemonID)idInt;
+			bool fainted = (pokemonData.ContainsKey("CurrentHP") && pokemonData["CurrentHP"].AsInt32() <= 0)
+				|| (id == PlayerID && _playerPokemonHp <= 0);
+			if (fainted)
 			{
 				Logger.Info("Cannot select a fainted Pokemon.");
 				return;
 			}
-
-			int idInt = (int)pokemonData["ID"];
-			PokemonID id = (PokemonID)idInt;
 
 			if (id == PlayerID)
 			{
@@ -751,24 +774,52 @@ namespace Game.Gameplay
 			await Task.Delay(1000);
 			return chance <= catchRate;
 		}
-		private async Task PokeballthrownAsync (Game.Core.Pokeball ball){
-			OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball.ToString().ToLowerInvariant()}_closed.tres");
-			
-			await AttemptCatch(ball);
-			SaveManager.Instance.CurrentSave.Pokeballs.Remove(ball);
-			SaveManager.Instance.SaveToDisk();
-			if (await AttemptCatch(ball))
+		private async Task PokeballthrownAsync(Game.Core.Pokeball ball)
+		{
+			if (_isThrowingPokeball || _isProcessingTurn) return;
+
+			_isThrowingPokeball = true;
+			SetPokeballButtonsDisabled(true);
+			if (Pokeballs != null) Pokeballs.Visible = false;
+
+			try
 			{
-				SavePokemonToParty((PokemonID)_oppPokemon.Id);
-				Logger.Info("Pokemon caught!");
-				_audioStreamPlayer.Play();
-				EndBattle(2);
-				QueueFree();
-			}else{
-				OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball.ToString().ToLowerInvariant()}_open.tres");
-				await Task.Delay(1000); // animation delay
-				OpponentSprite.Texture = _oppPokemon.FrontSprite;
+            OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball.ToString().ToLowerInvariant()}_closed.tres");
+
+            bool caught = await AttemptCatch(ball);
+
+            SaveManager.Instance.CurrentSave.Pokeballs.Remove(ball);
+            SaveManager.Instance.SaveToDisk();
+
+            if (caught)
+            {
+                SavePokemonToParty((PokemonID)_oppPokemon.Id);
+                Logger.Info("Pokemon caught!");
+                _audioStreamPlayer.Play();
+                EndBattle(2);
+            }
+            else
+            {
+                OpponentSprite.Texture = ResourceLoader.Load<Texture2D>($"res://resources/textures/pokeball_{ball.ToString().ToLowerInvariant()}_open.tres");
+                await Task.Delay(1000);
+                OpponentSprite.Texture = _oppPokemon.FrontSprite;
+
+                if (CommandMenu != null) CommandMenu.Visible = false;
+                await ExecuteEnemyTurnAsync();
+                OpponentSprite.Texture = _oppPokemon.FrontSprite;
+            }
 			}
+			finally
+			{
+				_isThrowingPokeball = false;
+			}
+		}
+
+		private void SetPokeballButtonsDisabled(bool disabled)
+		{
+			if (PokeballButtons == null) return;
+			foreach (var button in PokeballButtons)
+				if (button != null) button.Disabled = disabled;
 		}
 		private void SavePokemonToParty(PokemonID id)
 		{
@@ -778,7 +829,7 @@ namespace Game.Gameplay
 				var newPokeData = new Godot.Collections.Dictionary {
 					{ "ID", (int)id },
 					{ "Level", 5 },
-					{ "CurrentHP", _oppPokemonHp } 
+					{ "CurrentHP", _oppPokemonHp }
 				};
 				party[party.Count] = newPokeData;
 				SaveManager.Instance.SaveToDisk();
@@ -819,7 +870,7 @@ namespace Game.Gameplay
 			}
 		}
 
-	
+
 		private async void AwardExpToActivePokemon(int baseExp)
 		{
 			var party = SaveManager.Instance?.CurrentSave?.PartyDetails;
@@ -847,7 +898,7 @@ namespace Game.Gameplay
 					await MessageManager.PlayText(null, new string[] { $"{PlayerID} grew to Lv.{currentLevel}!" });
 					await CheckEvolution(PlayerID, currentLevel, i);
 				}
-				
+
 				entry["Level"] = currentLevel;
 				entry["Exp"] = currentExp;
 				party[i] = entry;
@@ -881,18 +932,18 @@ namespace Game.Gameplay
 			PlayerID = evolutionTarget;
 			_playerPokemon = PokeBase.LoadPokemon(evolutionTarget);
 			if (PlayerSprite != null) PlayerSprite.Setup(evolutionTarget);
-			if (PlayerNameLabel != null) 
+			if (PlayerNameLabel != null)
 				PlayerNameLabel.Text = $"{evolutionTarget} Lv.{newLevel}";
-		} 
+		}
 		public (string action, int amount, string stat) ParseEffect(string ShortEffect){
 			if (string.IsNullOrEmpty(ShortEffect)) return ("", 0, "");
 
 			var parts = ShortEffect.TrimEnd('.').Split(' ');
-			
+
 			string action = parts.Length > 0 ? parts[0] : "";
 			string stat = parts.Length > 2 ? parts[^1] : "";
 			int amount = 0;
-			
+
 			foreach (var part in parts)
 				if (int.TryParse(part, out int val))
 				{ amount = val; break; }

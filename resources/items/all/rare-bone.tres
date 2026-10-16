@@ -18,7 +18,6 @@ image = SubResource("Image_lv5eu")
 script = ExtResource("1_mxjhi")
 Name = "rare-bone"
 Id = 106
-Cost = 5000
 Category = "loot"
 Attributes = PackedStringArray("underground")
 ShortEffect = "Sell for 5000 Pokédollars, or to Bone Man for 10000 Pokédollars."

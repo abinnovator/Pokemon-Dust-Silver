@@ -6,5 +6,4 @@
 script = ExtResource("1_fibgx")
 Name = "pichu-fur"
 Id = 1781
-Cost = 100
 Category = "tm-materials"

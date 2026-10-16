@@ -6,6 +6,5 @@
 script = ExtResource("1_8ct2y")
 Name = "exp-candy-l"
 Id = 1185
-Cost = 3000
 Category = "vitamins"
 FlingPower = 30

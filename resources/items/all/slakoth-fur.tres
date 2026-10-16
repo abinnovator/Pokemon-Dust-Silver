@@ -6,5 +6,4 @@
 script = ExtResource("1_cfqlx")
 Name = "slakoth-fur"
 Id = 1804
-Cost = 60
 Category = "tm-materials"

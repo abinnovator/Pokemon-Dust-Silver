@@ -6,6 +6,5 @@
 script = ExtResource("1_ia4lr")
 Name = "pewter-crunchies"
 Id = 1039
-Cost = 250
 Category = "status-cures"
 FlingPower = 30

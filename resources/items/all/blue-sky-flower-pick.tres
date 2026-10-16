@@ -6,5 +6,4 @@
 script = ExtResource("1_k8qu1")
 Name = "blue-sky-flower-pick"
 Id = 2091
-Cost = 1000
 Category = "picnic"

@@ -20,5 +20,5 @@ Name = "dark-stone"
 Id = 658
 Category = "plot-advancement"
 ShortEffect = "Summons Zekrom for the final battle against N."
-Effect = "Summons zekrom for the final battle against N."
+Effect = "Summons Zekrom for the final battle against N."
 Sprite = SubResource("ImageTexture_trild")

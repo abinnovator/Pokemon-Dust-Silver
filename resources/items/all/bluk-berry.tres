@@ -18,7 +18,6 @@ image = SubResource("Image_4web6")
 script = ExtResource("1_dvx7i")
 Name = "bluk-berry"
 Id = 142
-Cost = 20
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

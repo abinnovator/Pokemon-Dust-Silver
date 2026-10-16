@@ -6,5 +6,4 @@
 script = ExtResource("1_abk2r")
 Name = "illumise-fluid"
 Id = 2141
-Cost = 10
 Category = "tm-materials"

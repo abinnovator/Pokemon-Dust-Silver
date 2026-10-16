@@ -6,5 +6,4 @@
 script = ExtResource("1_ggo4v")
 Name = "magnemite-candy"
 Id = 1091
-Cost = 20
 Category = "species-candies"

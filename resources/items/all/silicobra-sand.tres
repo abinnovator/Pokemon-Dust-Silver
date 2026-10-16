@@ -6,5 +6,4 @@
 script = ExtResource("1_lo3nb")
 Name = "silicobra-sand"
 Id = 1895
-Cost = 80
 Category = "tm-materials"

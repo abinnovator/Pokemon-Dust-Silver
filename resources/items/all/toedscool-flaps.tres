@@ -6,5 +6,4 @@
 script = ExtResource("1_eexp2")
 Name = "toedscool-flaps"
 Id = 1941
-Cost = 100
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_na6qk")
 script = ExtResource("1_sj26o")
 Name = "tm16"
 Id = 320
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Light Screen to a compatible Pokémon. (Gen II: Icy Wind Gen I: Pay Day)"
 Effect = "Teaches Light Screen to a compatible Pokémon."

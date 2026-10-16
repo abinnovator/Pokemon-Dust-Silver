@@ -6,5 +6,4 @@
 script = ExtResource("1_d0rvm")
 Name = "ability-shield"
 Id = 1697
-Cost = 20000
 Category = "held-items"

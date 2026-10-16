@@ -18,7 +18,6 @@ image = SubResource("Image_mfnrl")
 script = ExtResource("1_vp81f")
 Name = "gooey-mulch"
 Id = 98
-Cost = 200
 Category = "mulch"
 ShortEffect = "Berries regrow from dead plants an increased number of times."
 Effect = "Used on a path of soil :   Plant will regrow after dying 25% more times."

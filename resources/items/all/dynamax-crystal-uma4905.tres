@@ -6,5 +6,4 @@
 script = ExtResource("1_gbhub")
 Name = "dynamax-crystal-uma4905"
 Id = 1398
-Cost = 20
 Category = "dynamax-crystals"

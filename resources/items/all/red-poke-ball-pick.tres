@@ -6,5 +6,4 @@
 script = ExtResource("1_rokf1")
 Name = "red-poke-ball-pick"
 Id = 2085
-Cost = 200
 Category = "picnic"

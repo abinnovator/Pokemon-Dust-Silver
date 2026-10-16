@@ -6,6 +6,5 @@
 script = ExtResource("1_3bn4o")
 Name = "large-leek"
 Id = 1152
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 20

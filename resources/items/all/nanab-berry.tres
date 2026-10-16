@@ -18,7 +18,6 @@ image = SubResource("Image_v1f6g")
 script = ExtResource("1_sij5w")
 Name = "nanab-berry"
 Id = 143
-Cost = 200
 Category = "baking-only"
 ShortEffect = "Used for creating PokéBlocks and Poffins."
 Effect = "No effect; only useful for planting and cooking."

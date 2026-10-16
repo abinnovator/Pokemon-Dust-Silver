@@ -18,7 +18,6 @@ image = SubResource("Image_7w4qh")
 script = ExtResource("1_ev0ir")
 Name = "tm12"
 Id = 316
-Cost = 50000
 Category = "all-machines"
 ShortEffect = "Teaches Taunt to a compatible Pokémon. (Gen II: Sweet Scent Gen I: Water Gun)"
 Effect = "Teaches Taunt to a compatible Pokémon."

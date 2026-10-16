@@ -18,7 +18,6 @@ image = SubResource("Image_0s2w5")
 script = ExtResource("1_10bh1")
 Name = "tm33"
 Id = 337
-Cost = 10000
 Category = "all-machines"
 ShortEffect = "Teaches Reflect to a compatible Pokémon. (Gen II: Ice Punch)"
 Effect = "Teaches Reflect to a compatible Pokémon."

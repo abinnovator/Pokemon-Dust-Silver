@@ -20,5 +20,5 @@ Name = "soot-sack"
 Id = 531
 Category = "gameplay"
 ShortEffect = "Stores volcanic ash from Route 113."
-Effect = "Collects soot when walking through tall grass on hoenn route 113."
+Effect = "Collects soot when walking through tall grass on Route 113."
 Sprite = SubResource("ImageTexture_o0dky")

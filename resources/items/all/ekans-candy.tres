@@ -6,5 +6,4 @@
 script = ExtResource("1_46swv")
 Name = "ekans-candy"
 Id = 1066
-Cost = 20
 Category = "species-candies"

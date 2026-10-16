@@ -6,5 +6,4 @@
 script = ExtResource("1_f4m00")
 Name = "sableye-gem"
 Id = 1807
-Cost = 200
 Category = "tm-materials"

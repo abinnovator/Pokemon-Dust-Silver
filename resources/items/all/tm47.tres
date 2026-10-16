@@ -18,7 +18,6 @@ image = SubResource("Image_h2jmi")
 script = ExtResource("1_xgyb5")
 Name = "tm47"
 Id = 351
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Low Sweep to a compatible Pokémon. (Gen IV & III & II: Steel Wing Gen I: Explosion)"
 Effect = "Teaches Steel Wing to a compatible Pokémon."

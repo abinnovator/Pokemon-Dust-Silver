@@ -6,5 +6,4 @@
 script = ExtResource("1_n1f1w")
 Name = "bergmite-ice"
 Id = 1870
-Cost = 80
 Category = "tm-materials"

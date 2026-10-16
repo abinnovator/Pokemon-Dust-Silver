@@ -18,7 +18,6 @@ image = SubResource("Image_7f7c0")
 script = ExtResource("1_h1ky1")
 Name = "terrain-extender"
 Id = 896
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Extends the holder’s Terrain effects to 8 turns."
 Effect = "Held: When the holder changes the Terrain (whether by move or ability), it will last  8 turns instead of 5."

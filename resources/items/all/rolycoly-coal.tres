@@ -6,5 +6,4 @@
 script = ExtResource("1_lsdkl")
 Name = "rolycoly-coal"
 Id = 1894
-Cost = 80
 Category = "tm-materials"

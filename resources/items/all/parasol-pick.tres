@@ -6,5 +6,4 @@
 script = ExtResource("1_oefyc")
 Name = "parasol-pick"
 Id = 2090
-Cost = 800
 Category = "picnic"

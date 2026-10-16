@@ -6,5 +6,4 @@
 script = ExtResource("1_vdtwv")
 Name = "silver-pick"
 Id = 2037
-Cost = 40
 Category = "picnic"

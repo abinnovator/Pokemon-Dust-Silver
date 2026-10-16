@@ -6,5 +6,4 @@
 script = ExtResource("1_dwfae")
 Name = "pawmi-fur"
 Id = 1926
-Cost = 100
 Category = "tm-materials"

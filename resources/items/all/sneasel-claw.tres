@@ -6,5 +6,4 @@
 script = ExtResource("1_mlyrb")
 Name = "sneasel-claw"
 Id = 1793
-Cost = 80
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_xsri5")
 Name = "bacon"
 Id = 1735
-Cost = 150
 Category = "sandwich-ingredients"

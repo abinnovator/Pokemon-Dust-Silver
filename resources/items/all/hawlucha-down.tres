@@ -6,5 +6,4 @@
 script = ExtResource("1_rgcpi")
 Name = "hawlucha-down"
 Id = 1866
-Cost = 100
 Category = "tm-materials"

@@ -18,7 +18,6 @@ image = SubResource("Image_fqhh5")
 script = ExtResource("1_474o6")
 Name = "fluffy-tail"
 Id = 64
-Cost = 100
 Category = "spelunking"
 Attributes = PackedStringArray("countable", "consumable", "usable-in-battle", "holdable")
 ShortEffect = "Ends a wild battle."

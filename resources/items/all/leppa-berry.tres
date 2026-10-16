@@ -18,7 +18,6 @@ image = SubResource("Image_tx6v1")
 script = ExtResource("1_c3gps")
 Name = "leppa-berry"
 Id = 131
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when a move runs out of PP to restore its PP by 10."

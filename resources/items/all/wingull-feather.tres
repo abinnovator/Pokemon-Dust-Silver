@@ -6,5 +6,4 @@
 script = ExtResource("1_qfhrr")
 Name = "wingull-feather"
 Id = 1800
-Cost = 60
 Category = "tm-materials"

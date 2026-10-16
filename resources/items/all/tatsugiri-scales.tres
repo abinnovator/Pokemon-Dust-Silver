@@ -6,5 +6,4 @@
 script = ExtResource("1_mm8f2")
 Name = "tatsugiri-scales"
 Id = 1924
-Cost = 200
 Category = "tm-materials"

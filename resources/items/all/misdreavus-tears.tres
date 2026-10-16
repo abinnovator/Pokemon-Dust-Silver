@@ -6,5 +6,4 @@
 script = ExtResource("1_ji1oi")
 Name = "misdreavus-tears"
 Id = 1787
-Cost = 80
 Category = "tm-materials"

@@ -6,5 +6,4 @@
 script = ExtResource("1_killw")
 Name = "egg"
 Id = 1744
-Cost = 80
 Category = "sandwich-ingredients"

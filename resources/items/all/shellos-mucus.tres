@@ -6,5 +6,4 @@
 script = ExtResource("1_0xpf0")
 Name = "shellos-mucus"
 Id = 1829
-Cost = 80
 Category = "tm-materials"

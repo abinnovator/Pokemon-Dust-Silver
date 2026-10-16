@@ -6,5 +6,4 @@
 script = ExtResource("1_brmjo")
 Name = "prosciutto"
 Id = 1737
-Cost = 200
 Category = "sandwich-ingredients"

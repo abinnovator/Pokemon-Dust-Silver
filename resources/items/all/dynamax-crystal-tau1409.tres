@@ -6,5 +6,4 @@
 script = ExtResource("1_qit5a")
 Name = "dynamax-crystal-tau1409"
 Id = 1382
-Cost = 20
 Category = "dynamax-crystals"

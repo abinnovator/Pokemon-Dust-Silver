@@ -6,5 +6,4 @@
 script = ExtResource("1_fagf6")
 Name = "syrupy-apple"
 Id = 2109
-Cost = 500
 Category = "evolution"

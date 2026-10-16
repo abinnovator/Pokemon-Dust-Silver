@@ -6,6 +6,5 @@
 script = ExtResource("1_nycv5")
 Name = "golden-razz-berry"
 Id = 1015
-Cost = 5000
 Category = "catching-bonus"
 FlingPower = 10

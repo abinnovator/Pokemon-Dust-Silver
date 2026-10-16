@@ -6,6 +6,5 @@
 script = ExtResource("1_vyxor")
 Name = "fruit-bunch"
 Id = 1314
-Cost = 2200
 Category = "curry-ingredients"
 FlingPower = 10

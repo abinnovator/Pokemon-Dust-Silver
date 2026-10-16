@@ -6,5 +6,4 @@
 script = ExtResource("1_k10nu")
 Name = "shroodle-ink"
 Id = 1934
-Cost = 80
 Category = "tm-materials"

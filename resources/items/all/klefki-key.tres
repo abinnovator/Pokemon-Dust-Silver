@@ -6,5 +6,4 @@
 script = ExtResource("1_n81sh")
 Name = "klefki-key"
 Id = 1869
-Cost = 100
 Category = "tm-materials"

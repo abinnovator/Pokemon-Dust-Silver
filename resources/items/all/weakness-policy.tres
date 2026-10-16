@@ -18,7 +18,6 @@ image = SubResource("Image_d4ae7")
 script = ExtResource("1_87bsc")
 Name = "weakness-policy"
 Id = 682
-Cost = 1000
 Category = "held-items"
 ShortEffect = "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages."
 Effect = "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages."

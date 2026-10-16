@@ -6,5 +6,4 @@
 script = ExtResource("1_gubso")
 Name = "fighting-tera-shard"
 Id = 1684
-Cost = 500
 Category = "tera-shard"

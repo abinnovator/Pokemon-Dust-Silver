@@ -20,5 +20,5 @@ Name = "light-stone"
 Id = 657
 Category = "plot-advancement"
 ShortEffect = "Summons Reshiram for the final battle against N."
-Effect = "Summons reshiram for the final battle against N."
+Effect = "Summons Reshiram for the final battle against N."
 Sprite = SubResource("ImageTexture_jhii5")

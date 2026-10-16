@@ -18,7 +18,6 @@ image = SubResource("Image_q5chj")
 script = ExtResource("1_5uoxr")
 Name = "eviolite"
 Id = 581
-Cost = 4000
 Category = "held-items"
 ShortEffect = "Held: Holder has 1.5× Defense and Special Defense, as long as it’s not fully evolved."
 Effect = "Held by a Pokémon that is not fully evolved :   Holder has 1.5× Defense and Special Defense."

@@ -6,5 +6,4 @@
 script = ExtResource("1_gbnvc")
 Name = "marill-ball"
 Id = 2033
-Cost = 2000
 Category = "picnic"

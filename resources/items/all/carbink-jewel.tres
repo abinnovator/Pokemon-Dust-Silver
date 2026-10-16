@@ -6,5 +6,4 @@
 script = ExtResource("1_rqejw")
 Name = "carbink-jewel"
 Id = 2152
-Cost = 50
 Category = "tm-materials"

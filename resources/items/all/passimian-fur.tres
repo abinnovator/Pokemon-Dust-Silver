@@ -6,5 +6,4 @@
 script = ExtResource("1_n5qhq")
 Name = "passimian-fur"
 Id = 1882
-Cost = 120
 Category = "tm-materials"

@@ -20,5 +20,5 @@ Name = "devon-scope"
 Id = 542
 Category = "gameplay"
 ShortEffect = "Allows spotting of invisible Kecleon."
-Effect = "Reveals invisble kecleon on the overworld."
+Effect = "Reveals invisble Kecleon on the overworld."
 Sprite = SubResource("ImageTexture_kmf4b")

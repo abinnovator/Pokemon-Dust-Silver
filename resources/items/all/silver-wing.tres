@@ -20,5 +20,5 @@ Name = "silver-wing"
 Id = 481
 Category = "plot-advancement"
 ShortEffect = "Summons Lugia to the Whirl Islands."
-Effect = "Causes lugia to appear in the whirl islands."
+Effect = "Causes Lugia to appear in the Whirl Islands."
 Sprite = SubResource("ImageTexture_6rg57")

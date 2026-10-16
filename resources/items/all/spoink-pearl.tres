@@ -6,5 +6,4 @@
 script = ExtResource("1_36unq")
 Name = "spoink-pearl"
 Id = 1812
-Cost = 140
 Category = "tm-materials"

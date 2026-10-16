@@ -18,7 +18,6 @@ image = SubResource("Image_afsj5")
 script = ExtResource("1_dk3bn")
 Name = "tm68"
 Id = 372
-Cost = 30000
 Category = "all-machines"
 ShortEffect = "Teaches Giga Impact to a compatible Pokémon."
 Effect = "Teaches Giga Impact to a compatible Pokémon."

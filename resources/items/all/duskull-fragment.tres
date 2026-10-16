@@ -6,5 +6,4 @@
 script = ExtResource("1_e2jfp")
 Name = "duskull-fragment"
 Id = 2144
-Cost = 40
 Category = "tm-materials"

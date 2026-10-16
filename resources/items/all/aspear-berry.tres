@@ -18,7 +18,6 @@ image = SubResource("Image_48g3g")
 script = ExtResource("1_7lclm")
 Name = "aspear-berry"
 Id = 130
-Cost = 80
 Category = "medicine"
 Attributes = PackedStringArray("holdable-active")
 ShortEffect = "Held: Consumed when frozen to cure frozen."

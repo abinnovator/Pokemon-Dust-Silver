@@ -18,7 +18,6 @@ image = SubResource("Image_etaoi")
 script = ExtResource("1_xdawn")
 Name = "bright-powder"
 Id = 190
-Cost = 4000
 Category = "held-items"
 Attributes = PackedStringArray("holdable", "holdable-active")
 ShortEffect = "Held: Increases the holder’s evasion by 1/9 (11 1/9%)."

@@ -18,7 +18,6 @@ image = SubResource("Image_6bpcr")
 script = ExtResource("1_gslrx")
 Name = "tm43"
 Id = 347
-Cost = 1000
 Category = "all-machines"
 ShortEffect = "Teaches Flame Charge to a compatible Pokémon. (Gen IV & III: Secret Power Gen II: Detect Gen I: Sky Attack)"
 Effect = "Teaches Secret Power to a compatible Pokémon."

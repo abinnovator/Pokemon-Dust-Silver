@@ -18,7 +18,6 @@ image = SubResource("Image_nmkko")
 script = ExtResource("1_joq75")
 Name = "bug-memory"
 Id = 907
-Cost = 1000
 Category = "memories"
 ShortEffect = "Held: Changes Silvally to its Bug form.  Changes Multi-Attack’s type to Bug."
 Effect = "Held: Changes Silvally to its Bug form.  Changes Multi-Attack’s type to Bug."

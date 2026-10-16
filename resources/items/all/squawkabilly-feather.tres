@@ -6,5 +6,4 @@
 script = ExtResource("1_kghsb")
 Name = "squawkabilly-feather"
 Id = 1929
-Cost = 80
 Category = "tm-materials"

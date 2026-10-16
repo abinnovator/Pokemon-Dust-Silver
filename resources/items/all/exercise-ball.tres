@@ -6,5 +6,4 @@
 script = ExtResource("1_aa0ix")
 Name = "exercise-ball"
 Id = 2064
-Cost = 2000
 Category = "picnic"

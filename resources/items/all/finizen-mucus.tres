@@ -6,5 +6,4 @@
 script = ExtResource("1_wnrbf")
 Name = "finizen-mucus"
 Id = 1915
-Cost = 100
 Category = "tm-materials"

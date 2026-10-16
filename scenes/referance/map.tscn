@@ -35,7 +35,7 @@ position = Vector2(-72, -928)
 position = Vector2(-2768, -2096)
 
 [node name="Level2" parent="." instance=ExtResource("4_cjvgp")]
-position = Vector2(-344, -2104)
+position = Vector2(-332, -2147)
 
 [node name="Route 16" parent="." instance=ExtResource("5_gbcqk")]
 position = Vector2(1696, -2048)
